@@ -1,0 +1,193 @@
+
+/* ======================= UNIVERSAL CSS FRAMEWORK ======================
+Title: Universal CSS Framework, version 2.0.0.0
+Author: Mitchell Stokely (updated March, 2021)
+
+Description: This style sheet is part of a complete "progressive" CSS framework designed for cross-browser style sheet support in browsers going back to the birth of the World Wide Web in the 1990's. It provides old browsers the minimum styles needed to display content, while adding newer styles for more modern browsers that can display more modern CSS. I call this the "Universal CSS Framework" because it was designed to universally support as many web browsers as possible, including those that did not support CSS. This system should provide some form of basic layout or design in all browsers, old and new, with a rich cascading style sheet system that degrades gracefully to simpler layouts in the older browsers.
+
+The first "1.0" version of this CSS system was originally constructed in June of 2004, though its initial designs were laid down in 2001. This "2.0" version is a major upgrade I built to accommodate new HTML5 and CSS3 standards. You will see those more modern features in parts of the newer sheets designed for more modern browsers and much better fixes for many older browsers, as well.
+
+Please note that this solution is Javascript-free!
+
+============================ STYLE SHEET NOTES ===========================
+Use this sheet to tailor the CSS experience for Internet Explorer 4 for PC and Internet Explorer 5.x For Mac. These browsers will ONLY see a simple white block-level layout page with text and images. Do not style it for specific layouts as it will not import your classes.
+
+This page allows you to apply special fixes to Internet Explorer 4.x PC and 5.x for the Macintosh browsers only.
+
+IE 4 for PC and IE5 for Mac had font-size and other layout issues. So these fixes added below address those. Add more if targeting this browser on older PC's or Macs. IE was discontinued on Macintosh years ago, but many older models may still use this browser.
+
+Notes:
+- Using the import sheet style hack that imports this style sheet, this sheet should NOT be seen by any browser, old or new, except IE5 for Mac! These fixes cascade over the "OldBrowsers.css" base reset sheet and add to the final styles needed for IE5 for Mac.
+- This style sheet was tested long ago on an actual Mac with IE5 running on it years ago in order to fine-tune the fixes needed below for a clean, block-level only white page display of web site content.
+- Custom styles were added below for ID selectors related to headers, footers, and print in my original site. Change these as needed if you target this browser and want to simply or show/hide headers and footers for Mac. I kept examples of these below.
+- Keep in mind this browser still loads the "OldBrowsers.css" reset base sheet and uses that for its main element styling.
+- Because these old browsers and platforms may no longer exist in 2021 you may safely retire this sheet. It is optional.
+========================================================================== */
+
+
+
+
+/*=================== IE 5.x For Mac Element Style Fixes ================= */
+
+html {
+    height:100%;
+}
+
+/* ALERT: Font-size defaults to 13px, not 16px, by default on old Macs using IE. I have decided to remove that value below and just use the inherited text settings (font-size:16px) applied in "OldBrowsers.css" since they have impacted so many elements. Keep in mind most older Macs with IE may be using 13px default font sizes viewed on 96dpi screens, so the 16px setting may look much larger now for those users. I decided to allow that, but if you target this browser I recommend you go back to 13px for that user base.  */
+
+html body,
+html body form {
+    height: 100%;
+    min-width: 750px; /* helps IE for Mac displays on their tiny windows */
+    text-align: left;
+    background: #ffffff;
+    font-size:16px;
+}
+
+/* Optional: Because of inheritance issues, its important to force font-size on every element. */
+html body * {
+    /*original font-size used was "font-size:13px" */
+    font-size:16px
+}
+
+html body div {
+    float:none;
+    clear:both;
+    margin-top:2px;
+    padding:0;
+    border:0;
+    background-color:#ffffff;
+    width: 100%;
+}
+
+html body hr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html body big,
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h5,
+html body h6,
+html body small,
+html body sub,
+html body sup {
+    border: 0;
+}
+
+html body td 
+{
+    border:1px solid #999999;
+    padding:4px;
+}
+
+html body img {
+    display: block;
+    float: none;
+    clear: both;
+    margin: 2px 0;
+    padding: 0;
+    border: 0;
+    background-color: #cccccc;
+    color: #000000;
+}
+
+html body object,
+html body embed {
+    display: block;
+    float: none;
+    clear: both;
+    width: 100%;
+    height: auto;
+    background-color: #cccccc;
+    font-size: 16px;
+    margin: 0;
+    margin-top: 2px;
+    padding: 0;
+    border: 0;
+}
+
+html body ol,
+html body ul {
+    display: block;
+    float: none; /* we always enforce non-floating layouts by default */
+    padding: 0;
+}
+
+
+/*======================= CREATE BLOCK-LEVEL LAYOUT FOR IE for Mac ========================
+Because this is the last style sheet old IE for PC and Mac browsers will see, we need to reset all structural elements to simple non-floats and block-level layout divs and sections so they stack linearly and fill available width. Browsers like old IE will no longer support custom classes but get clean, simple linear block-level text now. The styles below also change navigation headers into simple inline lines of page links. */
+
+html body audio,
+html body canvas,
+html body meter,
+html body picture,
+html body progress,
+html body svg,
+html body video {
+    display: block;
+    float: none;
+    clear: both;
+    margin: 0;
+    margin-top: 2px;
+    padding: 0;
+    max-height: none;
+    outline: none;
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+    background-color: #ffffff;
+}
+
+html body article,
+html body aside,
+html body footer,
+html body header,
+html body main,
+html body section {
+    display: block;
+    float: none;
+    clear: both;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    margin-top: 2px;
+    padding: 0;
+    max-height: none;
+    outline: none;
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+    background-color: #ffffff;
+}
+
+
+
+/* ======================================================================== */
+
+/* Hide these custom items from old IE for Mac and PC*/
+html body  #printheader,
+html body  #printheaderlogo,
+html body  #mobileheader,
+html body  #skip_to_content,
+html body  #back_to_top {
+    display: none;/* if the IE user decides to print, and supports the print sheet, this would become "block". */
+    float: none;
+    clear: both;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    max-height: none;
+    outline: none;
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+    background-color: #ffffff;
+}
+
+/* ======================================================================== */

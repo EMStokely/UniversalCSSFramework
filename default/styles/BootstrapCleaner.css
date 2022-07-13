@@ -1,0 +1,888 @@
+
+/* ======================= UNIVERSAL CSS FRAMEWORK ======================
+Title: Universal CSS Framework, version 2.0.0.0
+Author: Mitchell Stokely (updated March, 2021)
+
+Description: This style sheet is part of a complete "progressive" CSS framework designed for cross-browser style sheet support in browsers going back to the birth of the World Wide Web in the 1990's. It provides old browsers the minimum styles needed to display content, while adding newer styles for more modern browsers that can display more modern CSS. I call this the "Universal CSS Framework" because it was designed to universally support as many web browsers as possible, including those that did not support CSS. This system should provide some form of basic layout or design in all browsers, old and new, with a rich cascading style sheet system that degrades gracefully to simpler layouts in the older browsers.
+
+The first "1.0" version of this CSS system was originally constructed in June of 2004, though its initial designs were laid down in 2001. This "2.0" version is a major upgrade I built to accommodate new HTML5 and CSS3 standards. You will see those more modern features in parts of the newer sheets designed for more modern browsers and much better fixes for many older browsers, as well.
+
+Please note that this solution is Javascript-free!
+
+============================ STYLE SHEET NOTES ===========================
+Use this style sheet to clear out Bootstrap's "reboot" style sheet system that resets a subset of HTML elements in their product to certain styles that are not the browser's defaults for those elements.
+
+Bootstrap created "reboot" to try and change styles on a subset of HTML elements prior to adding their own classes and other styles on top of those changes. They did this to try and align the newest browser types in those browsers in terms of basic element design to a common look and feel. Many developers do this anyway in what is called a "reset" style sheet. If you like Bootstrap's classes and layouts but do not like the inconsistency of these "reboot" changes on elements and need to control the default browser styling yourself, use this special "cleaning" style sheet to remove them. It resets the elements back to each browser's UA (user-agent) style sheet that comes with the browser.
+
+This clearing style sheet DOES NOT AFFECT BOOTSTRAP CSS CLASSES, but simply cleans up underlying element styling that differs between browsers, old and new. Keep in mind this reset sheet may affect some Bootstrap styles that depend upon some minor resets of browser HTML element layouts. I found this sheet helpful when wanting to clear out the inconsistent mess of Bootstrap element styling that did not perform or look as I expected out of the box simply because Bootstrap developers failed to carefully fix them consistently between versions and types of browsers in their "reboot" stylesheet.
+
+==========================================================================
+This sheet does the following:
+1. Recreates/copies all of Bootstraps basic "reboot" element CSS styles into this style sheet, the same ones found in the main Bootstrap CSS file "Bootstrap.css" or "Bootstrap-reboot.css" (this one uses a version of Bootstrap 4)
+2. Resets the above element styles and attempts to set them back to browser style defaults, cascading over Bootstrap's element styles (not Bootstrap style classes). Note: This does not affect Bootstrap classes and properties, only the default element styles.
+3. IMPORTANT: This @import cascade system relies on @import order. Make sure you put your link or @import to this CSS file AFTER Bootstrap's link or @Import but before any other reset CSS links you create. I elected not to add more selective CSS to the elements below (like "body div {...}") so later sheets and styles you add after this one would easily cascade over these styles, if needed without the need for more selectivity.
+===========================================================================
+Why would you want to use this style sheet?
+
+Many designers and developers want the browser's default element styles intact so they can reset them themselves or work with native browser user-agents styles that are set by the browser only, by users, or that come packaged with each agent. But most also still want to use Bootstrap's classes and layouts. These "reboot" styles may use or depend upon Bootstrap's layouts and classes. In clearing out (cascading over) the "reboot" or element styles and un-styling them, you now can use Bootstrap's actual style classes without the "reboot" element restyling that tampers with the underlying element styles native to the browser. I like to reset or reboot elements myself with my own reboot style sheet, anyway ("OldBrowsers.css" and "NewBrowsers.css" are my reset sheets).
+
+In some instances I have found older browsers do not work with Bootstrap's "reboot" element styles at all, so they are useless. Their use of "rem" is one case where such text styles are not fully supported in not only browsers pre-2001 but any Internet Explorer browser up to version 11. There are still bugs in version 11 using "rem". So, many modern browsers fail with "reboot" and would default to pixel defaults or worse. In many cases you might want to see what browsers set the styles at in HTML by default. In even more cases, you might find cross-browser issues with Bootstrap's default element styles that are not consistent, as I have, especially between the newest browsers which have various support for parts of CSS3 and HTML5. You also might want to style the elements yourself and not rely on Bootstrap. Because Bootstrap uses newer CSS like "rem", CSS properties, flex, and other changes not supported in many older browsers, their styles look broken or display poorly in older browsers still running in many corporate or government computers (i.e large corporations with computers stuck with very old browsers, which I have experienced first hand!). To fix those problems many developers layer over very complex polyfills or Javascript libraries like Modernize to force older browsers to deal with these bad style choices.
+
+For that reason it's often best to strip out or cascade over Bootstrap's "reboot" styles as this sheet does and add your own default element styles that still work in old agents, which is what I do every time. Keep in mind, because Bootstrap did not bother to separate their classes and their dependencies on these element "reboot" styles (which are often "compiled" or mushed together when minimized) you may see some Bootstrap layouts shift slightly in alignment or appearance. In that case, you may remove this clearing sheet, if you like. In many cases, I simply recommend you abandon Bootstrap and build your own "reset" CSS libraries and style libraries. You can easily simulate many of Bootstrap's classes. But this sheet at least gives you a clean separation between the Bootstrap classes and properties you do depend on and the Bootstrap element "reboots" you do not.
+
+Reseting Bootstrap's reboot sheet will cause some minor issues when you change these back to browser defaults, as Bootstrap designers chose to have some of their classes partially rely on these reset element styles (that is bad design!). But in some cases you may need to use this sheet to do that anyway as you are choosing to control the base styles to match what older browsers use, as well. Bootstrap's "reboot" styles in many cases do not affect many older browser versions so their "reboot" is not consistent nor cross-browser compatible. In my case my reset style sheets I designed work for 99.99% of old and new user-agents, not the modern browsers Bootstrap targets. For that reason, I developed this clearing style sheet to clear out that mess.
+
+On Reseting Element Styles: All the chosen Bootstrap element selectors below have properties that are either reset back to their inherited values (the parent element's value as far as inheritable styles) or have their style properties default to their original browser's style sheet values before Bootstrap changed them. These are generally anything text-based. In some cases they reset back to a style property's initial value (this would be the property's default for itself, not the element). Most of these changes use "initial", "unset", or "revert" which are read by nearly all modern browsers but Internet Explorer (v1-11). For that reason I have elected to manually reset each element's properties below, as well as use those custom property unset/revert/inherit/initial values, which many older browsers do not understand and would ignore. You will mostly see reset of element properties using "all:reset" which removes all old styles on the element that Bootstrap changed and resets them back to the default UA browser style sheet values. "Revert" strips cascaded styles on those elements. Occasionally, I will reset lots of properties manually on the element to specific values to force IE-only properties to be changed to a default standard value instead. That seems to work well for IE. But "revert" for the rest is a comprehensive return to defaults.
+
+WARNING, DO NOT USE "all:revert" on all elements! (Updated 6/2021) - After testing images, it appears we cannot use this property as it erases an images actual "width" and "height" from the DOM after processing 'img' element dimensions, including srcset values. After erasing them, the image then has no known dimensions after calling "all:revert", but fills the actual block level element, getting extremely large! 
+
+The only way to truly reset a style system back to each browser's default or UA browser style sheet is to force inheritance back to the root or "html"/"body" and set the root to use initial text values. For un-inherited properties "revert" will force the property to use the browser's default style sheet value from the root for that element. That means this sheet had to change the property settings in the "html"/"body", removing Bootstrap's custom font settings, for example. If you don't need to do that, you may remove the "html"/"body" styles. I try and avoid the use of "initial" and "unset" in many cases as they could reset values to property defaults, not inherit from the root values, and ignore the default browser style sheets entirely.
+
+Bootstrap's Font Settings: In the html and body elements you can control whether you still want to use Bootstrap's special font settings. To do so simply comment out all text styling in "html" and "body". There may be a handful of elements they explicitly restyled for fonts, so check below. I have left detailed comments below to guide you on all those settings. I have left the styles that DO strip out Bootstrap's fonts as I like to control those anyway in my comprehensive reset style sheet system that supports a wider range of old and new browsers.
+
+Notes on use of "unset" and "revert". This special style property is new in CSS3 and so has limited support. In the Gecko and Webkit browsers, it generally has good support and quite powerful in simplifying a clearing of styles back to each browser's default UA style sheet. For that reason it is used extensively below, but with caution. For starters, it only works in non-Internet Explorer browsers and forcefully clears all non-inherited values and uses the UA browser default style sheet. This "revert" thus returns element property values in most cases to the browser's and user-agent's (UA) default values. It works just like "unset" on inherited text values, but in the case of non-inherited removes the current style and replaces it with the browser's UA style sheet value for that element. That is sometimes what is set in the root element. "unset" is helpful in not removing cascades on elements, but for non-inheriting it can default to a property's "initial" value, not the UA style sheets value for the element. In some cases it is necessary to return to "initial" values which would not match the UA style sheet. Because Internet Explorer and many older browsers don't support "revert", "initial", or "unset" values, I have added fallback styles before "all:revert" that return the element to browser defaults (as close as possible) for IE and older agents. In that case IE and older browsers would ignore "all:revert" when read but would use the earlier manual property resets. In other cases, if the manual value doesn't work for IE, I use "inherit" which IE supports and would pull the value from the root element, if it exists.
+
+Note: Reseting these Bootstrap element property values DOES NOT AFFECT BOOTSTRAP'S STYLE CLASSES!! Those should look and work the same after applying this style sheet. Any minor formatting shifts can be adjusted by removing this sheet entirely from your pages or removing specific selectors from this sheet, as needed if you find you need specific Bootstrap element resets that got changed below.
+============================================================= */
+
+
+
+
+
+
+/* ========================= START ========================== */
+
+/* Remove the New HTML5/CSS3 Box Model Bootstrap Uses: Bootstrap (v4+) likes to use the new "border-box" box-model here, where padding and borders are included in the width and height of block level elements. I do too. The problem with that strategy here, however, is many older versions of browsers don't support this box-model, including some newer modern browsers, so will break. If Bootstrap had built a style system to apply box-sizing for just newer agents, this style below would make sense. So I reset it here then add it back in later in my own reset style sheet. If you see some of Bootstrap's layouts shift too much, you can comment out this style setting below and use this box-model setting. */
+
+*,
+*::before,
+*::after {
+    box-sizing: content-box; /* this sets box model back to traditional one for older browsers. note IE only supports this type or reset */
+    box-sizing: revert; /* only non-IE browsers understand "revert" here */
+}
+
+
+
+/* REMOVE BOOTSRAP's FONTS AND TEXT SETTINGS: These style sets below in root-level elements are critical in removing Bootstrap's custom device font-family list and all inheritable text styles used by all other elements below. So you must reset these in the html and body elements to affect other others below that inherit them. Bootstrap sets their font-family and text settings in the "html" and "body" elements below, which then gets inherited as well by all child elements. Personally, I like a clean start with no text styles as I prefer to use my own. So I kept the changes below which removes Bootstrap's font styles. Comment them out if you still want to honor Bootstrap's custom font and text settings.
+
+IMPORTANT: By putting "all:revert" last in the property list below, the earlier properties are used by IE and all browsers to reset core element styles back to a default. Newer browsers use "all:revert" for global reset and removal of all style cascades back to UA browser default styles. In some rare cases I needed to remove revert to not cascade over Bootstrap classes that get written over. In the case of pseudo-classes on anchor tags this was needed as those had the same weight as Bootstrap's classes and "all:revert" was cascading over their class styles, removing their values. Internet Explorer may go back to values that are not in its browser default sheet (based on what "initial" or "inherit" means in the html and body elements below), while all other browsers using "all:revert" should safely revert to all their UA browser default style sheet property values.
+ALERT: If you want to use Bootstrap's fonts and font settings then comment out all the properties below. */
+
+:root, html {
+    display: block;
+    font-family: inherit;/* IE doesn't know "initial", "unset", or "revert" so "inherit" was used */
+    line-height: inherit;
+    -webkit-text-size-adjust: inherit;
+    -webkit-tap-highlight-color: inherit;
+    /* WARNING, DO NOT USE "all:revert" on all elements! (Updated 6/2021) - After testing images, it appears we cannot use this property as it erases an images actual "width" and "height" from the DOM after processing 'img' element dimensions, including srcset values. After erasing them, the image then has no known dimensions after calling "all:revert", but fills the actual block level element, getting extremely large! */
+    /*all:revert;*/
+}
+
+
+
+/* Note: Bootstrap's custom device font list are primarily set here in the "body" and inherited by all text-based child elements. If you want to use Bootstrap's text settings then comment out all the properties below. Only do this if you want to use Bootstrap's assigned text-based CSS used in all elements inherited from the "body". */
+
+body {
+    display: block;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: inherit;
+    color: inherit;
+    text-align: inherit;
+    background-color: inherit;
+    /* WARNING, DO NOT USE "all:revert" on all elements! (Updated 6/2021) - After testing images, it appears we cannot use this property as it erases an images actual "width" and "height" from the DOM after processing 'img' element dimensions, including srcset values. After erasing them, the image then has no known dimensions after calling "all:revert", but fills the actual block level element, getting extremely large! */
+    /*all: revert;*/
+}
+
+
+
+/* OPTIONAL: CLEAR OUT ALL ELEMENT STYLES UNDER "body" AND REVERT BACK TO THE BROWSER's DEFAULTS. Use "all:revert" below for all modern, non-IE browsers resets of all elements in your web page. This wildcard (*) style takes every element under "body" and resets its styles to browser defaults. It duplicates what is done by each element below in most cases. This is just included here to make sure all HTML elements (Bootstrap or other sheets NOT targeted below) get reset to browser default style values. This only affects non-Internet Explorer browsers, so if you see anything not set in IE add a custom element style below and manually reset each property affected or used by the element for IE. We do this anyway below in the individual element styles. Note we also add "all:revert" to each element style below, even though its redundant, as in some cases it needs to be more selective and reset every property of the element back to browser defaults. */
+
+body * {
+    /* WARNING, DO NOT USE "all:revert" on all elements! (Updated 6/2021) - After testing images, it appears we cannot use this property as it erases an images actual "width" and "height" from the DOM after processing 'img' element dimensions, including srcset values. After erasing them, the image then has no known dimensions after calling "all:revert", but fills the actual block level element, getting extremely large! */
+    /*all: revert;*/
+}
+
+
+
+/* RESET OF BOOTSTRAP's "REBOOT" HTML5 ELEMENT STYLES. Because Internet Explorer and many older browser do not recognize these newer HTML5 elements (like main, header, etc.) Bootstrap defined them here as block level elements. I just reset them back to the browser's default which might be different. Older browsers simply do not know what these new HTML5 elements should look like, however. In my own reset sheets added later I do restyle these elements and more. Note that Bootstrap left unstyled many HTML elements not included below but found in the HTML5 recommendation. These were not added by me so I remain consistent with only changing what Bootstrap changed. Its yet one more reason to not let Bootstrap style any of them! */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+    display: block;
+    display: revert;
+}
+
+[tabindex="-1"]:focus {
+    outline: none;
+    outline: revert;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    box-sizing: revert;
+    height: revert;
+    overflow: revert;
+}
+
+p {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    display: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    margin-right: revert;
+}
+
+abbr[title],
+abbr[data-original-title] {
+    text-decoration: underline dotted;
+    -webkit-text-decoration: underline dotted;
+    cursor: auto;
+    border-bottom: initial;
+    -webkit-text-decoration-skip-ink: initial;
+    text-decoration-skip-ink: initial;
+    text-decoration: revert;
+    -webkit-text-decoration: revert;
+    cursor: revert;
+    border-bottom: revert;
+    -webkit-text-decoration-skip-ink: revert;
+    text-decoration-skip-ink: revert;
+}
+
+address {
+    display: block;
+    margin-bottom: 0;
+    font-style: italic;
+    line-height: inherit;
+    display: revert;
+    margin-bottom: revert;
+    font-style: revert;
+    line-height: revert;
+}
+
+ol,
+ul,
+dl {
+    margin-top: .5em;
+    margin-right: 0;
+    margin-bottom: .5em;
+    margin-left: 1.5em;
+    padding: 0;
+    margin-top: revert;
+    margin-right: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    padding: revert;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 1.2em;
+    padding: 0;
+    margin-top: revert;
+    margin-right: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    padding: revert;
+}
+
+/* ========================= START SPECIAL BOOTSTRAP FIXES ============================= 
+BOOTSTRAP FIX: These selectors are for Bootstrap's special use of "header" navigation styles which must not enforce styles on top of Bootstrap's header navigation custom classes. This selector set here would help newer browsers honor Bootstrap's newest navigation designs that the base reset sheet's anchor styles have removed for older browsers. Add additional Bootstrap fixes below, if needed. Note: "body header" is necessary to override "ul" styles in later imported "reset" sheets that would cascade over this. */
+
+body header ol,
+body header ul,
+body header dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    /* setting revert below screwed up Bootstraps navigation as it cleared out their custom classes. So, this defaults to "initial" now when using "unset" on a non-inheritable property */
+    margin-top: unset;
+    margin-bottom: unset;
+    margin-left: unset;
+    margin-right: unset;
+}
+body header ol ol,
+body header ul ul,
+body header ol ul,
+body header ul ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: unset;
+    margin-bottom: unset;
+    margin-left: unset;
+    margin-right: unset;
+}
+/* ========================= END SPECIAL BOOTSTRAP FIXES ============================= */
+
+dt {
+    font-weight: normal;
+    font-weight: revert;
+}
+
+dd {
+    margin-bottom: 0;
+    margin-left: 40px;
+    margin-bottom: revert;
+    margin-left: revert;
+}
+
+blockquote {
+    margin: 1em 40px;
+    margin: revert;
+}
+
+b,
+strong {
+    font-weight: bold;
+    font-weight: revert;
+}
+
+small {
+    font-size: smaller;
+    font-weight: normal;
+    font-size: revert;
+    font-weight: revert;
+}
+
+sub {
+    position: relative;
+    font-size: smaller;
+    line-height: normal;
+    vertical-align: sub;
+    bottom: initial;
+    position: revert;
+    font-size: revert;
+    line-height: revert;
+    vertical-align: revert;
+    bottom: revert;
+}
+
+sup {
+    position: relative;
+    font-size: smaller;
+    line-height: normal;
+    vertical-align: super;
+    top: initial;
+    position: revert;
+    font-size: revert;
+    line-height: revert;
+    vertical-align: revert;
+    top: revert;
+}
+
+a {
+    color: #006;
+    text-decoration: underline;
+    background-color: inherit;
+    color: revert;
+    text-decoration: revert;
+    background-color: revert;
+}
+
+/* In case a developer or Bootstrap uses anchors in HTML5 header navigation, remove custom anchor font settings and inherit those custom settings. Note: "body header" is necessary to override "ul" styles in later imported "reset" sheets that would cascade over this. */
+body header a {
+    font-size: inherit;
+    line-height: inherit;
+    word-spacing: inherit;
+    letter-spacing: inherit;
+    font-size: revert;
+    line-height: revert;
+    word-spacing: revert;
+    letter-spacing: revert;
+}
+
+/* RESET BOOTSTRAP'S PSEUDO-CLASSES : This code below resets Bootstrap's anchor pseudo-class styles using "revert" or "unset" but ONLY on links outside the header element. It makes your page links look like links again without affecting Bootstrap's navigation link styles. Note: I chose link colors that are used traditionally by pseudo-class states on links in older browsers. Change or customize these as you like. WARNING: Because pseudo-classes have the same selectivity as a plain class, these styles would conflict with style classes or custom classes applied to the anchor elements by Bootstrap later. For that reason, Ive limited any extra selectors that would give them more weight over a class. */
+
+a:link {
+    color: #006;
+    text-decoration: underline;
+    color: revert;
+    text-decoration: revert;
+}
+a:visited {
+    color: #66a;
+    text-decoration: underline;
+    color: revert;
+    text-decoration: revert;
+}
+a:hover {
+    color: #00c;
+    text-decoration: underline;
+    color: revert;
+    text-decoration: revert;
+}
+a:focus {
+    color: #00f;
+    text-decoration: underline;
+    color: revert;
+    text-decoration: revert;
+}
+a:active {
+    color: #00f;
+    text-decoration: underline;
+    color: revert;
+    text-decoration: revert;
+}
+
+/* These selectors are for Bootstrap's special use of "header" navigation anchor styles which must not enforce hyperlinks styles on top of Bootstrap's header navigation designs. Note: An anchor pseudo-class's font properties do not inherit from the anchor's style but the parent element above the anchor. Note: "body header" is necessary to override "ul" styles in later imported "reset" sheets that would cascade over this. */
+
+body header a:link,
+body header a:visited,
+body header a:hover,
+body header a:focus,
+body header a:active {
+    /* IE and older browsers will use this */
+    color: inherit;
+    text-decoration: none;
+    /* Newer modern non-IE browsers will read this */
+    color: unset;
+    text-decoration: unset;
+}
+
+a:not([href]):not([tabindex]):hover,
+a:not([href]):not([tabindex]):focus {
+    color: inherit;
+    text-decoration: underline;
+    color: revert;
+    text-decoration: revert;
+}
+
+a:not([href]):not([tabindex]):focus {
+    outline: none;
+    outline: revert;
+}
+
+a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: underline;
+    color: revert;
+    text-decoration: revert;
+}
+
+/* Note: Bootstrap uses a SPECIAL FONT SET for monospace-type elements below. So comment out the "font-family" property below if you want to use Bootstrap's special fonts. */
+pre,
+code,
+kbd,
+samp {
+    font-family: monospace;
+    font-size: inherit;
+    font-family: revert;
+    font-size: revert;
+}
+
+pre {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    overflow: auto;
+    margin-top: revert;
+    margin-bottom: revert;
+    overflow: revert;
+}
+
+figure {
+    margin: 1em 40px;
+    margin: revert;
+}
+
+img {
+    vertical-align: auto;
+    border-style: none;
+    vertical-align: revert;
+    border-style: revert;
+}
+
+svg {
+    overflow: auto;
+    vertical-align: auto;
+    overflow: revert;
+    vertical-align: revert;
+}
+
+table {
+    border-collapse: separate;
+    border-collapse: revert;
+}
+
+caption {
+    padding-top: 0;
+    padding-bottom: 0;
+    color: inherit;
+    text-align: center;
+    caption-side: top;
+    padding-top: revert;
+    padding-bottom: revert;
+    color: revert;
+    text-align: revert;
+    caption-side: revert;
+}
+
+th {
+    text-align: center;
+    text-align: revert;
+}
+
+label {
+    display: block;
+    margin-bottom: 0;
+    display: revert;
+    margin-bottom: revert;
+}
+
+button {
+    border-radius: 0;
+    border-radius: unset;
+}
+
+/* WARNING: Because pseudo-classes have the same weights as classes, if these have extra selectivity or lots of properties styles they might cascade over custom classes in Bootstrap. So keep styles to a minimum. */
+button:visited,
+button:hover,
+button:focus,
+button:active {
+}
+
+button:focus {
+    outline: revert;/* this appears to be the only pseudo-class Bootstrap added to buttons */
+}
+
+/* WARNING: Because pseudo-classes have the same weights as classes, if these have extra selectivity or lots of properties styles they might cascade over custom classes in Bootstrap. So keep styles to a minimum. */
+input:visited,
+input:hover,
+input:focus,
+input:active {
+}
+
+input,
+button,
+select,
+optgroup {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: normal;
+    margin: revert;
+    font-family: revert;
+    font-size: revert;
+    line-height: revert;
+}
+
+textarea {
+    margin: 0;
+    font-family: monospace;
+    font-size: inherit;
+    line-height: normal;
+    overflow: auto;
+    resize: none;
+    margin: revert;
+    font-family: revert;
+    font-size: revert;
+    line-height: revert;
+    overflow: revert;
+    resize: revert;
+}
+
+button,
+input {
+    overflow: hidden;
+    overflow: revert;
+}
+
+button,
+select {
+    text-transform: none;
+    text-transform: revert;
+}
+
+select {
+    word-wrap: normal;
+    word-wrap: revert;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button; /* restyles old-fashioned beveled button for all Apple device and Safari browsers */
+    -moz-appearance: button; /* restyles old-fashioned beveled button for Mozilla-Firefox browsers */
+    -webkit-appearance: revert;
+    -moz-appearance: revert;
+}
+
+/* Bootstrap uses attribute selectors and pseudo-classes below which have the same weight as a class. Change to "unset" if you see problems as "revert" strips all class styles and reverts back to browser defaults for uninherited properties, while "unset" returns them to property defaults only. */
+button:not(:disabled),
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled) {
+    cursor: inherit;
+    cursor: revert;
+}
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    padding: 0;
+    border-style: solid;
+    padding: revert;
+    border-style: revert;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    box-sizing: content-box;
+    padding: 0;
+    box-sizing: revert;
+    padding: revert;
+}
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+    -webkit-appearance: none;
+    -webkit-appearance: revert;
+}
+
+/* IE has weird default styles for the fieldset element, so I set it to use IE8's. As always, the "all:revert" will reset all non-IE browsers to their actual defaults for all properties for fieldset. */
+fieldset {
+    min-width: 0;
+    padding: 0 2px 3px;
+    margin: 0 2px;
+    border: 1px groove #000;
+    min-width: revert;
+    padding: revert;
+    margin: revert;
+    border: revert;
+}
+
+legend {
+    float: none !important;/* recent changes to bootstrap broke this feature so had to override */
+    clear: none !important;/* recent changes to bootstrap broke this feature so had to override */
+    display: block;
+    width: auto;
+    max-width: 0;
+    padding: 0 2px;
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    white-space: normal;
+    display: revert;
+    width: revert;
+    max-width: revert;
+    padding: revert;
+    margin-bottom: revert;
+    font-size: revert;
+    line-height: revert;
+    color: revert;
+    white-space: revert;
+}
+
+progress {
+    vertical-align: top;
+    vertical-align: revert;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+    height: revert;
+}
+
+[type="search"] {
+    outline-offset: 0;
+    -webkit-appearance: searchfield;
+    outline-offset: revert;
+    -webkit-appearance: revert;
+}
+
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: searchfield;
+    -webkit-appearance: revert;
+}
+[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: searchfield-cancel-button;
+    -webkit-appearance: revert;
+}
+
+::-webkit-file-upload-button {
+    font: inherit;
+    -webkit-appearance: default-button;
+    font: revert;
+    -webkit-appearance: revert;
+}
+
+output {
+    display: inline;
+    display: revert;
+}
+
+summary {
+    display: block;
+    cursor: inherit;
+    display: revert;
+    cursor: revert;
+}
+
+template {
+    display: none;
+    display: revert;
+}
+
+/* This appears to be just an attribute on elements (not a style element) used widely by Bootstrap though not supported in older browsers. Rather than reset its style I've elected to leave it alone. */
+[hidden] {
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    display: block;
+    font-weight: bold;
+    line-height: normal;
+    font-size: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    margin-right: revert;
+}
+
+h1 {
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    margin-right: revert;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    margin-right: revert;
+}
+
+h3 {
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    margin-right: revert;
+}
+
+h4 {
+    font-size: 1em;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    margin-right: revert;
+}
+
+h5 {
+    font-size: .83em;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    margin-right: revert;
+}
+
+h6 {
+    font-size: .67em;
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    margin-right: revert;
+}
+
+
+mark {
+    padding: 0;
+    background-color: inherit;
+    padding: revert;
+    background-color: revert;
+}
+
+code {
+    font-size: inherit;
+    color: inherit;
+    word-break: normal;
+    font-size: revert;
+    color: revert;
+    word-break: revert;
+}
+
+a > code {
+    color: inherit;
+    color: revert;
+}
+
+kbd {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    background-color: inherit;
+    border-radius: 2px;
+    padding: revert;
+    font-size: revert;
+    color: revert;
+    background-color: revert;
+    border-radius: revert;
+}
+
+    kbd kbd {
+        padding: 0;
+        font-size: inherit;
+        font-weight: inherit;
+        padding: revert;
+        font-size: revert;
+        font-weight: revert;
+    }
+
+pre {
+    display: block;
+    font-size: inherit;
+    color: inherit;
+    display: revert;
+    font-size: revert;
+    color: revert;
+}
+
+    pre code {
+        font-size: inherit;
+        color: inherit;
+        word-break: normal;
+        font-size: revert;
+        color: revert;
+        word-break: revert;
+    }
+
+
+
+
+/* Note: I don't care for Bootstrap's Print style sheet as it is so incomplete. So it has also been reset below. I recommend you build your own print sheet or use the default one in this CSS system. */
+@media print {
+    *,
+    *::before,
+    *::after {
+        text-shadow: none;
+        box-shadow: none;
+        text-shadow: revert;
+        box-shadow: revert;
+    }
+
+    a:not(.btn) {
+        text-decoration: underline;
+        text-decoration: revert;
+    }
+
+    abbr[title]::after {
+        content: normal;
+        content: revert;
+    }
+
+    pre {
+        white-space: pre;
+        white-space: revert;
+    }
+
+    pre,
+    blockquote {
+        border: 0;
+        page-break-inside: auto;
+        border: revert;
+        page-break-inside: revert;
+    }
+
+    thead {
+        display: table-header-group;
+        display: revert;
+    }
+
+    tr,
+    img {
+        page-break-inside: auto;
+        page-break-inside: revert;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 0;
+        widows: 0;
+        orphans: revert;
+        widows: revert;
+    }
+
+    h2,
+    h3 {
+        page-break-after: auto;
+        page-break-after: revert;
+    }
+
+    @page {
+        size: auto;
+        size: revert;
+    }
+
+    body {
+        min-width: 0;
+        min-width: revert;
+    }
+}
+
+/* ========================== END =========================== */

@@ -1,0 +1,429 @@
+
+/* ======================= UNIVERSAL CSS FRAMEWORK ======================
+Title: Universal CSS Framework, version 2.0.0.0
+Author: Mitchell Stokely (updated March, 2021)
+
+Description: This style sheet is part of a complete "progressive" CSS framework designed for cross-browser style sheet support in browsers going back to the birth of the World Wide Web in the 1990's. It provides old browsers the minimum styles needed to display content, while adding newer styles for more modern browsers that can display more modern CSS. I call this the "Universal CSS Framework" because it was designed to universally support as many web browsers as possible, including those that did not support CSS. This system should provide some form of basic layout or design in all browsers, old and new, with a rich cascading style sheet system that degrades gracefully to simpler layouts in the older browsers.
+
+The first "1.0" version of this CSS system was originally constructed in June of 2004, though its initial designs were laid down in 2001. This "2.0" version is a major upgrade I built to accommodate new HTML5 and CSS3 standards. You will see those more modern features in parts of the newer sheets designed for more modern browsers and much better fixes for many older browsers, as well.
+
+Please note that this solution is Javascript-free!
+
+============================ STYLE SHEET NOTES ===========================
+Place all your general CSS Page Styles in this style sheet. This is used for ALL CUSTOM CSS in your web project, and where you add all your classes, variables, SASS, or other custom CSS and processes. Also, you can insert newer CSS3 safely in here and it will not affect older web browsers that don't understand CSS3 or HTML5. The first section contains styles tied to the web page's "user interface", including layouts, default html resets for newer browsers, etc. - Mitchell Stokely 2021
+==========================================================================
+Style Sheet Notes:
+1. This sheet should also include the "NewBrowsers.css" reset element style sheet that fixes the majority of HTML element issues prior to applying these page-level styles below. 
+2. ALWAYS use "rem" font units in here, not "em" units, like in my older style sheets ("OldBrowsers.css"), as "rem" text-based units for fonts and dimensions are superior, and base their font-sizes off the "body" element font-size settings, not the parent or inherited values like "em" does. Internet Explorer 9+ supports both HTML5 and "rem" units fully. Remember, this style sheet is ignored by IE 1-7 versions when using my Universal Style Sheet System. Only browsers IE 8+ will see this, which means you can keep using "fallback" CSS properties like "font-size: 1em; font-size: 1rem" (fallback CSS) to allow IE8 to use "em" for units and everyone else "rem". But "rem" is sufficient ok to use 100% instead, ignoring IE 8, as the "NewBrowsers.css" would set a base font unit "em" size to start with for IE8. This helps IE8, the one exception, deal with "rem" font units in this sheet. But use the fallback shown above if you need to deal with issues in IE8.
+3. Most basic element settings, as mentioned above, are done in my new "NewBrowsers.css". So no need to set any of that here in this sheet. Just put your specific custom page styles in here.
+4. This sheet controls all major "structural" and layout blocks in the user interface. In general, do not modify these styles in the first section below, as they are carefully configured to address cross-browser and other issues in various user agents, often using complicated CSS "hacks". Because very few older browsers (like IE 1-7) can see this imported sheet you should have very little CSS "hacks" in here. In the future, this style sheet can be cloned and used to create alternate web site layouts, themed designs, skins, etc. for "frozen", "flexed", or other specialty page layouts.
+5. Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification for details on configuring this project to bundle and minify static web assets like this CSS page. In some cases you would not want to minify or destroy the styles and comments below when compiled.
+
+
+========================================================================== */
+
+
+
+/* ================= Hide Print and Mobile Sections ======================
+REQUIRED: Here we hide the alternative print and mobile HTML headers in the web page from the desktop browser view. These features will be re-enabled and shown in your print and mobile style sheets, as needed.*/
+
+#printheader,
+#mobileheader {
+    display:none;
+}
+
+/* REQUIRED: Hide the accessibility "skip to content" links that appear at the top and bottom of our pages to assist screen readers and users with disabilities quickly get to the content. All normal browser users will never see these special links that appear at the top and bottom of your web pages using the styles below, but search engines and screen readers will ignore the styles below that hide them and they will appear at the top and bottom of every page. As long as you don't remove dimensions or set invisibility, these items will not be ignored by screen readers who will see these links at the top and bottom of every page for fast content access. By not assign these to "display:none" I allow some text-based agents like Lynx and others to still see these helpful link items. */
+
+#skip_to_content {
+    display: block;
+    clear: both;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: -9999px;/* this hides the element until screen readers see it */
+    padding: .2em;
+    background: #fff;
+}
+#back_to_top {
+    display: block;
+    clear: both;
+    width: auto;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: -9999px;/* this hides the element until screen readers see it */
+    padding: .2em;
+    background: #fff;
+}
+
+
+/* ==================== HTML and Body Styles ============================= 
+REQUIRED: Added font-face and new font to body tag below. This has been supported since Internet Explorer 4 in the 1990's! Note that many developers prefer to install a direct dependency to Google or Bootstrap font sets on external servers. I prefer to embed my fonts directly into my pages. Note that I also encourage the browser to check the user's OS and platform to see if it already has the font installed, avoiding an external call to the server for the font download. Also, old Internet Explorer needs the true font name and your alias to match, so the font alias name is always the same as the "local" name. */
+
+/* OPTIONAL: Added this feature so that a "permanent" vertical scrollbar is always present even if content never extends beyond the viewport height. This makes the page width more predictable in all web pages when content extending beyond the bottom of the page creates a new scroll bar along the right-hand side. In many viewports, if you set width to 100%, when content appears beyond the viewport height, a scrollbar will appear. If width is already 100%, because the vertical scrollbar fills up some of that width, to allow 100% to work, a horizontal scrollbar will also now appear, creating an ugly scrollbar on both axis. If you plan on having pages with content that extends beyond the maximum horizontal length of the page, and a scrollbar would appear anyway, this forces the scrollbar to ALWAYS appear and so prevents header menus from moving to make room for the scrollbar when it would suddenly appears. Width 100% should now compensate for the permanent vertical or y-axis scroll bar and avoid the x-axis scrollbar getting created. Scrollbars can also shift navigation menus and some page content horizontally and unexpectedly, thus altering web page layouts when content suddenly extends beyond the maximum length of some web pages and the scrollbar appears.
+Note: I recommend you set this y-axis scrollbar on any page that will have extended content/text, or that will require scrolling vertically. */
+
+/* See my "Goodies.txt" file for more cross-browser font-face code design options that support more legacy browsers! */
+
+@font-face {
+    font-family: 'Ebrima';/* This sets the name of your font used in 'body' below for 'font-family' */
+    src: local('Ebrima'),url(../fonts/ebrima.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-size: medium;
+    font-variant: normal;
+    font-stretch: normal;
+    font-display: swap;/* Tells the browser to use the fallback font to display the text (sans-serif) until the custom font has fully downloaded to the browser. I like this as it prevents "invisible" font often used when set to "auto" or "block". */
+}
+
+/* Custom body styles were added below. These support my HTML5 tutorial page design. */
+html body {
+    background: #eee;
+    padding: 0 1em 1em 1em;
+    margin: 0;
+    overflow-y: scroll;
+    font-family: 'Ebrima', -apple-system, sans-serif;/* This uses the font-family name defined in @font-face block. */
+}
+
+
+
+
+
+/* ============================ Layout Styles ============================ 
+Use these recommended CSS structural HTML5 element styles to make sure your top-level layout elements perform as expected and have all the "style goodies" needed to perform various tricks and layout features. You may also add my special HTML5 cross-browser "grid" or "flex" systems into these elements to allow them to do even more! */
+
+#header {
+    /* "position:relative" is a nice style to add here to support any type of positioning of images, menus, or other blocks of content inside this element. They will position themselves relative to this top parent, now. */
+    /*position:relative;*/
+    display: block;
+    float: none;
+    clear: both;
+    /* Setting "auto" on dimensions make sure content side the element will always be wrapped around by this parent element and not break out. If it is not, set "display:inline-block", instead. */
+    width: auto;
+    min-width: 100%;
+    max-width: none;
+    /* Set "height" to "auto" and "min-height" to a specific limit or value (preferably "rem" units) to contain header height yet set its starting default height. "auto" allows unexpected content to stretch the header down should it need to. Note that "rem" only has support starting with IE 9+. So if you are ok with that support, use it here, or add a fallback "em" property before it. */
+    height: 40px;
+    /* set "min-height" to an "rem" units or pixels, if known.*/
+    min-height: 40px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-align: center;
+    vertical-align: middle;
+    background: #114f66;
+}
+
+#headerlogolink {
+    display: inline-block;
+    width: 301px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-left: 10px solid #fff;
+    border-right: 10px solid #fff;
+    text-align: center;
+    vertical-align: middle;
+    background: none;
+    text-decoration: none;
+}
+
+#headerlogo {
+    display: inline-block;
+    width: 301px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Note: IE 9-11 supported HTML5, but never adopted the new HTML5 "main" element. But setting its CSS properties below will allow it to function properly in IE 9-11. Inserting this element, and all other HTML5 elements, via JavaScript (document.createElement("main");) will allow you to style it in older IE browsers, if needed. */
+#main {
+    position:relative;
+    display: block;
+    float: none;
+    clear: both;
+    width: auto;
+    min-width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: none;
+    margin: 0;
+    padding: 0;
+    border:none;
+    text-align: left;
+    vertical-align: top;
+    background: none;
+}
+
+#footer {
+    position:relative;
+    display: block;
+    float: none;
+    clear: both;
+    width: auto;
+    min-width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: none;
+    margin: 0;
+    padding: 0;
+    border:none;
+    text-align: left;
+    vertical-align: top;
+    background: none;
+}
+
+#copyrightfooter {
+    font-size: smaller;
+    float:left;
+    margin: 0em .5em .5em 0em;
+}
+
+#printfooter {
+    font-size: smaller;
+    float:right;
+    margin: 0em 0em .5em .5em;
+}
+
+
+
+
+
+/* ============================== Utility Styles ========================= 
+Use this section to apply reusable styles that affect all pages. */
+
+/* You can indent all paragraphs a little bit to add better readability. Note the use of two cross-browser "fallback" properties for "text-indent". IE 4-8 will read the first property, while IE9 and modern browsers will know "rem", which is more predictable as it uses the root element for font-size. IE 3-5 would erase this property trying to read the second property, so do not use this if you are supporting very old IE browsers. IE 6-8 only knows "em", not "rem" units, so would read the first property and correctly ignore the second. IE 9 and most modern browsers will read "rem" units, which are better. */
+
+html body main p {
+    /*text-indent: 1em;*/
+}
+
+/* This forces all code with long lines that would break the page or create horizontal scroll bars to now wrap to the next line as the browser window decreases. */
+
+html body main pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Give all links a quick color transition to dark blue on rollover. This just adds some more interactive features to your pages. Notice I isolate this style effect to text in the main content section so it does not effect header or footer navigation. */
+
+html body main a:link,
+html body main a:visited {
+/*  -ms-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;*/
+    color: #222299;
+}
+html body main a:hover,
+html body main a:focus,
+html body main a:active {
+    color: #000033;
+}
+
+/* This adds a little extra interactive effect to textarea boxes. When a use selects text it highlights it in a light gray color and darkens the text. */
+html body main textarea::selection {
+    background: #eee;
+    color: #000;
+}
+
+.tinytext {
+    font-size: xx-small;
+}
+
+/* Insert this style on "divs" you want the printer to always start a new page at. */
+.print_pagebreak {
+    page-break-after: always;
+}
+
+/* Force additional spacing on all form elements. */
+#main button,
+#main input,
+#main textarea,
+#main select
+{
+    margin: .5em 0em;
+}
+
+
+
+/* ======================= Custom Web Page Styles ======================== 
+These styles mainly apply to my HTML 5 Tutorial page. */
+
+.box,
+.box_html5table {
+    display: block;
+    width: auto;
+    padding: .5em;
+    margin: .5em 0em .5em 0em;
+    background: #fff;
+    border: 1px solid #bbb;
+    -webkit-border-radius: .5em;
+    -khtml-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -moz-box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+}
+
+/* Here are the style for the HTML5 page, Introduction section. */
+#html5_introlist{
+    position: relative;
+    margin-left: 1em;
+    list-style: none;
+}
+#html5_introlist li::before {
+    display: inline-block;
+    content: "\2023";
+    color: #114f66;
+    font-size: 3em;
+    line-height: 0;
+    padding: 0 .1em 0 0;
+    margin: 0;
+    text-align: left;
+    vertical-align: top;
+    position: relative;
+    top: .2em;
+    left: 0em;
+}
+#html5_introlist li {
+    text-align:left;
+    vertical-align: top;
+    padding: .2em 0em .2em 0em;
+    margin: 0;
+    font-size: 1em;
+}
+
+textarea.code,
+textarea.code:hover,
+textarea.code:focus,
+textarea.code:active {
+    display: block;
+    width: 98%;
+    height: auto;
+    min-width: none;
+    max-width: none;
+    min-height: 10em;
+    max-width: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding:.5em;
+    margin: .5em 0em;
+    white-space:pre-wrap;
+    word-wrap: break-word;
+    /* This fixes a font sizing bug in the browsers when using monospace fonts. */
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+.elementtable {
+    table-layout:auto;
+    width: auto;
+    max-width: none;
+    margin:0;
+    padding:0;
+    border: none;
+    background: #fff;
+}
+
+.elementtable caption {
+    width: auto;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.elementblock3,
+.elementblock3 *
+{
+    font-size: small;
+    color: #444;
+}
+
+/* IE 6 font-size inheritance fix: Text properties fail to inherit so we address that here. Also, the "smaller" property above is not known for some older IE browsers. */
+
+* html .elementblock3,
+* html .elementblock3 *
+{
+    font-size: x-small;
+    color: #444;
+}
+
+/* Note: I used the child combinator here because it excludes IE 1-6, and forces those browsers to see a plain table. */
+.elementtable > thead > tr > th,
+.elementtable > tbody > tr > td,
+.elementtable > tfoot > tr > td {
+    border: 1px solid black;/*borders are empty or 0 by default on table and table cells */
+    border-collapse: collapse;/* prevents double thick borders between cells. enable collapse from double line borders between cells to merge to one they share where they touch */
+    border-spacing: 0;/* spacing between table cells and between non-zero borders. only meaningful if border-collapse is not collapse and you want double borders or spacing between table cells */
+    padding: .5em;/* table cell padding between text and border of the cells are 0 by default. notice this also pads the table element and all rows inside it! */
+    vertical-align: top;
+}
+
+
+.elementtable > thead > tr > th:nth-child(1) {
+    width: auto;
+    text-align: center;
+    background-color: #f3f3f0;
+}
+
+.elementtable > thead > tr > th:nth-child(2) {
+    width: auto;
+    text-align: center;
+    background-color: #f3f3f0;
+}
+
+.elementtable > thead > tr > th:nth-child(3) {
+    width: auto;
+    text-align: center;
+    background-color: #f3f3f0;
+}
+
+.elementtable > tbody > tr > td:nth-child(1),
+.elementtable > tfoot > tr > td:nth-child(1) {
+    text-align: center;
+}
+
+.elementtable > tbody > tr > td:nth-child(2),
+.elementtable > tfoot > tr > td:nth-child(2) {
+    text-align: center;
+}
+
+.elementtable > tbody > tr > td:nth-child(3),
+.elementtable > tfoot > tr > td:nth-child(3) {
+    text-align: left;
+}
+
+/* SPECIAL STYLES FOR CERTAIN ALTERNATING CELL COLORS: Because the td/th cells have no color the row color shines through all child cells. Also, because we wrap thead around the first row, the tbody row resets row number again to odd */
+.elementtable > thead > tr:nth-child(even),
+.elementtable > tbody > tr:nth-child(even),
+.elementtable > tfoot > tr:nth-child(even)
+{
+    background-color: #f3f3f0;
+}
+
+.elementtable > thead > tr:nth-child(odd),
+.elementtable > tbody > tr:nth-child(odd),
+.elementtable > tfoot > tr:nth-child(odd)
+{
+    background-color: #fff;
+}
+
+.elementblock1,
+.elementblock2,
+.elementblock3 {
+    margin: 0em 0em 1em 0em;
+}
+
+.tinytable,
+.tinytable caption,
+.tinytable th,
+.tinytable td {
+    font-size: smaller;
+}
+
+
+
+/* ======================================================================= */

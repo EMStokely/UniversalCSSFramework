@@ -1,0 +1,506 @@
+
+/* ======================= UNIVERSAL CSS FRAMEWORK ======================
+Title: Universal CSS Framework, version 2.0.0.0
+Author: Mitchell Stokely (updated March, 2021)
+
+Description: This style sheet is part of a complete "progressive" CSS framework designed for cross-browser style sheet support in browsers going back to the birth of the World Wide Web in the 1990's. It provides old browsers the minimum styles needed to display content, while adding newer styles for more modern browsers that can display more modern CSS. I call this the "Universal CSS Framework" because it was designed to universally support as many web browsers as possible, including those that did not support CSS. This system should provide some form of basic layout or design in all browsers, old and new, with a rich cascading style sheet system that degrades gracefully to simpler layouts in the older browsers.
+
+The first "1.0" version of this CSS system was originally constructed in June of 2004, though its initial designs were laid down in 2001. This "2.0" version is a major upgrade I built to accommodate new HTML5 and CSS3 standards. You will see those more modern features in parts of the newer sheets designed for more modern browsers and much better fixes for many older browsers, as well.
+
+Please note that this solution is Javascript-free!
+
+============================ STYLE SHEET NOTES ===========================
+Use this sheet to tailor the CSS experience for Internet Explorer 4-7. These browsers will ONLY see a simple white block-level layout page with text and images by default. Do not style it for specific layouts as it will not import your classes.
+
+This page IS ALSO IMPORTED BY MOST MODERN BROWSERS so use special "hacks" for IE5-7 or others below ONLY if you use it to apply custom styles for these older browsers. This page allows you to apply special fixes to mainly Internet Explorer 4-7 browsers, including troublesome IE6. Because the import rule that loads this style sheet is NOT seen by a wide range of older browser (generally version 4 or less), but is still seen by more modern browsers, it will have minimal styles and only ones that IE 4-7 might need but newer browser might not (after they alter those styles in later sheets). For that reason if you need special IE6 or other hacks to adjust layouts, add them here to narrow their access by all other browsers.
+
+This sheet supports the following browsers:
+
+- Windows Internet Explorer 4.x-7.x (includes IE6)
+- Opera 3-6
+- Netscape 6
+- Misc version 5-6 legacy browsers (not including IE5 for Mac)
+
+Be careful as this style sheet is still read by newer browsers which will cascade over it with styles IE 4-7 will not see in "NewBrowsers" style sheet later. To make sure most of the styles below are not known to newer browsers, I have used IE6-7 "hacks" that just effect those browsers or set elements to font-sizes that are ok for newer browsers, and likely cascaded over later in newer imported sheets for modern browsers.
+
+Notes:
+- Ive added examples of CSS "hacks" below you can safely use if you want to apply fixes for IE 6-7 but not affect more modern browsers.
+- Keep in mind, that IE 4-7 will inherit the "OldBrowsers.css" element reset sheet, and this one, but no others after this. It will not see any of your modern sheets imported in after this one, as IE 4-7 will not recognize the import rules used. This means they too will not style their pages with your custom styles, and like the older browsers, just inherit a simple, white web page with linear, block-level content. This relies on the fact you must use the import rules exactly as set in the imported style sheets and use clean HTML layouts in your page designs. Even most fancy, floated layouts and grids should revert to linear, white page, text-based layouts. So, they should look great in old IE. In that sense, you now should NOT have to hack styles for old IE6 structures, or deal with what was a very difficult doctype-switching, quirksmode browser.
+- Keep in mind this browser still loads the "OldBrowsers.css" reset base sheet and uses that for its main element styling.
+- Below are custom styles for structural elements if you need to customize things like headers and a print version for IE 4-7. Those users who choose to print in those old agents would benefit from you hiding desktop and mobile headers and showing your print headers, if used. Ive given an example below of how to do that using specific IE6-7 hacks if you have these legacy IE users and need to support special features like this.
+- Its best to NOT add any styles below. This old subset of browsers should not need additional styling now that IE 4-7 is excluded from all your later CSS styles. Your web page layouts in these rare, old, legacy browsers will revert to simple HTML block-level page designs using the "OldBrowsers" reset sheet, which is enough CSS design support for them for now.
+
+========================================================================== */
+
+
+
+/*===================== IE 4-7 General Element Style Fixes =============== */
+
+/* OLD BROWSERS FONT FIX: The rules below change the following items:
+1. Two CSS "hacks" below are applied that fix a font-size bug in Internet Explorer 4, 5, 5.5, and IE6 "quirksmode". These browsers set the default font one-size too LARGE. So we have to set them smaller using two special fixes below using "voice-family" and and IE6 "quirksmode" only fix. This was a problematic font-size issue that was quite dramatic when viewing web pages in IE 4, 5, and 6 long ago. This fixes that font issue. After fixing IE, this hack then sets the default font for all other browsers to "medium" or the correct default size.
+  Windows IE4/5's used an incorrect implementation of the font-size and its various keywords, with the correct implementations used by Netscape6+/Mozilla, Opera, and MacIE5/WinIE6, the latter when in standard's mode and using the the DOCTYPE to switch IE6 to standards mode. The nature of the discrepancy in font-size in WinIE4/5 is that these browsers implement "small" as the initial value, rather than "medium", as called for in CSS1/CSS2. The result is that without correction, all sizes specified in keywords will be one size smaller with respect to user preferences in WinIE4/5 compared to conforming browsers. Fortunately, the techniques developed by Tantek Celik to work around WinIE4/5's incorrect CSS box model can also be used to fix the keywords bug. You will see that used below.
+2. We are now writing over pixel font sets in the "OldBrowsers" sheet with this new absolute font-size setting ("medium"), which is applied to all other browsers, including IE versions 4-7. By setting font-size to a relative value (medium or em), we also fix an IE 4-6 bug where pixel fonts in style sheets disallowed the ability for the user to resize fonts in their IE 4, 5, and 6 browsers because font-size was in pixels (for example, a "font-size: 16px" declaration would mean font-size cannot be resized in IE). Using "font-size:medium" it can now. For IE 4-7, we have to reset the pixel font assigned to these selectors in the "OldBrowsers.css" sheet to this new relative value below for all the elements impacted so IE version 4-7 browsers can resize them now.
+3. Note: The universal element selector ("* {...}") by itself, as used in later style sheets, is not supported in any older IE browser until version 7. So it is not used here to change elements except as part of a "* html" selector "hack" that applies only to IE6. 
+4. Note: Netscape 1-4 series had issues in that it resizes fonts in steps of 1.5, rather than 1.2, the recommended CSS2 standard. Therefore, Netscape needed the "OldBrowsers.css" style sheet which uses plain pixels. Because Netscape 4 series never supported @import of style sheets, the changes to "medium" or absolute font sizing in this sheet is never seen by Netscape, which will only receive the pixel-based font-size sheet. */
+
+
+
+/* ================ IE 4, 5, 5.5, and 6 "quirksmode" Font Size Fixes =================== */
+
+/* The IE4, IE5, IE5.5, and IE6 "quirksmode" Font Size Fix:
+
+Why use "medium" for font-size? It was discovered in 2003 that using "medium" for font-size allowed developers to honor a user's chosen font-size in their browsers (supporting the elderly, disabled, partially-blind) while also allows your web pages and browser settings to elegantly scale font-sizes up or down across thousands of web pages without custom settings. It allowed users of these old browsers to scale text where before using pixel-based fonts they could not. Using pixel-based fonts in IE destroyed this ability, so was abandoned. "font-size:medium" in the "body" element then became the Holy Grail of web design after that.
+
+The problem was IE4, IE5, IE5.5, and IE6....they set their default or initial font-size to "small", but then gave it a medium font-size. This meant all font sizes in these browsers appeared ONE SIZE TOO BIG. Setting "medium" as the CSS font size in web pages thus displayed IE fonts as one size larger than all other browsers. To fix this you had to set its default back to "small" every time. In IE5 or IE6 "quirksmode" (which returns to IE5.5.), any use of a "default font" size keyword, or non-pixel relative font like "medium", always displayed these font-size settings one size larger in these browsers unless you set them back to "small" again. Although the CSS specification states that "medium" is the initial value of font-size, older IE browsers did not apply this, and made "small" the initial value while using "mediums" font-size. The result was, when you used "medium" it was actually "large" in size! This was a common issue when trying to use relative fonts in these much older browsers as in older IE the fonts always looked too big when applying any absolute font-size name. To fix this, many just tried apply percent or em units with mixed results. Then a series of "hacks" in CSS was developed to make them go back to using "small" in IE font-sizes to match all other browsers which used "medium" font sizes.
+
+This fix below applies the "small" font-size setting to old IE, with "small" sized to "medium" in IE, while applying the true "medium" keyword and size to everyone else. This was triggered anytime Internet Explorer version 5 was used, or IE 6 in "quirksmode" (HTML doctype was missing in the web page, for example) with a default font or relative font size like "medium" or percent units ("%") used. When IE6 was missing a doctype or had any text before the HTML tag it triggered the browser to use "quirksmode" which is the same as IE5.5 default non-standards mode. Otherwise it worked fine as far as font-size keywords. In the former case, IE6 fell back to the older 5.5 browser engine, which is full of browser bugs, including this CSS "font-size" issue.
+
+Using the "hacks" below will set your font-size correctly here for all IE5 or IE6 "quirksmode" browsers.
+
+Note on the Font Size "Hacks": There are two fixes for this issue. One is to apply a fix just to IE5 and IE5.5, both of which benefit from the "Tantek Celik Box Model Hack". The second issue occurs when IE6 is used but then gets triggers into IE5.5 via "quirksmode" (adding something to the top of the page that breaks the HTML doctype setting for the web page). In some testing environments IE6 in "quirksmode" is used, not true IE5.5, so the "Celik Hack" fails to get triggered (you are still in IE6). I have applied both hacks to be safe and trigger the font-size fix in both testing environments. */
+
+
+/* IE 4-5.5 BROWSERS: The declaration below sets IE 4-5.5 font-size for PC one size smaller to fix large font bug in those browser versions. Note: This CSS rule below only affects use of an actual IE 4. 5 or 5.5 browser, not "quirksmode" IE6. Note: All browsers, including IE 4-7, will read these rules below and use the last font-size property except IE 4-5.5. True IE5 and IE5.5 browsers will read only the first or smaller font-size property. Note: Setting or use of the "font-size:medium" or a "%" below is what triggers the larger browser size in IE5 as the browser doesn't use the same default font-size when you move away from pixel sizes. Note: I believe pixel use for font-size had this same issue in IE5. So, this fix was still needed anyway using pixel units. 
+
+Note: I would match the "font-size" below and "line-height" value to what is in the "NewBrowsers" style sheet so browsers IE 4-7 that use this sheet matches IE 8-11 and modern browsers that use the "NewBrowsers" style sheet.
+
+*/
+
+/* "Tantek Celik Box Model Hack": ALL BROWSERS FONT-SIZE FIX BELOW: All middle-tier browsers and later read the rule below, which fixes the correct font-size for IE 4-5.5 to "small", which is the same font-size as "medium" for all the other browsers. Note: "NewBrowsers" style sheet will cascade over all these rules, leaving those middle-tier browsers with only this style font-size fix as their last change. This means IE 4-7, for example, that do not read "NewBrowsers" will be left with whatever font-size styles you apply below. */
+html,
+html body {
+    /* font "small" setting only affects IE4-5.x, and IE6 quirksmode */
+    font-size: small;
+    /* false value for WinIE4/5 */
+    voice-family: "\"}\"";
+    /* trick WinIE4/5 into thinking rule is over */
+    voice-family: inherit;
+    /* recover from trick. values below intended value for better browsers */
+    /* This new "medium" settings below is hidden from IE 4-5.5 browsers and affects all other browsers, including IE 4, IE 5.x, IE 6, IE 7. IE 5 sets fonts one size too large, so must be smaller as set above. Below, we set the base or default font for all elements that inherit from the user's default browser settings back to "medium", or the browser user's medium font settings based on either a user's chosen font and size or the default font and size in their browser. Why use "medium" for font-size? It allows users of these old browsers to scale text where before using pixel-based fonts they could not. */
+    font-size: medium;
+    /* Allow IE 4-7 to use the new "line-height" (same feature found in "NewBrowsers" sheet applied after this). The "OldBrowsers" style sheet applied before this one did not apply line-height to spread paragraphs of text apart for easier reading because some older browsers like IE 3 and Netscape 4 had some bugs interpreting line-height. In this added sheet for IE 4-7 we can safely apply it here. */
+    line-height: 1.5;
+}
+/* "be nice to Opera 5" rule: Fix bug in older Opera 1-5.x which exhibit the same parsing errors exploited above but need the right value. */
+html>body {
+    font-size: medium;
+}
+
+
+/* ============= IE 6-7 ELEMENT FONT-SIZE FIX ================ */
+
+/* Because older Internet Explorer and other browsers (pre-IE6) often do not support text inheritance and font settings from the body element, and the "OldBrowsers" reset element sheet applied pixel fonts to all the elements anyway, we have to manually reset all the elements below to the new font-size, or one size smaller than "medium" as set above. For all other more modern browsers that support text style inheritance (IE 6-7), their elements will both inherit the new font size correctly and use the correct relative "medium" font unit set on the "body" above. So it is overkill for them. But this sheet will be the last style sheet in this style sheet system seen by browsers IE 4-7, anyway. So it is ok as is. 
+
+Note: When we later apply the new "NewBrowsers" reset style sheet in the @import piece after this sheet, we will erase and reset all these styles below for most newer browsers (all: revert) once more and re-apply "font-size:medium" (or whatever font-size default you applied above) via one CSS declaration using inheritance in the "body" element. That means these special styles and hacks below will only really affect IE 6-7 and a few middle-tier older browsers. This design allows us to fix all these older Internet Explorer bugs in this sheet, then ignore them all later in newer browser style sheets. */
+
+/* IE6 "quirksmode" Only Rule - IE6 will not read the IE5.5 hack above, so this applies the same issue when IE6 falls back to "quirksmode", which is similar to IE 5.5, but not the same. Note: The special CSS "comment" inserted below into the property portion of a CSS declaration should only be seen in "quirksmode" IE6 that falls back to IE 5.5. IE 4 and 5 here should ignore any property with a CSS comment in the property name like this, nor will any of the Gecko/Mozilla browsers. The "* html" hack is read by IE6 only, as well. So the commented property below affects IE6 that is in quirksmode only, similar to IE 5.5, but not including that actual physical browser. You can see this affect for IE6 in quirksmode by using Internet Explorer 11 and then clicking the F12 "Browser Developer Tools", and either viewing IE6 version and triggering quirksmode by removing all doctypes at the top of your web page, or by setting the version to "5" in the Tools, which I believe is not a true "IE5" browser but an IE6 engine in quirksmode (based on my testing). */
+
+/* IE 6 quirksmode only : font-size reset */
+* html body {
+    font-size/**/: small;
+}
+
+
+/* IE 5-6 and IE 7 FONT SIZE RESETS: Reset all the child elements to use the new absolute font unit ("medium") assigned to the 'html' and 'body' elements above. Using "em" units, all child elements will drop their static pixel size settings and now inherit whatever default font size is assigned to the 'html' and 'body' elements. This will override the old "pixel" font settings used in the older browser reset sheet and allow users in IE to change the font sizes in your website layouts in their browsers. Remember, old IE users could not resize text when set in pixels units (px). The "hacks" below reset all child elements in old IE 5-6 and IE 7 only. */
+
+/* IE 5-6 only */
+* html body * {
+    font-size: 1em;
+}
+
+/* IE 7 only */
+* + html body * {
+    font-size: 1em;
+}
+
+/* ======================================================================== */
+
+
+
+
+
+
+
+/* ========= Set Misc IE 4-7 Custom Style Fixes ========== */
+
+/* The CSS below are special fixes or additions for all the middle tier browsers like IE 4-7 that may see and read this sheet but will be excluded later from the "NewBrowsers" modern style sheet imported in after this one. These fixes were excluded from "OldBrowsers" style sheet and just affect the middle-tier browsers. Newer browsers will still read these changes but likely cascade over most of them in "NewBrowsers" style sheet. Some special IE6 and IE7 fixes are also listed after these. */
+
+
+/* Below we set all links, form dropdowns, button elements in all Internet Explorer version 5+ browsers to the "hand" cursor by default. Note: The "Hand" value is an old proprietary setting that only works in old IE browsers and does not work in non-IE browsers. The current "pointer" cursor unit is applied for modern browsers in a later sheet. */
+
+body a,
+body a:visited,
+body a:hover,
+body a:focus,
+body a:active,
+body a img,
+body button,
+body button:visited,
+body button:hover,
+body button:focus,
+body button:active,
+body input,
+body input:visited,
+body input:hover,
+body input:focus,
+body input:active,
+body select,
+body select:visited,
+body select:hover,
+body select:focus,
+body select:active,
+body textarea,
+body textarea:visited,
+body textarea:hover,
+body textarea:focus,
+body textarea:active {
+    /* IE 4-6 support "hand", which is the same look as "pointer". IE5 only supported "hand" while IE6 supported both "hand" and "pointer". The code below is a way to enforce a "pointer" type in both of these older IE browsers. Note: We declare "pointer" first and "hand" for old IE last, as old IE 5 does not ignore properties but resets unsupported values back to "initial" ones, resulting in "default" values for this property. In most cases this is the "arrow" but could be "hand" in some elements. To avoid problems, adding "pointer" first allows IE5 to set to return each element's cursor to its initial or default value first, which is often a non-pointer value. Adding "hand" in a second declaration then cascades over that setting for IE 5 only. Newer browsers work the opposite, reading "pointer" first but ignoring the "hand" property version, which they do not understand. */
+    cursor: pointer;
+    cursor: hand;
+}
+
+body big {
+    font-size: larger;
+}
+
+body h1 {
+    font-size: 1.80em;
+    line-height: 2.2;
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    font-size: 2.0em;
+    line-height: 1.8; /* end */
+}
+
+body h2 {
+    font-size: 1.5em;
+    line-height: 1.8;
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    font-size: 1.5em;
+    line-height: 1.8; /* end */
+}
+
+body h3 {
+    font-size: 1.2em;
+    line-height: 1.8;
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    font-size: 1.3em;
+    line-height: 1.7; /* end */
+}
+
+body h4 {
+    font-size: 1.0em;
+    line-height: 1.6;
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    font-size: 1.0em;
+    line-height: 1.8; /* end */
+}
+
+body h5 {
+    font-size: 93%;
+    line-height: 2;
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    font-size: 0.8em;
+    line-height: 2; /* end */
+}
+
+body h6 {
+    font-size: 75%;
+    line-height: 1.4;
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    font-size: 0.7em;
+    line-height: 2; /* end */
+}
+
+body sub {
+    font-size: x-small;
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    font-size: small; /* end */
+}
+
+body sup {
+    font-size: x-small;
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    font-size: small; /* end */
+}
+
+/* Broken box model fix. Turn off margins and use padding for these elements. */
+body ol,
+body ul {
+    padding-top: 7px;
+    padding-right: 0;
+    padding-bottom: 7px;
+    padding-left: 40px;
+    margin: 0;
+}
+
+body small {
+    font-size: smaller;
+}
+
+
+/* OPTIONAL: Extra Internet Explorer proprietary scrollbar styles that only work in versions of IE from 5.5 to 11, as well as Opera 7 if turned on in an inline setting. Since older IE would not support webkit or modern scrollbar properties, you can give these older browsers an improved scrollbar experience only they can see here. Note that these never worked in strict XHTML in IE. */
+html,
+body,
+select,
+textarea {
+    scrollbar-base-color: #c5c5c5;
+    scrollbar-face-color: #9E9E9E;
+    scrollbar-3dlight-color: #D1D1D1;
+    scrollbar-highlight-color: #FFFFFF;
+    scrollbar-shadow-color: #aaaaaa;
+    scrollbar-arrow-color: #555555;
+    scrollbar-track-color: #dddddd;
+    scrollbar-darkshadow-color: #989898;
+}
+
+
+
+
+
+/*======================= ELEMENT STYLES FOR IE 4-7 ONLY ========================
+Because this is the last style sheet IE 4-7 browsers will see, we need to reset all structural elements to simple non-floats and block-level layout divs and sections in IE5, IE6, and IE7 browsers, so they stack linearly and fill available width. As mentioned all older IE 4-7 are affected by this style sheet. And this is the last style sheet they will see. These older browsers will NOT get fancy layouts, floats, grids, or any design but plain white block-level vertical layouts with clean text.
+
+These browsers (IE 4-7 and others) will no longer support custom classes but get clean, simple linear blocks of text now. The styles below apply those settings and also change navigation headers into simple inline lines of page links. If you target IE 5-7, change these styles below to deliver those old IE browsers simple but usable CSS fixes you customize for them. */
+
+
+
+
+/* ----------------------------- IE 5-6 only ----------------------------- */
+
+/* Use this rule set to force all IE 5-6 browsers to reset all their elements to stack as block level boxes. Remove this style if you want older IE to use some custom CSS formatting you are using. This rule below uses the "wildcard" (*) before html, which is hidden from all browsers but older IE. Called the "Tan Hack" or "Star HTML Selector Bug". */
+
+
+/* This removes the bullet icon and pointer from the details HTML5 element which isn't supported in this version of IE 6. */
+* html details {
+    list-style: none;
+    cursor: default;
+}
+
+* html input[type="file"],
+* html input[type="file"]:visited,
+* html input[type="file"]:hover,
+* html input[type="file"]:focus,
+* html input[type="file"]:active {
+    padding: 2px 2px;
+    height: 1.6em;/* IE6 file input responds to height */
+    width: 304px;
+}
+
+* html a,
+* html a:visited,
+* html a:hover,
+* html a:focus,
+* html a:active,
+* html a img {
+	cursor: pointer;/* not supported till IE 6+ */
+}
+
+* html button,
+* html button:visited,
+* html button:hover,
+* html button:focus,
+* html button:active,
+* html input,
+* html input:visited,
+* html input:hover,
+* html input:focus,
+* html input:active,
+* html select,
+* html select:visited,
+* html select:hover,
+* html select:focus,
+* html select:active,
+* html textarea,
+* html textarea:visited,
+* html textarea:hover,
+* html textarea:focus,
+* html textarea:active {
+    display: inline-block;/* upgrade form controls to block-level elements */
+	cursor: pointer;/* not supported till IE 6+ */
+}
+
+/* IE 1-5 did not support these newer features. But since this sheet affects IE 6 and 7 now, the new features below allow pre-text to also wrap when needed rather than fill up horizontal space. */
+* html body pre {
+    white-space/**/: pre-wrap;
+    word-wrap/**/: break-word;
+}
+
+/* -------------------------------------------------------------------- */
+
+
+/* ----------------------------- IE7 only ----------------------------- */
+/* Note: These is the same set of styles as IE 5-6 above but using a different selector for IE7. Use this rule set to force all IE 7 browsers to reset all their elements to stack as block level boxes. Remove this style if you want older IE to use some custom CSS formatting you are using. */
+
+
+/* This removes the bullet icon and pointer from the details HTML5 element which isn't supported in this version of IE 7. */
+* + html details {
+    list-style: none;
+    cursor: default;
+}
+
+* + html input[type="file"],
+* + html input[type="file"]:visited,
+* + html input[type="file"]:hover,
+* + html input[type="file"]:focus,
+* + html input[type="file"]:active {
+    padding: 2px 2px;
+    height: 1.6em;/* IE7 file input responds to height */
+    width: 304px;
+}
+
+* + html a,
+* + html a:visited,
+* + html a:hover,
+* + html a:focus,
+* + html a:active,
+* + html a img {
+	cursor: pointer;/* not supported till IE 6+ */
+}
+
+* + html button,
+* + html button:visited,
+* + html button:hover,
+* + html button:focus,
+* + html button:active,
+* + html input,
+* + html input:visited,
+* + html input:hover,
+* + html input:focus,
+* + html input:active,
+* + html select,
+* + html select:visited,
+* + html select:hover,
+* + html select:focus,
+* + html select:active,
+* + html textarea,
+* + html textarea:visited,
+* + html textarea:hover,
+* + html textarea:focus,
+* + html textarea:active {
+    display: inline-block;/* upgrade form controls to block-level elements */
+	cursor: pointer;/* not supported till IE 6+ */
+    min-width: 0;/* fixes IE 7 bug that collapses width when min-width used in previous style sheet on buttons */
+}
+
+/* IE 1-5 did not support these newer features. But since this sheet affects IE 6 and 7 now, the new features below allow pre-text to also wrap when needed rather than fill up horizontal space. */
+* + html body pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* -------------------------------------------------------------------- */
+
+
+
+
+
+/* ================= CUSTOM STYLES FOR OLDER BROWSERS =======================
+Add your custom classes below for IE 4-7 layout structures in your CSS if you are targeting a specific older browser and choose to have them use certain structures you use in your custom web page. Since they will not ever see your custom style sheets, you can add those below if wanted to customize them with certain features. I like to show and hide structural elements with ID's that are hidden until needed for print, mobile, etc. Examples are show below. Change the selectors to ones you use in your page. Note: IE-only hacks were added below. */
+
+/* Hide these custom items until ready to print in these specific browsers */
+
+/* IE 5-6 only */
+* html #printheader,
+* html #mobileheader,
+* html #skip_to_content,
+* html #back_to_top {
+    display: none;/* if the IE user decides to print, and supports the print sheet, this would become "block". */
+    float: none;
+    clear: both;
+    width: auto;
+    min-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    max-height: none;
+    outline: none;
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+    background-color: #ffffff;
+}
+
+/* IE 7 only */
+* + html #printheader,
+* + html #mobileheader,
+* + html #skip_to_content,
+* + html #back_to_top {
+    display: none;/* if the IE user decides to print, and supports the print sheet, this would become "block". */
+    float: none;
+    clear: both;
+    width: auto;
+    min-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    max-height: none;
+    outline: none;
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+    background-color: #ffffff;
+}
+
+
+
+/* ===================================================================== */
+/* IE 4-8 HTML5 Fix: If you want HTML5 elements to work in Internet Explorer you have to install the new HTML5 elements via the script below before styles affect them correctly. Because my style sheet system for old IE wont work till these elements are installed. Below, Ive listed a script you can run if you choose to support IE 4-8 with new HTML5 layout elements.        
+   Note: Even IE 9-11 never supported the HTML element "main". So, they will not receive this element injection. However, you can still style the unknown element in these newer IE browsers and they seem to perform ok. */
+
+/*
+<!--[if lt IE 9]>
+<script>
+        document.createElement("header");
+        document.createElement("nav");
+        document.createElement("main");
+        document.createElement("footer");
+        document.createElement("section");
+        document.createElement("article");
+        document.createElement("aside");
+        document.createElement("figure");
+        document.createElement("figcaption");
+        document.createElement("video");
+        document.createElement("audio");
+        document.createElement("picture");
+        document.createElement("output");
+        document.createElement("details");
+        document.createElement("summary");
+</script>
+<![endif]-->
+*/
+
+
+
+/*======================= IE 4-7 Sample CSS "Hacks"  ========================
+Use the CSS style hacks if you need to target a specific IE version (4-7) and apply your own custom layout styles for that browser. These should not be needed now that IE 4-7 is excluded from all your later styles and the designs in these browsers will revert to simple HTML block-level page designs. These "hacks" below will NOT be seen by any other browser, old or new, but the IE version listed. */
+
+/* DO NOT USE "!important" IN THIS STYLE SHEET: Not supported till IE 8+ so avoid in this style sheet. Older browsers IE5-7 will ignore any property that uses it, so it can also be a way to hide styles. Because it then applies an ugly permanent override to all IE8= and other modern browsers on a specific style property, I do not recommend its use unless you have a special reason to do so. */
+
+/* IE 5-6 only */
+* html .addyourclass {
+}
+
+/* IE 7 only */
+*:first-child + html .addyourclass {
+}
+* + html .addyourclass {
+}
+
+/* IE 3-7 */
+body.addyourclass\ {
+}
+
+/* Only IE 7 or less see this. This applies trigger that forces "HasLayout" on an element to force it to be block level on IE7 or less versions.  */
+.ie7orlessheight {
+    /* *height: 1%; */
+}
+
+/* ======================================================================== */

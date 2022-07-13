@@ -1,0 +1,100 @@
+
+/* ======================= UNIVERSAL CSS FRAMEWORK ======================
+Title: Universal CSS Framework, version 2.0.0.0
+Author: Mitchell Stokely (updated March, 2021)
+
+Description: This style sheet is part of a complete "progressive" CSS framework designed for cross-browser style sheet support in browsers going back to the birth of the World Wide Web in the 1990's. It provides old browsers the minimum styles needed to display content, while adding newer styles for more modern browsers that can display more modern CSS. I call this the "Universal CSS Framework" because it was designed to universally support as many web browsers as possible, including those that did not support CSS. This system should provide some form of basic layout or design in all browsers, old and new, with a rich cascading style sheet system that degrades gracefully to simpler layouts in the older browsers.
+
+The first "1.0" version of this CSS system was originally constructed in June of 2004, though its initial designs were laid down in 2001. This "2.0" version is a major upgrade I built to accommodate new HTML5 and CSS3 standards. You will see those more modern features in parts of the newer sheets designed for more modern browsers and much better fixes for many older browsers, as well.
+
+Please note that this solution is Javascript-free!
+
+============================ STYLE SHEET NOTES ===========================
+Note: This page allows you to apply special fixes to Netscape 4.x and earlier browsers only that do not recognize @import but which have major issues interpreting basic CSS. Netscape 4 does NOT understand @import so only apply this sheet via a style link. The styles below use a special hack that is NOT seen by any other browsers except Netscape 4. Even though Netscape 4 series is a tiny percentage of available agents now, this special style sheet allows you to design for that cross-section of users if you are delivering you content to a high volume web site. Common bugs related to Netscape 4, beside major visual issues, is font sizes are too small and many font properties are inherited correctly in heavily nested HTML elements.
+
+To support Netscape 4 in your web project, add this simple link to this style sheet as shown below last in your linked style list in the head of your page. Be sure to then test in Netscape 4 and customize for your pages. DO NO PRECOMPILE this sheet as it uses complex hacks below for Netscape 4 that would fail or crash the compiler!
+
+        <link media="screen" rel="stylesheet" type="text/css" href="~/css/default/styles/NetscapeOnly.css" />
+
+==========================================================================
+
+ALERT: Font-size defaults to 14px in old Netscape 4, not 16px, by default on old Windows computers with 72dpi monitors (2001). I have decided to apply the newer 16px font-size value in styles below instead for consistency, otherwise the 14px font size settings would have caused some inconsistent font shifts when some elements are resized to 16px font-size as applied by "OldBrowsers.css" (which Netscape 4 would read) and other 14px settings as set below. Keep in mind most older Netscape Windows browser users may be using 14px default font sizes viewed on older 72dpi screens and expect 14px font sizes. Any 16px font-size settings may look much larger now for those users. If you want to honor the older 14px default you will need to test Netscape 4 on a 72dpi monitor and then add more styles from "OldBrowsers.css" to the list below with font-size set to 14px and with more selective values to cascade over them.
+
+==========================================================================
+
+NETSCAPE 4 STYLE RESET BUG: Netscape 4 has a problem reading style sheets or scripts and applying them, as well as issues when resizing the browser. Resizing needs the page to reload styles. Otherwise, page can break or shift blocks. Theres a Netscape 4 JavaScript fix below. Often, Netscape 4 will load a large style sheet system and Javascript will either crash or fail to refresh and apply them to its DOM. Cut and paste the script below at the head of your page if you are trying to support Netscape 4 with style sheets:
+
+<script type="text/javascript">
+
+//JAVASCRIPT REFRESH CODE BELOW: This script loads and refreshes Netscape 4 browsers, which helps them load large style sheet systems better. Old Netscape 4 series (2000) had issues when resized. The page actually needs to be refreshed when that occurs.
+
+function reLoadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {
+    if ((appName=="Netscape") && (parseInt(appVersion)==4)) {
+    document.is_pgW=innerWidth; document.is_pgH=innerHeight; 
+    onresize=reLoadPage; }}
+  else if (innerWidth!=document.is_pgW || innerHeight!=document.is_pgH) 
+    location.reload();
+  }
+reLoadPage(true);
+
+</script>
+
+IMPORTANT: Netscape depends on Javascript to render style sheets, so if you disable style sheets, it will also disable CSS!
+
+==========================================================================
+*/
+
+
+
+/* BASE NETSCAPE 4 SERIES STYLES
+Notes: 
+- Below are HTML4 elements only. Add HTML5 ones if needed
+- Do not forget to add the AjaScript web page refresher above to your web page
+- Add this sheet last in your linked style sheet list
+- The "html" selector was not supported in Netscape 4 so removed
+- Add your custom classes and styles to the last section as needed
+- !important is not supported in Netscape 4 so you will need to make more selective rules when overriding other style sheet selectors
+*/
+
+body {
+/*/*//*/background-color:#ffffff;margin:0;padding:0;line-height:1;border:none;/*end*/
+}
+body,a,abbr,acronym,address,area,b,bdo,blockquote,br,button,caption,cite,col,colgroup,dd,del,dfn,dl,dt,em,fieldset,form,hr,i,img,input,ins,label,legend,li,map,noscript,object,ol,ol ol, ol ol ol,ol ol ol ol,ol ol ol ol ol,optgroup,option,p,param,q,ruby,rt,rb,select,span,strong,table,tbody,td,textarea,tfoot,th,thead,tr,tt,ul,ul ul,ul ul ul,ul ul ul ul,ul ul ul ul ul,div {
+/*/*//*/font-size:16px;/*end*/
+}
+big,h1,h2,h3,h4,h5,h6,small,sub,sup {
+/*/*//*/border:0;line-height:1;/*end*/
+}
+hr {
+/*/*//*/margin:0;padding:0;border:0;/*end*/
+}
+code,kbd,pre,samp,var {
+/*/*//*/font-size: 16px;line-height:1;/*end*/
+}
+body div,body div div,body div div div,body div div div div,body div div div div div,body div div div div div div,body div div div div div div div,body div div div div div div div div {
+/*/*//*/font-size:16px;margin:0;padding:0;border:0;line-height:1;/*end*/
+}
+body img{
+/*/*//*/display:block;float:none;margin:2px 0px;padding:0;border:none;background-color:#ffffff;color:#000000;line-height:1;/*end*/
+}
+
+
+
+/* CUSTOM NETSCAPE 4 SERIES STYLES */
+
+/* If you target Netscape 4 specifically you can add your custom classes and styles into this Netscape 4 hack format below. */
+
+body #skip_to_content a, body #back_to_top a {
+    /*/*//*/text-decoration:underline;color:#0000ff;/*end*/
+}
+
+/* style these items for regular web pages */
+body .mypageclass{
+    /*/*//*/{add your font settings here}/*end*/
+}
+
+/* hide these items for print from regular pages */
+body .myprintclass {
+    /*/*//*/height:0;width:0;display:none;margin:0;padding:0;line-height:0;font-size:0;visibility:hidden;float:none;/*end*/
+}
