@@ -1,0 +1,1 @@
+Store all your fonts in one folder so you manage them away from design, content, and styke sheet files.

@@ -1,0 +1,1 @@
+All the style sheets used in your website should always be kept together in one folder. Grouping all these files together allows you to keep all your UI, CSS, and design files together. Note that each of the CSS files has more detail comments about how they work. The goodies file has extra code for legacy browsers and tricks you might find helpful.
