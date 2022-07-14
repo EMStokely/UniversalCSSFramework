@@ -247,6 +247,15 @@ html body main textarea::selection {
     margin: .5em 0em;
 }
 
+/* I prefer to separate list items as a custom change for just this one website. */
+
+#main li {
+    padding: .5em 0em;
+}
+
+
+
+
 
 
 /* ======================= Custom Web Page Styles ======================== 
@@ -256,7 +265,7 @@ These styles mainly apply to my HTML 5 Tutorial page. */
 .box_html5table {
     display: block;
     width: auto;
-    padding: .5em;
+    padding: 1em 2em;
     margin: .5em 0em .5em 0em;
     background: #fff;
     border: 1px solid #bbb;
