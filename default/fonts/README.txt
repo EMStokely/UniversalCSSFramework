@@ -1,1 +1,1 @@
-Store all your fonts in one folder so you manage them away from design, content, and styke sheet files.
+Store all your fonts here in one folder so you manage them away from your website, content, and style sheet files.
