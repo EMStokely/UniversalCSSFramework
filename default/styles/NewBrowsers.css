@@ -1124,7 +1124,7 @@ body input[type="file"]:read-only:active {
 /* These special selectors attempt to alter the file upload button style by browser engine type. Support will be limited. */
 ::-ms-browse { /* IE 10-11 only */
 	display: inline-block;
-	padding: 5em .5em;
+	padding: .25em .5em;
 	margin: 0;
 	text-align: center;
 	border: none;
