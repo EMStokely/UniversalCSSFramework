@@ -1,1 +1,79 @@
-All the style sheets used in your website should always be kept together here in this one folder. If you copy the parent "default" folder to create a new "skin" or theme, everyone you need to create a new web design is grouped under one folder. Grouping all these files together allows you to keep all your UI, CSS, and design files together and makes web redesigns extremely simple and portable. Note that each of the CSS files in this folder has more detail comments about how they work. The goodies file has extra code for legacy browsers and tricks you might find helpful. Do not try and use SASS or minimization routines to rewrite these files, except for the Styles, Mobile, and Print CSS files. They will destroy or crash on the various CSS hacks, fixes, and code used to control what legacy browsers use. But you can manually remove all comments from them.
+INTRODUCTION: All the style sheets used in this framework are in this one folder. They should always be kept together here in this one "styles" folder so everyone in your team has access. Grouping all these CSS files together in one folder allows you to keep all your design files together and makes web redesigns extremely simple and portable.
+
+WARNING: Feel free to manually remove all my comments from these CSS files to reduce size, but do NOT use a minimizer, preprocessor, SASS, or script to do so as there are very carefully placed CSS hacks used for showing and hiding CSS rules from older browsers. These will get stripped out by accient and this style sheet framework will then fail! You may only use custom 3rd party software to change the Styles, Mobile, and Print CSS files.
+
+----------------------------------------
+
+HOW TO INSTALL AND LINK TO THE CSS FRAMEWORK IN YOUR WEBSITE
+
+1. Copy and paste the "default" folder of files into your website. 
+2. Optional: I recommend you create a "css" parent folder and move the "default" folder inside it in case you want copies of the default folder as a skin later.
+3. Add the HTML code below to the <head> section of your HTML page after pasting in the "default" folder of files into your website. Be sure to customize the paths below depending on the final path to your CSS files.
+
+Below is the starting link set I recommend you use. It does not include the Netscape custom style page or the optional Bootstrap cleaner/import set. Only user those if you need them.
+
+    <link media="print" rel="stylesheet" type="text/css" href="css/default/styles/Print.css?v=2.0" />
+    <link media="screen" rel="stylesheet" type="text/css" href="css/default/styles/NewBrowsersImporter.css?v=2.0" />
+    <link media="screen" rel="stylesheet" type="text/css" href="css/default/styles/OldBrowsers.css?v=2.0" />
+
+Optional: Add these optional styles if designing for old Netscape or needed to clear out Bootstrap's reboot element styles which are incomplete:
+
+    <link media="screen" rel="stylesheet" type="text/css" href="css/default/styles/NetscapeOnly.css" />
+    <link media="screen" rel="stylesheet" type="text/css" href="css/default/styles/BootstrapImporter.css?v=2.0" />
+
+----------------------------------------
+
+WHAT DOES EACH CSS FILE DO?
+
+Put all your modern and/or custom CSS in these three (3) files only. These only affect newer browsers and is where you will style your website. These files you can also safely minify, compress, use SASS with, customize with classes, use with JavaScript API's, etc. They only affect newer browsers, including IE 9-11, Edge, Chrome, Firefox, Safari, all mobile browsers, etc. Note that some of the starter CSS code in these sheets works with my new HTML5 template system. You can use my "README.html" source code with these styles and get up and running with my CSS framework fast. Mobile and print designs are built in!
+
+Styles.css - Put all your projects main design CSS in here, including fonts, classes, etc.
+
+Mobile.css - Put all styles that affect mobile browsers and smart phone browsers in here.
+
+Print.css - The project HTML readme sample uses a full set of HTML that works with this print sheet. Simply use that HTML staructure, the element id's, and modify this print sheet to make your website fully printable!
+
+* Note, in addition to the 3 sheets above, you can customize the HTML element reset sheet listed below - "NewBrowsers.css". It simple enhances/resets the basic HTML element designs for all modern browsers. However, I do not recommened it as I have carefully designed that sheet to style browsers post-2001 to present with styles that work with non-conforming CSS3 agents.
+
+----------------------------------------
+
+DO NOT MODIFY THE SHEETS BELOW
+
+The files below control the designs for all older browsers, resetting their elements, then import in the styles above for newer browsers, as well as a modern reset element sheet only they can see. Follow my link 
+
+WARNING: DO NOT MODIFY the CSS files below except to remove comments only! That will reduce their size. DO NOT MINIFY OR COMPRESS!
+
+
+
+OldBrowsers.css - Required. This is the main element reset style sheet for all browsers, old and new. This is one of the files you directly link to in the <link> list above.
+
+OldBrowsersFix1.css - Required. This is is imported by "NewBrowsersImporter" and fixes bugs only for old IE for Macs.
+
+OldBrowsersFix2.css - Required. This is is imported by "NewBrowsersImporter" and fixes bugs only for old IE 1-7 for Windows.
+
+NewBrowsers.css - Required. This is is imported by "NewBrowsersImporter" and fixes all HTML elements for newer browsers. Note that for newer browsers, this sheet is only seen by modern user agents and cascades over the "OldBrowsers" sheet above with more modern element styles. You can customize or enhance those in this sheet if you like.
+
+NewBrowsersImporter.css - Required.  This is the main importer that imports in newer styles for more modern browsers, hiding them for a long list of older browsers, including Intern Explorer 1-7, Netscape series, Old Opera, IE for Mac, and a list of others. This sheet also loads in the styles, mobile, and print sheets listed above so they are hidden from newer browsers. This is one of the files you directly link to in the <link> list above.
+
+
+----------------------------------------
+
+OPTIONAL SHEETS 
+
+As above, do NOT modify these sheets below except to remove comments:
+
+BootstrapImporter.css - optional. This sheet imports in the "cleaner" for newer browers only. It then resets the elements back to the browser's cleaner defaults so my style resets work better.
+
+BootstrapCleaner.css - optional. The import sheet above loads this cleaner that resets bootstraps HTML element changes back to the browsers default styles so you start with a clean, uncorrupted element styling.
+
+NetscapeOnly.css -optional. Do not use this sheet unless you really want to custom the base design for old Netscape series (pre-2006). The base oldbrowsers sheet will fix most of netscapes issues.
+
+
+
+----------------------------------------
+
+ADDITIONAL COMMENTS: Each of the CSS files in this folder has more detailed comments about how they work, why each selector or CSS rule was chosen, how to import files, how the reset element sheets work, etc. If you want the dirty details, I have added a rich set of instructions inside each. Feel free to delete all my comments when you are ready to move to production. But do NOT minimize or prepreprocess them or the CSS hacks in them will fail.
+
+GOODIES: The "goodies" file has extra code for legacy browsers and tricks you might find helpful.
+
+CREATING SKINS: If you want to create multiple "skins" or theme for your website, just copy the parent "default" folder, give it a new name, change its "styles.css" styles, and link to the folder. That is it! Everything you need to create a new web design is now grouped under one folder. You can even hand this folder of styles, fonts, and images to a designer and they can start customizing the design instantly.
