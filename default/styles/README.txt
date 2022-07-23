@@ -1,6 +1,6 @@
 INTRODUCTION: All the style sheets used in this framework are in this one folder. They should always be kept together here in this one "styles" folder so everyone in your team has access. Grouping all these CSS files together in one folder allows you to keep all your design files together and makes web redesigns extremely simple and portable.
 
-WARNING: Feel free to manually remove all my comments from these CSS files to reduce size, but do NOT use a minimizer, preprocessor, SASS, or script to do so as there are very carefully placed CSS hacks used for showing and hiding CSS rules from older browsers. These will get stripped out by accient and this style sheet framework will then fail! You may only use custom 3rd party software to change the Styles, Mobile, and Print CSS files.
+WARNING: Feel free to manually remove all my comments from these CSS files to reduce size, but do NOT use a minimizer, preprocessor, SASS, or script to do so as there are very carefully placed CSS hacks inside each file that used for showing and hiding rules from older browsers. If you do so, these rules will get stripped out by accident and this style sheet framework will then fail. You may use custom 3rd party tools to change the Styles, Mobile, and Print CSS files.
 
 ----------------------------------------
 
@@ -16,7 +16,7 @@ Below is the starting link set I recommend you use. It does not include the Nets
     <link media="screen" rel="stylesheet" type="text/css" href="css/default/styles/NewBrowsersImporter.css?v=2.0" />
     <link media="screen" rel="stylesheet" type="text/css" href="css/default/styles/OldBrowsers.css?v=2.0" />
 
-Optional: Add these optional styles if designing for old Netscape or needed to clear out Bootstrap's reboot element styles which are incomplete:
+Optional: Add these optional styles if designing for old Netscape or need to clear out Bootstrap's reboot element styles, which are incomplete:
 
     <link media="screen" rel="stylesheet" type="text/css" href="css/default/styles/NetscapeOnly.css" />
     <link media="screen" rel="stylesheet" type="text/css" href="css/default/styles/BootstrapImporter.css?v=2.0" />
@@ -25,35 +25,37 @@ Optional: Add these optional styles if designing for old Netscape or needed to c
 
 WHAT DOES EACH CSS FILE DO?
 
-Put all your modern and/or custom CSS in these three (3) files only. These only affect newer browsers and is where you will style your website. These files you can also safely minify, compress, use SASS with, customize with classes, use with JavaScript API's, etc. They only affect newer browsers, including IE 9-11, Edge, Chrome, Firefox, Safari, all mobile browsers, etc. Note that some of the starter CSS code in these sheets works with my new HTML5 template system. You can use my "README.html" source code with these styles and get up and running with my CSS framework fast. Mobile and print designs are built in!
+Put all your modern and/or custom CSS in these three (3) files listed below.
 
-Styles.css - Put all your projects main design CSS in here, including fonts, classes, etc.
+These style sheet only affect newer browsers and is where you will place your custom website CSS designs. These files you can also safely minify, compress, use SASS with, customize with classes, use with JavaScript API's, etc. The styles in these three sheets are only seen by newer browsers, including IE 9-11, Edge, Chrome, Firefox, Safari, all mobile browsers, etc. Note that some of the starter CSS code in these sheets works with my new HTML5 template system. You can use my "README.html" source code with these styles and get up and running with my CSS framework fast. Mobile and print designs are built in!
 
-Mobile.css - Put all styles that affect mobile browsers and smart phone browsers in here.
+Styles.css - Put all your projects modern web page CSS design code in here, including fonts, classes, etc.
 
-Print.css - The project HTML readme sample uses a full set of HTML that works with this print sheet. Simply use that HTML staructure, the element id's, and modify this print sheet to make your website fully printable!
+Mobile.css - Put all styles that affect mobile browsers and smart phone browsers in here. Note that the sample code inside is designed to work with my README.html sample page and HTML so try and use that code to make your website fully mobile-friendly!
 
-* Note, in addition to the 3 sheets above, you can customize the HTML element reset sheet listed below - "NewBrowsers.css". It simple enhances/resets the basic HTML element designs for all modern browsers. However, I do not recommened it as I have carefully designed that sheet to style browsers post-2001 to present with styles that work with non-conforming CSS3 agents.
+Print.css - This system comes with a print design framework that allows your whole website to be fully printable. The sample code inside is designed to work with my README.html sample page and HTML so try and use that code to make your website fully printable!
+
+* Note, in addition to the three sheets above, you can customize the HTML element reset sheet listed below - "NewBrowsers.css". It simply enhances/resets the basic HTML element designs for all modern browsers. However, I do not recommend it as I have carefully designed that sheet to style browsers post-2001 to present with styles that work with non-conforming CSS3 agents.
 
 ----------------------------------------
 
 DO NOT MODIFY THE SHEETS BELOW
 
-The files below control the designs for all older browsers, resetting their elements, then import in the styles above for newer browsers, as well as a modern reset element sheet only they can see. Follow my link 
+The files below control the designs for all older browsers, resetting their elements, then importing in the style sheets above for newer browsers as well as a modern reset element sheet only they can see.
 
-WARNING: DO NOT MODIFY the CSS files below except to remove comments only! That will reduce their size. DO NOT MINIFY OR COMPRESS!
+WARNING: DO NOT MODIFY the CSS files below except to remove comments! That will reduce their size. DO NOT MINIFY OR COMPRESS or the CSS will become corrupted as it uses many custom CSS rules and code that most browsers understand but most modern tools will not understand and corrupt!
 
 
 
 OldBrowsers.css - Required. This is the main element reset style sheet for all browsers, old and new. This is one of the files you directly link to in the <link> list above.
 
-OldBrowsersFix1.css - Required. This is is imported by "NewBrowsersImporter" and fixes bugs only for old IE for Macs.
+OldBrowsersFix1.css - Required. This is is imported by "NewBrowsersImporter" and fixes bugs only for old IE for Macs. This sheet is imported by "NewBrowsersImporter" below.
 
-OldBrowsersFix2.css - Required. This is is imported by "NewBrowsersImporter" and fixes bugs only for old IE 1-7 for Windows.
+OldBrowsersFix2.css - Required. This is is imported by "NewBrowsersImporter" and fixes bugs only for old IE 1-7 for Windows. This sheet is imported by "NewBrowsersImporter" below.
 
-NewBrowsers.css - Required. This is is imported by "NewBrowsersImporter" and fixes all HTML elements for newer browsers. Note that for newer browsers, this sheet is only seen by modern user agents and cascades over the "OldBrowsers" sheet above with more modern element styles. You can customize or enhance those in this sheet if you like.
+NewBrowsers.css - Required. This sheet cleans up and restyles all known HTML5 elements for newer browsers. Note, this sheet is only seen by modern user agents and cascades over the "OldBrowsers" sheet above with more modern element styles tailored for HTML5. It does include a limited CSS style set that works well with a wide range of browsers built since 2001. You can customize or enhance those in this sheet if you like, but it is not recommended. You could enhance an element with new CSS3 styles that then fails in a long list of older browsers. This sheet is imported by "NewBrowsersImporter" below.
 
-NewBrowsersImporter.css - Required.  This is the main importer that imports in newer styles for more modern browsers, hiding them for a long list of older browsers, including Intern Explorer 1-7, Netscape series, Old Opera, IE for Mac, and a list of others. This sheet also loads in the styles, mobile, and print sheets listed above so they are hidden from newer browsers. This is one of the files you directly link to in the <link> list above.
+NewBrowsersImporter.css - Required. This is the main "importer" style sheet that loads in newer styles sheets for more modern browsers, hiding them for a long list of older browsers, including Internet Explorer 1-7, Netscape series, Old Opera, IE for Mac, and a list of others. This sheet also loads in the styles, mobile, and print sheet pages listed above so they are hidden from newer browsers. This is one of the files you directly link to in the <link> list above.
 
 
 ----------------------------------------
