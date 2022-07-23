@@ -55,7 +55,7 @@ OldBrowsersFix2.css - Required. This is is imported by "NewBrowsersImporter" and
 
 NewBrowsers.css - Required. This sheet cleans up and restyles all known HTML5 elements for newer browsers. Note, this sheet is only seen by modern user agents and cascades over the "OldBrowsers" sheet above with more modern element styles tailored for HTML5. It does include a limited CSS style set that works well with a wide range of browsers built since 2001. You can customize or enhance those in this sheet if you like, but it is not recommended. You could enhance an element with new CSS3 styles that then fails in a long list of older browsers. This sheet is imported by "NewBrowsersImporter" below.
 
-NewBrowsersImporter.css - Required. This is the main "importer" style sheet that loads in newer styles sheets for more modern browsers, hiding them for a long list of older browsers, including Internet Explorer 1-7, Netscape series, Old Opera, IE for Mac, and a list of others. This sheet also loads in the styles, mobile, and print sheet pages listed above so they are hidden from newer browsers. This is one of the files you directly link to in the <link> list above.
+NewBrowsersImporter.css - Required. This is the main "importer" style sheet that loads in newer styles sheets for more modern browsers, hiding them for a long list of older browsers, including Internet Explorer 1-7, Netscape series, Old Opera, IE for Mac, and a list of others. This sheet also loads in the styles, mobile, and print sheet pages listed above so they are hidden from older browsers. This is one of the files you directly link to in the <link> list above.
 
 
 ----------------------------------------
