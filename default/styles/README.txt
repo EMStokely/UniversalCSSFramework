@@ -4,6 +4,30 @@ WARNING: Feel free to manually remove all my comments from these CSS files to re
 
 ----------------------------------------
 
+
+HOW DOES THIS STYLE SHEET SYSTEM WORK?
+
+It is very simple. This CSS system first resets or restyles all known HTML elements (HTML3.2/HTML4.1/HTML5), supported or not, to clean, stable designs. It does NOT restructure or radically change the HTML elements. It simpley aligns them to a single design set that works in the widest range of web browsers going back over 20 years!
+
+In redesigning the elements, it makes sure a few simple features are added that allow very old browsers (pre-2001) and many medium range ones (like IE 1-7) to display text content in clean, stacked, vertical blocks of text. It essentially delivers to all browsers a plain white set of HTML elements and layouts that display all your text and media files in a clean, white page with minimal margins and padding, and with plain black text in a simple san-serif font set at medium size. This then allows a large range of browsers built prior to 2010 to deliver you pages and pages of web content and images in white vertical pages so the content is accessible. That is critical, as you do NOT want to struggle to try and force say old Internet Explorer to try and float crazy layouts when they likely will fail due to broken box model designs. So, using this old reset sheet, a wide range of browsers are given a standard, clean but gracefully degraded vertical, block-level layout those old browsers can access and read.
+
+Lastly, the system then applies a NEW modern reset HTML element sheet. This new sheet is hidden from the old browsers above using a special @import style sheet trick all known modern browsers understand but older ones do now. THis new reset element sheet then cascades over the old one above with newer CSS3 element designs and features the old browser would not understand, allowing you to now use a solid modern HTML element foundational design for all know HTML elements used in your website. With this modern reset you now can apply custom cutting-edge CSS3 designs using the same @import system above, which is also hidden from the older browsers. So now, you can safely apply newer CSS3 layouts like grid of flex layout designs, knowing they would fail in older browsers but now safely hidden from them.
+
+You now deliver plain black and white text-based content in clean fast HTML to older browsers, and fast, cutting-edge CSS3 layouts and HTML5 element sets to newer browsers going forward. You never have to ever design for old browsers like Internet Explorer 6, Netscape 4, Opera 4, or IE for the old Macs ever again. You can forget about the older browsers forever, yet know your web page content is still viewable by every single one of the older browsers forever going forward. 
+
+You can now safely focus 100% of your time on newer HTML5 web design!
+
+* Note: Because Internet Explorer 8-11 are seen by the newer CSS you add to the modern CSS pages, you may still have to add a few custom hacks or CSS to code with a few bugs. But those now are isolated and can be given fixes that address things like flex, grids, HTML5 elements like "main", etc. But you can safely target these last old buggy browsers very easily. I have included some sample CSS hacks that target these old browsers in my "OldBrowsersFix2.css" sheet.
+
+* Note: If you want to maximize your cross-browser abilities even more, so your pages support even more out-dated browsers and HTML elements, go read my extensive HTML5 tutorial which not only addresses the cutting-edge HTML5 elements and best cross-browser choices you should use today, but picks the best ones that work in older browsers, as well. I also include custom HTML and CSS for building grids in IN 8-11, as well as cross-browser flex code. I also have solid HTML templates that work with my CSS system that also work well in older browsers. If you combine my HTML with my CSS system, all your layout and web design issues in all known older browsers are solved for you, so you can put 100% focus on doing cutting-edge CSS3 and HTML5 in your web projects. How fun is that idea!
+
+This will save you thousands of hours struggling with cross-browser issues going forward! That was why I built this CSS and HTML system.
+
+- Mitchell Stokely
+
+
+----------------------------------------
+
 HOW TO INSTALL AND LINK TO THE CSS FRAMEWORK IN YOUR WEBSITE
 
 1. Copy and paste the "default" folder of files into your website. 
