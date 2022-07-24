@@ -1,6 +1,6 @@
 INTRODUCTION: All the style sheets used in this framework are in this one folder. They should always be kept together here in this one "styles" folder so everyone in your team has access. Grouping all these CSS files together in one folder allows you to keep all your design files together and makes web redesigns extremely simple and portable.
 
-WARNING: Feel free to manually remove all my comments from these CSS files to reduce size, but do NOT use a minimizer, preprocessor, SASS, or script to do so as there are very carefully placed CSS hacks inside each file that used for showing and hiding rules from older browsers. If you do so, these rules will get stripped out by accident and this style sheet framework will then fail. You may use custom 3rd party tools to change the Styles, Mobile, and Print CSS files.
+WARNING: Feel free to manually remove all my comments from these CSS files to reduce size, but do NOT use a minimizer, preprocessor, SASS, or script to do so as there are very carefully placed CSS hacks inside each file that are used for showing and hiding rules from older browsers. If you do so, these rules will get stripped out by accident and this style sheet framework will then fail. You may use custom 3rd party tools to change the Styles, Mobile, and Print CSS files.
 
 ----------------------------------------
 
