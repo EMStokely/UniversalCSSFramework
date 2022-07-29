@@ -1,157 +1,15 @@
 
-/* ======================= UNIVERSAL CSS FRAMEWORK ======================
-Title: Universal CSS Framework, version 2.0.0.0
-Author: Mitchell Stokely (updated March, 2021)
-
-Description: This style sheet is part of a complete "progressive" CSS framework designed for cross-browser style sheet support in browsers going back to the birth of the World Wide Web in the 1990's. It provides old browsers the minimum styles needed to display content, while adding newer styles for more modern browsers that can display more modern CSS. I call this the "Universal CSS Framework" because it was designed to universally support as many web browsers as possible, including those that did not support CSS. This system should provide some form of basic layout or design in all browsers, old and new, with a rich cascading style sheet system that degrades gracefully to simpler layouts in the older browsers.
-
-The first "1.0" version of this CSS system was originally constructed in June of 2004, though its initial designs were laid down in 2001. This "2.0" version is a major upgrade I built to accommodate new HTML5 and CSS3 standards. You will see those more modern features in parts of the newer sheets designed for more modern browsers and much better fixes for many older browsers, as well.
-
-Please note that this solution is Javascript-free!
-
-============================ STYLE SHEET NOTES ===========================
-Use this sheet to tailor the CSS experience for all modern browsers including Firefox, Chrome, Safari, Edge, and Internet Explorer versions 8-11. These browsers will import in this reset sheet, apply modern relative font and CSS3 element changes, then your custom style sheets with your custom classes will be applied over these. This sheet is simply a "reset" of all the HTML5 supporting elements to defaults that utilize powerful new "relative" font-sizes and font inheritance in newer browsers. Older browsers, like IE1-7, Netscape 1-6, and many others will not see this style sheet using my @import system. If you choose to not use my @import style sheet system to hide this sheet and others from older browser like IE 1-7, you may delete them and start with this reset element sheet as the basis for basic browser style sheet design and support.
-
-MODERN BROWSERS RESET SHEET: Nearly all modern browsers (Internet Explorer browser version 8-11, browser version 5+ for all other ) will read this HTML element "reset" style sheet. Many browsers released 2001 to present would be styled by this sheet which cascades OVER the basic CSS style resets found in "OldBrowsers.css". Bu this sheet is mainly designed to apply styles to newer browsers that have started to support more modern CSS (version 3+) recommendations. Keep in mind, any changes or additions of more cutting-edge CSS type selectors and properties below risk getting ignored, if added into this style sheet. For that reason I have tried to keep the styles used very basic and avoid fancier CSS3 technology. This allows this sheet to more fully support 20 years worth of browsers and their various versions. But this sheet at least gives you a solid CSS element restyling that a large block of modern browsers can use correctly.
-
-A specific @import rule (@import 'NewBrowsers.css' all;) in "NewBrowsersImporter.css" imports this CSS style sheet into the browser using a specific "form" of @import that excludes many older browsers that do not support @import or this specific format. Browser support and non-support by version is listed below. This list is not comprehensive so test in other historical browsers you target.
-
-The following browsers are INCLUDED in support of this imported style sheet and will always see it, as long as you are using my @import style sheet system (found in "NMewBrowsersImporter.css"). All older browsers will be hidden from it:
-------------------------------------------------------------
-- Internet Explorer 8.x-11.x
-- Microsoft Edge 1.0+
-- Netscape 6.x-9.x
-- Mozilla 1.0+
-- Firefox 1.0+
-- Chrome 1.0+
-- Safari 1.0+
-- Opera 3.6+
-------------------------------------------------------------
-
-The following browsers are EXCLUDED from using this style sheet and will never see it:
-------------------------------------------------------------
-- Windows Internet Explorer 1-7.x
-- Macintosh Internet Explorer 2-5.x (all IE for Mac)
-- Netscape 1-4.8 (all Navigator/Communicator versions)
-- Opera 1-3.5
-- Konqueror 1-2.1
-- Windows Amaya 1-5.1
-- iCab 1-2
-- OmniWeb
-- misc browsers (pre-2001)
-------------------------------------------------------------
-
-NOTES ON THIS STYLE SHEET:
-
-All the styles and element selectors listed below are copies of those found in the "OldBrowsers.css" sheet. The styles below cascade and replace the styles found in "OldBrowsers.css" for newer browsers that import in this more modern style sheet. They are repeated in this sheet with newer, more modern properties than the pixel-based ones found in the old browser sheet. They now have newer relative font settings applied and return text properties styles that naturally inherit their values from the body element. Copying all properties from the old sheet to this one allows this sheet to not only cascade over those older pixel-based styles used by older browsers with newer relative font settings, but makes this sheet 100% independent of that older style sheet, making this style sheet capable of being used without the old browser one, if you choose. In other words, this sheet does not combine styles with the older one, but replaces it completely for newer browsers. This is an important distinction, as I wanted to make each style sheet a powerful independent entity which could still be combined together to create something more powerful that give all browsers, old and new, what they need to format your HTML content correctly. These style sheets are still additive in terms of building up a rich list of browser version support, but also comprehensive and work independently should you need to remove any of them. That does mean slightly more styles are downloaded in the CSS framework, but allows this sheet to be added to projects independent of all others, if needed. Thats the opposite of how 3rd party frameworks and CSS reset sheets usually work, making them a cobbled together patchwork of styles that are dependent on each other. If you decide later to abandon the "OldBrowsers.css" sheet or this cross-browser import system you can safely use this sheet independently of the larger CSS framework as a modern "reset" element style sheet in your web projects without worrying about older agents, of you choose. It has everything in it you need for reseting element styles in most browsers built after 2001. It is a fully fledged typed "reset" style sheet.
-
-This modern element "reset" style sheet allows you to change all your basic html elements so that they use "relative" font-sizing that end-users can control in their browser. The "OldBrowsers.css" sheet applied pixel-based fonts for older browsers prior to this sheet. It is designed to be read by ALL browsers, old and new. But older browsers will not be able to see this style sheet as it is imported, older browser not supporting various formats of @import (see "NewBrowsersImporter.css"). Newer browsers (version 5+ browsers) will import this sheet over that older "base" sheet and apply newer, more powerful relative font-sizing, as show below.
-
-Relative font-sizing is powerful! Using pixels is now discouraged for both font sizes and layout dimensions. Relative font and block-level sizing, as found in this style sheet, use "%", names ("medium"), or relative "em"/"rem" font units, which allow browser viewers the ability to resize the text in the web application or stretch the layouts as a user, as well as increase/decrease text and resize its boxes and text based on their text or zoom settings. If you design your website so all the fonts, images, objects, and dimensional layouts are sized in "em" units, for example, then as the user changes font sizes in their browser, or the device zooms or expands your site, the whole web site will scale with it. This allows a newer, richer readability in your web application online across many devices, screen resolutions, viewport physical dimensions, and user-types, globally. Use this sheet to setup all your basic elements with relative fonts sizes, like 83%, 100%, 1em, "medium", etc. to support those newer, more progressive features used by modern browsers and websites.
-
-Why use "medium" for the font-size in "body"? The font-size of "medium" is recommended below in the "body" and lets the author's style sheet system honor the user's/browser's chosen style sheet font sizing (relative sizing), and thus picks the medium font size for whatever font and size the browser uses, or the specific font size the user has chosen in their browser. This relative size can be changed by the user in the "text-sizing" feature. All such changes by the user are then cascaded into the rest of the styled web page and is reflected into the child elements that inherit its value using "em" or "larger"/"smaller" or "rem" relative font-sizing. Because these more selective font sizes cascade over the pixel font setting of "OldBrowsers.css", they are sizable now via inheritance for newer and some older browsers (v5+).
-
-Using "medium" and relative font-size settings in this style sheet, font-size changes by the user in their browsers would be set RELATIVE TO THE INITIAL SIZE YOU SET BELOW, not the actual pixel size the user has chosen. But this is what you want. Example: If the user in their browser chooses a larger font as their default for viewing all web pages online, its size in your website would be "relative" to your page's initial value. Choosing "medium" below for the website's initial size is the best choice, as it means its size is accurately reflected in representing the user's chosen size, should in be medium or not, as the website's starting size matches most browser's default which is medium anyway (that translates to 16px in most modern agents). So, your font-size value below becomes the DEFAULT font size or starting point for all resizing by the user or device, later. But you can change that now to any size you like and it would still support the user's choice, as well. So in terms of browser font-size user changes, if their browser default was medium/16px and your site was set to "small", it would still start at "13px" or small for them, initially, not 16px. But as they enlarge it, it would still grow relative to that setting. If they changed to say "18px" or a larger font-size, it would not display their font size at 18px but the next size above "small" which is "medium" or 16px. Only if you set NO font size on the website's "body" element would it honor their default font size as the reference point, which is not usually done. Most authors want control over a default. But that is another option. To do that, set your "body" font-size to "inherit". This is why "medium" is the perfect relative font-size value initially, however, and aligns your website font size with most user and browser default settings currently applied (95%), regardless of actual pixel default size or user changes. Anything else runs the risk of ignoring or conflating user font size settings who have set their browser to use anything other than the default font-size.
-
- We used "em" units below rather than "rem" (which prevents compounding inheritance of font unit sizes) as this modern sheet still affects many older browsers that do not support "rem". Internet Explorer started "rem" unit support in version 9 but IE10-11 still has bugs using "rem". To facilitate use of "rem" in newer browsers and reset all the elements in this page to this newer standard, I have added two font-size properties to many of the type selectors below, with the fallback size using "em" for older browsers and newer ones using "rem" after that using a second property with a unit ignored by older agents. IE browsers that do not understand "rem" always revert back to "em" using these fallback properties added to the styles below. If you need to use more "rem" in more parts of your page from the root or specific elements, you may do so in your "Styles.css" sheet or whatever modern @imported sheets you choose. Be sure to use the fallback em/rem property strategy if you care to support older IE browsers. Note: "rem" is not supported as a unit in IE 1-8.
-
-COLORS: Use of the "rgb" decimal color format ("rgb(255,16,39)") for colors on borders, HTML blocks, backgrounds, etc. was widely supported in most older browsers (one exception is IE3). It is now safe in this style sheet to use "rgb", "rgba", and the newer style sheet color systems where it was not in the "OldBrowsers.css" sheet.
-
-NO MORE INTERNET EXPLORER 6 CSS SUPPORT NEEDED EVER AGAIN! Because this new @import CSS system has now excluded IE4-7 to older style sheets, browsers like IE6 now do not need any custom styling or fixes. This includes all other browsers older than version 5, in general. Older sheets have addressed all their needs for you. So you can focus on using the newest CSS3 style and create your beautiful layouts without worries for hacking old browser. IE6 is not going to see this sheet or any of the others that have custom classes and styles. So no more Internet Explorer fixes required! Yea!!!
-
-JAVASCRIPT-FREE CSS! Javascript is still Evil! Many inexperienced programmers today have decided to use even more scripting to manipulate even simple cross-browser CSS issues an single style sheet like this one could easily solve for them. Their argument is often non-minified or imported CSS creates a little delay in downloading times or adds a few extra kilobytes of CSS, when their own ECMAScript libraries download MEGABYTES and MEGABYTES of scripts and polyfills and embedded page-level CSS thats not cached. These scripts often fail in older browsers anyway! These JavaScript solutions even damage the batteries and CPU's of small devices and clog up bandwidth. If you are sick of these "hacked", poorly designed JavaScripted CSS solutions, import in this sheet and watch how its cached then used for months by your users in a wide range of browsers with no problems and no scripting ever! Your user's device CPU's and host providers will thank you!
-
-- "!important" - This property rule was not supported till IE8. IE7 or less would ignore all CSS properties where this was applied. Because this imported sheet supports browsers IE8+, you can now safely use it in this sheet and all future ones, as long as you are using my @import system to load style sheets (see "NewBrowsersImporter.css").
-
-==========================================================================
-The Font-Sizing History of Older Browsers and CSS (1995-2005)
-
-Choosing a default font size has changed radically in the past 10 years (since 2010). There is still a reason to support older browsers and computers, yet be bold in using newer standards. But this should be tempered by an understanding of how things were done in the browser and computer world in the prior decades. If you are a young developer, you need to understand the history or be prepared to fail at achieving 100% cross-browser support. In the 1990's, the world wide web exploded and websites all adopted a core standard for how fonts, pixels, and devices would interpret CSS. This really didn't take hold until after 1995 when personal computers and monitor resolutions all standardized. This went on from 1995 to about 2007 when everything changed in the pixel-world with the invention of the SMART PHONE. Prior to 2007, however, many PC monitors were unified in a common resolution standard. That set the size of fonts on screen, and so the 1-to-1 CSS pixel was invented. Prior to 2010, the common default font-size was based on that CSS pixel, and so the default 13 pixel medium font-size on a 72dpi display was common practice. Today on more modern screen resolutions the default font-size in most browsers is 16 pixels, which matches support on HD screen and retina displays. However, the old CSS pixel standard still says 1 inch = 92dpi on screens. The problem today is many modern smart devices and monitors after 2010 have high definition displays where the old 92 pixels=one inch is no longer an inch, but a very tiny square the size of a pencil eraser. Around 2008, this pixel size varied by browser for many older low resolution monitor screens compared to the newer HD ones as they came online. The current 16px font-size standard is still not reliable and not 100% adopted. Pixel settings would not always honor the browser default as there are many minor user-agents that use various size outside the major browser list. According to the old standard, a CSS 1px = 1/96th of an inch or 96 pixels per inch. But with high screen resolution devices like iPhone they now convert that to a new creature called a "device pixel", which varies and ranges from 1-3 CSS pixels per device pixel now or percentages pf pixels in controlling those rations. This has the effect of making tiny CSS pixel fonts on smart phones grow larger and close to what desktop users see....but not quite. Confused yet? This translation of your websites pixels and relative font sizes might make your site or fonts look bigger or smaller, depending on the phone or screen or device. The "device pixel" on each HD screen or phone ratio will tell you. It is all relative! So, from a simple standard in the 1990's to the mess we have today, you now see that the size of your pixel layouts in your website and how they fit depends on the device and its resolution,its, dimensions, and even orientation! So this is why we now use relative pixels and need to, and avoid ALL PIXEL SIZES! 
-
-That's why in this modern style sheet we will reset font and block-level sizes to use the browser's default for that font, which is always "100%" or "medium". Any user that's changed their default font size smaller or bigger will then base that resize on the "medium" starting point you set which is resizeable. Using this strategy and this style sheet your website will adopt whatever the default size is set for that browser on that device and by the end-user.
-
-========================== Special Browser Fixes =========================
-The following is a general idea of browsers and their versions supported by this @imported style sheet:
-
-- Windows Internet Explorer 8.x and later
-- Chrome 1.x and later
-- Firefox 1.x and later
-- Safari 1.x and later
-- Opera 3.6 and later
-- Konqueror 2.2 and later
-- Windows Amaya 5.2 and later
-- iCab 3 and later
-- Netscape 6 series
-- Misc modern browsers
-
-All other older browsers will read the "oldBrowsers.css" style sheet only.
-
-* Note: IE8 has issues using Bootstrap (4) styles, for some reason. Both its box-model breaks and come classes do not load. That is ok, as it will read all other classes in this sheet or fall back to block level designs.
-
-------------------------------------------------------------
-Use the following fixes and "hacks" below if you need to address special items that target specific older IE (8-11), Edge (12), and others. Because this imported sheet is only seen by a limited subset of older browsers that still support most of the core modern CSS1/2 recommendations, there should be very few fixes or hacks needed. But you may add more to this sheet as you discover them and target specific browsers.
-------------------------------------------------------------
-Microsoft Internet Explorer 8 Hack : Uses a media query.
-
-@media \0screen {
-	body {
-		background: red !important;
-	}
-}
-------------------------------------------------------------
-Microsoft Internet Explorer 9 Hack : Uses slash-9 hack in property values.
-
-@media all and (min-width:0\0) and (min-resolution:.001dpcm) {
-	body {
-		background: blue !important;
-	}
-}
-------------------------------------------------------------
-Microsoft Internet Explorer 10 & 11 Hack : Use this to target old IE version 10 or 11 only.
--ms-high-contrast is only available in IE 10 +
-
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	body {
-		background: green !important;
-	}
-}
-------------------------------------------------------------
-Microsoft Edge 12 : Use to modify only Edge browsers. Can use the @supports rule now.
-
-@supports (-ms-ime-align:auto) {
-	body {
-		background: yellow !important;
-	}
-}
-------------------------------------------------------------
-
-========================================================================== */
-
-
-
-
-/* ================= START : APPLY BASE ELEMENT STYLES =================== */
-
-/* OPTIONAL: RESET ALL ELEMENT STYLES TO BROWSER DEFAULTS FOR ALL MODERN BROWSERS: Here we only reset the property values assigned to all elements that may be coming from other reset style sheets like "OldBrowsers.css" sheet or the default UA browser style sheet that comes with each browser. This allows us to start with a fresh, cleared out default style sheet then recreate those styles on elements below using modern property standards.  */
-
 html,
 html body,
 * {
-	font-family: inherit; /* we use "inherit" here as its the only reset value supported by some older IE browsers */
+	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
 	word-spacing: inherit;
 	letter-spacing: inherit;
     color: inherit;
-	/* Alert: This property is optional: "all: revert" is a newer CSS declaration that resets all HTML element properties to default values. It is only supported by certain newer CSS3-supporting browsers and resets all HTML element values to either a previous default UA style sheet value or their "body" inherited one (mostly text values) prior to building the new "reset" CSS below. Note: This property only works in non-IE browsers. Use this if you do not want to see the older styles that cascade into this style sheet and clear out all styles on core HTML5 elements. Note: Because this sheet is comprehensive (copies all style properties and more from "OldBrowsers.css") in writing over all former style sheets on these elements, this declaration is optional and should not change anything other than reset the CSS cascade. Your web page should work fine with or without this special reset below. Note: Remove this custom style property if you would like to see styles inherited from the previous reset style sheets before they are cascaded over by this sheet's styles. 
-
-	Warning: "revert" on img elements erases the calculated width and height of images as defined by "width" and "height" attributes. New HTML5 requires browsers calculate a CSS value set now based on width/height attributes then erases those attribute values on the image, so they are lost. Doing a "revert" on image styles destroys those values in memory so images revert back to native dimensions (actual images true size). In most cases this is ok as you don't want to use img attributes to "stretch" images or sizes anyway. You want that set in your CSS. But if you have issues where images are not sizing to img attribute dimensions, remove this "revert" property.
-    WARNING, be careful using "all:revert" on all elements below! (Updated 6/2021) - After testing images, it appears we cannot use this property as it erases an images actual "width" and "height" from the DOM after processing 'img' element dimensions, including srcset values. After erasing them, the image then has no known dimensions after calling "all:revert", but fills the actual block level element, getting extremely large! */
-
 	all: revert;
 }
-
-/* OPTIONAL: Reset all elements to use the new box-model sizing "border-box" rather than "content-box". This new setting has padding and borders included in the dimensions for all block-level elements or elements that support padding, borders, width, and height. */
 
 *,
 html *,
@@ -164,80 +22,47 @@ html body *::after {
 }
 
 :root, html {
-    /* For now, we do not set width to "auto" or any value, as some browsers require different settings. IF we set width to "100%" and content overflows, we could see scroll bars and issues. If we set it to "auto" and the "body" element "100%, we have issues with collapsing content sections on block-level elements. Because each browser is different, by leaving off this property, we let each browser decide and use its default value. */
-    /*width: auto;*/
-	/* HEIGHT: "height" in modern browsers is now almost uniformly derived from the viewport's 100% height default value, and passed on to the 'body' or page content area via the 'html' element's "height" property value. The 'html' element always defaults its "height" to "auto", which means it collapses down to the content available in its child elements, by default. This means any child elements that try and use "percent" to calculate height will always collapse to zero height, by default, no matter what height values they use. In modern browsers, to transfer 100% viewport height to the 'body' or web page, you must now set 'html' height to 100%. This then gives the body full height for its "min-height:100%" value, which is often used to stretch background colors across the full height of the page without scrollbars, allowing it to stretch as the viewport stretches. 'body' "height" properties can be left as "auto" as you want page content to be able to stretch past 100% height. Only "auto" allows that effect. But the drawback is 'html' height at 100% will not stop at the boundary of the browser window, as 'body' content overflows. That is why we never rely on background colors or effects inside the 'html' CSS rule. Note that when using "percent" units, they always derive their values from the parent. That is the  main reason we must always set 'html' height to 100% today, though its a sloppy way to derive 100% height. Because the 'body' elements height defaults to "auto", it means its content height will not ever be 100% and it will still collapse back,  but it can stretch as its content stretches beyond 100% height. This is the best strategy if you want to create 100% height effects in  most modern browsers. I have also added the new CSS3 feature in the 'body' element using "height:100vh", which bypasses the 'html' set 100% height and directly uses its height to figure out content height.
-    Note that in some older browsers it was not possible to calculate body height from html height. Old browsers like IE 6 inherited 100% html height and bypassed this problem, but created inconsistency across all other browsers that defaulted to "auto". I generally accept that most browsers today define height correctly in the html root and use the body element's "min-height:100%" to fill its background colors using the html 100% height value, while retaining collapsible "auto" height around content to create the effect of a full viewport content height that stretches. I recommend you continue to use those settings plus the new "100vh" height feature to recreate 100% height effects. 
-    Note: Years ago in older IE browsers, "height:100%" was required to override the 'quirks' mode feature that forced all page elements to collapse to minimum space required to render content. This "height:100%" setting overrides that and allows your div's to stretch to 100% in most browsers.
-
-    Note: Use 100% below for older IE5-7 browsers since they do not understand the 'vh' viewport units below. However, this fallback property value is option since old IE5-7 will not see or use this sheet using my import filtering system.
-	*/
 	height: 100%;
-    /* This "viewport" value below overrides the 100% height "fallback" value used above by older IE browsers and is optional since '100vh' is essentially the same as 100% in modern browsers. But it works better as 'html' should always first inherit height from the device viewport in newer browsers and devices. */
     height: 100vh;
-    /* "min-height: 100%" or "min-height: 100vh" is optional here and really only needed if you are using "height:auto" above. Because "min-height" is not inherited by "body", but "height" is, its better to set "height" instead of "min-height" here. Again, I have added the '100vh' version after the older fallback '100%' version for older browsers in case this sheet is processed by old IE5-7. */
 	min-height: 100%;
 	min-height: 100vh;
 	max-height: none;
-	/* Some very old browsers manipulated the margins and padding in 'html' elements, so make sure those are removed from the root. */
 	padding: 0;
 	margin: 0;
-	/* BOX SIZING: In modern browsers "box-sizing:border-box" allows all padding and borders to now be a part of all block dimension calculations. Note: This will not work in many older browsers that do support @import of this sheet but not "box-sizing". Note that box-sizing is not supported by IE 7 or earlier, chrome 9 or earlier, and Firefox 28 or earlier. So be careful using this setting. It should be ignored by older agents but change your layout size calculations in agents with versions in most browsers that import this sheet (90%+). */
 	box-sizing: border-box;
-	/* BOX SIZING FOR OLDER BROWSERS: Certain older user agents may require these custom box-sizing properties. */
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	/* SMART PHONE AND TABLET DEVICES : These "text-size-adjust" properties control whether you allow a new HD handheld device and its browsers to change font-size (not layout) or zoom your page when your web page fits their viewport 100%, but text size is too small based on their various algorithms. This feature was supported on older SMART PHONE browsers but disabled on many others today. Any "responsive" website using relative font sizing should never need this feature as they now design pages using media queries and relative font sizing. Note: "none" disables the browser's text inflation algorithm but also disallows zoom. "100%" lets the device inflate text size or zoom but keeps text at its current size or 100%. So, the latter is a good choice. Note: This does not work on certain iOS Apple devices as of 2021, so not critical. */
-	-webkit-text-size-adjust: 100%; /* 100% means keep font size stays the same size on phones. And zoom is allowed. */
-	-moz-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-size-adjust: 100%;
-	/* We use "body" below to control this value, so pass in the user's default browser down via inheritance below. */
-	font-family: inherit;
-	/* We use "body" below to control this value, so pass in the user's default browser down via inheritance below. */
-	font-size: inherit;
-	line-height: inherit;
-    color: inherit;
-	/* Note: Avoid "html" element backgrounds and use the "body" background property only, as they can be different in some modern browsers starting with IE5+. */
-    background: transparent;/* reset the "white" given older browsers in the "OldBrowser" sheet and show no color by default */
-}
-
-html body {
-	/* Note: Most modern browsers now manage "width" and "height" correctly and consistently without need for custom units or changes on those dimensions. The default is "auto" for both in 'body' as they will inherit full height as long as the 'html' element is set to "height:100%". This means 'body' will default to collapse around content using "auto" for its height, which is what you want so that body stretches as content fills its height dimensions beyond 100% of the viewport. Otherwise, it overflows its parent. Setting "auto" would also mean, in most cases, that the body dimensions could start out smaller than the viewport's. To create a 100% height background page effect, rely on the "min-height:100% value instead. */
-	height: auto;
-	width: auto;
-    /* Note that "min-height" was not supported in IE 1-6. Because this sheet targets IE 8+, you shouldn't worry about browser support now. */
-	min-height: 100%;
-    /* Using the new viewport units in newer browsers that support it, with this fallback property. "vh" and "vw" units bypass the parents 'html' element values and derive dimensions directly from the browser or device's viewport dimensions. Since "html" derives its dimensions from the viewport, setting "body" to "vh" or "%" here inherits the same value. */
-	min-height: 100vh;
-	max-height: none;
-    /* This can also be "min-width:100%". I do not like to set that here in case padding or a border is added by someone to the "body" element later, which could force the body to extend width past 100% and create a nasty scrollbar. Any long content page with extra height creates a scrollbar that can then add to the width calculation, breaking the 100% width value, causing a scrollbar to be created horizontally. Leaving this value unspecified means you let the content fill it as needed and go past the maximum width as needed, too. If you see block-level elements inside the "body" element fail to stretch to 100% viewport width when needed, then add this value back in. Note: Setting a "min-width:100%" can cause a bug in Safari 3.1 where screen and content doesn't extend when content in browser is past minimal width.*/
-	min-width: 0;
-	max-width: none;
-	/* Always reset margin and padding on "body" to "0", as some older browsers come with a default non-zero value. We generally manage these values instead in new HTML5 header, main, and footer blocks, instead. Example: You might want the "main" element to have a viewport padding or border but "header" sections to be flush with the viewport border. */
-	padding: 0;
-	margin: 0;
-	/* SET THE UNIVERSAL BACKGROUND COLOR: Set the universal page background color here for all old browsers. Why? Because some old browsers will set background-color to either a color like gray, or set a transparent value then show the browsers own canvas color in the background, which was light gray in some 90's browsers like Netscape. If a user sets their background to a color like black and your page has not, but has black text, its unreadable! So always set your intended background-color, and not to transparent. Note: This shorthand resets all background values to none or default as well as the white background. */
-	background: #fff;
-	/* SET THE UNIVERSAL FONT COLOR: Set the universal text color here as you like. All modern browsers importing this sheet should all recognize hexadecimal shorthand colors. But many may still not know RGB colors. So avoid those. Those properties are not used in this reset sheet unless as a custom add-on that also includes a sibling fallback color property using hex values. Note: I also add the old "bgcolor" and "text" attributes on my "body" element in HTML to handle weird bugs in old Netscape 4 and some older IE that did not know CSS or default body colors to trigger black background with black text, which was not readable. Note that, these styles below always cascade over those "body" attributes. */
-	color: #000;
-	/* These are optional and just repeats of the root settings. In case body doesn't inherit these values, I have repeated them here. */
 	-webkit-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 	text-size-adjust: 100%;
-	/* SET THE UNIVERSAL FONT FAMILY: Set your universal font styles here. Using a generic type name here forces the user's browser to default to the first font it supports for that type. This is more flexible. We do not define that but let the user's browser decide. Note: Place more specific fonts in front of "sans-serif" if you want a certain font used for your default font but which falls back to the generic "sans-serif" if not found on their device. "Arial" is the typical default sans-serif on nearly all major Windows browsers I tested. Helvetica is used on Macs. So, expect those two fonts using the generic sans-serif type below. ALTERNATIVE FONT SETTING: If you want to default to the user's global default font use "inherit" instead! Using inherit (font-family: inherit) forces the website to honor the user's browser's default font family OR the font they customized and chose in the browser settings. Use that setting if you are ok having most user browser default to "Times Roman" (the usual default in most modern browsers) but in which you want to try and honor the user's font choice. This is the only way to do that, currently. Your pages will look horrible with Time Roman, but it now allows you more granular control over how user font settings affect your site design. Example: If you used "inherit" for font-family below, as a user changes fonts they would appear instantly in your website, as opposed a font you have forced them to accept. Note: Older Mozilla and Gecko browsers will only read the lower-case version of sans-serif. */
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+    color: inherit;
+    background: transparent;
+}
+
+html body {
+	height: auto;
+	width: auto;
+	min-height: 100%;
+	min-height: 100vh;
+	max-height: none;
+	min-width: 0;
+	max-width: none;
+	padding: 0;
+	margin: 0;
+	background: #fff;
+	color: #000;
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-size-adjust: 100%;
 	font-family: sans-serif;
-	/* SET THE UNIVERSAL FONT SIZE: Set the universal font size here for all modern browsers. Note: "medium" (an absolute value) is the best option and lets the author's style sheet system honors both the browser's style sheet font sizing (relative sizing) or the user's custom settings. "medium" defaults to what most users set in their browser which is "medium" (or 16px, the default size in more popular browsers), which in turn is based on whatever font the browser uses or the user has chosen. This choice of size setting also supports "font resizing" and zoom of your web pages by the user in all modern browsers. So, if the user changes font size, uses zoom, or zoom text-only sizing, your web site will scale text sizes based on natural inheritance. For those users who have changed default font sizes in their browser already, "medium" sets initial text at the user's default font-size as its starting point size, but then rescales font size up or down based on their settings, thus honoring the user's expected relative font resize changes, correctly. Whether the pixel size changed, or just a percent zoom resize occurred in the user-agent, it honors both. Honoring the user and their device font opens up your website to be FLEXIBLE and adapt to any device, screen size, device pixel, screen resolution, or font design characteristic. It means you no longer FORCE users to comply with your "pixels" but allow the unlimited variability of your audience's preferred and chosen font or font-size to shine and look great in your web application.
-    To support this "medium" font-size "body" setting, just remember to use "em" or "rem" font-size and layout settings throughout all your website styles. Thats it! They will now inherit as well as modify their sizes relative to your "medium" font-size. In addition, as a user changes font-size in the browser, all your fonts will change in size now relative to that setting.
-    If you don't believe me that absolute "keyword" font-sizes are SUPERIOR to pixels and any other font unit, read Todd Fahrner's words written 20 years ago when he discovered the superiority of "medium" for the base "body" element font:
-    "The solution is for the designer to specify sizes not in any length system - relative or absolute - but in literals (keywords) whose actual values adapt intelligently to the baseline or "medium" value chosen by the user. Such "absolute size" schemes have the unique benefit of being both based on a user-chosen size and "node agnostic;" i.e., the document structure does not complicate the meaning of absolute sizes the way it complicates the meaning of, say, "75%". Furthermore, the actual values of literals can vary in more sophisticated ways than simple relative length units, taking font quality and available resolution into account." */
 	font-size: medium;
-	/* MISC SETTINGS: By setting a line-height we cascade over any special font design settings found in the browser's default UA style sheet (or previous "reset" style sheets). If you use line-height "normal" they match the "medium" font-size settings set above. Because many older browsers still accessing this imported sheet might not inherit a default value or understand "initial" on these properties, using "normal" assumes we want all browsers to reset to their default text-based property values, where "normal" in most cases is the browser's default setting. "Unset" will work in newer browsers and reverts to "inherit" in most cases for text-inherited values (or the browser's default UA style sheet value for that element) or its previous set value rather than a properties initial value which is NOT the element's default. When we explicitly set text-based property values to a "default" or a value we know it will also have the advantage that the value will be inherited into all child elements below. That is a good idea as they not only cascade over any non-defaults in UA style sheets or element properties, but align all your inherited element text values to a common, shared, default value initially you can control. That then forms a solid foundation you can easily customize in your classes later.*/
-	line-height: 1.5; /* I have increased this slightly for better readability for text in all newer browsers. */
-	/* BOX SIZING: In modern browsers "box-sizing:border-box" allows all padding and borders to now be a part of all block dimension calculations. Note: This will not work in many older browsers that do support @import of this sheet but not "box-sizing" (like IE7 or earlier, Opera 6 or earlier, etc). So be careful using this setting. It should be ignored by older agents but change your layout size calculations in agents with versions in most browsers that import this sheet (90%+). */
+	line-height: 1.5;
 	box-sizing: border-box;
-	/* BOX SIZING FOR OLDER BROWSERS: Certain older user agents may require these custom box-sizing properties. */
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -245,19 +70,9 @@ html body {
 	letter-spacing: normal;
 	white-space: normal;
 	border: none;
-    /* This can be "center" if you have a page needing to center content that is limited in width. */
     text-align: left;
-	/* Using cursors: Most modern browsers have user UI style sheets which set each element to use their own preferred cursor. In older browsers, "default" worked the same way and was the "initial" or default value for the "cursor" property, and triggered different cursors by element in these default style sheets. Instead, most modern browsers now recognize "auto" which serves that purpose and says, "let the element type decide what cursor to use". "default" is usually the same as "pointer" and is often an arrow cursor. For this reason, you can use both values here. Use "auto" if you want the browser to let each element decide, letting the "body" element set up that global decision across all child elements. "auto" was generally not as widely supported as "default" in older browsers, however. I prefer to use "default" below, as it enforces the "pointer" or arrow by default on all elements, unless overridden by each elements preferred type, or until I explicitly change the cursor manually in each element in this reset style sheet, below. Because "cursor" is generally not inheritable, it should have minimal effects on the custom cursors of elements and their native cursor settings. Note: Because "auto" was still not recognized in older browsers like IE5, I have tried to avoid its use, though IE5 will never read this style sheet using my @import system. */
 	cursor: default;
-    /* POSITIONING: Many older browsers get confused as to what top-level parent to position themselves to. Some used the viewport, others the "body" element. If you choose to use various types of positioning and want to avoid confusion, set the "body" element to be the global ancestor or all positioning elements using the "position:relative" setting below. */
-    /*position: relative;
-    top:0;
-    left:0;*/
 }
-
-/* All elements in modern browsers will now inherit this value from the body now. This says push all padding and border dimensions into an boxes width and height values. This allows percentages for width and height now with border and padding without problems. 
-Note: The pseudo-elements ":before" and ":after" are not supported in CSS supporting browsers, IE 3-5. Because those browser will not see this sheet anyway, it is safe to use them below.
-*/
 
 *,
 *::before,
@@ -267,22 +82,6 @@ Note: The pseudo-elements ":before" and ":after" are not supported in CSS suppor
 	-moz-box-sizing: inherit;
 	box-sizing: inherit;
 }
-
-
-
-/* HTML ELEMENT LIST:
-
-Set basic styles on older HTML 4 supported elements. Some may be deprecated but still could appear in out html pages and browsers.
-
-All the styles listed below are copies of those found in the "OldBrowsers.css" sheet. They are repeated in this sheet, minus the text and pixel units set on properties.
-
-All elements listed below are found in most modern browser UA style sheets and the HTML5 recommendation. A few older HTML4 types have been added to support older sites.
-
-The inheritable text values below are native to most of these elements. By explicitly assigning them I not only replace the pixel-based values found in the "OldBrowsers.css" sheet, but I enforce inheritance across elements that may not natively have those features. This just makes sure all types have full text inheritance properties.
-
-Some special elements, like textarea. button, select, and input are considered "replaced" elements and in some browsers have internal text formats that are not always affected by CSS style sheet font settings, and so  may not inherit text properties. This rule set below enforces that inheritance across all these HTML types.
-
-I added slightly more weighted selectors below using "body" below so they cascade over "OldBrowsers.css" and other 3rd party element reset styles like Bootstrap's "reboot" styles and enforce those changes. */
 
 body a,
 body abbr,
@@ -374,7 +173,6 @@ body var {
     color: inherit;
 }
 
-/* These elements do not need style formatting, in most cases. */
 body area,
 body base,
 body basefont,
@@ -393,41 +191,38 @@ body a {
 	color: #006;
 	text-decoration: underline;
 	cursor: pointer;
-	background: transparent;/* IE 10 and others may try and add gray backgrounds, so this fixes that value. */
+	background: transparent;
 }
 
-/* WARNING: Because pseudo-classes have the same selectivity as a plain class, these styles can conflict with many 3rd party style classes or custom classes applied to the anchor elements. For that reason Ive removed any extra selectors that would give them more weight than a plain CSS class. Also, because pseudo-classes may not inherit font settings in older browsers or may not cascade over previous 3rd part resets, Ive explicitly added font inheritance settings below. */
-
-body a:link { /* Note: ":link" is any element with an "href" attribute. For now we wont define the link pseudo-class default styles on other elements other than anchors. */
+body a:link {
 	color: #006;
-	background: transparent;/* IE 10 and others may try and add gray backgrounds, so this fixes that value. */
+	background: transparent;
 	text-decoration: underline;
-	/* WARNING: We do NOT add font properties here to prevent issues where modern 3rd party sheets use anchors in pseudo-classes in header elements with non-traditional styles that this selector would write over. */
     cursor: pointer;
 }
 
-body a:visited { /* Note: new "privacy" concerns in modern search engines now limit the properties web authors are allowed to change on "visited" anchors. So most of these are removed. Color is one you can still safely change. */
+body a:visited {
 	color: #66a;
 	background: transparent;
 	text-decoration: underline;
     cursor: pointer;
 }
 
-body a:hover { /* hover is any link with mouse-over. not supported in IE */
+body a:hover {
 	color: #00c;
 	background: transparent;
 	text-decoration: underline;
     cursor: pointer;
 }
 
-body a:focus { /* focus is any link with keyboard tab focus. also occurs briefly on mouse-up click event */
+body a:focus {
 	color: #00f;
 	background: transparent;
 	text-decoration: underline;
     cursor: pointer;
 }
 
-body a:active { /* active is generally the click event on the anchor. very brief color change */
+body a:active {
 	color: #00f;
 	background: transparent;
 	text-decoration: underline;
@@ -444,7 +239,6 @@ body abbr[title] {
 	cursor: help;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. Use "abbr" instead. */
 body acronym {
 	display: inline;
 	border: 0;
@@ -462,30 +256,26 @@ body address {
     margin: .5em 0;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. Use "object" or "video" instead. */
 body applet {
 	cursor: pointer;
 }
 
 body b {
 	display: inline;
-	font-weight: bold; /* some older agents like Mozilla 5 and others don't know "bolder" */
-	font-weight: bolder; /* used bolder rather than bold in weird cases where bold text is already used */
+	font-weight: bold;
+	font-weight: bolder;
 }
 
-/* This 'unicode-bidi' property allows the 'bdo' element to enforce and override all Unicode language direction based on the 'dir' attribute direction set in the element. */
 body bdo {
 	unicode-bidi: bidi-override;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 body big {
 	display: inline;
-	font-size: large; /* some older agents don't know "larger" */
-	font-size: larger; /* note: you could use a percent here, but the text size steps vary by font */
+	font-size: large;
+	font-size: larger;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 body blink {
 }
 
@@ -493,8 +283,6 @@ body blockquote {
 	display: block;
 	padding: 0;
 	margin: 1em 1.6em;
-	/* "blockquote" is for larger blocks. "q" for quoted smaller ones. But if you want to add quotes to your text by default, below is an example. */
-	/*quotes: "“" "”";*/
 }
 
 body br {
@@ -502,14 +290,6 @@ body br {
 	margin: 0;
 	clear: both;
 }
-
-/* -------------------- Button Styles -------------------------- */
-/* BUTTON STYLES:
-Button elements are notoriously difficult to design cross-browser. The original buttons in old browsers were styles to look like old, gray-scale, raised Windows PC application buttons. The style properties below create a "default button" look-and-feel that is beveled and matches the "input button" design that comes with most browsers the past 20 years. You can customize input and button styles later and create your own buttons as you need in the "Styles.css" sheet. But this base style allows a wide range of old and new browsers to share a common button default beveled button design.
-WARNING: Because pseudo-classes have the same weights as classes, if these have extra selectivity or lots of properties styles they might cascade over custom button classes in 3rd party products like Bootstrap. So keep styles to a minimum or remove properties if they conflict with 3rd party product designs.
-Note: The button elements were not inheriting font size settings correctly, so fixes were applied below for text styles.
-Keep in mind buttons can be of three "types": Button, Submit, Reset. For now I make all three the same default style.
-*/
 
 body button,
 body button:visited,
@@ -521,29 +301,25 @@ body button:active {
 	height: auto;
 	padding: .2em .5em;
 	margin: 0;
-	overflow: visible; /* show text overflow in IE and Edge */
-	text-transform: none; /* remove text-transform inheritance */
+	overflow: visible;
+	text-transform: none;
 	background: #fff;
-	outline: none;/* Note: "outline" was not supported in IE 1-6. */
+	outline: none;
 	text-align: center;
 	cursor: pointer;
-	border-radius: .2em; /* all buttons, inputs, selects, and textareas will have a small default rounded corners */
-	/* WARNING: These two properties below would remove the raised beveled look of buttons. Add these two properties for a smoother, raised but flatter button.  */
-	/*background-image: linear-gradient(to bottom, #e4e4e4, #f7f7f7);
-	border: 1px solid #afafaf*/
-	-webkit-appearance: button; /* styles old-fashioned beveled button for all Apple device, Edge, and Safari browsers */
-	-moz-appearance: button; /* styles old-fashioned beveled button for Mozilla, Firefox, and Gecko browsers */
-	cursor: pointer !important; /* note: had to add !important here due to Bootstraps more selective cursor rule that overrides it */
-    line-height: normal;/* Required as pseudo-classes should not inherit line-height */
+	border-radius: .2em;
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	cursor: pointer !important;
+    line-height: normal;
 }
 
 body button:hover,
 body button:focus,
 body button:active {
-	background: #f9f9ff;/* I am using a light blue background here to indicate an interaction event. remove if needed */
+	background: #f9f9ff;
 }
 
-/* Note: Attribute selectors in older browsers are only supported in IE6+, Netscape 6+, and Mozilla 5+. So its fairly safe to use them in this sheet. Disabled buttons should be grayed out. Ive also added a cursor with red circle crossed out type design to indicate no interaction allowed. */
 body button[disabled],
 body button[disabled="disabled"],
 body button[disabled]:hover,
@@ -552,20 +328,15 @@ body button[disabled]:focus,
 body button[disabled="disabled"]:focus,
 body button[disabled]:active,
 body button[disabled="disabled"]:active {
-	background: #f0f0f0;/* not needed as most browsers gray out these buttons naturally. */
+	background: #f0f0f0;
 	color: #999;
-    /* "not-allowed" creates a red circle with line though it to indicate this form field cannot be interacted with. Also can set this cursor to just "default". This "!important" was required to override Bootstrap's weird cascade rule on this. */
 	cursor: default !important;
 }
 
-/* This removes borders and inner padding for the inner text block on buttons in Gecko browsers. */
 body button::-moz-focus-inner {
 	border-style: none;
 	padding: 0;
 }
-
-/* ------------------------------------------------------------ */
-
 
 body caption {
 	display: table-caption;
@@ -577,7 +348,6 @@ body caption {
 	text-align: center;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 body center {
 	text-align: center;
 }
@@ -589,7 +359,6 @@ body cite {
 
 body code {
 	display: inline;
-	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. */
     font-family: monospace, monospace;
     font-size: 1em;
 }
@@ -620,7 +389,6 @@ body dfn {
 	font-style: italic;
 }
 
-/* Since this is a deprecated HTML4 element, I have copied the "dd" styles into it. */
 body dir {
 	display: block;
 	padding: 0;
@@ -628,13 +396,10 @@ body dir {
 	line-height: 1.2;
 }
 
-/* Note: The "div" was commonly used for all HTML layout structures prior to 2010 and HTML5. Some older browsers like Netscape 4 did not inherit styles or interpret CSS correctly, so nested divs often had to be styled individually. This style set is now reset back to inheritance of text styling for more modern browsers. */
-
 body div {
 	display: block;
 	width: auto;
 	height: auto;
-	/* Optional: For now I want all content blocks to limit their width to the available viewport or parent width, in all cases. Remove this if its an issue and you need bleed over on large content blocks or allow horizontal scrolling. */
 	max-width: 100%;
 	padding: 0;
 	margin: 0;
@@ -661,7 +426,6 @@ body em {
 	font-style: italic;
 }
 
-/* Use fieldset and its title "legend" to group related form fields and controls. These styles give the fieldset a more modern, softer feel that matches the form control default designs. */
 body fieldset {
 	display: block;
 	width: auto;
@@ -670,12 +434,10 @@ body fieldset {
 	padding: .5em 1em 1em 1em;
 	margin: .5em 0em;
 	border-radius: .2em;
-	/* Fieldset originally had a Windows dialog box feel to it with a lite gray background when grouping form fields. This looks really nice with input controls inside it. So I have added it back. What is nice about the gray is it matches disabled or readonly form fields inside the fieldset, so that they now blend back into the background and appear more non-interactive, as they should. You can remove this color, if needed. */
 	background-color: #f3f3f3;
 	border: 2px solid #bbb;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 body font {
 }
 
@@ -683,27 +445,21 @@ body form {
 	display: block;
 	clear: both;
 	padding: 0;
-	/* "margin:auto" here is used to let the browser center a form of input fields horizontally in the web page with versatile but unknown content width dimensions. This assumes the parent container to have "width:100%" or a larger value than the form. */
 	margin: auto;
 }
 
-
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 body frame {
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 body frameset {
 }
 
-/* Note: The heading style property values below are based on older HTML4 defaults that you can change, if you like. I like using the older, original formats once found in older browsers so the styles look consistent with them. These relative font-size values below were updated from the base 13px font-size ones I had in place in 2005. That means they may look much larger in old browsers still using 72dpi monitors and PC's. */
 body h1 {
 	display: block;
 	padding: 0;
 	margin: 0;
-	/* Below is a fallback style example. Only "em" units are supported by older Internet Explorer browsers in most cases, where the more modern "rem" unit property listed next only non-IE modern browsers would read. Old IE 3-5 that knows CSS would blow up when reading this declaration and erase the earlier "em" value. Because this sheet is never seen by IE 5 using my CSS framework, and applies to IE 8+, it is ok to use it here. Newer IE 6+ would correctly erase the previous "em" rule and use "rem". The problem is IE 6-8 do not know "rem", but would ignore this and use "em", instead. IE 9+ browsers would use "rem" correctly here. */
-	font-size: 2.0em;/* IE 6-8 only */
-	font-size: 2.0rem;/* IE 9+ */
+	font-size: 2.0em;
+	font-size: 2.0rem;
 	font-weight: bold;
 	line-height: 1.8;
 	color: #000;
@@ -769,10 +525,9 @@ body hr {
 	width: 100%;
 	height: 0;
 	padding: 0;
-	/* Margins on this element by default are usually half the page's font-size. But if you increase line-height, be sure to increase the margins here, as well. */
 	margin: 1em 0;
-	border-top: 1px solid #999; /* use a softer rule color for newer browsers */
-	border-bottom: none; /* all other borders must be turned off to use the border-top trick to style "hr" */
+	border-top: 1px solid #999;
+	border-bottom: none;
 	border-left: none;
 	border-right: none;
 	background-color: transparent;
@@ -784,66 +539,21 @@ body i {
 	font-style: italic;
 }
 
-/* "iframes" are supported in many new and old browsers, but not recommended due to security and other concerns. But, I have added some basic default styles to make the iframe presentable when used. */
 body iframe {
     display: inline-block;
     border: 2px solid #999;
 	background:white;
 }
 
-/* Note: Ive removed the formatting for images in old browsers. Newer browsers importing later style sheets will return to unstyled images that are styled to fit into any custom layout. */
 body img {
 	display: inline-block;
-	max-width: 100%; /* optional: do not allow visuals to break out of or extend available viewport or parent element widths */
+	max-width: 100%;
 	padding: 0;
 	margin: 0;
 	color: inherit;
-	background-color: transparent;/* this can also be #eee, a soft gray, so that the boundary of missing images can be seen */
-	border: none;/* we leave the image with no borders, padding, or dimensions so they can be customized by the page author. */
+	background-color: transparent;
+	border: none;
 }
-
-
-
-/* -------------------- Input Styles -------------------------- 
-NEW HTML5 PSEUDO-CLASSES: Note the rich HTML pseudo-class events added below that most modern browsers now support. Change colors and borders on these styles as needed. The text inputs now respond to various added attributes that trigger colored borders and messages from the browser on validation, required, and other interactions. I have not added every supported pseudo-class but ones that are generally supported by most major browsers and which support rich form control designs. See below for a full set of pseudo-classes, as well.
-
-WARNING: Because pseudo-classes have the same weights as classes, if these have extra selectivity or lots of properties styles they might cascade over custom classes in 3rd party products like Bootstrap. So keep styles to a minimum. Note: These elements were not inheriting font size settings correctly in some older browsers, so font inheritance was applied.
-----------------------------------------------------------------
-
-DO USE THESE: I may offer limited CSS design for these new HTML5 input types listed below. But because some still are "buggy" or require very elaborate CSS designs that are often proprietary, I will likely not style most of these in my current "reset" sheet. Feel free to bolt in CSS for these in your custom sheets:
-
-Input Types Supported (limited in Internet Explorer 10+):
-- number
-- email
-- search
-- tel
-
-----------------------------------------------------------------
-DO NOT USE THESE TYPES: These input "types" listed below are not fully styled or used as they still do not have sufficient modern browser support to be included in this style sheet as of 2021. You will find some custom CSS designed for these online. But, because the controls do not fully function across many browsers anyway, regardless of fallbacks, I do not attempt to add all the elaborate CSS "hacks" needed in this simple "reset" to make them work in all the modern browsers.
-
-Input Types Not supported in most Internet Explorer versions (IE9 or less):
-- url
-- color
-- date
-- datetime-local
-- month
-- time
-- week
-- range
-
-Input Types Not supported in Safari:
-- url
-- month
-- week
-
-Input Types Not supported in Firefox:
-- week
-
- */
-
-
-
-/* BASIC 'input' STYLES */
 
 body input,
 body input:visited,
@@ -851,32 +561,26 @@ body input:hover,
 body input:focus,
 body input:active {
 	display: inline-block;
-	width: auto; /* we let the user customize dimensions and leave these flexible */
+	width: auto;
 	height: auto;
 	min-width: 0;
 	max-width: none;
 	padding: 0;
 	margin: 0;
-	overflow: visible; /* show text overflow in IE and Edge */
-	text-transform: none; /* remove text-transform inheritance */
-	/* WARNING: Adding a "border" property triggers all input fields and input buttons to flatten instead of using their default, old-fashioned, beveled look in some browsers. */
-	/*border:none;*/
+	overflow: visible;
+	text-transform: none;
 	background: none;
 	cursor: pointer;
-	/* Do NOT apply outline settings here and let the browsers apply their natural colored outlines as needed. HTML5-supporting browsers apply special colored or shaded outlines on required fields and other events. Only apply this setting below if you want to remove the black default outline that appears in some browsers when the input is clicked. */
-	/*outline: none;*/
-    line-height: normal;/* required as pseudo-classes should not inherit line-height */
+    line-height: normal;
 }
 
 body input[type="checkbox"],
 body input[type="radio"] {
 	display: inline-block;
-	padding: 0; /* extra IE10 padding removed */
+	padding: 0;
 	background: none;
 }
 
-
-/* WARNING: There is limited support of these types of CSS selectors for many older browsers, so these may be ignored. */
 body input[type="url"],
 body input[type="url"]:visited,
 body input[type="url"]:hover,
@@ -907,7 +611,6 @@ body input[type="month"]:visited,
 body input[type="month"]:hover,
 body input[type="month"]:focus,
 body input[type="month"]:active,
-/* These types below are fully supported in most modern HTM5 browsers. */
 body input[type="text"],
 body input[type="text"]:visited,
 body input[type="text"]:hover,
@@ -939,19 +642,14 @@ body input[type="search"]:hover,
 body input[type="search"]:focus,
 body input[type="search"]:active {
 	display: inline-block;
-	min-width: 12em; /* reset min-width from previous reset sheet. add if you want all text inputs to stretch a minimum distance */
+	min-width: 12em;
 	padding: .2em .2em;
 	margin: 0;
 	border-radius: .2em;
-	/* Note: I added this border style below on ALL text-type inputs to flatten the design for this control as modern Webkit browsers were not matching the default sunken beveled look in Gecko or IE browsers. Note: Adding a border here does remove the sunken beveled look in Gecko browsers and Webkit and adds a thick outline that matches other borders on other types of controls. */
 	border: 2px solid #bbb;
 	background: #fff;
 	cursor: pointer;
-	/* Do NOT use these properties as types like "number" and "search" are not true text boxes and have custom features this CSS below removes. They only matter for some older browsers that might not understand the new HTML5 types (IE 1-9, Safari, etc.)*/
-	/*-webkit-appearance: textfield;
-	-moz-appearance: textfield;*/
 }
-
 
 body input[type="search"],
 body input[type="search"]:visited,
@@ -969,8 +667,6 @@ body input[type="search"]::-webkit-search-cancel-button:active {
 	-webkit-appearance: searchfield-cancel-button;
 }
 
-
-
 body input[type="url"]:hover,
 body input[type="date"]:hover,
 body input[type="datetime-local"]:hover,
@@ -983,7 +679,7 @@ body input[type="tel"]:hover,
 body input[type="number"]:hover,
 body input[type="password"]:hover,
 body input[type="search"]:hover {
-	background: #f9f9ff; /* I am using a light blue to indicate an interaction */
+	background: #f9f9ff;
 	border: 2px solid #999;
 }
 
@@ -1023,19 +719,18 @@ body input[type="password"]:active,
 body input[type="search"]:visited,
 body input[type="search"]:focus,
 body input[type="search"]:active {
-	background: #fff; /* Default back to white when focused. */
+	background: #fff;
 	border: 2px solid #999;
 }
 
-/* SPECIAL: Many browsers still do not fully support "color" input type below. But I provide basic styles for now. The "color picker" type in supporting browsers has strange styling requirements. In this simple "reset" sheet we do not attempt to add elaborate styling but instead revert all previous styling back to the browsers UA default style sheet, adding a few minor styles to match their inputs. This element seems to have problems being styled without very elaborate, custom CSS "hacks". */
 body input[type="color"],
 body input[type="color"]:visited,
 body input[type="color"]:hover,
 body input[type="color"]:focus,
 body input[type="color"]:active{
-	min-width: 12em;/* these are for IE 10-11*/
-	min-height: 1em;/* these are for IE 10-11*/
-	all: revert;/* Note: This only works in limited browsers and resets all properties back to browser defaults. */
+	min-width: 12em;
+	min-height: 1em;
+	all: revert;
 	display: inline-block;
 	padding: .2em .2em;
 	margin: 0;
@@ -1044,22 +739,20 @@ body input[type="color"]:active{
 	cursor: pointer;
 }
 
-/* SPECIAL: Many browsers still do not fully support "range" input type below. But I provide basic styles for now. The "range" type in supporting browsers has strange styling requirements. In this simple "reset" sheet we do not attempt to add elaborate styling but instead revert all previous styling back to the browsers UA default style sheet, adding a few minor styles to match their inputs. This element seems to have problems being styled without very elaborate, custom CSS "hacks". */
 body input[type="range"],
 body input[type="range"]:visited,
 body input[type="range"]:hover,
 body input[type="range"]:focus,
 body input[type="range"]:active{
-	min-width: 12em;/* these are for IE 10-11*/
-	min-height: 1em;/* these are for IE 10-11*/
-	all: revert;/* Note: This only works in limited browsers and resets all properties back to browser defaults. */
+	min-width: 12em;
+	min-height: 1em;
+	all: revert;
 	display: inline-block;
 	padding: 0;
 	margin: 0;
 	cursor: pointer;
 }
 
-/* File upload styles involve the file text box and the upload button. These are tricky to style and some features below in older browsers will not be available. Note: In general the "file" attribute styles just the textual file name bar, not the button. See below for those styles. */
 body input[type="file"],
 body input[type="file"]:visited,
 body input[type="file"]:hover,
@@ -1068,7 +761,7 @@ body input[type="file"]:active {
 	display: inline-block;
 	padding: 0em 0em;
 	margin: 0;
-	overflow: hidden; /* long file names overflow so just hide the end */
+	overflow: hidden;
 	background: #fff;
 	border-radius: .2em;
 	border: 2px solid #bbb;
@@ -1078,36 +771,34 @@ body input[type="file"]:active {
 }
 
 body input[type="file"]:hover {
-	background: #f9f9ff; /* I am using a light blue to indicate an interaction */
+	background: #f9f9ff;
 	border: 2px solid #999;
 }
 
 body input[type="file"]:visited,
 body input[type="file"]:focus,
 body input[type="file"]:active {
-	background: #fff; /* default back to white when focused */
+	background: #fff;
 	border: 2px solid #999;
 }
 
-/* Note: Firefox flags the file name box as a readonly input. So that was added below. But these rules blow up in IE as it does not recognize the "read-only" pseudo-class, so had to be separated from the same styles listed above. */
 body input[type="file"]:disabled,
 body input[type="file"]:read-only {
 	margin: 0;
 	padding: 0;
-	overflow: hidden; /* long file names overflow so just hide the end */
+	overflow: hidden;
 	border-radius: .2em;
 	border: 2px solid #bbb;
 	-webkit-appearance: textfield;
 	-moz-appearance: textfield;
-	background: #f0f0f0;/* not needed as most browsers gray out these buttons naturally. */
+	background: #f0f0f0;
 	color: #999;
-    /* "not-allowed" creates a red circle with line though it to indicate this form field cannot be interacted with. Also can set this cursor to just "default". This "!important" was required to override Bootstrap's weird cascade rule on this. */
 	cursor: default !important;
 }
 
 body input[type="file"]:disabled:hover,
 body input[type="file"]:read-only:hover {
-	background: #f9f9ff; /* I am using a light blue to indicate an interaction */
+	background: #f9f9ff;
 	border: 2px solid #999;
 }
 
@@ -1117,12 +808,11 @@ body input[type="file"]:disabled:active,
 body input[type="file"]:read-only:visited,
 body input[type="file"]:read-only:focus,
 body input[type="file"]:read-only:active {
-	background: #fff; /* default back to white when focused */
+	background: #fff;
 	border: 2px solid #999;
 }
 
-/* These special selectors attempt to alter the file upload button style by browser engine type. Support will be limited. */
-::-ms-browse { /* IE 10-11 only */
+::-ms-browse {
 	display: inline-block;
 	padding: .25em .5em;
 	margin: 0;
@@ -1132,7 +822,7 @@ body input[type="file"]:read-only:active {
 	white-space: nowrap;
 	cursor: pointer;
 }
-::file-selector-button {/* Firefox */
+::file-selector-button {
 	display: inline-block;
 	padding: .18em .5em;
 	margin: 0em 1em 0em 0em;
@@ -1145,7 +835,7 @@ body input[type="file"]:read-only:active {
 	cursor: pointer;
 }
 
-::-webkit-file-upload-button { /* chrome and edge */
+::-webkit-file-upload-button {
 	display: inline-block;
 	padding: .2em .5em;
 	margin: 0em 1em 0em 0em;
@@ -1158,28 +848,6 @@ body input[type="file"]:read-only:active {
 	white-space: nowrap;
 	cursor: pointer;
 }
-
-/* PSEUDO-CLASSES ON INPUTS:
-Added New HTML5 required and validation pseudo-classes. These depend on adding the "required=required" attribute on text inputs. If the user has failed to enter valid text data in these text boxes on submit, alert messages and colored outlines will appear on these inputs to alert the user. The browser generally controls these boxes and outlines, but I have attempted to enhance these, when possible.
-
-Other pseudo-class candidates you can use that have wide adoption in 2021. Note: All these have some level of limited Internet Explorer support:
-
-- :optional
-- :target
-- :empty
-- :checked
-
-Do NOT use these pseudo-classes as modern browsers still do not interpret these correctly:
-
-- :enabled
-- :disabled
-- :read-only
-
-*/
-
-/* ----------------------------------------------------- */
-
-
 
 body input[type="url"]:required:visited:valid,
 body input[type="url"]:required:valid,
@@ -1208,9 +876,8 @@ body input[type="password"]:required:valid,
 body input[type="search"]:required:visited:valid,
 body input[type="search"]:required:valid {
 	background: #fff;
-	border: 2px solid #7fbe96; /* light green */
+	border: 2px solid #7fbe96;
 }
-
 
 body input[type="url"]:required:hover:valid,
 body input[type="date"]:required:hover:valid,
@@ -1226,9 +893,8 @@ body input[type="number"]:required:hover:valid,
 body input[type="password"]:required:hover:valid,
 body input[type="search"]:required:hover:valid {
 	background: #f9f9ff;
-	border: 2px solid #278b3d; /* green */
+	border: 2px solid #278b3d;
 }
-
 
 body input[type="url"]:required:focus:valid,
 body input[type="date"]:required:focus:valid,
@@ -1244,9 +910,8 @@ body input[type="number"]:required:focus:valid,
 body input[type="password"]:required:focus:valid,
 body input[type="search"]:required:focus:valid {
 	background: #fff;
-	border: 2px solid #278b3d; /* green */
+	border: 2px solid #278b3d;
 }
-
 
 body input[type="url"]:required:visited:invalid,
 body input[type="url"]:required:invalid,
@@ -1275,9 +940,8 @@ body input[type="password"]:required:invalid,
 body input[type="search"]:required:visited:invalid,
 body input[type="search"]:required:invalid {
 	background: #fff;
-	border: 2px solid #ff6565; /* red */
+	border: 2px solid #ff6565;
 }
-
 
 body input[type="url"]:required:hover:invalid,
 body input[type="date"]:required:hover:invalid,
@@ -1293,9 +957,8 @@ body input[type="number"]:required:hover:invalid,
 body input[type="password"]:required:hover:invalid,
 body input[type="search"]:required:hover:invalid {
 	background: #f9f9ff;
-	border: 2px solid #ce2f2f; /* dark red */
+	border: 2px solid #ce2f2f;
 }
-
 
 body input[type="url"]:required:focus:invalid,
 body input[type="date"]:required:focus:invalid,
@@ -1311,12 +974,9 @@ body input[type="number"]:required:focus:invalid,
 body input[type="password"]:required:focus:invalid,
 body input[type="search"]:required:focus:invalid {
 	background: #fff;
-	border: 2px solid #ce2f2f; /* dark red */
+	border: 2px solid #ce2f2f;
 }
 
-/* ----------------------------------------------------- */
-
-/* BUTTON INPUT STYLES: These styles create a "default input button" look-and-feel that is beveled and matches the "button" look-and-feel. You will customize input and button styles later as you need in the "Styles.css" sheet. But this allows a wide range of old and new browsers to share a common button default design. */
 body input[type="button"],
 body input[type="reset"],
 body input[type="submit"],
@@ -1338,13 +998,11 @@ body input[type="submit"]:active {
 	text-align: center;
 	border-radius: .2em;
 	cursor: pointer;
-	outline: none; /* remove the black default outline that appears in some browsers when the button is clicked */
-	/* WARNING: Adding a "border" property triggers all input fields and input buttons to flatten instead of using their default, old-fashioned, beveled look in some browsers. */
-	/*border:2px solid #bbb;*/
-	background: #fff; /* I have made the buttons white but traditionally they were gray Windows button colors. */
+	outline: none;
+	background: #fff;
 	white-space: nowrap;
-	-webkit-appearance: button; /* styles old-fashioned beveled button for all Apple device and Safari browsers */
-	-moz-appearance: button; /* styles old-fashioned beveled button for Mozilla-Firefox browsers */
+	-webkit-appearance: button;
+	-moz-appearance: button;
 }
 
 body input[type="button"]:visited,
@@ -1362,7 +1020,6 @@ body input[type="submit"]:active {
 	background: #f9f9ff;
 }
 
-/* This removes borders and inner padding for the inner text block on buttons in Firefox/Gecko browsers. */
 body input[type="button"]::-moz-focus-inner,
 body input[type="reset"]::-moz-focus-inner,
 body input[type="submit"]::-moz-focus-inner {
@@ -1370,8 +1027,6 @@ body input[type="submit"]::-moz-focus-inner {
 	padding: 0;
 }
 
-/* DISABLED-READONLY INPUTS: Enforce inputs with disabled or readonly attributes to appear non-interactive. 
-WARNING: Do not use the "input:disabled" or "input:read-only" pseudo-classes as they are not interpreted correctly in some modern browsers, and when failing default to "input", affecting all the styles above. */
 body input[disabled],
 body input[readonly],
 body input[disabled="disabled"],
@@ -1392,15 +1047,9 @@ body input[disabled]:active,
 body input[readonly]:active,
 body input[disabled="disabled"]:active,
 body input[readonly="readonly"]:active {
-	/*border: 2px solid #bbb;*/ /* DO NOT USE: This flattens disabled buttons so they look like text boxes with readonly instead of raised beveled gray buttons. */
-	background: #f0f0f0;/* not needed as most browsers gray out these buttons naturally. */
-	color: #999;
-    /* "not-allowed" creates a red circle with line though it to indicate this form field cannot be interacted with. Also can set this cursor to just "default". This "!important" was required to override Bootstrap's weird cascade rule on this. */
+	background: #f0f0f0;
 	cursor: default !important;
 }
-
-/* ------------------------------------------------------------ */
-
 
 body ins {
 	display: inline;
@@ -1409,29 +1058,25 @@ body ins {
 
 body kbd {
 	display: inline;
-	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. */
     font-family: monospace, monospace;
     font-size: 1em;
-	/* Added "bubbles" around keyboard inputs to make them stand out. */
 	border-radius: 2px;
 	padding: .1em;
 	border: 1px solid #666;
 }
 
 body label {
-	/* Return labels to inline designs so they line up next to form controls. */
 	display: inline-block;
 	padding: 0;
 	margin: 0;
 }
 
-/* This is the title piece to "fieldset". I like to keep the font-size the same as page text. */
 body legend {
 	color: inherit;
 	padding: .25em .5em;
 	max-width: 100%;
 	background-color: #fff;
-    line-height: normal;/* required as legend should not inherit line-height */
+    line-height: normal;
 	border-radius: .2em;
 	border: 2px solid #bbb;
 }
@@ -1440,11 +1085,9 @@ body li {
 	display: list-item;
 	margin: 0;
 	padding: 0;
-    /* This shorthand for several list-styles is used to try and inherit all their values from the "ul" or "ol" parent's list-style-type. Always allow the browser's "li" element to inherit "list-style" and "list-style-type" from the "ol" or "ul" nested parent element! */
 	list-style: inherit;
 }
 
-/* Special list tree formatting to make sure newer browsers have a list with a cleaner, more compact look. */
 body li ul,
 body li ul ul,
 body li ol ul,
@@ -1464,17 +1107,14 @@ body map {
 	cursor: pointer;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 body marquee {
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 body noframes {
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 body noembed {
-    display: none;/* Note: We hide this from newer browsers as HTML5 does not support this tage and it would always show this element regardless of browser support of media when using the 'embed' element. */
+    display: none;
 }
 
 body object {
@@ -1503,10 +1143,9 @@ body ol ol ol  {
 }
 
 ol ol ol ol {
-    list-style-type: decimal;/* reset back to decimal again */
+    list-style-type: decimal;
 }
 
-/* The Select element's optgroup and options below have LIMITED style property control in modern browsers as they are "replaced" elements. */
 body optgroup,
 body optgroup:visited,
 body optgroup:hover,
@@ -1514,12 +1153,13 @@ body optgroup:focus,
 body optgroup:active {
 	margin: 0;
 	padding: 0;
-	font-style: inherit;/* removes the italic style */
+	font-style: inherit;
 	font-weight: bold;
 	cursor: pointer;
 	background: #fff;
-	border: none; /* removes IE borders that can occur */
+	border: none;
 }
+
 body optgroup:visited,
 body optgroup:hover,
 body optgroup:focus,
@@ -1536,8 +1176,9 @@ body option:active {
 	padding: 0;
 	cursor: pointer;
 	background: #fff;
-	border: none; /* removes IE borders that can occur */
+	border: none;
 }
+
 body option:visited,
 body option:hover,
 body option:focus,
@@ -1549,7 +1190,6 @@ body p {
 	display: block;
 	clear: none;
 	padding: 0;
-	/* Margins on this element by default are usually the same as the page's font-size. But if you increase line-height, be sure to increase the margins here, as well. */
 	margin: .5em 0em .5em 0em;
 }
 
@@ -1557,22 +1197,16 @@ body pre {
 	display: block;
 	padding: 0;
 	margin: 1em 0em;
-    /* Newer browsers (IE8+) should now accept other forms of "pre", so we use "pre-wrap" which allows wrapping of formatted text. Below we force text to also wrap and word-break when going beyond the available width, so we avoid weird issues where older browser scroll long content blocks off the page. */
     white-space: pre-wrap;
     word-wrap: break-word;
-	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. */
     font-family: monospace, monospace;
     font-size: 1em;
 }
 
-/* Because of the complexity of removing then re-adding quotations around the 'q' element text, I've elected to let existing browsers decide what types of quotes to wrap around quoted text. */
 body q {
 	display: inline;
-	/* This is the default in most browsers but shows you how you can change what types of quotes to use. */
-	/*quotes: "“" "”";*/
 }
 
-/* Note: "ruby", "rt", and "rp" where never part of HTML4, but were added to XHTML. Only IE 5.5 and later supported these three ruby elements, until HTML5 adopted them after 2010. I do not change the styles here as most browsers use custom and often elaborate positioning of the "rt" element text. Later ruby elements were added to HTML5, like "rb", "rbc", and "rtc". But currently they are not supported by most browsers. */
 body rp {
 }
 
@@ -1589,12 +1223,10 @@ body s {
 
 body samp {
 	display: inline;
-	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. */
     font-family: monospace, monospace;
     font-size: 1em;
 }
 
-/* The Select element like Textarea has LIMITED style property control in modern browsers as its a "replaced" element and a special type of object. See option and optgroup for additional select dropdown styles. */
 body select,
 body select:visited,
 body select:hover,
@@ -1605,18 +1237,16 @@ body select:active {
 	height: auto;
 	min-width: 0;
 	max-width: none;
-	padding: .17em .17em;/* aligns default select height with input elements */
+	padding: .17em .17em;
 	margin: 0;
-	text-transform: none; /* remove text-transform inheritance */
+	text-transform: none;
 	border-radius: .2em;
-	/* Note: I added this border style below to flatten the design for this control as modern Webkit browsers were not matching the default sunken beveled look in Gecko browsers. Note: Adding a border here does remove the sunken beveled look in Gecko browsers and adds a thick outline that matches other borders on other types of controls. */
 	border: 2px solid #bbb;
 	background: #fff;
 	cursor: pointer;
-	/* We do not define outlines here as HTML5 browsers may control that feature based on various user interactions. */
 	-webkit-appearance: listbox;
 	-moz-appearance: listbox;
-    line-height: normal;/* required as pseudo-classes should not inherit line-height */
+    line-height: normal;
 }
 
 body select:visited,
@@ -1626,13 +1256,12 @@ body select:active {
 	background: #f9f9ff;
 	border: 2px solid #999;
 }
+
 body select:focus {
-	background: #fff; /* default back to a white box when focused. */
+	background: #fff;
 	border: 2px solid #999;
 }
 
-/* Added New HTML5 required and validation pseudo-classes. Note: The colors below match the input ones for consistency. */
-/* ----------------------------------------------------- */
 body select:required:visited:valid,
 body select:required:valid {
 	background: #fff;
@@ -1686,27 +1315,21 @@ body select[readonly]:active,
 body select[disabled="disabled"]:active,
 body select[readonly="readonly"]:active {
 	border: 2px solid #bbb;
-	background: #f0f0f0;/* not needed as most browsers gray out these buttons naturally. */
+	background: #f0f0f0;
 	color: #999;
-    /* "not-allowed" creates a red circle with line though it to indicate this form field cannot be interacted with. Also can set this cursor to just "default". This "!important" was required to override Bootstrap's weird cascade rule on this. */
 	cursor: default !important;
 }
 
-
-/* ----------------------------------------------------- */
-
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 body small {
 	display: inline;
-	font-size: small;/* used here as some older agents may not know "smaller" (IE1-6) */
-	font-size: smaller;/* note: you could use a percent here, but the text size steps vary by font */
+	font-size: small;
+	font-size: smaller;
 }
 
 body span {
 	display: inline;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 body strike {
 	display: inline;
 	text-decoration: line-through;
@@ -1714,40 +1337,32 @@ body strike {
 
 body strong {
 	display: inline;
-	font-weight: bold;/* some older agents don't know "bolder" */
-	font-weight: bolder; /* used bolder rather than bold in weird cases where bold text is already used */
+	font-weight: bold;
+	font-weight: bolder;
 }
 
-/* This newer version below is supposed to prevent the element from affecting line-height. */
 body sub {
 	display: inline;
 	font-size: smaller;
 	line-height: inherit;
     padding: 0px 1px;
-	/*vertical-align: sub;
-	bottom: auto;*/
-	vertical-align: baseline; /* this is the default value */
+	vertical-align: baseline;
 	position: relative;
 	top: 0.2em;
 }
 
-/* This newer version below is supposed to prevent the element from affecting line-height. */
 body sup {
 	display: inline;
 	font-size: smaller;
 	line-height: inherit;
     padding: 0px 1px;
-	/*vertical-align: super;
-	bottom: auto;*/
-	vertical-align: baseline; /* this is the default value */
+	vertical-align: baseline;
 	position: relative;
 	top: -0.3em;
 }
 
-/* This provides a default table design with borders and padding. */
 body table {
 	display: table;
-    /* "auto" is the default and uses widest content in any cell to set table column widths and table width. This is slower that "fixed" which relies on the first row of cells and its CSS style column width or content to control all other later row cell content widths. So if you want to use "fixed", be sure to set cell widths on your header cells in the first row. This will lead to faster rendering. The danger is unknown content widths in later rows and cells that could overflow or show content that does not fit. If cell content is always text, in most cases "fixed" tables will perform ok with no overflow. */
     table-layout: auto;
 	margin: 0;
 	padding: 0;
@@ -1766,7 +1381,6 @@ body tbody {
 	border-collapse: collapse;
 }
 
-/* This provides a default table design with borders and padding. */
 body td {
 	display: table-cell;
 	margin: 0;
@@ -1787,33 +1401,23 @@ body textarea:focus,
 body textarea:active {
 	display: inline-block;
 	width: auto;
-	/* Height "auto" will allow the text area to expand vertically in size with a horizontal scrollbar if pre-existing content is added to the box before rendering. */
 	height: auto;
 	min-width: 20em;
-	/* The max-width "100%" value fixes a weird issue where width is too wide by default and extends beyond 100% of the parent in some agents. */
 	max-width: 95%;
-	/* Use "em" to define the height based on the text size set in your website and the text rows in the box, not a static pixel value. */
 	min-height: 10em;
 	padding: .2em;
 	margin: 0;
 	-webkit-appearance: textarea;
 	-moz-appearance: textfield-multiline;
 	cursor: text;
-	/* Overflow "auto" allows the box to start with no scrollbars but add them as content fills the box. */
 	overflow: auto;
-	/* Resize creates a tab in the lower right corner of textarea for most modern browsers and allows users to resize the box manually. Note: Resize isn't supported by most older agents and IE. */
 	resize: both;
-	/* Traditionally, textarea always had a light gray background in older browsers, like a windows dialog input box. I tend to like form controls to look by default like their original Windows designs. Remove this if needed. */
 	background-color: #eee;
-	/* "word-wrap: normal" allows text to drop down to a new line when it reaches the textarea's width. */
 	word-wrap: normal;
-	/* Note: I added this border style below to flatten the design for this control as modern Webkit browsers were not matching the default sunken beveled look in Gecko browsers. Note: Adding a border here does remove the sunken beveled look in Gecko browsers and adds a thick outline that matches other borders on other types of controls. */
 	border: 2px solid #bbb;
 	border-radius: .2em;
-	/* We do not define outlines here as HTML5 browsers may control that feature based on various user interactions. */
-	/* We add font inheritance here, which means 'textarea' uses the same font-face as the other elements, instead of using the default monospace font. Textarea design then matches our input form control styles. */
 	font-family:inherit;
-    line-height: normal;/* required as pseudo-classes should not inherit line-height */
+    line-height: normal;
 }
 
 body textarea:visited,
@@ -1824,9 +1428,10 @@ body textarea:active {
 	border: 2px solid #999;
 }
 body textarea:focus {
-	background: #fff; /* Default back to a white box when focused. */
+	background: #fff;
 	border: 2px solid #999;
 }
+
 body textarea[disabled],
 body textarea[readonly],
 body textarea[disabled="disabled"],
@@ -1848,14 +1453,10 @@ body textarea[readonly]:active,
 body textarea[disabled="disabled"]:active,
 body textarea[readonly="readonly"]:active {
     border: 2px solid #bbb;
-	background: #f0f0f0;/* not needed as most browsers gray out these buttons naturally. */
+	background: #f0f0f0;
 	color: #999;
-    /* "not-allowed" creates a red circle with line though it to indicate this form field cannot be interacted with. Also can set this cursor to just "default". This "!important" was required to override Bootstrap's weird cascade rule on this. */
 	cursor: default !important;
 }
-
-
-
 
 body tfoot {
 	display: table-footer-group;
@@ -1866,7 +1467,6 @@ body tfoot {
 	border-collapse: collapse;
 }
 
-/* This provides a default table design with borders and padding. */
 body th {
 	display: table-cell;
 	margin: 0;
@@ -1900,17 +1500,15 @@ body tr {
 }
 
 body tt {
-	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. */
     font-family: monospace, monospace;
     font-size: 1em;
 }
 
-/* ALERT: The 'u' element was deprecated in later HTML4 recommendations as it had no semantic meaning, but was  re-instated in HTML5, but for the wrong reasons (for misspelled words?). Plus, the "underline" has always confused text with hypertext links. So, I force an alternative line style now so users know the wrapped text is a "spelling error". */
 body u {
 	-webkit-text-decoration: underline dashed red;
-    text-decoration: underline dashed red;/* Older IE browsers only */
+    text-decoration: underline dashed red;
 	-webkit-text-decoration: underline wavy red;
-    text-decoration: underline wavy red;/* Try and use the "spellcheck" wavy error line instead. */
+    text-decoration: underline wavy red;
 }
 
 body ul {
@@ -1932,29 +1530,17 @@ body ul ul ul {
 }
 
 body ul ul ul ul {
-    list-style-type: disc;/* reset back to disc again */
+    list-style-type: disc;
 }
-
-/* Note: We are not adding "ol ul" or "ul ol" bullet type style combinations here for now. */
 
 body var {
 	display: inline;
     font-weight: bold;
 	font-style: italic;
-	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. */
     font-family: monospace, monospace;
     font-size: 1em;
 }
 
-
-
-
-
-
-/* ============================ NEW HTML5 ELEMENTS =============================== */
-/* New HTML5 elements added which older browsers will not style without help. */
-
-/* These new elements should be part the page flow and should need font styling. */
 body menu,
 body menuitem,
 body mark,
@@ -1974,29 +1560,23 @@ body wbr {
 	color: inherit;
 }
 
-/* These elements have no design formatting but can be part of the page flow. */
 body source,
 body track {
 }
 
-/* These elements have no design formatting, are deprecated, or should never be seen. */
 body keygen {
-	/* WARNING! Use "display:none" to permanently remove the item from any readers, search engines, and submitted form data. Doing so means those elements are in the source code but not part of form-posted data, seen by users, or part of the DOM. */
-	/*display: none !important;*/
-	/* This hides these elements without removing them from screen readers, form submissions, or search engines. They are simply removed off the page visually. */
 	position: absolute !important;
 	top: -9999px !important;
 	left: -9999px !important;
 	visibility: hidden;
 }
 
-/* New HTML5 inline graphic elements */
 body bdi,
 body data {
 	display: inline;
 	margin: 0;
 	padding: 0;
-	vertical-align: baseline; /* fixes vertical alignment in progress */
+	vertical-align: baseline;
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
@@ -2014,12 +1594,11 @@ body progress,
 body svg,
 body video {
 	display: inline-block;
-	/* optional: do not allow these visuals to break out of or extend available viewport or parent element widths */
 	max-width: 100%;
 	padding: 0;
 	margin: 0;
 	border: none;
-	outline: none;/* needed for older browsers that used to display outlines */
+	outline: none;
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
@@ -2029,7 +1608,6 @@ body video {
 	color: inherit;
 }
 
-/* These are new HTML5 block-level elements that function like div's. Note: IE 9-11 still does not know HTML5 element "main", but "display:block" below fixes its issues. */
 body article,
 body aside,
 body details,
@@ -2046,13 +1624,9 @@ body section {
 	display: block;
 	width: auto;
 	height: auto;
-	/* optional: do not allow these visuals to break out of or extend available viewport or parent element widths */
 	max-width: 100%;
 	padding: 0;
 	margin: 0;
-	/*This would not affect the rest of the background properties for some special multimedia elements that might have unique background features.*/
-	/*background-color: transparent;*/
-	/*This resets all background properties for these special multimedia selectors! If this causes issues with say video, then remove it.*/
 	background: none;
 	font-family: inherit;
 	font-size: inherit;
@@ -2063,26 +1637,19 @@ body section {
 	line-height: inherit;
 }
 
-
-/* =================== HTML5 : SPECIAL ELEMENT STYLES ================== */
-
-/* These items have special formatting that cannot be duplicated in old browsers without damaging HTML5 supporting ones. */
-
-/* Datalist has very poor browser support so styles are left off. */
 body datalist {
 }
 
-/* Dialog has very poor browser support so styles are left off. */
 body dialog {
 }
 
-/* Figure needs to perform like "inline-block" elements, not a block element. */
 body figure {
 	display: inline-block;
     text-align: center;
 	margin: 0;
 	padding: 0;
 }
+
 body figcaption {
 	display: block;
     clear: both;
@@ -2091,14 +1658,12 @@ body figcaption {
 	padding: .1em .5em .25em .5em;
 }
 
-/* These are the defaults for most modern HTML5 browsers but I add them to make sure all use the same design. */
 body mark {
     display: inline;
     background-color: yellow;
     color: black;
 }
 
-/* New in HTML5, "menu" and "menuitem" are currently only supported in Gecko browsers. Testing today in Firefox indicates no support for "menu", however. I have given the menu some styles to indicate its presence in the web page, though few browsers support it. */
 body menu {
 	display: inline-block;
 	margin: 0;
@@ -2114,16 +1679,15 @@ body menuitem {
 	background: none;
 }
 
-/* ALERT: These CSS properties should try and match whatever 'input' and 'input["text"]' combined used as as far as styles. But because some differences remain in browsers as to how to style these, some customizations were applied. */
 body output,
 body output:visited,
 body output:hover,
 body output:focus,
 body output:active {
-    display: block;/* This is the only way to keep the output box dimensions from shifting or collapsing when text appears inside. */
-	width: 12em;/* This is the only way to keep the output box dimensions from shifting or collapsing when text appears inside. */
-	max-width:12em;/* This is the only way to keep the output box dimensions from shifting or collapsing when text appears inside. */
-    height: 1.8em;/* This is the only way to keep the output box dimensions from shifting or collapsing when text appears inside. */
+    display: block;
+	width: 12em;
+	max-width:12em;
+    height: 1.8em;
 	cursor: pointer;
 	width: auto;
 	padding: .2em .2em;
@@ -2134,64 +1698,33 @@ body output:active {
 	line-height: normal;
 }
 
-/* WARNING: Even though most older browsers served by this sheet will never know this new HTML5 element, changing its "display" or its parent 'detail' element's "list-item" property destroys the ability of newer HTML5 browsers to render this interactive element correctly. So, avoid most structural style changes! (The exception is IE8-11 styles below. These older browsers will never render the interactive toggle features for 'details' and 'summary' correctly, so need fixes.)*/
-/* This element is interactive in HTML5 with a dropdown so add a pointer */
 body details {
     cursor: default;
 }
+
 body summary {
-	/*display:inline; ONLY add this if you want to place block-level images, headings, etc inside summary. */
     padding: .2em 1em;
     cursor: pointer;
 }
 
-/* Time is a new HTML5 element that is helpful when it also has some visual enhancement combined with a tooltip. */
 body time {
 	-webkit-text-decoration: underline dashed #000000;
     text-decoration: underline dotted #000 ;
 }
 
-/* =================== END : APPLY BASE ELEMENT STYLES =================== */
-
-
-
-
-
-/* ======================= ADD SPECIAL STYLES HERE ====================== */
-
-/* Image links can require special formatting. In some older browsers, image links created nasty borders or outlines around images you could not remove. The hacks below help. */
 body a img {
 	display: inline-block;
-    /* Below, we always reset padding and  margin on block level elements to 0 unless needing a value. */
 	padding: 0;
 	margin: 0;
-	border: none; /* old browsers add borders around images with links so remove those */
+	border: none;
 	cursor: pointer;
-	/* I left out background resets here in case we have set gray backgrounds on the image. */
 }
 
-/* Special spacing must be added when using 'div' to space form field controls. */
 body form div {
     margin: .2em 0;
 }
 
-/* ==================================================================== */
-
-
-
-
-
-
-
-
-
-/* ======================= SPECIAL IE 8-11 FIXES ====================== */
-
-/* IE8 ONLY HACK: For IE8's default page view we must not allow width on block level elements to go beyond 100%. Some frameworks now set width 100% but then add left and right padding. Starting in IE9, it supports CSS3 and the new HTML5 elements. Because IE8 does not know the new "box-sizing: border-box" setting, IE8 will add any extra padding or borders to "width:100%" elements overflowing the viewports total width, creating scrollbars. You can add "width:auto" fix below to correct that. */
-
-/* IE 8 Only */
 @media \0screen {
-
 	html article,
 	html aside,
 	html div,
@@ -2209,16 +1742,14 @@ body form div {
 	html hgroup,
 	html summary,
 	html video {
-		/* Do not use "width:auto" here for IE8 unless you want to force IE8 to use the new modern box-model used in CSS3 browsers IE9-11. */
-		/*width: auto;*/
 		max-width: 100%;
 		max-height: none;
 	}
 
-	/* This removes the bullet icon from the details HTML5 element which isn't supported in this version of IE. */
 	body details {
 		list-style: none;
 	}
+
 	body summary {
 		cursor: default;
 	}
@@ -2260,18 +1791,7 @@ body form div {
 
 }
 
-/*------------------------------------------------------------*/
-
-/* IE9 Only Hack - Note: This is the first browser to support CSS3 and HTML5 elements, though some support is limited or spotty. */
-
-/* IE 9 Only */
 @media all and (min-width:0\0) and (min-resolution:.001dpcm) {
-
-	/*body .example {
-		background: blue;
-	}*/
-
-	/* This removes the bullet icon from the details HTML5 element which isn't supported in this version of IE. */
 	body details {
 		list-style: none;
 	}
@@ -2281,29 +1801,23 @@ body form div {
 	}
 }
 
-/*------------------------------------------------------------*/
-
-/* IE 10-11 Only Hack -  Note: These browsers fully supports HTML5 and CSS3 with some bugs and issues. */
-
-/* IE 10-11 Only */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-
 	body input,
 	body input:visited,
 	body input:hover,
 	body input:focus,
 	body input:active {
-		outline: none; /*remove the large 2px red outline when form fields are required and do not validate*/
+		outline: none;
 	}
+
 	body select,
 	body select:visited,
 	body select:hover,
 	body select:focus,
 	body select:active {
-		outline: none; /*remove the large 2px red outline when form fields are required and do not validate*/
+		outline: none;
 	}
 
-	/* This removes the bullet icon and pointer from the details HTML5 element which isn't supported in this version of IE. */
 	body details {
 		list-style: none;
 		cursor: default;
@@ -2312,7 +1826,4 @@ body form div {
 	body summary {
 		cursor: default;
 	}
-
 }
-
-/* ==================================================================== */

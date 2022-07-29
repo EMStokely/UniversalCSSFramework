@@ -1,258 +1,48 @@
 
-/* ======================= UNIVERSAL CSS FRAMEWORK ======================
-Title: Universal CSS Framework, version 2.0.0.0
-Author: Mitchell Stokely (updated March, 2021)
-
-Description: This style sheet is part of a complete "progressive" CSS framework designed for cross-browser style sheet support in browsers going back to the birth of the World Wide Web in the 1990's. It provides old browsers the minimum styles needed to display content, while adding newer styles for more modern browsers that can display more modern CSS. I call this the "Universal CSS Framework" because it was designed to universally support as many web browsers as possible, including those that did not support CSS. This system should provide some form of basic layout or design in all browsers, old and new, with a rich cascading style sheet system that degrades gracefully to simpler layouts in the older browsers.
-
-The first "1.0" version of this CSS system was originally constructed in June of 2004, though its initial designs were laid down in 2001. This "2.0" version is a major upgrade I built to accommodate new HTML5 and CSS3 standards. You will see those more modern features in parts of the newer sheets designed for more modern browsers and much better fixes for many older browsers, as well.
-
-Please note that this solution is Javascript-free!
-
-============================ STYLE SHEET NOTES ===========================
-Framework History: The initial CSS structures that would form Version 1 of this "Universal CSS Framework" officially began on June 4th of 2001 by web developer, Mitchell Stokely in Dallas, Texas. I started constructing the framework for this "reset" CSS system from early CSS templates created in that year while building web applications for many types of clients. At that time, Internet Explorer 5 (1999) and Netscape 4 (1997) were the dominant browsers. By 2005, newer agents had come out which followed powerful "Web Standards" as set by the many groups online and by the W3C (2001). Adoption of stricter XHTML would follow. After the release of IE6 and the first Web Standards Mozilla browsers came on the scene, I had discovered I needed a new concept in how I would support old and new browsers. Cross-browser was in its infancy on the web, but that form of style design was always on my mind. Creating a "reset" style sheet to re-align all the HTML elements in all the browsers, as well as building CSS for page layouts that looked great across all of them, would be challenging. Having your web applications look great in a wide variety of browsers, old and new, was the "Holy Grail" of web development back then. But it was not easy. Most of my peers in my neck of the woods could care less about Web Standards, much less perfecting their own CSS and HTML solutions. In Texas, I was very much alone on this journey. I did not have the network of developers most people around the world had. In 2001, most of the standards groups were in the UK, California, or New York. My only friend was the World Wide Web and the many "web logs" online talking about these changes. The business people in my sphere just wanted things to "work" so the money would roll in. It's then I discovered some critical "tricks" that would allow me to achieve my goals. I had discovered the CSS use of "@import" and its various forms of support in different browsers. That tool is what changed how I would control use of CSS and HTML, and its changing support in various browsers going forward. For example, I could now use @import to block a whole range of custom style sheets from older agents, like 'IE for Mac', Windows IE 2-5, old Opera, and Netscape 4. That then formed the backdrop for a more comprehensive, 'cross-browser' CSS system that could allow me to separate these very old 1990's browsers from more modern ones. Version 1 of this style sheet system was soon completed in 2004. It would form a reliable CSS system in all the websites I would ever build over the years. It turned out to be an extremely reliable and powerful tool for controlling CSS issues in multiple troublesome browsers and their many versions. Combined with some unique IE6 flexible negative margin layouts that came later, I was able to design websites that looked good in 99% of all the browsers out there, even in text-only Lynx and others! Honestly, my sites rarely had design or cross-browser issues after that. I've used this simple @import-based, cross-browser CSS system up until now with very little problems.
-
-But in 2016-2021 I realized it needed to be reworked and updated for newer CSS3 technologies and HTML5 web frameworks that had been on the scene for a decade or more. After substantial reworks and refinements in 2020 and now 2021, I feel confident in this new Version 2 of my "Universal CSS Framework". It does need a very thorough testing. From my initial testing it appears to still pass minimal tests needed to give it 99.99% support in fixing issues in a wide range of user-agents, old and new, including IE 5-11 (the troublesome browsers). As I fine tune it, you may see the version number update. Getting the latest version, however, should not add much to your websites. At this stage it will include only minor changes and updates. I tried to pack as many testing updates and fine-tuning into the "2.0.0.0" version as possible. I anticipate Version 2 will last another decade or two like the last one and continue to support browsers going back in time (over 20 years ago) while fully supporting new browsers as they arrive on the scene. Thats quite a powerful style sheet system!
-
-I am NOT a fan of JavaScript, Polyfills, Modernizr, pre-processors like SASS, or any other "living standard" HTML5 patch in web development today!
-
-I AM a fan of my Universal CSS Framework which supports the OLDER more reliable and simpler concept of "graceful degradation" of your web designs BACK to very simple, white, linear. block-level designs for older user agents, which then allows you complete freedom to use "progressive enhancements" like floating layouts, flex boxes, and canvases in newer browsers to release cutting-edge CSS3+ design! Think about that......NO MORE MULTI-MEGABYTE JAVASCRIPT API's shoved down a browser's throat just to display a tiny snippet of news or an image of your family in a web page! This is why I am hoping this very powerful, @import system will allow you to separate your websites into simple designs for a wide range of older browsers and cutting-edge layouts for the newer ones. It is a dream kids today tried to fix via scripts but failed miserably to solve, while older solutions could have been adopted that solved all their problems. A plain CSS framework is all you now need with my solution.
-
-The ONE difference with this reworked CSS framework version shown below is I've perfected the use of @import now a bit more since 2004 when I started playing with it as a cross-browser solution. In this version, I can now safely strip out IE 1-7 Windows and IE 1-5 for Mac browsers from seeing all my newer CSS3 and HTML5 modern sheets. This is HUGE! This means I can now kiss goodbye (really apply simpler CSS designs) a range of 1990's and 2000's browsers! This means now in version 2.0 we are left with semi-buggy IE 8, which has no HTML5 support, and kinda-buggy IE 9-11 browsers which do support most of newest HTML5 and CSS3 standards. I can now use these newer @import changes to flex my cross-browser CSS muscles a bit more and exclude a wider array of older user agents from modern CSS. That then means I can concentrate on fully implementing the newest, most cutting-edge HTML5 and CSS3 features in my other style sheets in more modern browsers than ever before! This new CSS system, for example, frees you up from ever having to build custom HTML and CSS layouts for IE6 and its broken box model, ever again!!
-
-I hope you too will see the power in using this simple drag and drop CSS framework as a great fast solution to numerous problems you might struggle with for months in a web project. BTW...I call this a "framework" rather than a "system" or "reset sheet", as it really is an all-in-one, script-free, CSS solution using traditional technology with a cutting-edge end result. That is a framework type model which you can fully adopt, reject, or customize as you need. But it needs to be used and approached as a complete cross-browser comprehensive solution, not one you can cherry-pick apart or attach to other solutions. The exception is, you could use it as your "reset" style sheet, then apply your others. But then older browsers would still see your own sheets and fail. If it was just one of dozens of style sheets you could paste and combine with other 3rd party products, I would say its a system or an API. But to me its really an end-all solution to every CSS issue you might have as far as CSS architecture and design. No other CSS system separates older user agents from newer quite like this one. And its free of Polyfills and Modernizr and many other scripted dependencies. It simply uses every browsers's native support for CSS and HTML without JavaScript circus tricks. It has no compiler, company, ideology, or JavaScript API to manage it. That is its beauty of it as a "framework". It just is so simple to implement and use. I hope you will agree.
-
-======================== MORE STYLE SHEET NOTES ==========================
-MOST CSS SYSTEMS FAIL: Keep in mind MOST "reset" style systems on the World Wide Web today (2021) are NOT very mature much less truly comprehensive. Most ignore Netscape 4, IE 1-4, older Mac browsers, IE6, IE6 in "quirksmode", XHTML issues, and many other implementations by old browsers now dying or dead. But are they ever truly dead? I've seen some of these old browsers on corporate networks, which is quite shocking! I found one of these old browsers on a projector PC used in a major energy corporation's conference room a few years ago where I gave a large presentation of a web application I built to a large group of engineers. If my style sheet had not been implemented the broken box model CSS fixes in that agent it would have jumbled my website and gotten lots of laughs from the audience. Keep in mind, most of the fancy and popular reset style sheet systems built today really do not address the full range of CSS elements/types in their style sheets. Even the most hyped style sheets I have seen address a tiny subset of the issues. As a result, they do not even attempt to address most of the major issues in older browsers. Some stumble around with property "fallbacks", CSS box model hacks, etc. I have seen some used by thousands of developers that even use "rem", which even IE11 and Edge still struggle to fully support correctly. Other developers use very complex JavaScripted solutions or stacks of "hacks" to try and fix tiny changes using Polyfills or gigantic ECMAScript libraries and API's. But those aren't true reset sheets. My goal as a developer has always been to address EVERYTHING wrong with the World Wide Web with my system (not parts of it), while still focusing on simple strategies and solutions that are flexible and easy to understand. I'm disappointed when I see half-baked or poorly architected CSS solutions by younger developers around the world that fail to truly address the wide range of broken issues found in older browsers. To me the goal has been to let primitive browsers use primitive CSS, not fancy hacks to try and duplicate complex grids and fonts hacked together using client-size scripting. I hope you will agree simple is better, and see my gracefully degrading CSS solution is more sweeping and comprehensive in its approach, yet more realistic in how it chose to solve the larger CSS cross-browser problem that is not going away any time soon. 
-
-MY JAVASCRIPT-FREE SOLUTION TO CSS CROSS-BROWSER SUPPORT: You may have heard the term years ago, "JAVASCRIPT IS EVIL!" Yes, you heard me. ECMAScripted style sheets solutions are the WORST solution to any CSS problem!! It not only forces very old browsers to struggle with a CSS fix to make a complex HTML layout look good in its bad old parser, but it shoves down megabytes of Javascript down its throat (like "Modernizr") that will likely crash and burn in its older parsing engine! Using Javascript to solve cross-browser fixes in CSS displays means you now have to download an ECMAScript detector to see if the Javascript version itself will even work. That is a compounded mess! Why not let a simple CSS solution do it all for you these old browsers will recognize and parse naturally? That's what the UNIVERSAL CSS SYSTEM does. And its why I'm 100% against Modernizr and polyfills and shims and shams and junk designed to try and patch things in old agents via scripting. Send those old agents a clean white block of CSS in text files, create flat divs, and let those users enjoy reading your pages in a clean simplified format without crashing from excessive Javascript or single-threaded execution routines in memory that fudge the DOM and attempt convoluted layouts!
-
-SMALL CSS FILE SIZE/FEWER STYLE SHEETS TO DOWNLOAD: You will notice there are 12 style sheets max in this application, most of which are very small in terms of file size.....all but the "Styles.css" file which is where you will place ALL your custom website styles. That is by design! By using a small lite library of CSS fixes and simplifying the custom styles to one sheet, it means you have far less hits to the server or wait times when downloading styles (as opposed to a huge library of CSS or Javascript CSS broken out by types, modules, components, themes, etc.). You can still precompile or minimize this one "Styles.css" file if you like using SASS. This design also means linked sheets are cached rather than crammed into embedded CSS by Javascript routines. Combine this simpler CSS cross-browser system with NO JAVASCRIPT MANIPULATION or giant ECMAScript dependencies and you have a very fast, easy to use CSS cross-browser solution you can cut and past into any project quickly and get up and running fast with a fully cross-browser solutions without complicated testing and hacking!
-
-Lastly, this is an ode to Eric Meyer for his initial take on the CSS "reset" stylesheet in 2001. I took my original idea from him and the work of others back then developing reset CSS sheets. I still believe it's a fundamentally good idea to use these. Why not start all browsers on the same style footing? How deep you go with reseting every browser's default UA style sheet element or type system is up to you. I obviously have decided to go deeper with it, as you will see below. But that's because I see the power of controlling every element in CSS from the start and gaining full control of the final design of web pages. When you remove the mystery of how and why every single HTML5 element does what it does, you suddenly lift the veil of mystery in designing good HTML, and the cross-browser issues and CSS snowflakes magically disappear from all the web applications you will ever construct in your lifetime! That is a pretty convincing reason why you should build and implement your own reset CSS style sheets like this one in every website you ever build, don't you think?
-
-- Mitchell Stokely, Jan. 2021
-
-============================== HOW IT WORKS ==============================
-This style sheet "resets" and assigns all elements to a primitive CSS list of styles supported by a common base of older browsers. It hides newer, more modern styles from them using imported modern style sheets found in import files. This strategy allows much older browsers to read only this sheet and ignore the imported ones. It thus delivers a simpler, block-level layout, while allowing newer browsers to access your full range of newer CSS and more complex HTML layouts. Using this strategy, this CSS System allows you to support 99.99% of browsers, old and new, going back to the 1990's while moving forward with newer cutting edge CSS3 styles (and later) in your modern website with no worries for cross-browser compatibility issues.
-
-This system also controls the complete design and layout of a modern web application, including styles for alternate devices and page formats like mobile, print, etc. As such it is a complete cross-browser CSS style reset solution, and was designed to cascade over most browser's UA default style sheet and affect the look-and-feel in older browsers going back to the birth of the World Wide Web (including Netscape 4 and Internet Explorer 2, for example) while allowing you to move forward with modern CSS designs in current browsers. It was designed to reduce the complexity of managing older browser experiences that break using modern layouts that rely on newer CSS technologies. It allows you to move forward with newer styles in more modern user-agents WITHOUT having to hack most older browsers. There may be exceptions (IE6, for example) where you might want to apply some small fixes, but they should be minimal.
-
-Because many young, inexperienced web developers today struggle with or ignore cross-browser issues today (notably Internet Explorer) that still have wide use in large corporate environments, this CSS system was designed to help them fix most of the major issues and give those older browsers some ability to recover their basic html block-level structure enough to display their website's basic page content in a format that is readable and usable. Because browser technologies have rapidly changed since 2000 (past 20 years), some of these older browser solutions could be safely abandoned and these style hacks and fixes deprecated. But for the sake of attaining 99.99% effective content display in all user agents created over the years, I've elected to keep what I created in this CSS system and add, improve, and modify it over time to match newer goals without abandoning older ones.
-
-Using this sheet and the @import files that come with it, you should NOT have to test or modify any styles for older browsers, but remain focused on testing in the newest ones only with your newest CSS styles. If you do target an older agent, for example IE6, and see minor issues or choose to try and recreate complex CSS layouts in older agents, this CSS framework will allow you to do that quite reliably without messing with older or newer browsers. Each of the imported and linked CSS sheets in this system have support for targeting specific browsers, as needed without disrupting older or newer versions.
-
-=============== NOTES ON THIS CROSS-BROWSER STYLE SHEET SYSTEM ===============
-The following notes are added to help you understand how this sheet and system works and why you might want to use it:
-
-1. CSS ARCHITECTURE: This CSS style system includes a number of linked and imported style sheet pages which combined together solve all of your basic website design and style sheet cross-browser needs going back to very old 1990's browsers. This system's design was based on application of a set of core "reset" CSS designs for older browsers, while allowing newer styles over time to be added over older styles to enhance your pages in more modern browsers that support more recent CSS additions. For that reason, the architecture involves the loading and layering of this base, universal style sheet supported by all browsers ("OldBrowsers.css") first that "resets" all the core HTML elements of all browsers, old and new, to a common core element design they ALL support. Imported sheets are added next that gradually add back in newer CSS changes that are ignored by many older agents (2001 or older). A Bootstrap optional import with cleanup sheet set is also included since so many people now are dependent on that technology. The imported sheets pages add more modern CSS fixes like use of relative fonts (em, 100%, medium), hacks to fix broken font or block-level issues, and your custom style sheet ("Styles.css") for your websites current styles and layouts. Lastly, I added special sheets for Mobile, Print, and a special sheet that only old Netscape will use in order to cascade over this base sheet so its layouts look readable. When you link to these import style sheets they will automatically load all the others via their import system which takes care of all cross-browser bugs for you by applying simple "reset" sheets with styles known by most older browsers, but which hide newer sheets that rely on @import versions older browsers do not understand. Everything you need to run this new style system should be in the "default" style folder which contains all these style fixes and which as a package acts as a "skin" or theme you can easily customize and duplicate as needed.
-
-2. BOOTSTRAP SUPPORT : This system should work with Bootstrap or other third party style frameworks with minimal conflicts as long as you use this CSS import system to load those systems in (which would hide Bootstrap from very old browsers which would not understand Bootstrap's advanced layouts and flex systems). As you know, in a cascading system, there will always be some style conflicts and design shifts. So I've tried to carefully update my style system so it does minimal changes to Bootstrap's classes, while still allowing you full control to reset their "reboot" type styles back to browser defaults. This allows you to safely overlay your own CSS in harmony with these 3rd party products. Unfortunately, the guys at Bootstrap did not fully understand nor support CSS in older browsers or Internet Explorer, and so stumbled around with a system that only partially resets the CSS in most newer browsers. Because they now have adopted "rem" and newer CSS in their "reboot" CSS, their reset style systems will not work very well in many older browsers (and most versions of Internet Explorer) as those "rem" units would be ignored if not recognized. So to cope with these issues, Ive written an importer and cleaner sheet to force all their "reboot" element style selectors back to browser UA default styling before applying this sheet's "reset" element styles. This style sheet below has been modified to cascade over the cleaner and Bootstrap's "reboot" styles successfully, and the browsers UA style sheet yet again. This then resets all core HTML elements back to a more favorable and universal format that supports older browsers without interfering with Bootstrap's custom class designs and layouts layered over it. For example, this system overrides Bootstrap's "rem" html font settings and puts browsers back to their original font family and size settings (em) as best as possible so you can see how your site should look natively in the browser free of Bootstrap element styles.
-
-3. HOW DOES THIS STYLE SHEET WORK WITH ALL THE OTHER SHEETS? The "OldBrowsers.css" file is simply a "reset" style sheet, designed to shift the browsers UA default styling to a common element design and layout first. This "reset" style sheet is what you will link to in your web project so its seen by every web browser, old and new. It is loaded first by the browser via a simple style link (see instructions below). It was designed to load ALL CSS CORE BASE STYLES for your site into it, then uses Importer sheets in later sheets to load NEWER "RESET" CSS STYLES on top with no hassles and thus bring into the browser a rich set of imported sheets and fixes that address a wide range of old and new browser design issues and layouts prior to loading in your own custom styles for modern browsers. This base sheet first "resets" all styles in the browsers and applies default styling to all core HTML elements in your website, so that you have complete control over styling of all your page elements added on top, no matter where they are used in the web application or what browser/user-agent displays them. It cascades over both the browser's UA style sheet and any third party element re-styling (like Bootstrap's "reboot" styles). In general, the style system uses the CSS in this "reset" old browser sheet to change the page's font-families and basic text weights and colors on types/elements, as well as "reset" all browser HTML elements to their natural defaults if any outside style system has altered them. You will see pixels used in this sheet's property units, which are supported by nearly all old and new browsers. Many of the properties using them are not inheritable and static, yet supported by many old browsers. Often designers get confused by these strange "resets" to element styles done on their markup prior to layering their own CSS styles on top. Using this base sheet as a better "reset" system that works in old browsers, it first aligns all your browser's displays to a basic HTML core set of layout structures and designs shared by every browser out there, so what you get from each browser type and version looks the same prior to you adding custom CSS classes to your web page. Keep in mind the @Import sheets applied later will cascade over this sheet's styles with more modern settings that are ignored by older browsers that only read this style sheet.
-
-4. HOW DO FONTS WORK? The primitive font sizes assigned below apply to older browsers only and will be cascaded over in a later "reset" sheet ("NewBrowsers.css") with more modern "relative" text styles. Many older agents only support fonts in pixel units and on each element (do not fully support inheritance). This base page is thus a reset back to a workable base font-size for these browsers, as some browsers like IE 5.5 start off using "smaller" font sizes that must be increased. Initially (pre-2007), older browsers commonly used "13px" as their default. This was due to the "1 CSS pixel = 1 Device pixel" computers and screens back then that all accepted the 96/72 ppi system. Because of the advent of smart phones, HD, and retina displays after 2007, CSS pixels were translated into "device pixels" in ratios of 2 to 1 or 3 to 1, making such fonts appear slightly smaller or larger on very high resolution screens. The developer and newer browser community after 2010 then appeared to adopt "16px" as the default medium font for many of the most popular browsers to compensate for the "device pixel" invention.
-Initially in version 1 of this style system, after exhaustive testing, I decided to use 13px as a UNIVERSAL DEFAULT FONT size, as it mapped to a "1em" font in some systems, where "16px" mapped to "1.2em" when set as the default font-size in the "body" element. But I changed the default to "16px" below, instead, for this new sheet. Keep in mind that this new pixel default size may appear very large for an older browser on a low resolution monitor. This pixel font setting ONLY affects very old browsers, however. The relative font sheet imported in later ("NewBrowsers.css") will apply relative font units (em, %, medium) for newer agents over that pixel value, and cascade over them, resetting values with "em" or "medium". This allows browsers that do not adopt the "16px" default (which is a number of minor browsers out there today) to choose what that default size might be, or adopt the user's chosen default size they set themselves in their browser. This means the newer "reset" full supports user font settings and relative font layout. It allows the modern browser user to set their own fonts size in your website and your CSS-driven website to adopt that value in modern browsers, which remain for the older browsers unchanged as pixels. The fonts selected for font-family in this sheet were picked based on widely available sans-serif fonts found in browsers prior to 2007. In the later imported sheets I have limited the font-family to just "sans-serif" which would allow each browser to choose its own default sans-serif font based on the device and browser. If you want to let the user's browser control font-family completely you would need to set the html/body "font-family" property in these sheets to "inherit" and remove "sans-serif". It would then inherit the user's default font or one they specifically set. Often that is "Times Roman" which is quite unattractive. That is why I used "sans-serif" in the newer reset sheet. Nearly all website authors avoid this today, so I have too and kept "sans-serif" as the preferred generic font to use. Keep in mind, in over 90% of modern browsers today that the "sans-serif" value would be interpreted as "Arial" in most modern browsers, including many smart phone browsers. So add more fonts to the font-family list as needed, or load in ones you like from your server. Again, the font-families and pixel-based font-size values applied here in this sheet work very well in old agents but affect old and new browsers alike initially. As such, older browsers will retain all the older styles and more primitive fonts. This would NOT affect your custom layouts and classes added last with custom fonts you apply in later sheets like "Styles.css". Note that Internet Explorer long did not allow a browser user to change the font-size when authors used pixels for font-size. So, even though that is used here in this older browser sheet, I will not be using pixel units for font-size going forward in later sheets for newer browsers.
-
-5. CROSS-BROWSER LAYOUT COMPATIBILITY IS BUILT IN : This style sheet system applies styles that allow the site to work in a wide range of browsers, even using HTML5, approaching 99.99% saturation based on testing I did some years ago. In general, you should NOT have to ever change any of these style sheets except the classes and styles you add to your custom style sheet, as found in "Styles.css" (as well as companion sheets for print, mobile, etc.). All newer browsers will see the full style design and layouts using imported sheets in those sheets, and so layer over newer CSS technologies without affecting simpler content displays for older browsers found in this style sheet. This cross-browser system relies on the fact the HTML structures in your page must be solid and simple, using older HTML4 element styles (like "div") whenever possible, using less floats, and using simple HTML structures and layouts. Problematic browsers, like Internet Explorer 5 for Macintosh, Opera 6 and older, and Netscape 4 series will not understand the modern, relative font sizing, and custom float-style sheet layouts you design. These will not have to be recreated or interpreted, however, using this "progressive" CSS system. The content will appear to them as stacked, plain, linear white text blocks on a white page for those browsers with minimal design and CSS support. This allows content to be widely accessible for older agents without compromising rich visual content displays and layouts shown in newer, more modern browsers. Many problematic browsers like Internet Explorer version 5-9 will have special CSS "hacks" in later imported sheets to help you deal with more complex box-model and font sizing issues, should you need them. Note that select CSS3 or other styles that are not widely accepted in modern browsers or that are deprecated will not be found in this system. So look for those commented fixes in later layout sheets imported in. Special design considerations, like how IE6 see floated div's or Flexbox will be represented in "Styles.css" as examples I have created to help you sold those issues. Because IE 2-4, for example, will never see those styles, you can rest comfortably that those much older browsers interpretation of Flexbox is not needed now. Note that older Mozilla and Netscape 6 (pre-2008) could be triggered into "Netscape 4" or "compatibility mode" by removing all DOCTYPES at the top of a typical HTML page, which reverts to the buggy Netscape 4 original code base. Internet Explorer 6 could be triggered back to IE 5.5 by removing a doctype or placing code before it.
-
-6. WHERE DO I PUT MY CUSTOM STYLES? I've created the "Styles.css" sheet for you to use as a place to put ALL your custom styles and actual style classes that design your pages. The print and mobile sheets are companions to that sheet. The "styles" sheet is called simply, "Styles.css", and must be imported in like the others. You'll see that included in the "NewBrowsersImporter.css" style sheet. Everything you style (minus "Print.css") would go in there. Because it's imported it would be excluded from many old browsers in this system, which is what you want. But newer browsers will load and support it via @import. You are free to add newer styles in that sheet and even compile or minimize it. When adding in your newest cutting-edge CSS3 styles, please keep in mind the limited support by more modern browsers like IE11 for many new properties and selectors. Many may not work! For that reason Ive tried to add some CSS "hack" examples in all the pages for you to apply quick fixes, as needed. Many of the larger structural changes for these "middle version" browsers should have been fixed already in the older browser sheets. You may also use SASS or compile this style sheet as long as you still import in the final minimized version inside "NewBrowsersImporter.css".
-
-7. DOES THE ORDER OF LINKED AND EMBEDDED STYLE SHEETS MATTER? YES!! Why? Newer browsers now honor specific style sheet "source order" regardless of linked vs embedded, but in older ones they honored the standard! In the older browsers most ignored the order of linked and embedded sheets and tried to follow the standard, where it did not matter if linked sheets came before embedded <style> element styles. The embedded ones ALWAYS were applied last after downloading all style sheets. In older browsers pre-2010 the order of linked to embedded <style> sheets didn't matter as embedded were always ordered last. Newer browsers today using HTML5 decided to ignore W3C and Web Standards, so now order does matter! So, I always place linked before embedded to avoid issues where two identical selectors need to follow stricter cascade order. Second, older browsers like IE3 removed all linked sheets but the last one, so I've re-ordered the style sheets below so "OldBrowsers" is last and the "NewBrowsers" precedes it. "NewBrowsers" has more selective styles and can come before "OldBrowsers" which ha same selectors without bad cascade effects because of that. So, you can safely change the order because none of my style sheets rely on cascade order. This means, in  most modern browsers, if you place any embedded <style> elements BEFORE these linked sheets, the linked sheets can and will cascade over your embedded styles. It also means linked styles with styles having the same specificity that come AFTER other sheets will win in the cascade as the last styles have higher order. This is counter-intuitive, so I recommend you ALWAYS PUT LINKED STYLES IN THE CORRECT ORDER AND BEFORE EMBEDDED STYLES TO PREVENT PROBLEMS IN OLD AND NEW BROWSERS!
-
-8. WHY DO YOU USE ONLY PIXELS OR "EM" FOR FONTS AND DIMENSIONS IN THIS SHEET? Some much older browsers do not understand certain units like "rem" for fonts. Nor do they understand more exotic units like "ex", "vw", etc. Browsers like Netscape 4 series knew pixels but not "em". IE 1-3 did not understand either "px" or "em" units until version 4. The support for these two older types is the same in history. For that reason I try and avoid "px" and use "em" which is a favorite older unit I use for global font and layout dimensions in more advanced style sheets. Because some properties, like font-size, benefit in some older browsers using pixels, you will see me use those below in this sheet to support them. In the newer style sheets I fully abandon pixels and use "em" instead. Only old Netscape 1.5-4 really benefits from using pixels "px" or some other unit like "pt" for CSS units historically. The same applies in a few cases fir IE 3 with pixels "px" for margin or padding units. After IE3 and Netscape, pixels offer no advantages over "em" as those bugs were fixed. So for those reason alone I use them in this sheet. All newer browsers fully support a much wider array of units including "em". After IE 9, support for "rem" is available. For these reasons, all my newer styles use "em" as the primary fallback style unit (not pixels), then add a second copy of a property with "rem" units, which is supported in IE 9-11 and all modern browsers today (HTML5 supporting browsers).
-
-9. MISC OLD BROWSER NOTES: 
-- Remember, this style sheet is the ONLY sheet older browsers will see based on the @import sheet system I am using. So make sure you only style element selectors below and do not add any custom style here, unless absolutely necessary. This sheet only applies element styles and makes sure your HTML is clean and HTML elements are styled as clean supported HTML styles all old browser can use. You will see at the end of the sheet I hide print headers and a few custom things I like to use in all my web pages. The goal is to force older browsers to only style your pages in a white page with blocks of vertically stacked content. That is all this sheet does. It doesn't radically change the default UA style sheet that already comes with browsers. It just shifts the design a little bit so its consistent between all browsers.
-- Some older browsers going back to 1996 will read this linked sheet ok. So do not add CSS "hacks" or fixes in it, unless needed for a specific older browser you are targeting. 
-- Some older browsers going back to 1996 have trouble with "@media" or "@import". They will BREAK if you add "@" rules, like @media or @import. So do not add any of those features here. Example: Using @media sheet {...}, IE3 will only ignore the first selector after "{" and read the rest.
-- If you need custom styles for a specific browser I recommend you add a separate sheet, like my "NetscapeOnly.css" sheet, which ONLY works in Netscape 4, or my "BoostrapCleaner.css" which strips out Bootstrap's "reboot" styling of HTML elements.
-- Margin Bugs: Historically, browsers like IE 3-5 and Netscape 4 had bugs with right margins, margins on images, or margins on inline elements. Some of these continued until IE6. Floats and margins collapsing in IE6 was one of the last bugs I remember. IE3 messed up margins all dimensions and inline margins Netscape 4 failed on. Since then, most of that has been resolved. Unless you are designing floating layouts for those browsers, I would not worry about those issues in those older browsers. I do use pixel-based margins below to give these agents the best chance to paint them correctly.
-- CSS SUPPORT IN BROWSERS: The first CSS browsers were Internet Explorer 3.0 in 1996 and Netscape 4.0 in 1997. My style system supports older browsers previous to those by using hidden ("display:none") HTML blocks that only appear for those browser that do not support CSS with a simple box with a message that tells the user to upgrade to a selection of modern browsers. The box will remain at the top of their browser as an alert. This box is optional and is part of my web page template that comes with this universal style sheet system. Note: After 2000, the dominant non-CSS browser was Netscape 3, which would be 80% or more of the non-CSS browsers affected. Surely this browser is completely dead, but designing some solution for this group might add another .001% of browser support to this solution. Thus, my solution noted above was added to my HTML template supported by this style sheet. Note: Many of the CSS added below was carefully designed to address some of the lack of style sheet support in IE3 and Netscape 4 with their early support of CSS. Netscape 4 was especially buggy, for example, non-support of "html" styling, CSS refresh issues on resizing, etc. I built a special "NetscapeOnly" style sheet to address these CSS issues, btw. But this "OldBrowsers" sheet tries, as well. The "restrained" use of some types of properties, declarations, units, or features was measured based on how those might affect these early CSS-supporting agents, too. So, before you heavily modify this Old Browser style sheet keep in mind its impact on the earliest CSS-supporting browsers, like IE3 and Netscape 4 which were the frontier browsers implementing the first CSS rules. You might laugh as their existence, but imagine being a viewer of the Web in 1996 and using these powerful new applications to see colored text and backgrounds on websites for the first time! I respect that fact so I honor them by attempting to style for them as best I can.
-- "!important" - Not supported till IE8 so avoid in this style sheet. Older browsers IE5-7 will ignore any property that uses it!
-
-10. ORDER OF STYLES: Most CSS developers have forgotten how to organize styles in sheets so below is an education for the youth on how to do that so its easy for people to find and change their CSS. Do not rely on SASS or Bootstrap as most of the web will never use those systems despite some periods of wider adoption recently:
-
-- ALWAYS order styles into element areas or sheets first ("resets"), ID's, then classes
-- ALWAYS order elements styles alphabetically first
-- ALWAYS order all others by top element order layouts first (ID's), then global fonts, variables, then general classes
-- ALWAYS add PRINT and MOBILE sheets (i.e. media queries) into their OWN sheets, and organize them the same as above. Do NOT mix them with regular styles nor use @print or @import with print styles, but always use @media query types for mobile and different device styling. (Remember these two systems will also inherit and use the "OldBrowsers" and "NewBrowsers" reset element style sheets in my system, same as desktop browsers)
-- OPTIONALLY, place all Bootstrap or SASS pre-processed styles in a SEPARATE style sheet. This way you can process and minimize those sheets separate from my larger CSS system.
-
-=================== STYLE SHEET INSTRUCTIONS =================================
-1. As of this writing (2021), to add this style system to your web application, you simply add the "css" folder of files, adding the following linked sheets listed below to your web page, then change the paths based on where you added the "default" CSS folder in your project. Keep in mind, the Bootstrap importer below is only needed if you use the newest Bootstrap and want to cleanup its poorly built "reboot" element style sheet. You will need an actual path to your Bootstrap file location inserted into its @Import line inside my "BootstrapImporter.css". Add the links below to the <head> of your HTML pages. Change the paths below as needed:
-
-        <link media="print" rel="stylesheet" type="text/css" href="/css/default/styles/Print.css" />
-        <link media="screen" rel="stylesheet" type="text/css" href="/css/default/styles/NewBrowsersImporter.css" />
-        <link media="screen" rel="stylesheet" type="text/css" href="/css/default/styles/BootstrapImporter.css" />
-        <link media="screen" rel="stylesheet" type="text/css" href="/css/default/styles/OldBrowsers.css" />
-
-Note: The order of sheets above is not required but IDEAL if you want to support older browsers as many ignored multiple style links but only supported the last one listed (like IE3, for example). The "NewBrowsers" style sheet has increased selectivity in its style rules so it is completely independent of the order of the other sheets and will always cascade over all other older sheets for older browsers, regardless of sheet order. The same applies to "OldBrowsers" sheet. Each style sheet is 100% independent of each other and so its possible to remove any single one and it will not affect the others or the total style cascade, only how the style system affects old or new browsers. Because newer HTML5 browsers now honor strict sheet order between embedded (<style>) and linked (<link>) styles, order DOES matter in newer browsers in 2021 if you have any selectors that are the same between the two style types in the head of your web page. For that reason I always put embedded sheets LAST in the <head> tag and linked sheets FIRST. The order above, again, maximizes your ability to support older browsers. Be sure to add "?v=1.0" or other query string to the end of the paths below if you want to force removal of your sheets from browser cache memory on refresh. I use a "time tick" numerical value created by the server that forces cache refresh of a CSS path in development and a versioning number, like "href="/css/default/styles/OldBrowsers.css?v=1.1.2" when live, so I can control when versions of the CSS linked sheets change. Again, each of these sheets has been carefully designed, including all the sheets they import, to work independent of each other. So you should in theory be able to change the order or strip out sheets for some reason you do not like and the rest run perfectly fine, independent of the others. In other words, there should be no dependencies between them.
-
-Note: The "default" folder name and path system shown in my CSS folder is a way of assigning a "skin" or common version or design of styles to your website using one folder, which would support your default look-and-feel and all the cross-browser style sheets behind it that support it in all the different browsers. If you created another CSS skin, just copy the complete CSS folder and call it whatever: "/css/MySkin1/", etc. Using those folder-based skinning system rather than say Microsoft "themes" or say Bootstrap/SASS, all your styles for one design are all in one folder! Using this simple folder "skinning" system, if you wanted to create a new skin or theme, you would simply copy and paste copies of this folder of style sheets into a new folder with a new folder (in the same parent folder as the "default" folder) and give it a new name. Modify your style links above to load that new skin via a new folder path. Thats it! Using this simple system means you now have a cross-browser, powerful skinning style sheet system! This allows you to manage a true library of themes you can change by a simple folder path change, yet still support all the cross-browser issues, old and new, safely with this theme system.
-
-Note: There are other sheets you can add to support custom styles for older agents, like my "NetscapeOnly" sheet, which applies special fixes just for Netscape 4 series. The Netscape fix style sheet included in the folders is optional and a piece of unusual CSS that just simplifies your layout in very old Netscape 1-4 user agents using primitive hacks. Netscape 1-4 simply did not support most CSS style conventions, had a weird refresh CSS problem when the browser viewport was changed (would not refresh the CSS layout), and poor CSS inheritance in nested elements. Use of this sheet is optional as old Netscape is all but dead around the world and has been since 2001.
-
-Note: The print sheet is added and is where you will build your print-friendly CSS. Notice it is not imported nor uses media queries or @print queries, all of which fail in many versions of older browsers based on my research. Most older browsers do support "print" as a type attribute on linked elements and would need this convention alone to access its print styles. This print style system using linked styles was supported all the way back to the 1990's when CSS versions 1-2 first came out. But many do not support print via the new @import or @print media query as newer agents would. Many do support the linked print version, so its manually added as a link instead allowing many older agents to print your pages. If you use the @import, @media, or @print media queries they would not.
-
-2. As mentioned above, use the "Styles.css" sheet (imported inside the "NewBrowsersImporter.css" sheet) for all your custom CSS and layouts for newer browsers and your custom classes and styles used by all modern browsers you are targeting. Add all your custom site CSS there. In general, this sheet would be seen in IE8+ going forward and allow you to avoid all custom styling for IE 1-7. In general, styles in this imported "styles" page, like all other imported sheets, will be read by newer browsers only (made since 2009) which would include IE8 and others. That means styles in there would be seen by some older problematic browsers. For that reason Ive included some "hacks" you can use to fix IE8, 9, 10, and 11 to address specific CSS issues. This is where your custom styling, SASS, etc can be added and modified and minified as needed, as well, if you like compiling your CSS. If SASS or other compilers break reading your CSS "hacks" or other relics of old browsers, Ive designed the system so you can safely add your CSS hacks to the "NewBrowsers" sheet instead and keep "Styles.css" clean. Keep in mind that in this styles CSS sheet you can safely customize or override any CSS selectors and styles in all the previous imported CSS sheets this system loads in. Such cascades would again only affect newer web browsers. Make sure you only import "Styles.css" in using my system (@import), otherwise it would read by older browser CSS layouts and destroy the whole purpose of using this special Universal CSS Framework.
-
-3. Do not change the other styles sheets in the system unless you need to target a specific change to a specific older browser. All these sheets have fixes in them which are applied to a wide range of Mac, Windows, and older browsers. You can change them if needed or where you see issues or need to fix say a specific font in an older browser or add your custom layout classes for certain older browsers you may be targeting. Remember, your goal in cross-browser CSS is to build custom classes ON TOP of these older base reset styles in your "Styles.css" sheet, not try and fudge custom CSS layouts for older browsers. They only need a very crude, plain, white page. You then only target elements in old browser which have very low selectivity and affect core HTML elements only. Because all these loaded sheets just target elements, their range of weights in the cascade is only "1", or "10" for more selective elements and pseudo-classes. Classes are always "10" or higher so cascade over them, if needed with "11" selectivity by adding "html" or "html body" in front of your element selector. The ONE exception is the "pseudo-class" (example a:hover). Because those are weighted just like classes and could cascade over your own styled version, Ive tried to limit those as far as adding more selectivity. So if you decide to change "a:visited" it likely would just need "html body a:visited" which would override it. Just be sure to make your pseudo-class selectors use more selective CSS to cascade over the reset element style sheet styles. Just understand the other style sheets in this framework were carefully constructed based on support for older browsers and older CSS technologies you may not care about in your newer layouts. Older browsers just need a basic content layout in order to display your page's custom text content in blocks in a simpler, vertical, more readable format. These older styles were designed to display most layouts in clean blocks of content anyway, not show your site as it would exactly appear in complicated floats or flex layouts used in newer agents using newer CSS technologies in fancy float layouts or colorful page structures.
-=========================================================================== */
-
-
-
-/* ==================== START : APPLY BASE PAGE STYLES ===================== */
-
-/* OPTIONAL:  FIRST RESET ALL ELEMENT STYLES TO BROWSER DEFAULTS FOR ALL MODERN BROWSERS: Here we use the wildcard to tell all elements to reset their style properties (text or inheritable styles for IE) back to their defaults. Only non-IE and more modern browsers will understand "all:revert" which returns all properties back to the the UA browser style sheet values. If supported, it will safely reset all styles back to the browser's default styles that come with the browser and give you a clean set of unstyled HTML elements. Only newer, non-IE browsers currently support the "all:revert" property which resets all element properties back to a default. So its added after the fallback version for older browsers which for now will just reset their inherited text styles.
-
-WARNING, DO NOT USE "all:revert" on all elements! (Updated 6/2021) - After testing images, it appears we cannot use this property as it erases an images actual "width" and "height" from the DOM after processing 'img' element dimensions, including srcset values. After erasing them, the image then has no known dimensions after calling "all:revert", but fills the actual block level element, getting extremely large! Newer HTML5 "living standards" requires browsers calculate a CSS value set now based on width/height attributes then erases those attribute values on the image, so they are lost. Doing a "revert" on image styles destroys those values in memory so images revert back to native dimensions (actual images true size). In most cases this is ok as you don't want to use img attributes to "stretch" images or sizes anyway. You want that set in your CSS, anyway, not in "width"/"height" html attributes on the "img" tag. But if you have issues where images are not sizing to img attribute dimensions, remove this "revert" property.
-
-Note: The wildcard "*" selector below has a small weight of only 1 (same as a element selector), so will not cascade over previous styles like "body div {...}" found in say the "NewBrowsers" style sheet. But you can remove this selector below if it causes issues as its not required.
-
-Note: Netscape 1-4 and IE 1-4 do NOT support the wildcard selector nor "inherit" as a value. Only IE8+ supports "inherit" below. In addition, no version of IE supports "all:revert", only the newest, most modern browsers do.
-*/
-
 * {
     font-family: inherit;
     font-size: inherit;
-    /*line-height: normal;*//* Avoid line-height resets on every element for now. */
     word-spacing: inherit;
     letter-spacing: inherit;
-    /* Alert: "all:revert" is a newer CSS declaration that resets all HTML element properties to its original user agent style and not to the property’s base style. In the case of inherited text values, it will use the "body" element first, then the UA browser style sheet. Use of "initial" or "unset" will not do that and in the case of "initial" wipe away all styles completely. All the elements will look the same and use the same default values. Note that "all:revert" only works in more modern HTML5 browsers (c. 2020). It is only supported by certain newer CSS3-supporting browsers. None of the older browsers (pre-2010) will understand this declaration, so it will be ignored by them. But I added this "revert" here in case newer browsers that read this sheet want a clean reset of previous styles applied.
-
-    WARNING, be careful using "all:revert" on all elements below! (Updated 6/2021) - After testing images, it appears we cannot use this property as it erases an images actual "width" and "height" from the DOM after processing 'img' element dimensions, including srcset values. After erasing them, the image then has no known dimensions after calling "all:revert", but fills the actual block level element, getting extremely large! */
-
     all:revert;
 }
 
-
-/* ================== Apply "reset" Element Styles ======================= */
-
-/* Notes on What is Included in this Style Sheet:
-
-1. The HTML element styles below are manual element/type "resets", like the newer "all:revert" above. But these style affect ALL BROWSERS. After newer styles are applied and cascade OVER these styles below, they will only be used by older agents. This serves two functions: First, the text styles below align all the browser's basic HTML elements or types to a common set of CSS font designs. Any differences between ALL browsers, old and new, are now minimized and layouts are more consistent. Because these all use older CSS (not CSS3), 99.99% of all browsers old and new will start with the exact same base HTML and CSS layouts on all their elements. Second, this sheet will attempt to write over many 3rd party reset element styles so that you have more control over use of native HTML5 designs and layouts and so start out with a clean, consistent look and feel, not one defined by say Bootstrap or 3rd [party reset sheets which are not comprehensive and affect only a subset of elements. These target EVERY HTML element known from HTML version 3-5.
-2. Many elements below you will see have text-based settings (non-inherited) applied that would normally be applied by common CSS inheritance rules. This addresses weird issues in very old browsers that do not support full inheritance of text-based styles. In those cases, I have applied these text-based styles directly to every element. Note: Netscape 4 is an example of am old browser that had inheritance problems.
-3. Pixel or percent-based text styles are needed below in many older browsers to size text or dimensions. These will be replaced with more modern "relative" font sizing in newer imported sheets later. 
-4. Font-Family: For this property I used ("Arial, Verdana, Helvetica,'MS Sans Serif','Lucida Grande', Lucida, Geneva, sans-serif") These fonts are supported in many very old browsers and older Windows/Mac computers, so were chosen for them to replace the default "Times Roman" or other ugly "serif" fonts which many UA browser default style sheets default to when unstyled in older web browsers.
-5. If you want to use BOOTSTRAP's fonts remove all the font-family properties below and let Bootstrap's body text styling cascade into the root elements that most browsers use for text inheritance. I have made notes below in the first few selectors, like "body", where these are used. I do not recommend you change these, however, as very old browsers will likely not support Bootstrap's custom fonts, variables, SASS, sourced server fonts, or the font families modern Bootstrap has chosen to use in the past decade. They were poorly designed and thought through by Twitter developers from the beginning as these kids came into web technology with no former training of past browser functionality, so they ignored them, creating a cross-browser mess! My system fixes their mess :)
-6. Font-size : Many older browsers used 13 pixels (pre-2010) as a standard default font size back in the 72dpi computer world pre-2007. But after the modern browsers updated most of their default medium fonts to 16px to support new smart devices and high resolution screens, Ive updated that below to match the new larger default font size. This will appear very large on people using old computers and low resolution monitors. So keep that in mind. If you see that problem, convert all "16px" below back to "13px". Again, change this will not affect newer browsers. 
-7. HTML and BODY Elements: Some very old browsers manipulated the height, background, margins, and padding in 'html' and 'body' elements. So I make sure those are removed or reset. Since old browser will only see this style sheet, I like to add an additional 'margin' around the body of the page.
-8. The pseudo-elements ":before" and ":after" are not supported in CSS supporting browsers, IE 3-5. So never use those in this sheet!
-9. IE 3-5 have a variety of inheritance issues, too many to list here. In general, most elements in IE 3-5 inherit text styles from the "body". They incorrectly fail to inherit any styles from their parent elements EXCEPT font-family, instead inheriting everything else from the "body" element styles. For that reason make sure your "body" always has a full set of inheritable text settings in it, as shown below.
-9. Support for the "min-" and "max-" properties is poor in most older browsers. To reset "min-" set it to "0" which is the default. For "max-" to reset it change it to "none" which is the default. Styles like "min-width", "max-height", etc. were not widely supported except in early Mozilla browsers. Netscape 4 and Opera 3 never supported them, and Internet Explorer did not support them until version 6. You can use them below but keep in mind they will not be widely supported in older browsers. So set "width" and "height" instead.
-10. Support for Font Style Keywords: In the "NewBrowsers" style sheet I use "larger", "bolder", etc for elements like <big>, <strong>, etc. Because support in Netscape 4 and Internet Explorer 3-5 in some cases still did not fully support those values, I have stayed with traditional units, like "large" and "bold", etc. In general, however, its better to apply relative units in cases where text starts out large or bold and must be larger and bolder to stand out.
-11. HTML and BODY Backgrounds: Avoid "html" element backgrounds and use the "body" background property only, as they can be different in some browsers.
-12. CSS COLORS: Support for truncated hexadecimal colors (#fff rather than #ffffff) was widely supported in older browsers, so can be used. But to be safe in this sheet, I use the full hex values. Also, in older browsers the use of the "Web Safe 216" hex color palette was widely used. I would ignore that limitation unless you have a much older OS, computer, or screen limited by those values. Most modern users do not. I would avoid all use of so-called "non-CSS" color names, however, but basic ones ("white, "blue", etc.) even though support of many of the fancier color names would likely be supported in older browsers. Stay with hex values.
-Finally, use of the "rgb" decimal color format ("rgb(255,16,39)") for colors on borders, HTML blocks, backgrounds, etc. was widely supported in most older browsers (one exception is IE3). But for those few older browsers that might not support it, in this sheet I will not be using "rgb". The newer style sheet can use them, however.
-13. "inherit" Support: Netscape 4 Internet Explorer 1-5 never supported "inherit" as a value for CSS properties. Elements style properties could not "reset" or be forced to inherit from say the parent or the body element using it in those older browsers. So, I do not rely on its use to fix issues in the styles below. Where it is used it should be safely ignored by those browsers that do not support it, or simply do nothing. Because there is no real "safe" alternative for "inherit" without assigning a value to a property you might prefer to return to "default" values, I would avoid it. That is why below I explicitly assigned all values or let the older browsers refer to their default UA style sheet to set them. Font or text properties you will notice are explicitly set below on every element, for that reason. Remember that "initial" is more dangerous to use than "inherit", regardless of support, so rarely if ever used in this sheet. "initial" is the default value for a CSS property regardless of its use or context with a specific element. Its the default of defaults for the CSS property, so could damage your CSS styles. So avoid it as well!
-14. The child combinator (">" as in "a > span {...}") and the adjacent sibling combinator ("+" as in "a + p {...}") were never supported in Netscape 4 nor in IE 1-5. In Opera 1-3 they were buggy. Only Mozilla and early Firefox supported them. So I have avoided those types of selectors entirely in this style sheet. This should include the other sub-forms of them. In later modern browser sheets you can safely use them.
-15. Attribute selectors ("a[title]{...}") are not supported in Netscape 4 or IE 1-6. In this rare case I have decided to use them anyway to support Mozilla browsers. As they are optional and ignored if not read, they should car minimal harm to non-supporting sheets that should ignore them.
-16. I have avoided all cases of ":first-line", ":first-letter", and ":first-child" as they too are not supported in Netscape 4 or IE 1-6
-17. ":focus" is not supported in Netscape 4 or IE 1-6. ":active" and ":hover" have IE 4-6 support but are buggy, and no support in Opera 1-3.6. But I have elected to support these on elements such as anchors, buttons, and inputs anyway as they are used more often as not and non-support does not harm the element as they are event triggered and optional.
-18. I avoid multiple classes (.myclas1 .myclass2 {...}) as there is no support in Netscape 4 or IE 1-6.
-19. I avoid all use of @media and @import of any type in this style sheet. Adding any styles before @import fails the import. Most @import fails for older browsers, anyway. Same for @media. There are even more errors using @media as the "type" attribute on the linked style sheet that contains media decides the media type ("print", "screen", etc.). So "@media print {...}" might not work if the style sheet uses a "type=screen attribute". @media in <style> elements in the head of your page have the same issues. Its better to just use the linked style sheet with the type and avoid all @media rules.
-20. AVOID "FALLBACK" PROPERTIES IN THIS SHEET: I try and avoid using "fallback" properties in this sheet. Sometimes its beneficial to deliver multiple copies of a style declaration with different style units for different browsers that support different units. In the case of "cursors" its safe to use them as if they fail, they don't have major impacts in the user experience. But in many cases "fallback" properties do not work for older browsers, like IE 3-5.5, and cause formatting issues.
-
-Example of a "fallback" property that won't work till IE 6+:
-
-p {
-    padding: 10em; <<< All Older IE browsers would read this correctly and use "em".
-    padding: 10rem; <<< Old IE 3-5 that knows CSS would blow up when reading this declaration and erase the earlier 10em, so avoid this. Newer IE 6+ would correctly erase the previous "em" rule and use "rem". The problem is IE 6-8 do not know "rem", but would ignore this and use "em", instead. IE 9+ browsers would use "rem" correctly here.
-}
-
-* Internet Explorer 3-5 will crash when reading second rule and erase (destroy) the first property units, if it does not recognize the second padding unit ("rem" is not supported till IE9). That means padding would be "0" for IE 5 using this fallback strategy, which then means both properties failed. IE 7 and 8, however, will fail to understand the second "rem" unit but NOT erase the first padding, so work ok. Newer browsers would retain padding "10em" using this system but older ones would erase both. For that reason you will see fallbacks in "NewBrowsers" reset element sheet. The reason for this issue is the older IE browsers do not "ignore" declarations with names or types they don't recognize, but instead erase them when they find a bad property unit. So be careful adding those below, as "fallback" properties do not work for older browsers! You can add those safely in the "NewBrowsers" style sheet.
-21. SPECIAL: Netscape 4 and IE 3 were the first browsers to support CSS so are filled with bugs you may or may not care to address. Besides the ones listed above, Netscape 4 does not allow styling of the "html" element. So do not put any crucial styles there but use the "body" element, instead.  Avoid use of "line-height" in these older browsers due to spacing bugs. I have removed line-height from this sheet in most cases and will instead use it only in my "NewBrowsers" sheet. I remember weird spacing occurring in these old browsers, so I have left it out. These additional buggy properties below are not supported in those older browsers so ok to use as they should be ignored by Netscape 4 and IE3: "word-spacing", "letter-spacing", "white-space". A major issues is using tables in those browsers where they sometimes terminate your "body" element styles. To avoid this issue, when it does crash the table and the body, you can divide your "body" style selector into two "body" styles: One for inherited (font) and the other for non-inherited properties. I have elected to not do that since this is such a narrowly focused bug fix. But if you want to divide your "body" selectors up for Netscape 4 and IE3 you may do that below.
- Note: IE3 only supports the "background" shorthand property and not the individual properties. For Netscape 4, when you use the background shorthand, if you do not specify a color, Netscape specifies black. As a result, you should always specify a color..
-
-*/
-
-/* Only Netscape 4 ignores the "html" selector and its properties below. If you target Netscape 4, use my "NetscapeOnly.css" style sheet instead as it will have a wide range of issues, including poor support for "html" styles, poor support for "height", "margins", "borders", "line-height", and many others. */
 html {
-    /* HEIGHT: Height in modern browsers is best defined here in the 'html' element as "100%" as its "percent" value is often inherited by the 'body' below and must be set this way if you want full 100% height designs. Browsers using height in percent units calculate their height based on the parent's height. If the 'html' element has any height value other than "auto", only then will the body using a percent height calculate a dimension from it. Because 'html' derives 100% height from the browsers viewport, only it can set the overall web pages height as set in the 'body'. Otherwise, it collapses to zero or "auto" height. Without setting "height:100%" in 'html', the 'body' element or content page will never be able to set any height using "height" or "min-height" and will collapse to zero by default. In older browsers it was better to set "height:auto" on the 'html' element and set "min-height:100%" with a background color to simulate full height pages due to some bugs that would occur when inheriting 'html' values. For example, in Netscape "height:100%" usually collapsed the page content and background colors anyway due to non-support of the feature. In IE 5, "height:100%" in the 'body' element with a background color would not work even when 100% height was set on the 'html' element. Old browsers like IE 6 set 100% 'html' height as the default, fixing the IE 5 problem. But this was non-standard and created inconsistency across all other browsers that did not assume 100% height in 'html'. Setting 'body' to 100% height instantly created height in IE 6, but the other browsers now needed 100% height in both 'html' and 'body' elements. But this also meant body content could break through the 100% wrapper, creating overflow problems. Using "height:100%" in the 'html' element and "height:auto" in the 'body' element instead allowed the 'body' element to collapse around content and then stretch for older IE and Mozilla-Netscape browsers and make sure the browser's content filled its container properly without overflow. This disrupted IE6's new abilities, but was the best option. Aand today it still is. Just realize that the 'html' element's height ends at 100% of the browser window, and 'body' content breaks through it. But no scroll bars will be created and yet using "min-height:100%" on the 'body' element allows you to simulate a true 100% height background effect without scrollbars. 
-    Note: To support very old browsers, I am using 'html' with :auto" instead. This means height will be collapsed and cannot be set in the body. I'm doing this because I am using a margin in the body, which if 100% height was used, would overflow the viewport and create ugly scrollbars. If there is any margins, padding, or borders in the 'body' element, setting "height:100%" would also create ugly scrollbars, as most browsers will push 100% height to include the margin, padding, or border dimensions. Applying "height:auto" and "min-height:100%" on the 'html' element is a better solution for the older browsers that will use this style sheet, and sets the 'html' element to fill the page to full viewport height for background color purposes only, while collapsing height around stretchable and growing content using "auto". This solves issues in many older browsers. But it also means your 'body' height below cannot inherit any height at all and will also collapse, no matter what settings you apply. Again, for older browsers with plain white progressive pages, this is fine.
-    You can set the 'html' element to use "height:100%" if you need smaller content pages to stretch to 100% height, need body to calculate percent height from the viewport and 'html' element, or where you need your body content to expand to full height starting out. ONLY do this if your body element below is NOT using margins, padding, or borders (as I am doing) AND you need 100% height in some older browsers that support html height inheritance using percentages. Otherwise, you will see a scrollbar or the page collapse its body background effects around the content height. In general, "height:auto" and "min-height:100%" set below will fix most height issue for most browsers and stretch page content and any background color in 'html' to fill the viewport. But the 'body' will inherit "height:auto" and not stretch to fill the height. This works ok in most web page designs. You can test this by applying a background color to this element (hiding the body background first) and see how this setting fills the complete height in most browser viewports. Know that this again is a setting that works well in most older web browsers. */
     height: auto;
-    /* "min-height:100%" allows the 'html' element to stretch to full viewport width, regardless of the 'html' height setting, but does NOT affect the inherited "height:auto" or collapsed height setting of the 'body' element. That is because 'body' height and min-height is always derived from the 'html' "height" property. This "min-height:100%" setting helps old Netscape 6+ browsers and older Mozilla by setting the minimum height to the full users window, yet allows height to wrap around content that goes beyond 100% because height is set to "auto" and collapse around content no matter how long it gets. Note that this property setting below is only really useful if "height:auto" is used above. */
     min-height: 100%;
     max-height: none;
-    /* ALWAYS reset padding and margins here and in  most block-level elements back to zero ("0") here as some older browsers set a default non-zero value. */
     padding: 0;
     margin: 0;
-    /*Resets all fonts to the browsers default or customized user's font size before specifically resizing on a tag-by-tag basis below.*/
     font-size: medium;
-    /* Older IE browsers likely ignore "inherit" font property values here and inherit them naturally. So, these are optional. */
 	font-family: inherit;
 	font-size: inherit;
-    /* Avoid line-height settings on the "html" element in older browsers or set to "normal". */
-    /*line-height: normal;*/
-    /* Avoid border settings on the "html" element in older browsers or set to "none". Note: IE 5 applies borders ONLY when "body" does not, so avoid use of borders on both. In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value.
-    Note: In Netscape 4, setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
-    /*border: none;*/
-    /* Some older browsers display a gray background and only recognize "white" here as a color change. Note: IE3 only supports the "background" shorthand property and not the individual properties. For Netscape 4, when you use the background shorthand, if you do not specify a color, Netscape specifies black. As a result, you should always specify a color. 
-    Note: In Netscape 4, if background is applied to a block-level element with text, it only fills in under text not the whole block. Strangely, adding "border:none" fixes that. So enable below if you see background issues! */
     background: white;
 }
 
 body {
-    /* HEIGHT: The "height" and "min-height" properties in CSS will collapses to zero (or "auto") if using percentages AND the 'html' parent has not defined a "height" property value (like 100%). Because of this, not that without "height:100%" set on the 'html' element above, no settings below for "height" or "min-height" on the body will change the height in side the 'body' element. This is because the 'body' element calculates its percent height based on the 'html' parent's percent height. For this reason, I have set 'body' height to "height:auto" (or the default) below because the parent 'html' element is using the same "auto" value in this sheet. I do not want 100% height in 'html' or 'body' in this sheet as I am using a margin to create a border of empty space around the page to separate content from the edge. Note that the "min-height:100%" on the 'html' element does NOT affect height in the 'body' element. Only the "height" property can do that. But the "min-height:100%" value in 'html' will still stretch the elements background colors to the full height of the page. Note that modern browsers will normally inherit or calculate full "height" values above using the 'html' element's height value only. But in many older browsers, like Netscape 4 or IE 5, height could not be properly calculated from the 'html' element. Using "height:100%" height values in 'body' usually collapsed down to content height due to non-support in those browsers, anyway. Only IE 6 allowed you to truly set 100% height in body, regardless of the 'html' settings. However, using the "auto" setting below will show content inside "body" ok without overflow or create ugly scrollbars in browsers. But, it will unfortunately collapse any body background color effects you use.
-    Set "height:100%" below ONLY if the 'html' element height is also set to "100%" AND you don't use any margins/padding/borders, AND you need to fill your content to the full height of the viewport with no plans to flow past its height boundaries. Its usually best to set 'html' to a height of 100% in that case, and let 'body' use "auto" which means it inherits the value naturally. You can create that by also leaving off the "height" attribute below in 'body' or setting it to "auto". Note in the newer style sheets, more modern browsers will recognize 100% height in the 'html' element and you will see it used there, primarily because the newer style sheets do not have padding on the 'body' element like this sheet applies and fully calculate the 'html' height value. You will also see the use of "height:100vh" which bypasses the 'html' height and calculates its height from the viewport directly. */
     height: auto;
     width: auto;
-    /* Note: "min-height" fixes a lot of bugs in old and new browsers, by allowing you to use "height:auto" in "body" for content that must stretch past 100% height but which must contain content. You could then allow full "body" background colors using "min-height: 100%". Note that "min-height" is not available or inherited like "height" is by "body" from "html". The problem is IE 5-6 never supported "min-height", unlike all the other browsers, so would fail in situations where page content was less than 100% viewport height, but where you wanted a full-height, colored layout. It was also difficult to create a footer that floats on the bottom of pages or deliver full height designs in IE. I was able to achieve this using negative nested margin div's and positioning tricks, but most developers gave up or used tables back then. You should not worry about these old design issues now in these antiquated browsers, unless that is a target browser you wish to support. */
     min-height: 100%;
     max-height: none;
-    /* It is better to set "min-width:none" here to avoid overflow if your body has margins, padding, or borders like this sheet applies. (I apply a margin to the body below because I want all older browsers to get a plain, clean, white web page with stacked content only). Otherwise, with "100%" it would overflow and create a scrollbar. You can also set this to fit specific smaller monitors in pixels, but I do not here as the world no longer uses small monitor resolutions. In the past, I set this to " min-width:750px". That worked best in NS 6+ browsers and old Mozilla, and sets the minimum width to the full users window for the tiniest browser window available on desktop computers. Because "min-width:100%: causes overflow issues when padding or margins are applied (creating scrollbars) I set this to "none". Only set to 100% if you know "body" will never have padding or borders. Because we need to allow for overflow of content, Ive disabled this. Note that the body will still naturally stretch to fill the max width. */
     min-width: none;
-    /* This style works better in NS 6+ browsers and old Mozilla, and sets the minimum width to the full users window. Because we need to allow for overflow of content, Ive disabled this. */
     max-width: 100%;
-    /* ALWAYS reset padding and margins here and in  most block-level elements back to zero ("0") here as some older browsers set a default non-zero value.
-    Note: I am setting a minimal margin here for improved older browser content page display, as all older browsers (pre-2001) will be shown a plain white page defined by this style sheet, with vertical content blocks that need to be pushed off the edge of the page. We are defaulting all older browsers to use this simpler, more readable content page, setting a margin here pushes text away from the browser's border for those older browsers. 
-    Most browsers today (and in the past) have interpreted "margin" as "padding" in that they add margin to the 100% width of the viewport, and allow background colors to flow under margin, filling the viewport like padding allows. */
     margin: 10px;
     padding: 0;
-    /* Set the universal page background color here for all old browsers. Why? Because some old browsers will set background-color to either a color, or set transparent color then show the browsers own canvas color in the background, which was gray in some 90's browsers (Netscape 4). If a user sets their background to a color like black and your page has not and has black text, its unreadable! So always set your intended background-color. Note: If the browser inherits from "html" above it would be white, anyway. But some older browsers did not allow you to set "html" styles (Netscape browsers). Also, I set the "background" shorthand property to reset any background formats other than color, which get cleared out or set to "none" which is the default for all the sub-properties using this system.
-    Note: IE3 only supports the "background" shorthand property and not the individual properties (i.e. no support for background-color:#ffffff). For Netscape 4, when you use the background shorthand, if you do not specify a color, Netscape 4 specifies black for the background. As a result, you should always specify a color. 
-    Note: Since Netscape 4 and IE 3 had issues with background and text colors, I have also added the old "body" element attributes for those items to match these below, which these cascade over. This just guarantees those older user agents always default to black text on a white page by default.
-    Note: In Netscape 4, if background is applied to a block-level element with text, it only fills in under text not the whole block. Strangely, adding "border:none" fixes that. So enable below if you see background issues! */
     background: #ffffff;
-    /* "color" was generally one of the few properties even old Netscape 4 inherited. But some browsers struggled to inherit text properties from "body" or between elements, so that is enforced in the HTML element list below. I also set "color" on the HTML "body" element for older IE3 and Netscape. See the HTML pages that come with this CSS framework. */
     color: #000000;
-    /* Avoid UA or System font systems, font shorthand, and custom fonts as they were generally poorly supported by older browsers. Adding popular fonts used in older Windows or Mac systems as shown below for sans-serif types was widely supported with lots of fallback choices and font foundry support native to both Macs and Windows. Font-family names like "sans-serif", "monospace", etc. were also widely supported in very old browsers that support CSS so safe to use below as fallbacks. Always use double-quotes rather than single ones around font names with spaces as single quotes are not supported by IE 3. Many older versions of IE also needed lower case font-family names. The options below include a few fonts only PC's or Mac's used pre-2008. Always end with the generic type, "sans-serif". Note: Older Mozilla and Gecko browsers will only read the lower-case version of sans-serif. */
     font-family: Arial, Verdana, Helvetica,'MS Sans Serif','Lucida Grande', Lucida, Geneva, sans-serif;
-    /* IMPORTANT: This pixel font size is the UNIVERSAL FONT SIZE SET FOR ALL BROWSERS. Many older browsers ONLY recognize pixel or use pixels consistently cross-browser, so it was used here as a foundation size for all base level elements below (cascaded over later by another more modern style sheet set with relative font units for newer browsers). IE3 and Netscape 4 do not know "em", "rem" and so must use pixels. In IE6 and below, font-sizes set in pixels cannot be resized by the user, so later relative font sizing will cascade over these older settings. IE5 always defaults to one size larger, so a fix is applied in the "OldBrowsersFix2" sheet, as well, using "small". Given the limited support in IE2-6, Netscape, etc. for font units, using this sheet's pixel-based fonts would be our best default size for much older browsers. Note that pixels as values are unchangeable to users and are static but again work in very old browsers like IE 3, so recommended. Note that Navigator 4.x doesn't correctly inherit styles like font-family and color set for the body to elements like table, div, and p.
-    WARNING: Long ago when using IE 5 and 6, 13px or "small" was the default font-size I used in my CSS when on Windows 96 ppi monitors, simply because IE5 or quirksmode IE6 default font sizes were one size too large. 13px then was used as my standard font-size setting and became the standard. But all it did was reduce the larger IE font back to 16px. The equivalent physical size in inches on a Mac 72 ppi monitor was still 16px. For that reason I used a CSS hack to set "small" in IE, which changed the font-size "medium" to "small" for IE only, while Macs remained at 16px using "medium" for font-size. The Windows "small" then appeared to be close to the same size as 72 ppi Macs using "medium" or 16px. Today, I've changed the global default for all fonts for old browsers in this style sheet to 16px as the default to support newer browsers using higher definition screens and also supporting 16px fonts. But in the "OldBrowsersFix2" sheet I still fix this old IE5/6 font-size issue again using "small"/"medium" CSS reset hacks. Some old browser users on older 96 dpi Windows monitors may still see very large fonts using 16px below. If it becomes an issue go back to 13px in this sheet for those users, if needed. Keep in mind only very old browsers will now use this sheet after imported newer sheets are applied. But the "NewBrowsers" sheets and later ones will cascade over these settings using "medium" and "em" user-based font settings in newer browsers.
-    Note: Keep in mind that old browsers using pixel unit font-size cannot change their font sizes in the browser. This is the trade off for wider browser support using pixels for sizes. The new browser sheets allow relative font-sizing in "em" and absolute font sizes like "medium", so return the user to full relative font-size support. But if allowing older browsers font-sizing is a priority for you, over support of say Netscape 4 and IE 3 using pixel-based fonts, you can use "em" units instead of "px" to support that feature below.
-    */
     font-size: 16px;
-    /* OPTIONAL - If you want to use "font-size:1em" above instead for old browsers that know relative fonts and show old Netscape the older pixel font-size, here is a Netscape 4 hack below shown ONLY to Netscape 4. Because IE3 had issues, I have chosen to just keep 16px font-size above. */
     /*/*//*/font-size: 16px;/*end*/
-    /* Optional - "line-height" in "body": If you do set it, other than "normal", older browsers like Netscape 4 have widest support for a line-height in pixels ("px") first, then "em", "%", and then a numerical value. If you do not use pixel units, numerical values (like "1.2") will work in most older browsers, as well, and allows the browser to calculate the right height based on font-size. The problem is older browsers might interpret that as "pixels"! Netscape 4 and IE 3 had real issues with any type of line-height other than pixels as they mis-calculated numerical values. Netscape 4 translated numerical line-height to "%", for example! Consider avoiding using line-height values and just use "normal" as below or no value. But if you must use them, use "px" values. Remember, line-height "normal" usually translates to "1.2", or "19px" using font-size "16px". You should still avoid line-height in the body and apply by element below, using "normal" or a "px" value, as mentioned. Because line-height still has bugs with these older browsers and a few others, you can remove its setting in this style sheet until you use the "NewBrowsers" sheet, if you see issues.
-    Note: I set line-height below explicitly on every element as inheritance was often incomplete in older browser versions using "body". Setting it here in the "body" would be optional, but helpful for many older browsers that did support inheritance of line-height. Line-height values are not compounded from "body" values in old browsers with poor inheritance, however, so I set the default line-height to either "24px" or "normal" (which inherits the user's line-height defaults first) then lets individual elements set them below as needed without inheritance problems found in Netscape 4 and IE 3. Below I assign line-height again manually on each element, besides "body", for those browsers like Netscape 4 that do not inherit this value from the "body" element. Using pixels for units below, though widely supported in all older user agents, means in many browsers (like Internet Explorer) the user cannot adjust the font-size nor the line-height from their default values, as pixels prevent font resizing in the browser. Use "normal" if you need to return to the native font's line-height value without this increased one. In Netscape 4, if there are conflicting or nested elements with pixel-based line-height values, it will not choose the larger one. Only "normal" fixes that issue in Netscape. */
 	line-height: 24px;
-    /* OPTIONAL - If you want to use the more modern numeric value anyway above, like "line-height:1.5" or "24px" for old browsers that know numeric or pixel line-heights, and show old Netscape 4 the safer version of "normal", below is a Netscape 4 hack below shown ONLY to Netscape 4. I have chosen to let Netscape 4 users return to a shorter line-height which is "normal" or equal to around "19px" for a "16px" font-size. The reason is, Netscape struggles with inheritance and calculation of any value other than "normal". Example, "line-height:2" is "line-height:200%" in older Netscape 4. Also, line-height in IE 3 sets margin-top to "0". */
     /*/*//*/line-height: normal;/*end*/
-    word-spacing: normal;/* OPTIONAL: not supported IE 3-5 or Netscape 4 */
-    letter-spacing: normal;/* OPTIONAL: not supported in IE 3 or 5, Netscape 4 */
-    white-space: normal;/* OPTIONAL: not supported until IE 3-5, buggy in Netscape 4 */
-    /* Avoid border settings on the "body" element in older browsers or set to "none", as in IE5 and other border values can cause scrollbars to appear. Also, in IE5 if border is set on "body", then "html" border settings are never applied. Finally, IE5 used the broken box-model where border was not added to width like in most older browsers. So again avoid borders here to prevent scrollbars in these older agents.
-    Note: In Netscape 4, setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value.
-    Note: In Netscape 4, if background is applied to a block-level element with text, it only fills in under text not the whole block. Strangely, adding "border:none" fixes that. So enable below if you see background issues!
-    I have set "border:none" to force older browsers to have no border and fix Netscape 4 background issue. "line-height" wont be reset to "normal" as I have assigned a "margin" value above.
-    Note: IE 5 applies margins inside borders on "body", so avoid use of borders which will collapse inside width and height for that browsers but create scrollbars in all others.
-    */
+    word-spacing: normal;
+    letter-spacing: normal;
+    white-space: normal;
     border: none;
-    /* This can be "center" if you have a page needing to center content that is limited in width. */
     text-align: left;
-    /* CURSORS: Reset the overall page's cursors to the page's "default", if different. We could use "auto" here, which allows each element to decide its own cursor type. But I like defaulting to an "arrow" over everything first, instead. Default is sometimes the same as "pointer" or "hand" in some older browsers, rather than the "arrow" or text "I" beam. I do not like text being an i-beam. So this sets everything to an arrow. Note: Older Mozilla and Gecko browsers like Netscape 6 did not support "auto" for cursor, so avoid. */
     cursor: default;
-    /* POSITIONING: Many older browsers get confused as to what top-level parent to position themselves to. Some used the viewport, others the "body" element. If you choose to use various types of positioning and want to avoid confusion, set the "body" element to be the global ancestor or all positioning elements using the "position:relative" setting below. */
-    /*position: relative;
-    top:0;
-    left:0;*/
 }
 
-/* HTML ELEMENT LIST: Set basic text styles only on all HTML5 and older HTML 4 supported elements below. Some elements below may be deprecated, but still could appear in some older html pages and browsers. Note: Do NOT add any styles accept fonts/text below. We will customize them below in other parts of this style sheet. Note: IE5 and many other older browsers failed to inherit font values from the "body". The "caption" element in IE5 is one of many examples. So, assigning those values manually below will fix text "body" inheritance problems across the board for many older browsers in this CSS system! */
 a,
 abbr,
 acronym,
@@ -335,33 +125,16 @@ tt,
 u,
 ul,
 var {
-    /* Avoid UA or System font systems, font shorthand, and custom fonts as they were generally poorly supported by older browsers. Adding popular fonts used in older Windows or Mac systems as shown below for sans-serif types was widely supported with lots of fallback choices and font foundry support native to both Macs and Windows. Font-family names like "sans-serif", "monospace", etc. were also widely supported in very old browsers that support CSS so safe to use below as fallbacks. Always use double-quotes rather than single ones around font names with spaces as single quotes are not supported by IE 3. Many older versions of IE also needed lower case font-family names like sans-serif. The options below include a few fonts only PC's or Mac's used pre-2008. Always end with the generic type, "sans-serif". */
     font-family: Arial, Verdana, Helvetica,"MS Sans Serif","lucida grande", lucida, geneva, sans-serif;
-    /* Note: Using pixels for units below, though widely supported in all older user agents, means in some browsers (like older Internet Explorer browsers) the user cannot adjust the font-size nor the line-height from their default values, as pixels prevent font resizing in the browser. This is the trade-off for wider font-size compatibility with older browsers in this sheet. Note that Navigator 4.x doesn't correctly inherit styles like font-family and color set for the body to elements like table, div, and p. That is why we explicitly added font-size and line-height settings below for every element. 
-    Note: In my previous iteration, to address text inheritance issues in some very old browsers, I set "font-size:medium" in the 'body' element, but then added below "font-size:100%" which allows fonts to be adjustable, as percent units look to the parent for their calculated value. This also works well. This also was adopted in most older browsers. Because I did some research that showed that pixels might be more stable, and wanted to avoid weird inheritance bugs in fonts in Netscape and IE 3-4, I decided to stay with "pixel" fonts below. Note that in my "fix" sheets that are added after this one, I do convert back to "medium" or relative font units for IE 4-7. */
-    /*font-size: 100%;*/
     font-size: 16px;
-    /* OPTIONAL - If you want to use "font-size:1em" above instead for old browsers that know relative fonts and show old Netscape the older pixel font-size, here is a Netscape 4 hack below shown ONLY to Netscape 4. Because IE3 had issues, I have chosen to just keep 16px font-size above. */
     /*/*//*/font-size: 16px;/*end*/
     word-spacing: normal;
     letter-spacing: normal;
-    /* "color" was generally one of the few properties even old Netscape 4 inherited. But some browsers struggled to inherit text properties from "body" or between elements, so that is enforced here. I also set "color" on the HTML "body" element for older IE3 and Netscape. See the HTML pages that come with this CSS framework. */
     color: #000000;
-    /* We explicitly set line height to match "NewBrowsers" "line-height:1.5" value using pixels here so that older browsers all use the same height in case inheritance fails. In many older browsers (pre-2001) the block level elements would often have varying line-heights that differ between them or are affected by inheritance in different ways. Setting an explicit value below on all elements aligns them with the same global line-height, unless customized further below.
-    Note: In many older browsers a line-height "number" gets inherited as is and applied to the font-size of the element, so is superior to using "em" or "%" for line-height which gets calculated first in the parent using its font-size before inheriting, causing problems in child elements that inherit its manipulated value. Pixel-based line-height allows you even wider support in Netscape 4 and IE 3 and so a more stable value in many older browsers. Below you can use 1.5 or 24px, the latter which is 1.5 x 16px = 24px. There were cases where Netscape 4 using "line-height:1" was translated to "1px" so collapsed text. So, using pixels below solves all those issues. If you do not want to use a value and use the default, set this to "line-height:normal". 
-    Note: Using pixels for units below, though widely supported in all older user agents, means in many browsers (like Internet Explorer) the user cannot adjust the font-size nor the line-height from their default values, as pixels prevent font resizing in the browser. Use "normal" if you need to return to the native font's line-height value without this increased one. In Netscape 4, if there are conflicting or nested elements with pixel-based line-height values, it will not choose the larger one. Only "normal" fixes that issue in Netscape.*/
-    /*line-height: 1.5;*/
 	line-height: 24px;
-    /* OPTIONAL - If you want to use the more modern "line-height:1.5" above instead for old browsers that know numeric line-heights, and show old Netscape the older pixel version, here is a Netscape 4 hack below shown. */
     /*/*//*/line-height: normal;/*end*/
-    /* Note: In Netscape 4, setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value.
-       Note: In Netscape 4, if background is applied to a block-level element with text, it only fills in under text not the whole block. Strangely, adding "border:none" fixes that. So enable below if you see background issues! */
-    /*border: none;*/
-    /* ALERT: Only add this "float" declaration below if you want to force older browsers to never float and stack content vertically in every case. In general this would affect only browsers pre-2001 and IE 1-7. */
-    /*float: none;*/
 }
 
-/* These elements do not need style formatting, in most cases. */
 area,
 base,
 basefont,
@@ -375,84 +148,59 @@ style,
 title {
 }
 
-/* PSEUDO-CLASSES: NEVER STYLE PLAIN PSEUDO-CLASSES FOR OLDER BROWSERS! IE 1-3, Netscape 1-4, and Opera 1-3.6 all misinterpret plain pseudo-class selectors as shown below. Example: Netscape 3 will not read these pseudo-classes at all. Without an element assigned to the pseudo-class, these browsers destroy them or the page styles! The most common bug is they interpret them as all belonging to "a" anchor tags, destroying your anchor tag styles. Opera tries to apply worse results, including block level margins and padding assigned to every elements! Netscape will again turn these into anchor-only styles then push all their combined styles onto one style set on the anchor element. Only color works as a style property in pseudo-classes for Netscape. :hover and :focus are ignored in IE3. Netscape, Opera and IE 3 do not support :hover or :active.
-
-So ALWAYS avoid these styles below except when explicitly assigning them to an element like "a:visited", "input:focus",  etc.
-
-:link {...}
-:visited {...}
-:hover {...}
-:focus {...}
-:active {...}
-
-*/
-
-/* Netscape 4 Link Style Issues: Netscape gives more specificity to "a" than its pseudo-class versions (a:link). It should be the reverse, with "a{...}" rule have a "1" weight and "a:link{...}" having 10+1=11 weight, as the class :link has more weight. For this reason, all properties in "a" below, except "color", will cascade over your pseudo-class styles below for old Netscape viewers. For that reason, consider removing most properties below on "a" below unless you are ok having them all cascade over your pseudo-classes below. */
 a {
 	display: inline;
-    /*color: #000066;*/
     text-decoration: underline;
-    /* CURSOR IN IE: Old browsers like IE5, only supported "hand" for the "pointer". They do not recognize "pointer" or "auto" here, so seeing an unrecognized property value, trigger the properties to return "initial", which is usually the element's value of "default", which for many interactive elements in IE5 becomes the same as "pointer" for IE, anyway. In the "OldBrowsersFix2" sheet for old IE browsers, we explicitly add "hand" to list of "pointers" for IE to avoid confusion, as it is the only true value needed to enforce the "pointer" on interactive elements. */
     cursor: pointer;
     background: transparent;
 }
 
-/* WARNING: Because pseudo-classes have the same selectivity as a plain class, these styles can conflict with many 3rd party style classes or custom classes applied to the anchor elements. For that reason Ive limited any extra selectors that would give them more weight than a class. Also, because pseudo-classes may not inherit font settings in older browsers or these style selectors below not cascade over previous 3rd party reset sheets, Ive explicitly added base font settings below. */
-
-a:link { /* link is any anchor tag with an "href" attribute */
+a:link {
     color: #000066;
-    background: transparent;/* some older browsers changed the background color */
+    background: transparent;
     text-decoration: underline;
     cursor: pointer;
-    /* WARNING: We do NOT add font or text properties here to prevent issues where modern 3rd party sheets use anchors in pseudo-classes in header elements with non-traditional styles that this selector would write over. */
 }
 
-a:visited { /* Note: new "privacy" concerns in modern search engines now limit the properties web authors are allowed to change on "visited" anchors. So most of these are removed. Color is one you can still safely change. */
+a:visited { 
     color: #6666aa;
-    background: transparent;/* some older browsers changed the background color */
+    background: transparent;
     text-decoration: underline;
     cursor: pointer;
 }
 
-a:hover { /* hover is any link with mouse-over. not supported in older IE */
+a:hover { 
     color: #0000cc;
-    background: transparent;/* some older browsers changed the background color */
+    background: transparent;
     text-decoration: underline;
     cursor: pointer;
 }
 
-a:focus { /* focus is any link with keyboard tab focus. also occurs briefly on mouse-up click event. Focus was never supported in IE 1-6. */
+a:focus { 
     color: #0000ff;
-    background: transparent;/* some older browsers changed the background color */
+    background: transparent;
     text-decoration: underline;
     cursor: pointer;
 }
 
-a:active { /* active is generally the same as the "mousedown" event on the anchor. very brief color change. Netscape doesn't support "active" */
+a:active { 
     color: #0000ff;
-    background: transparent;/* some older browsers changed the background color */
+    background: transparent;
     text-decoration: underline;
     cursor: pointer;
 }
 
 abbr {
 	display: inline;
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
-    /*border: 0;*/
     text-decoration: none;
-    /* Dashed appears to have better support than dotted in very old browsers. In IE5 both of these become solid lines, however. Netscape will translate both to solid, but does not support "border-bottom" anyway. */
     border-bottom: 1px dashed #000000;
     color: #000000;
     cursor: help;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. Use "abbr" instead. */
 acronym {
 	display: inline;
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
-    /*border: 0;*/
     text-decoration: none;
-    /* Netscape does not support "border-bottom". */
     border-bottom: 1px dashed #000000;
     color: #000000;
     cursor: help;
@@ -466,7 +214,6 @@ address {
     margin: 8px 0;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. Use "object" or "video" instead. */
 applet {
     cursor: pointer;
 }
@@ -476,29 +223,23 @@ b {
     font-weight: bold;
 }
 
-/* This 'unicode-bidi' property allows the 'bdo' element to enforce and override all Unicode language direction based on the 'dir' attribute direction set in the element. */
 bdo {
     unicode-bidi: bidi-override;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 big {
 	display: inline;
     font-size: 18px;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 blink {
 }
 
 blockquote {
     display: block;
 	padding: 0;
-    /* In Netscape 4, "margin-left" and "margin-right" on "blockquote" are interpreted relative to the element's default margins, rather than to the left or right of the parent containing block. So, these values may be extra indented for that old browser. There is no way to address that beyond a JavaScripted detection and custom sheet. If you need advanced Netscape 4 support use my "NetscapeOnly.css" style sheet. Otherwise, I've added a small hack only for Netscape below to address it. */
     margin: 14px 21px;
     /*/*//*/margin: 14px 0px;/*end*/
-	/* "blockquote" is for larger blocks. "q" for quoted smaller ones. But if you want to add quotes to your text by default, below is an example. */
-	/*quotes: "“" "”";*/
 }
 
 br {
@@ -507,45 +248,36 @@ br {
     clear: both;
 }
 
-/* WARNING: Because pseudo-classes have the same weights as classes, if these have extra selectivity or lots of properties styles they might cascade over custom classes in 3rd party products like Bootstrap. So keep style to a minimum. Note: These elements were not inheriting font size settings correctly so fixes were applied. */
-
 button,
 button:visited,
 button:hover,
 button:focus,
 button:active {
-    display: block; /* for these much older browsers we will let form controls stack vertically. change as needed. */
-    /* Note: Since this will be the last style sheet read by much older agents, I have added a slight margin to separate the content boxes they will display. */
+    display: block;
 	width: auto;
 	height: auto;
     padding: 0px 5px;
-    margin-top: 2px;/* margin-top requires pixels for Netscape 4 */
+    margin-top: 2px;
     margin-bottom: 2px;
     text-align: center;
-    /* Netscape messes up all form fields and buttons when border or background is set so we set those to "none" below. */
     background: #ffffff;
     /*/*//*/background: none;/*end*/
-    outline: none;/* Note: "outline" was not supported in IE 1-6. */
+    outline: none;
     cursor: pointer;
-    /* Optional: Adding "line-height" settings in pseudo-classes is good as inheritance in line-height is spotty in very old browsers. Even though "normal" is the ideal value to use here, and is supported in many old browsers, Netscape 4 doesn't allow "normal" to override any values that might be inherited. So, I use 19px for line-height here, which is close to what "normal" for line-height, or "1.2", when using a "16px" font. It also matches the default height assigned to the input text boxes in this style sheet. Note: These changes match the "input", "select", and "textarea" elements below. */
     line-height: 19px;
-    /* Adding a minimum width allows all your smaller text label buttons to line up as the same size. Note: These changes match the "input", "select", and "textarea" elements below. Note: IE 1-5, Netscape 1-4 and others do not understand the "min-" values. */
     min-width: 6em;
 }
 
-/* IE5 ignores width, height, and positioning in captions, so avoid. */
 caption {
     display: table-caption;
     caption-side: top;
     margin: 0;
     padding: 0;
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
     border: none;
     color: #000000;
     text-align: center;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 center {
     text-align:center;
 }
@@ -557,18 +289,14 @@ cite {
 
 code {
 	display: inline;
-	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. I left the original 2000 font set commented out below. It was often used to improve monospace fonts displays. */
-    /*font-family:"Courier New", Courier, Corsiva, Helvetica, monospace;*/
     font-family: monospace, monospace;
     font-size: 1em;
 }
 
-/* This is part of a "table". Note: IE 1-5 have a variety of inheritance issues of CSS properties from this element to its rows and cells. Do not NOT rely on this element to style any children in tables! */
 col {
     display:table-column;
 }
 
-/* This is part of a "table". Note: IE 1-5 have a variety of inheritance issues of CSS properties from this element to its rows and cells. Do not NOT rely on this element to style any children in tables! */
 colgroup {
     display:table-column-group;
 }
@@ -591,7 +319,6 @@ dfn {
     font-style:italic;
 }
 
-/* Since this is a deprecated HTML4 element, I have copied the "dd" styles into it. */
 dir {
     display: block;
 	padding: 0;
@@ -599,20 +326,15 @@ dir {
     line-height: 133%;
 }
 
-/* Note: The "div" was commonly used for all HTML layout structures prior to 2010 and HTML5. Some older browsers like Netscape 4 did not inherit styles or interpret CSS correctly, so nested divs often had to be styled individually. */
-
 div {
     display: block;
-    /* Note: Since this will be the last style sheet read by much older browsers, we want their div blocks to fill the width of the viewport 100% and stack vertically. However, there is a small margin in the body set so that the content is padded away from the edge. Some older browser might interpret 100% width to not include this value and bleed over, so I set width to auto. */
     width: auto;
     height: auto;
-    /* Optional: For now I want all content blocks to limit their width to the available viewport or parent width, in all cases. Remove this if its an issue and you need bleed over on large content blocks or allow horizontal scrolling. */
     max-width: 100%;
     padding: 0;
     margin: 0;
     background-color: transparent;
-    /* Note: Since this will be the last style sheet read by much older agents, I have added a slight margin to separate the content boxes they will display. */
-    margin-top: 2px;/* margin-top requires pixels for Netscape 4 */
+    margin-top: 2px;
     margin-bottom: 2px;
 }
 
@@ -636,21 +358,17 @@ em {
     font-style:italic;
 }
 
-/* Use fieldset and its title "legend" to group related form fields and controls. These styles give the fieldset a more modern, softer feel that matches the form control default designs. */
 fieldset {
     display: block;
     width: auto;
     height: auto;
     padding: 8px 16px 16px 16px;
     margin: 8px 0px;
-    /* Fieldset originally had a Windows dialog box feel to it with a lite gray background when grouping form fields. This looks really nice with input controls inside it. But many older browsers bleed the color over the legend at the top so Ive removed it for all older browsers. Note: Below, Netscape will set background to black if a border is applied and background is set to transparent. So, we set it to white for Netscape only with this Netscape only hack. */
     background-color: transparent;
     /*/*//*/background-color: white;/*end*/
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
     border: 2px solid #bbbbbb;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 font {
 }
 
@@ -658,27 +376,22 @@ form {
     display: block;
     clear: both;
     padding: 0;
-	/* "margin:auto" here is used to let the browser center a form of input fields horizontally in the web page with versatile but unknown content width dimensions. This assumes the parent container to have "width:100%" or a larger value than the form. */
     margin: auto;
-    /* Note: If you decide to style a form with a background color for older browsers, either avoid it or instead add "border:none" to fix color issues in Netscape. Otherwise Netscape only puts color behind the text. This applies to all elements. */
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 frame {
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 frameset {
 }
 
-/* Note: The heading style property values below are based on older HTML4 defaults that you can change, if you like. I like using the older, original formats once found in older browsers so the styles look consistent with them. These pixel values below were updated from the base 13px font-size ones I had in place in 2005. That means they may look much larger in old browsers still using 72dpi monitors and PC's. */
 h1 {
     display: block;
     padding: 0;
     margin: 0;
-    font-size: 32px;/* pixel font-sizes are widely supported in older browsers */
+    font-size: 32px;
     font-weight: bold;
-    line-height: 48px;/* pixel line-heights are widely supported in older browsers */
+    line-height: 48px;
     color: #000000;
 }
 
@@ -732,20 +445,14 @@ h6 {
     color: #000000;
 }
 
-/* IE5 had a large number of bugs with changing "hr" properties. The main ones to avoid are padding and margins using left and right values. */
 hr {
     display: block;
-   /* In Netscape, this would be the width of the browser page, not the containing parent element. So I added a small fix for Netscape below. */
     width: 100%;
     /*/*//*/width: auto;/*end*/
     height: 0px;
     padding: 0;
-	/* Margins on this element by default are usually half the page's font-size. But if you increase line-height, be sure to increase the margins here, as well. */
     margin: 16px auto;
-    /* IE5 uses color not border to change the color values on "hr" elements. */
     color:#999;
-    /* All other borders must be turned off to use the border-top trick to style "hr".
-    Note: Netscape does not support any of the "border-{value}" properties. Setting a border on HR screws it up, drawing a tiny box above and below the rule rather than draw a border round the rule. If you need to style "hr" for Netscape, try my "NetscapeOnly" style sheet. */
     border-top: 1px solid #999999;
     border-bottom: none;
     border-left: none;
@@ -759,61 +466,42 @@ i {
     font-style: italic;
 }
 
-/* "iframes" are supported in many new and old browsers, but not recommended due to security and other concerns. But, I have added some basic default styles to make the iframe presentable when used. */
 iframe {
     display: inline-block;
     border: 2px solid #999999;
     background:white;
 }
 
-/* Note: Ive added default formatting for images in old browsers with background color, border, and formatting so they appear as block-level placeholders in the simpler content displays. */
 img {
-    display: inline-block; /* if we let this be a block element its background suddenly gains 100% width. So that is avoided here */
-    max-width: 100%; /* optional: do not allow visuals to break out of or extend available viewport or parent element widths */
+    display: inline-block;
+    max-width: 100%;
     padding: 0;
     margin: 0;
     color: black;
-    background-color: #eeeeee;/* this can also be "transparent", but for older browsers I like to show placeholder gray blocks where image will appear. */
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
+    background-color: #eeeeee;
     border: 2px solid #bbbbbb;
     /*/*//*/border: none;/*end*/
-    /* Images in Netscape will displace the image so remove them for Netscape only. */
-    /* This Netscape 4 "normal" line-height value below protects Netscape viewers with inline images, as anything other than "normal" means the image uses the lines compressed height rather than the image's. */
     /*/*//*/line-height: normal;/*end*/
 }
-
-
-/* -------------------- Input Styles -------------------------- */
-/* WARNING: Because pseudo-classes have the same weights as classes, if these have extra selectivity or lots of properties styles they might cascade over custom classes in 3rd party products like Bootstrap. So keep styles to a minimum. Note: These elements were not inheriting font size settings correctly so fixes were applied. */
 
 input,
 input:visited,
 input:hover,
 input:focus,
 input:active {
-    display: block; /* for older browsers that don't understand inline-block */
-    /* Warning: Do NOT set padding for now on all default pseudo-classes for inputs and accept the older browser defaults as we cant rely on customizations of padding using CSS attribute CSS selectors for types of inputs like radio or text. */
-    /*padding: 0;*/
-    /* Note: Since this will be the last style sheet read by much older agents, I have added a slight margin to separate the content boxes they will display. */
-    margin-top: 2px;/* margin-top requires pixels for Netscape 4 */
+    display: block;
+    margin-top: 2px;
     margin-bottom: 2px;
     margin-left: 0px;
     margin-right: 0px;
-    /* WARNING: Adding a "border" property triggers all input fields and input buttons to flatten instead of using their default, old-fashioned, beveled look in some browsers. In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
-    /*border:none;*/
-    background: none;/* reset all background values first */
-    /* Since only older IE 3-7 will use this, and not support fancy layouts with backgrounds, default all input fields and their types to white. Note: Netscape is glitchy with backgrounds on form fields so added a hack to remove them. */
+    background: none;
     background-color: #ffffff;
     /*/*//*/background: none;/*end*/
     cursor: pointer;
-    /* Do NOT apply outline settings here and let the browsers apply their natural colored outlines as needed. HTML5-supporting browsers apply special colored or shaded outlines on required fields and other events. Apply this settings to remove the black default outline that appears in some browsers when the input is clicked. Note: "outline" was not supported in IE 1-6. */
-    /*outline: none;*/
-    /* See "button" element notes on Netscape issues and why these values are chosen. */
     line-height: 19px;
     min-width: 6em;
 }
 
-/* WARNING: There is limited support of these first types of CSS selectors for many older browsers, so these may be ignored. Starting with the "text" types below, those types are fully supported in most browsers. */
 input[type="url"],
 input[type="url"]:visited,
 input[type="url"]:hover,
@@ -875,23 +563,21 @@ input[type="search"]:hover,
 input[type="search"]:focus,
 input[type="search"]:active {
     display: block;
-    min-width: 200px;/* select and text inputs now look the same for older browsers with this value */
-    padding: 2px 2px;/* select and text inputs now look the same for older browsers with this value */
+    min-width: 200px;
+    padding: 2px 2px;
     margin: 2px 0px;
-    /* Select and text inputs now look the same for older browsers with this value. Note: In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. Borders generally fail on all form fields in Netscape so we set those below to "none".*/
     border: 2px solid #999999;
     /*/*//*/border: none;/*end*/
     background-color: #ffffff;
     /*/*//*/background: none;/*end*/
 }
 
-/* search has an extra feature delete icon that shortens the box*/
 input[type="search"],
 input[type="search"]:visited,
 input[type="search"]:hover,
 input[type="search"]:focus,
 input[type="search"]:active {
-    min-width: 208px; /* select and text inputs now look the same for older browsers with this value */
+    min-width: 208px;
 }
 
 input[type="checkbox"],
@@ -901,7 +587,6 @@ input[type="radio"] {
     background: none;
 }
 
-/* File upload styles involve the file text box and the upload button. */
 input[type="file"],
 input[type="file"]:visited,
 input[type="file"]:hover,
@@ -910,15 +595,13 @@ input[type="file"]:active {
     display: block;
     padding: 0;
     margin: 0;
-    overflow: hidden; /* long file names overflow so just hide the end */
+    overflow: hidden;
     background-color: #ffffff;
     /*/*//*/background: none;/*end*/
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
     border: 2px solid #999999;
     /*/*//*/border: none;/*end*/
 }
 
-/* WARNING: There is limited support of these types of CSS selectors for many older browsers so these may be ignored. */
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
@@ -937,13 +620,8 @@ input[type="submit"]:active {
     display: block;
     padding: 2px 5px;
     text-align: center;
-    /* WARNING: Adding a "border" property triggers all input fields and input buttons to flatten buttons instead of using their default, old-fashioned, raised look in some browsers. Add the border property to "flatten" them. */
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
-    /*border:2px solid #bbb;*/
     /*/*//*/border: none;/*end*/
 }
-
-/* ------------------------------------------------------------ */
 
 ins {
 	display: inline;
@@ -952,43 +630,34 @@ ins {
 
 kbd {
 	display: inline;
-	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. I left the original 2000 font set commented out below. It was often used to improve monospace fonts displays. */
-    /*font-family:"Courier New", Courier, Corsiva, Helvetica, monospace;*/
     font-family: monospace, monospace;
     font-size: 1em;
-	/* Added "bubbles" around keyboard inputs to make them stand out. */
 	border-radius: 2px;
 	padding: 2px;
 	border: 1px solid #000000;
 }
 
 label {
-    /* Note: Since this will be the last style sheet read by much older agents, I have added inline-block formatting if supported, and a slight margin to separate the content boxes they will display. */
     display: block;
     display: inline-block;
     padding: 0;
-    margin-top: 2px;/* margin-top requires pixels for Netscape 4 */
+    margin-top: 2px;
     margin-bottom: 2px;
 }
 
-/* This is the title piece to "fieldset". Note: I like to keep the font-size the same as page text. So its font-size is set above in the elements lost to match paragraph text. */
 legend {
     color: #000000;
 	padding: 4px 8px;
     background-color: #ffffff;
-    line-height: normal;/* required as legend should not inherit line-height */
+    line-height: normal;
 }
 
 li {
-    /* Warning: Some older browsers like IE 5 and older Mozilla 1-5/Netscape 6 do not understand the declaration "display:list-item" and may cause ordered lists to show "0" rather than numbers. For that reason Ive commented this out and will let the browser's default UA style sheet set this value. */
-    /*display: list-item;*/
     padding: 0;
     margin: 0;
-    /* This shorthand for several list-styles is used to try and inherit all their values from the "ul" or "ol" parent's list-style-type. Always allow the browser's "li" element to inherit "list-style" and "list-style-type" from the "ol" or "ul" nested parent element! */
     list-style: inherit;
 }
 
-/* Special list tree formatting to make sure newer browsers have a list with a cleaner, more compact look. */
 li ul,
 li ul ul,
 li ol ul,
@@ -1008,15 +677,12 @@ map {
     cursor: pointer;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 marquee {
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 noframes {
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 noembed {
 }
 
@@ -1030,7 +696,7 @@ object {
 ol {
     display: block;
     padding: 0;
-    margin-top: 8px;/* margin-top requires pixels for Netscape 4 */
+    margin-top: 8px;
     margin-right: 0;
     margin-bottom: 8px;
     margin-left: 20px;
@@ -1046,21 +712,17 @@ ol ol ol {
 }
 
 ol ol ol ol {
-    list-style-type: decimal;/* reset back to decimal again */
+    list-style-type: decimal;
 }
 
-/* Note: We are not adding "ol ul" or "ul ol" bullet type style combinations here for now. */
-
-/* Note: IE 3-5 will allow font properties on the "select" element only, not its child option elements. They cannot be styled using font, background, margin, line-height, and many other properties in those browsers. IE 4 does not support optgroup at all. */
 optgroup {
 	margin: 0;
 	padding: 0;
-    font-style: normal;/* removes the italic style */
+    font-style: normal;
     font-weight: bold;
     cursor: pointer;
 	background: #ffffff;
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
-    border: none;/* removes IE borders that can occur */
+    border: none;
 }
 
 option {
@@ -1068,8 +730,7 @@ option {
 	padding: 0;
     cursor: pointer;
 	background: #ffffff;
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
-    border: none; /* removes IE borders that can occur */
+    border: none;
 }
 
 
@@ -1077,7 +738,6 @@ p {
     display: block;
     clear: none;
     padding: 0;
-	/* Margins on this element by default are usually the same as the page's font-size. But if you increase line-height, be sure to increase the margins here, as well. */
     margin: 8px 0px 8px 0px;
 }
 
@@ -1085,22 +745,15 @@ pre {
     display: block;
     padding: 0;
     margin: 16px 0px;
-    /* In IE 3-6 it only accepts "pre" in the strict sense. "pre-wrap" has little support. As a rule, for older browsers, do not set "white-space:pre" accept on this "pre" element. */
     white-space: pre;
-	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. I left the original 2000 font set commented out below. It was often used to improve monospace fonts displays. */
-    /*font-family:"Courier New", Courier, Corsiva, Helvetica, monospace;*/
     font-family: monospace, monospace;
     font-size: 1em;
 }
 
-/* Because of the complexity of removing then re-adding quotations around the 'q' element text, I've elected to let existing browsers decide what types of quotes to wrap around quoted text. */
 q {
 	display: inline;
-	/* This is the default in most browsers but shows you how you can change what types of quotes to use. */
-	/*quotes: "“" "”";*/
 }
 
-/* Note: "ruby", "rt", and "rp" where never part of HTML4, but were added to XHTML. Only IE 5.5 and later supported these three ruby elements, until HTML5 adopted them after 2010. I do not change the styles here as most browsers use custom and often elaborate positioning of the "rt" element text. Later ruby elements were added to HTML5, like "rb", "rbc", and "rtc". But currently they are not supported by most browsers. */
 rp {
 }
 
@@ -1117,8 +770,6 @@ s {
 
 samp {
 	display: inline;
-	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. I left the original 2000 font set commented out below. It was often used to improve monospace fonts displays. */
-    /*font-family:"Courier New", Courier, Corsiva, Helvetica, monospace;*/
     font-family: monospace, monospace;
     font-size: 1em;
 }
@@ -1128,28 +779,23 @@ select:visited,
 select:hover,
 select:focus,
 select:active {
-    display: block; /* for these much older browsers we will let form controls stack vertically. change as needed. */
-    /* Note: Since this will be the last style sheet read by much older agents, I have added a slight margin to separate the content boxes they will display. */
+    display: block;
 	width: auto;
 	height: auto;
-    min-width: 208px; /* Select and text inputs now look the same for older browsers with this value. */
-    padding: 2px 2px; /* Select and text inputs now look the same for older browsers with this value. Note: IE 5 doesn't support padding on select. Some older Mozilla browsers will destroy padding on replaced elements.  */
+    min-width: 208px;
+    padding: 2px 2px;
     margin: 0;
-    margin-top: 2px;/* margin-top requires pixels for Netscape 4 */
+    margin-top: 2px;
     margin-bottom: 2px;
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
-    /* Select and text inputs now look the same for older browsers with this value. Note: In Netscape, setting "border" destroys the element so we set it to "none" below. */
     border: 2px solid #999999;
     /*/*//*/border: none;/*end*/
-    background-color: #ffffff; /* in case there is color behind this control, make the dropdown background white */
+    background-color: #ffffff;
     /*/*//*/background: none;/*end*/
     cursor: pointer;
-    /* See "button" element notes on why these values are chosen. */
     line-height: 19px;
     min-width: 6em;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 small {
 	display: inline;
     font-size: 13px;
@@ -1159,7 +805,6 @@ span {
 	display: inline;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 strike {
 	display: inline;
     text-decoration: line-through;
@@ -1174,36 +819,28 @@ sub {
 	display: inline;
     font-size: 13px;
     padding: 0px 1px;
-	/*vertical-align: sub;
-	bottom: auto;*/
-	vertical-align: baseline; /* this is the default value */
+	vertical-align: baseline;
 	position: relative;
 	top: 3px;
-    line-height: normal;/*make sure any line-height settings are not applied here. "normal" is supported in many old browsers */
+    line-height: normal;
 }
 
 sup {
 	display: inline;
     font-size: 13px;
     padding: 0px 1px;
-	/*vertical-align: super;
-	bottom: auto;*/
-	vertical-align: baseline; /* this is the default value */
+	vertical-align: baseline;
 	position: relative;
 	top: -5px;
-    line-height: normal;/*make sure any line-height settings are not applied here. "normal" is supported in many old browsers */
+    line-height: normal;
 }
 
-/* Note: IE 1-5 have a variety of inheritance issues from the "table" element to its rows and cells. Setting "padding" in IE5, for example, on the table tag would not apply padding to the table itself, but push it into the table cells from the table parent. Avoid use of "table" to style its children and all CSS inheritance (other than font-family) or properties. Make sure you style "th" and "td" specifically in your CSS to avoid problems. This includes color, font-size, padding, background, and more. */
 table {
-    /* do not use "fixed" here unless you plan to use set widths first row of table */
     display: table;
-    /*table-layout: auto;*//* This is not supported in older browsers and no IE browser. */
     margin: 0;
     padding: 0;
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
     border: 1px solid #000000;
-    border-spacing: 0;/* not supported in IE3-6+ other than 1px or 0. avoid "0px" value in IE, just use 0 */
+    border-spacing: 0;
     border-collapse: collapse;
     vertical-align: top;
 }
@@ -1212,7 +849,6 @@ tbody {
     display:table-row-group;
     margin:0;
     padding:0;
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
     border:none;
     border-spacing:0;
     border-collapse:collapse;
@@ -1222,7 +858,6 @@ td {
     display: table-cell;
     margin: 0;
     padding: 8px;
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
     border: 1px solid #000000;
     border-spacing: 0;
     border-collapse: collapse;
@@ -1237,40 +872,26 @@ textarea:visited,
 textarea:hover,
 textarea:focus,
 textarea:active {
-    display: block; /* for these much older browsers we will let form controls stack vertically. change as needed. */
-    /* Some older browsers like IE 1-5 do not interpret min-width here so need width. */
+    display: block;
     width: 500px;
-    /* Height "auto" will allow the text area to expand vertically in size with a horizontal scrollbar if pre-existing content is added to the box before rendering. */
-    /* Some older browsers like IE 1-5 do not interpret min-height here so need height to trigger "hasLayout". */
     height: 200px;
-    /* The max-width "100%" value fixes a weird issue where width is too wide by default and extends beyond 100% of the parent in some agents. */
     max-width: 95%;
-    padding-top: 2px;/* Netscape 4 requires pixels for padding-top and padding-bottom. Some older Mozilla browsers will destroy padding on replaced elements. */
+    padding-top: 2px;
     padding-right: 2px;
     padding-bottom: 2px;
     padding-left: 2px;
-    /* Note: Since this will be the last style sheet read by much older agents, I have added a slight margin to separate the content boxes they will display. */
-    margin-top: 2px;/* margin-top requires pixels for Netscape 4 */
+    margin-top: 2px;
     margin-right: 0px;
     margin-bottom: 2px;
     margin-left: 0px;
     cursor: text;
-    /* Overflow "auto" allows the box to start with no scrollbars but add them as content fills the box. Note: IE5 sets this to "scroll" automatically before content overflows. */
     overflow: auto;
-	/* Resize creates a tab in the lower right corner of textarea for most modern browsers and allows users to resize the box manually. Note: Resize isn't supported by most older agents and IE. */
     resize: both;
-    /* Some textareas have a light gray background by default anyway. Note: Netscape has issues with backgrounds on form fields so we reset it to "none" below. */
     background-color: #eeeeee;
     /*/*//*/background: none;/*end*/
-	/* "word-wrap: normal" allows text to drop down to a new line when it reaches the textarea's width. */
 	word-wrap: normal;
-    /* Do not use "border" in textareas unless you want to remove the 3D box most browsers assign and flatten the box design. In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin-left or margin-right to any value. */
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. Also, setting border on "textarea" in Netscape destroys its display, so avoid for Netscape or set a hack below to "border: none". */
-    /*border: 1px solid black;*/
     /*/*//*/border: none;/*end*/
-    /* I have decided to let old browser keep the beveled look (no border trigger) and use the old monospace default font set typical of c. 2000 browsers. */
     font-family:"Courier New", Courier, Corsiva, Helvetica, monospace;
-    /* See "button" element notes on why these values are chosen. */
     line-height: 19px;
     min-width: 6em;
 }
@@ -1279,7 +900,6 @@ tfoot {
     display:table-footer-group;
     margin:0;
     padding:0;
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
     border: none;
     border-spacing:0;
     border-collapse:collapse;
@@ -1289,7 +909,6 @@ th {
     display: table-cell;
     margin: 0;
     padding: 8px;
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
     border: 1px solid #000000;
     border-spacing: 0;
     border-collapse: collapse;
@@ -1304,7 +923,6 @@ thead {
     display:table-header-group;
     margin:0;
     padding:0;
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
     border:none;
     border-spacing:0;
     border-collapse:collapse;
@@ -1314,65 +932,51 @@ tr {
     display:table-row;
     margin:0;
     padding:0;
-     /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
     border: none;
     border-spacing:0;
     border-collapse:collapse;
 }
 
 tt {
-	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. I left the original 2000 font set commented out below. It was often used to improve monospace fonts displays. */
-    /*font-family:"Courier New", Courier, Corsiva, Helvetica, monospace;*/
     font-family: monospace, monospace;
     font-size: 1em;
 }
 
-/* ALERT: The 'u' element was deprecated in later HTML4 recommendations as it had no semantic meaning, but was  re-instated in HTML5, but for the wrong reasons (for misspelled words?). Plus, the "underline" has always confused text with hypertext links. So, I force an alternative line style now so users know the wrapped text is a "spelling error". */
 u {
-    text-decoration: underline dashed red;/* Older IE browsers only */
-    text-decoration: underline wavy red;/* Try and use the "spellcheck" wavy error line instead. */
+    text-decoration: underline dashed red;
+    text-decoration: underline wavy red;
 }
 
 ul {
     display: block;
     padding: 0;
-    margin-top: 8px;/* margin-top requires pixels for Netscape 4 */
+    margin-top: 8px;
     margin-right: 0;
     margin-bottom: 8px;
     margin-left: 20px;
-    list-style-type: disc;/* widely supported starting with IE 4 and Netscape 4 */
+    list-style-type: disc;
 }
 
 ul ul {
-    list-style-type: circle;/* widely supported starting with IE 4 and Netscape 4 */
+    list-style-type: circle;
 }
 
 ul ul ul {
-    list-style-type: square;/* widely supported starting with IE 4 and Netscape 4 */
+    list-style-type: square;
 }
 
 ul ul ul ul {
-    list-style-type: disc;/* reset back to disc again */
+    list-style-type: disc;
 }
-
-/* Note: We are not adding "ol ul" or "ul ol" bullet type style combinations here for now. */
 
 var {
 	display: inline;
     font-weight: bold;
     font-style: italic;
-	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. I left the original 2000 font set commented out below. It was often used to improve monospace fonts displays. */
-    /*font-family:"Courier New", Courier, Corsiva, Helvetica, monospace;*/
     font-family: monospace, monospace;
     font-size: 1em;
 }
 
-
-
-/* ============================ NEW HTML5 ELEMENTS =============================== */
-/* New HTML5 elements added which older browsers will not style without help. */
-
-/* These new elements should be part the page flow and should need font styling. */
 menu,
 menuitem,
 mark,
@@ -1389,40 +993,32 @@ wbr {
     word-spacing: normal;
     letter-spacing: normal;
     color: #000000;
-    line-height: inherit;/* for now just try and inherit whatever is set in the body for line-height */
+    line-height: inherit;
 }
 
-/* These elements have no design formatting but can be part of the page flow. */
 source,
 track {
 }
 
-/* These elements have no design formatting, are deprecated, or should never be seen. */
 keygen {
-    /* WARNING! Use "display:none" to permanently remove the item from any readers, search engines, and submitted form data. Doing so means those elements are in the source code but not part of form-posted data, seen by users, or part of the DOM. */
-    /*display: none;*/
-    /* This hides these elements without removing them from screen readers, form submissions, or search engines. They are simply removed off the page visually. */
     position: absolute;
     top: -9999px;
     left: -9999px;
-    /* Optional: Using "visibility:hidden"
-, IE4-7 only hides the parent content and not its children. In IE5, adding "visible" under a "hidden" parent is not shown in some cases. */
     visibility: hidden;
 }
 
-/* New HTML5 inline graphic elements */
 bdi,
 data {
     display: inline;
     margin: 0;
     padding: 0;
-    vertical-align: baseline; /* fixes vertical alignment in progress */
+    vertical-align: baseline;
     font-family: Arial, Verdana, Helvetica,'MS Sans Serif','Lucida Grande', Lucida, Geneva, sans-serif;
     font-size: 16px;
     word-spacing: normal;
     letter-spacing: normal;
     color: #000000;
-    line-height: 24px;/* this matches the line-height assigned the body and element list. */
+    line-height: 24px;
 }
 
 audio,
@@ -1433,23 +1029,19 @@ progress,
 svg,
 video {
     display: inline-block;
-    /* optional: do not allow these visuals to break out of or extend available viewport or parent element widths */
     max-width: 100%;
     padding: 0;
     margin: 0;
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
     border: none;
-    outline: none; /* needed for older browsers that used to display outlines */
+    outline: none;
     font-family: Arial, Verdana, Helvetica,'MS Sans Serif','Lucida Grande', Lucida, Geneva, sans-serif;
     font-size: 16px;
     word-spacing: normal;
     letter-spacing: normal;
     color: #000000;
-    line-height: 24px;/* this matches the line-height assigned the body and element list. */
+    line-height: 24px;
 }
 
-
-/* These are new HTML5 block-level elements that function like div's. Note: IE 9-11 still does not know HTML5 element "main", but "display:block" below fixes its issues. */
 article,
 aside,
 details,
@@ -1466,13 +1058,9 @@ section {
     display: block;
     width: auto;
     height: auto;
-    /* optional: do not allow these visuals to break out of or extend available viewport or parent element widths */
     max-width: 100%;
     padding: 0;
     margin: 0;
-    /*This would not affect the rest of the background properties for some special multimedia elements that might have unique background features.*/
-    /*background-color: transparent;*/
-    /*This resets all background properties for these special multimedia selectors! If this causes issues with say video, then remove it.*/
     background: none;
     font-family: Arial, Verdana, Helvetica,'MS Sans Serif','Lucida Grande', Lucida, Geneva, sans-serif;
     font-size: 16px;
@@ -1480,25 +1068,15 @@ section {
     white-space: normal;
     letter-spacing: normal;
     color: #000000;
-    line-height: 24px;/* this matches the line-height assigned the body and element list. */
-    /* ALERT: Only add this "float" declaration below if you want to force older browsers to never float and stack content vertically in every case. In general this would affect only browsers pre-2001 and IE 1-7. */
-    /*float: none;*/
+    line-height: 24px;
 }
 
-
-/* =================== HTML5 : SPECIAL ELEMENT STYLES ================== */
-
-/* These items have special formatting that cannot be duplicated in old browsers without damaging HTML5 supporting ones. */
-
-/* Datalist has very poor browser support so styles are left off. */
 datalist {
 }
 
-/* Dialog has very poor browser support so styles are left off. */
 dialog {
 }
 
-/* Figure needs to perform like "inline-block" elements, not a block element. */
 figure {
 	display: inline-block;
     text-align: center;
@@ -1519,7 +1097,6 @@ mark {
     color: black;
 }
 
-/* New in HTML5, "menu" and "menuitem" are currently only supported in Gecko browsers. Testing today in Firefox indicates no support for "menu", however. I have given the menu some styles to indicate its presence in the web page, though few browsers support it. */
 menu {
 	display: inline-block;
 	margin: 0;
@@ -1535,15 +1112,14 @@ menuitem {
 	background: none;
 }
 
-/* ALERT: These CSS properties should try and match whatever 'input' and 'input["text"]' combined used as as far as styles. But because some differences remain in browsers as to how to style these, some customizations were applied. */
 output,
 output:visited,
 output:hover,
 output:focus,
 output:active {
-    display: block;/* This is the only way to keep the output box dimensions from shifting or collapsing when text appears inside. */
-    width: 200px;/* This is the only way to keep the output box dimensions from shifting or collapsing when text appears inside. */
-    height: 18px;/* This is the only way to keep the output box dimensions from shifting or collapsing when text appears inside. */
+    display: block;
+    width: 200px;
+    height: 18px;
     cursor: pointer;
     padding: 2px 2px;
     margin: 2px 0px;
@@ -1554,8 +1130,6 @@ output:active {
     line-height: normal;
 }
 
-/* WARNING: Even though most older browsers served by this sheet will never know this new HTML5 element, changing its "display" or its parent 'detail' element's "list-item" property destroys the ability of newer HTML5 browsers to render this interactive element correctly. So, avoid most structural style changes! (The exception is IE8-11 styles below. These older browsers will never render the interactive toggle features for 'details' and 'summary' correctly, so need fixes.)*/
-/* IE does not support the "details" interactive element so do not use a pointer */
 details {
     cursor: default;
 }
@@ -1564,63 +1138,20 @@ summary {
     cursor: default;
 }
 
-/* Time is a new HTML5 element that is helpful when it also has some visual enhancement combined with a tooltip. */
 time {
     text-decoration: underline dashed #000000;
 }
 
-/* ===================================================================== */
-/* IE 4-8 HTML5 Fix: If you want HTML5 elements to work in Internet Explorer you have to install the new HTML5 elements via the script below before styles affect them correctly. Because my style sheet system for old IE wont work till these elements are installed. Below, Ive listed a script you can run if you choose to support IE 4-8 with new HTML5 layout elements.
-  Note: Even IE 9-11 never supported the HTML element "main". So, they will not receive this element injection. However, you can still style the unknown element in these newer IE browsers and they seem to perform ok. */
-
-/*
-<!--[if lt IE 9]>
-<script>
-        document.createElement("header");
-        document.createElement("nav");
-        document.createElement("main");
-        document.createElement("footer");
-        document.createElement("section");
-        document.createElement("article");
-        document.createElement("aside");
-        document.createElement("figure");
-        document.createElement("figcaption");
-        document.createElement("video");
-        document.createElement("audio");
-        document.createElement("picture");
-        document.createElement("output");
-        document.createElement("details");
-        document.createElement("summary");
-</script>
-<![endif]-->
-*/
-
-/* ==================== END : APPLY BASE PAGE STYLES =================== */
-
-
-
-
-/* ======================= ADD SPECIAL STYLES HERE ====================== */
-/* Since this is the last and only style sheet older browsers (pre-2001) will ever see due to non-support of your imported style sheets and custom classes, you might want to hide those content blocks using custom styles below. This might include print headers and items you hide in your main "Styles.css" page. In most cases, since these much older browsers are a tiny subset of your users and will see a very basic white page with vertical content displays, any extra content not hidden from the page is likely going to drift to the top of the user's display in these old browsers and be ignored anyway. So custom classes and page styles below are optional. */
-
-/* Image links can require special formatting. In some older browsers, image links created nasty borders or outlines around images you could not remove. The hacks below help. */
 a img {
     display: block;
-    /* Below, we always reset padding and  margin on block level elements to 0 unless needing a value. */
 	padding: 0;
 	margin: 0;
-    /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
-    border: none;/* Old browsers add borders around images with links so remove those. They fail in Netscape. */
+    border: none;
     cursor: pointer;
-    /* OPTIONAL HIDING THOSE PESKY IMAGE LINK BORDERS IN NETSCAPE 4: "color:white" seems to be the only way to hide the border from image links in NN4 without hiding its alt tag info. This hack below only seen by NN4. */
     /*/*//*/color: white;/*end*/
-    /* This Netscape 4 "normal" line-height value below protects Netscape viewers with inline images, as anything other than "normal" means the image uses the lines compressed height rather than the image's. */
     /*/*//*/line-height: normal;/*end*/
 }
 
-/* Special spacing must be added when using 'div' to space form field controls. This also is part of the vertical, block-level, white page, "cleanly" spaced, element redesign only older browsers like IE 1-7 and other will receive when laying out your web page. */
 form div {
     margin: 4px 0;
 }
-
-/* ===================================================================== */

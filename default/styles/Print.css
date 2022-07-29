@@ -1,137 +1,12 @@
 
-/* ======================= UNIVERSAL CSS FRAMEWORK ======================
-Title: Universal CSS Framework, version 2.0.0.0
-Author: Mitchell Stokely (updated March, 2021)
-
-Description: This style sheet is part of a complete "progressive" CSS framework designed for cross-browser style sheet support in browsers going back to the birth of the World Wide Web in the 1990's. It provides old browsers the minimum styles needed to display content, while adding newer styles for more modern browsers that can display more modern CSS. I call this the "Universal CSS Framework" because it was designed to universally support as many web browsers as possible, including those that did not support CSS. This system should provide some form of basic layout or design in all browsers, old and new, with a rich cascading style sheet system that degrades gracefully to simpler layouts in the older browsers.
-
-The first "1.0" version of this CSS system was originally constructed in June of 2004, though its initial designs were laid down in 2001. This "2.0" version is a major upgrade I built to accommodate new HTML5 and CSS3 standards. You will see those more modern features in parts of the newer sheets designed for more modern browsers and much better fixes for many older browsers, as well.
-
-Please note that this solution is Javascript-free!
-
-============================ STYLE SHEET NOTES =======================
-GENERAL RULES TO FOLLOW WHEN DISPLAYING PRINT DESIGNS
-
-This style sheet page controls all printing for all pages in your website.
-
-I will not be covering Web Page Printing HTML techniques, as that alone is a large topic. But I have built a nice print-friendly CSS style sheet technique that works well in a wide range of browsers. This particular "link" print sheet should work in the majority of browsers created the past 20 years. Just make sure its linked from all your web pages as a "media=print" type.
-
-Very old browsers have a range of issues with printing. There are some browsers that don't work well with the <style> element of print as a style media type, like Opera 6 which sees it as the main style sheet or the older IE issues with "print" as a media type using media queries, which fail even in some newer IE versions.
-
-For the WIDEST POSSIBLE BROWSER SUPPORT FOR PRINT:
-
-1. Always use a plain linked style sheet with media type or "print" after all the other styles.
-2. Avoid "print media queries" in embedded page styles and in style sheets. Avoid mixing print media queries or @page media queries in "screen" type sheets, as many browsers get confused as to which styles apply to what types and fail.
-3. Always avoid "media=all" or "all" in any form in @import, @page, or @media queries. Avoid "all" in all your style media types, as again, many older browsers never supported "all" or do not know which sheets are print and/or screen when using "all".
-4. Always avoid "title" attributes on your linked print sheets as those trigger alternate style sheet rules in many browsers. That then breaks print features in Mozilla browsers and triggers it to be an alternate style sheet, not print.
-5. Always avoid "@media print {...}" and other tricks to inject printing CSS in screen type style sheet pages as it will confuse browsers. Instead use a plain print style sheet like this one. A sample linked print sheet is shown below. Add this link sheet below to your web pages with your custom style sheet path. Do so will increase chances for supporting "print" in old and new browsers. Make sure it is the first or last linked sheet in your list of style sheet for maximum chances of print support in the browser:
-
-    <link media="print" rel="stylesheet" type="text/css" href="/styles/print.css" />
-
-6. Always put print sheets either first or last in your page order, in case the last link sheet is the only one supported, as was the case years ago on some older browsers like IE 3.
-7. Use print units for fonts, like "pt". 72pts = one inch. In printing using various CSS units, one inch = one real-life inch on paper, like on a ruler. It is NOT the inch on a computer screen, which is totally arbitrary based on resolution, device pixels used, etc. 
-8. Avoid shadow effects, giant image downloads, animations, video, audio, Flash, and heavy design element as they will NOT print!
-9. Avoid Pixels in CSS when Printing and rely on "pt" or "em" units which work better.
-10. Flatten all flex, grid, and Bootstrap layouts when printing, and hide structural elements when possible.
-11. WARNING: Internet Explorer 8 or lower do not work with media queries! So, be aware how these changes triggered below for small screen or print affect IE 8 or lower.
-12. In general, use this page to display the hidden print logo and header, hide navigational elements and hide all non-content blocks in the UI, and modify text and layouts for maximum display on printed paper. Load in all the desktop style sheets and their formats you also want applied to your printable web pages. Remember, this print sheet will only be seen by browsers when printing and will ignore all your screen styles. For that reason, I like to @import in all my screen sheets below first, into my print sheet. That makes it very easy to customize just a few styles for print, and avoid having to ever change much for print.
-13. You generally need to do this as you may want to keep a large percentage of font and style designs. You can then hide web page headers, turn on high resolution print headers and logos, redesign print margins, customize print-friendly fonts and sizes, turn some divs off and restructure page layouts, etc. Note: You may also need to add some new print-only divs with hidden content your unhide in this sheet only. Be sure to then add a matching style in your desktop screen style sheet that hides these special print items.
-14. AVOID USE OF @PAGE or @PRINT CSS RULES as they do not appear to be supported by many older browsers. Apple and Safari don't support it now. IE 8 or less doesn't. Just try media queries instead. You can't change all CSS properties with @page. You can only change the margins, orphans, widows, and page breaks of the document. Attempts to change any other CSS properties will be ignored. CSS2 provides support for paged media which is used by the now deprecated CSS media types of projection, handheld and embossed. Note: @Page support in IE began with IE8 and no modern Safari or older browser supports it.
-15. AVOID @MEDIA PRINT {...} OR @IMPORT url() print VERSIONS, AS WELL as fewer older browsers support it. IE 1-7 DOES NOT SUPPORT @IMPORT url() print. The best choice is a print linked style sheet for maximum support. So DO NOT USE the media type below!! 
-
-====================== OPTIONAL PAGE BREAKS =======================
-
-You can use these custom page break classes in your web page HTML in places where you want pages to break or not break when printing. "auto" or "avoid" -- Use these values to forbid page break inside the element. "auto" lets the printer decide. Some browsers also support "always". Note: You can add these CSS properties into any CSS rule, or use these classes below, directly in your HTML. The former is much easier to implement in this sheet than these custom classes, unless you have very specific markers in your HTML where you want breaks.
-
-.print_avoidpagebreakbefore {
-    page-break-before: avoid;
-}
-.print_avoidpagebreakafter {
-    page-break-after: avoid;
-}
-.print_avoidpagebreakinside {
-    page-break-inside: avoid;
-}
-.print_orphanedlinesallowed  {
-    orphans: 2;
-}
-.print_widowedlinesallowed  {
-    orphans: 2;
-}
-
-========================== IF YOU USE @PAGE =======================
-
-@PAGE RULE: If you choose to use @Page, here are some options to use only in this style sheet for print. Create Optional Page Areas with Margins: "@page" defines the characteristics of a printed page you want used when HTML appears that is associated with the "named" page attached (see below how to attach this to html). The "size" sets the total printed page dimensions, with the margin setting the borders that contain the "page box" where HTML content will appear when printed.
-
-This style below would apply to all pages in a website. Named pages would not and must be assigned to classes or elements using the "page" property. I've listed examples of page size layouts below.
-
-@page {
-    size: auto;
-    size: portrait;
-    size: landscape;
-    size: 8.5in 11in;
-    margin: 1in;
-    size: 10%;
-}
-
-The first page can be set using :first" and as a cover page with special margins or characteristics.
-
-@page :first {
-    margin: 0;
-}
-
-
-NAMED PAGE EXAMPLE: This CSS says, when using the named page layout, start new page and move all html associated with the page type into a "portrait" layout when printing. I have added a landscape one, too, so you can see how you can trigger CSS classes when in different page size formats. 
-
-@page myportraitpage {
-    size: portrait;
-    margin: 1in 1in;
-}
-.print_portrait {
-    page : myportraitpage;
-}
-@page mylandscapepage {
-    size: landscape;
-    margin: 1in 1.5in;
-}
-.print_landscape {
-    page : mylandscapepage;
-}
-
-
-This CSS Rule affects ALL print pages in your website and is the default. It lets the user's printer settings decide what page size to use. "letter" is the most common but you can custom size, if you like. This allows you to set styles to fit the give page size used.
-
-@page {
-    size: auto;
-}
-
-/* =================================================================== */
-
-
-
-
-
-
-
-/* ================= IMPORT IN ALL WEBSITE STYLES ==================== */
-
-/* REQUIRED: IMPORT IN ALL WEBSITE STYLES : Unless you want to cut-and-paste your complete website styles into this print sheet, the best strategy is to simply import in the "importers" for all your desktop style sheets. Based on browser version, this print sheet will load in all the styles needed to print. You can then simply customize a few features of your web site styles below for your print version of your website. Note: ALWAYS place @imports ABOVE all CSS style rules, or they will fail in compliant CSS browsers. */
-
 @import url("BootstrapImporter.css");
 @import url("NewBrowsersImporter.css");
 @import url("OldBrowsers.css");
 
-
-
-
-/* ======================= SHOW/HIDE FROM PRINT ====================== */
-
-/* REQUIRED: ALWAYS SHOW THE HIDDEN PRINT HEADER! */
 html body #printheader {
     display:block;
 }
 
-/* Hide all non-printable headers and items. */
 html body #header,
 html body #mobileheader,
 html body #footer,
@@ -142,7 +17,6 @@ html body #back_to_top {
     display:none;
 }
 
-/* FORMAT THE WEB PAGE PRINT HEADER AS YOU NEED. */
 html body #printheader {
     display:block;
     float:none;
@@ -177,7 +51,6 @@ html body #printheader address {
     font-style: normal;
     font-variant: small-caps;
     font-family: arial, verdana, sans-serif;
-    /*font-size: 10pt;*/
 }
 
 html body #printheader hr {
@@ -194,9 +67,6 @@ html body #printheader hr {
 	text-align: center;
 }
 
-
-
-/* REQUIRED: Hide non-visual items from the printer. */
 html body base,
 html body basefont,
 html body head,
@@ -209,51 +79,8 @@ html body title {
     display:none;
 }
 
-/* OPTIONAL: Hide these specialized items, multimedia objects, and non-visual items from the printer. */
-/*
-html body applet,
-html body area,
-html body audio,
-html body canvas,
-html body embed,
-html body frame,
-html body frameset,
-html body iframe,
-html body param,
-html body map,
-html body menu,
-html body menuitem,
-html body meter,
-html body nav,
-html body noscript,
-html body noframes,
-html body object,
-html body progress,
-html body source,
-html body svg,
-html body template,
-html body track,
-html body video {
-    display:none;
-}
-*/
-
-
-
-
-
-
-
-
-
-/* ===================== APPLY BASE PRINT STYLES ===================== */
-
-/* Set up basic page-level print styles for all HTML5 elements below. In many cases this is optional. In other cases, where you want all your fonts to be closely tied to physical units on paper, you might convert all the font settings to "pt", "cm", etc. You also might want to add borders to images, change some layouts to block-level objects, hide specific content like navigation, add or remove borders, flatten tables or increase width to page boundaries, etc.
-In other cases you might just want to explicitly print the page with the same look and feel as the website. Others, you might want just the text content and print the material as a book. In the former case you would want very minimal changes, except in the case of content that isn't printable, like audio, video, etc. In the latter case, you would want to completely reformat all the HTML elements and content until you display text blocks in the specific printable format needed. */
-
 :root,
 html {
-    /* These first properties you should set to control overall print page dimensions from the root element of the page. "body" below will generally control most of the page properties, but also inherit first what is in this root element. */
     width: 100%;
 	height: 100%;
 	min-height: none;
@@ -262,23 +89,7 @@ html {
 	margin: 0;
     color: #000;
     background: transparent;
-    /*
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-text-size-adjust: 100%;
-	-moz-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-size-adjust: 100%;
-	font-family: inherit;
-	font-size: inherit;
-	line-height: inherit;
-    */
 }
-
-/* This set of style properties is a copy from the "NewBrowsers" style sheet. Only change the values that benefit printing, and leave the rest. Note: for "font-size", I would leave it as "medium" as this honors the user font size setting. If a user is printing, and wants to increase the text size, that should naturally increase in the print sheet as well. Using "medium" would enable that handy feature. 
-Note on Fonts: I do recommend you change all fonts "pt" which map to physical units on printed paper and are laser accurate when reproduced in print. Do NOT use pixels in print. For now, because I use absolute units (like "medium") that map back to the user's font-size settings in their browser, I would rather keep the inherited font sizes linked into this print sheet from the reset sheets, and allow users to customize their own font sizes rather than try and translate or force set print "point" sizes. But, if you do change all font-sizes to "pt", be sure to choose a size that maps back as closely to a medium font size, so if users do scale, the "pt" unit fonts will scale as proportionately into their print sizes as possible. "pt" units are as follows: 1 inch = 72 pts. This means you can choose "12pt" (same as "16px medium font) size for your middle font-size and assign it to "body" element below. Your print sheet will then accurately recreate a perfect medium font.
-*/
 
 html body {
 	height: auto;
@@ -291,74 +102,27 @@ html body {
 	margin: 0;
 	background: transparent;
 	color: #000;
-	/*-webkit-text-size-adjust: 100%;*/
-	/*-moz-text-size-adjust: 100%;*/
-	/*-ms-text-size-adjust: 100%;*/
-	/*text-size-adjust: 100%;*/
 	font-family: sans-serif;
-	/*font-size: medium;*//* because my CSS system customizes font sizes for IE 4-7, I will leave this */
-	/*line-height: 1.5;*/
-	/*box-sizing: border-box;*/
-	/*-webkit-box-sizing: border-box;*/
-	/*-moz-box-sizing: border-box;*/
-	/*box-sizing: border-box;*/
-	/*word-spacing: normal;*/
-	/*letter-spacing: normal;*/
-	/*white-space: normal;*/
-	/*border: none;*/
-    /*text-align: left;*/
-	/*cursor: default;*/
 }
-
-
-/* UNIVERSAL HTML RESET: Add any universal changes you want applied to all elements that could affect printing. My recommendations include:
-
-- Strip shadows from all your HTML elements
-- Reset all positioning (static) on all your HTML elements
-- Flatten out layouts on all your HTML elements
-- Remove floats on all your HTML elements
-- Remove backgrounds pr set to transparent on all your HTML elements
-
-*/
 
 *,
 *::before,
 *::after {
-    text-shadow: none !important;/* removes all drop shadows from boxes which are not printable */
+    text-shadow: none !important;
     box-shadow: none !important;
-    position: static !important;/* this will force all positioned or hidden element into the print view so you can show or hide them */
+    position: static !important;
     float: none !important;
-    background: transparent !important;/* note most printers cannot print background colors */
+    background: transparent !important;
 }
 
-/* Force all "pre" elements to always wrap text so they can be printed. */
 pre {
     white-space: pre-wrap !important;
     word-wrap: break-word !important;
 }
 
-/* Force HTML elements like "table" to always break before the element and start a new print page. Be careful using this as there may be smaller or nested tables you do not need to start a page for. You can add additional style below to control how tables perform when printing.*/
-
 html body table {
     page-break-inside: avoid;
-    /*
-    page-break-before: always;
-    table-layout:auto;
-    width: auto;
-    height: auto;
-    min-width: 98%;
-    max-width: 98%;
-    margin:0;
-    padding:0;
-    border: none;
-    background: transparent;
-    border-spacing: 0;
-    border-collapse: collapse;
-    padding: 0;
-    margin: 0px auto 0px auto;
-    */
 }
-
 
 html body img {
     page-break-inside: avoid;
@@ -367,7 +131,6 @@ html body img {
     outline: none;
     color:#ffffff;
 }
-
 
 html body p {
     orphans: 3;
@@ -388,25 +151,17 @@ html body main a:focus,
 html body main a:active {
 	color: #000;
 	background: transparent;
-    /* optional styles below to indicate hypertext links when printing */
     font-weight:bold;
     text-decoration:none;
     border-bottom: 1px dashed #cccccc;
 }
 
-
-
-
-
-/* ======================= CUSTOM PRINT STYLES ======================= */
-/* Set all your page-by-page print customizations below. */
-
-/* This affects the links in the introduction panel at the top. */
 #html5_introlist{
     position: relative;
     margin-left: 2em;
     list-style: square;
 }
+
 #html5_introlist li::before {
     display: none;
     content: "";
@@ -421,6 +176,7 @@ html body main a:active {
     top: 0em;
     left: 0em;
 }
+
 #html5_introlist li {
     text-align:left;
     vertical-align: top;
@@ -429,7 +185,6 @@ html body main a:active {
     font-size: inherit;
 }
 
-/* These apply to my HTML 5 Tutorial Page.*/
 html body main textarea.code,
 html body main textarea.code:hover,
 html body main textarea.code:focus,
@@ -445,7 +200,6 @@ html body main textarea.code:active {
     margin: 1em 0em;
     white-space: pre-wrap;
     word-wrap: break-word;
-    /* This fixes a font sizing bug in the browsers when using monospace fonts. */
     font-family: monospace, monospace;
     font-size: 1em;
 }
@@ -465,8 +219,3 @@ html body main .elementtable {
     padding: 0;
     margin: 0px auto 0px auto;
 }
-
-
-
-
-/* ======================================================================== */

@@ -1,68 +1,17 @@
 
-/* ======================= UNIVERSAL CSS FRAMEWORK ======================
-Title: Universal CSS Framework, version 2.0.0.0
-Author: Mitchell Stokely (updated March, 2021)
-
-Description: This style sheet is part of a complete "progressive" CSS framework designed for cross-browser style sheet support in browsers going back to the birth of the World Wide Web in the 1990's. It provides old browsers the minimum styles needed to display content, while adding newer styles for more modern browsers that can display more modern CSS. I call this the "Universal CSS Framework" because it was designed to universally support as many web browsers as possible, including those that did not support CSS. This system should provide some form of basic layout or design in all browsers, old and new, with a rich cascading style sheet system that degrades gracefully to simpler layouts in the older browsers.
-
-The first "1.0" version of this CSS system was originally constructed in June of 2004, though its initial designs were laid down in 2001. This "2.0" version is a major upgrade I built to accommodate new HTML5 and CSS3 standards. You will see those more modern features in parts of the newer sheets designed for more modern browsers and much better fixes for many older browsers, as well.
-
-Please note that this solution is Javascript-free!
-
-============================ STYLE SHEET NOTES ===========================
-MOBILE STYLE SHEET SYSTEM : This sheet is used to try and control styling in a wide range of mobile devices. This mobile style system uses a very basic mobile style sheet page. In the past (c. 2007), this simple mobile style sheet was attached to HTML pages via its own <link>. Mobile devices recognized it using either the media="handheld" or using <style> tags with @import and the handheld attribute added. Because support for the media="handheld" attribute was so spotty in old pda's, micro-browsers on small screen devices, and mobile devices (like early smart phones) back in 2008, it was very difficult to predict which device would read the sheet, or if they read style any "screen" style sheets at all. The "handheld" media type was dropped from the mobile device specifications some time after 2008, so this technique was abandoned. After 2010, we utilized a better mobile CSS solution. When we needed to develop a special mobile-based page for this web product, we would develop a stripped down version of this mobile web pages in a separate folder or create a module using plain "XHTML-basic" code, which was universally accepted around the world, and similar to HTML 3.2. That too was abandoned after the smart phones makers realized there were too few mobile websites out there, and they would need to try and support full display of all desktop websites online. Today in 2021, most web sites control mobile device browser display using screen type sheets and "media queries" combined with the new "flex" and "grid" CSS properties. And so, this sheet has been modified to support those newer goals.
-==========================================================================
-GENERAL RULES TO FOLLOW WHEN DISPLAYING MOBILE DESIGNS
-1. Avoid shadow effects, giant image downloads, animations, video, audio, Flash, and heavy script routines on mobile devices, as they drain mobile phone battery life!
-2. Use Media Queries sparingly and with sensitivity to how devices use default user-controlled font sizing, rotation, zoom, and other features. The default display settings are always best!
-3. Avoid Pixels in CSS: Realize that the "device pixel" on newer smart phones is so tiny compared to the CSS pixel sent to the browser that often large images and layouts on laptops appear tiny on mobile. To accommodate that fact, most devices "translate" your layouts into their pixels and font sizes, changing your carefully configured pixel designs into something different. That is why its always best to rely on the device or browser's default medium font size setting and do not count on zoom to save you!
-4. Use flex, grid, and Bootstrap layouts sparingly. Media queries still have widest support in these browsers and can solve most of your layout issues without any help.
-5. WARNING: Internet Explorer 8 or lower do not work with media queries! So, be aware how these changes triggered below for small screen or print affect IE 8 or lower.
-========================================================================== */
-
-
-
-
-/* ====================== SAMPLE MOBILE DEVICE CSS ======================= */
-
-/* Older iphone only styles : These examples below used to work well in reformatting very old mobile phone browsers in preparation for layout CSS later in the sheet. Note: Do not use "max-device-width" in the media query if possible as it did not have wide support in older agents and was supposed to be deprecated.*/
-
-/*
-@media only screen and (max-width: 480px) {
-}
-*/
-
-
-/* GENERIC SMALL SCREEN STYLES : Use this change to cover any screen that drops below 800 pixels or smaller. Notice I prefer to use "rem" user text sizes to determine small screen dimensions so I avoid device pixel variation. This matches the users font size and readability better. 
-    Note: 46rem was the place where the desktop view could no longer fit its content, and had to resort to the mobile view with smaller text to fit into the window. */
-
 @media only screen and (max-width: 46rem) {
-
     html,
     html body
     {
-        /*width:100%;*/
-        /*height:auto;*/
         min-width: none;
         max-width: none;
         min-height: none;
         max-height: none;
         margin: 0;
         padding: 0 .25em .25em .25em !important;
-        /*border:0;*/
-        /*text-align:left;*/
-        font-size: small !important;/* always honor the user's chosen font size using absolute font types */
-        /*font-weight:normal;*/
-        /*word-spacing:0;*/
-        /*letter-spacing:0;*/
-        /*color:#000;*/
-        /*font-family:sans-serif;*/
-        /*line-height:normal;*/
-        /*background:#fff;*/
+        font-size: small !important;
     }
 
-
-    /* We now reveal the mobile header and below hide the other headers for print and desktop */
     #mobileheader {
         display: block !important;
     }
@@ -75,9 +24,6 @@ GENERAL RULES TO FOLLOW WHEN DISPLAYING MOBILE DESIGNS
         display: none !important;
     }
 
-
-    /* Apply custom element reset styles for mobile and small screen devices. Below are basic HTML 5 element resets. */
-
     html body header,
     html body nav,
     html body main,
@@ -87,26 +33,6 @@ GENERAL RULES TO FOLLOW WHEN DISPLAYING MOBILE DESIGNS
     html body footer,
     html body div,
     html body form  {
-        /*Resets all absolute and relative positioning on these blocks.*/
-        /*position:static;*/
-        /*Makes sure all elements are turned into div block for better display.*/
-        /*display:block;*/
-        /*These properties below are optional and set default dimensions and formats on all top-level HTML5 elements.*/
-        /* For now, we do not need to restyle these HTML elements for small screen. But many options are available to customize below. Examples might be smaller padding, make backgrounds all white, tiny fonts in some blocks, etc.
-        float:none;
-        width:auto;
-        height:auto;
-        min-width:100%;
-        max-width:100%;
-        min-height:none;
-        max-height:none;
-        margin:0;
-        padding:0;
-        border:0;
-        text-align:left;
-        vertical-align:top;
-        background:none;
-        */
     }
 
     #mobileheader {
@@ -149,7 +75,6 @@ GENERAL RULES TO FOLLOW WHEN DISPLAYING MOBILE DESIGNS
         text-indent: 0;
     }
 	
-	/* In 2022, it appears that at least the top 4 mobile browsers do NOT support "border" on buttons (button and input button types). So a default background must be set or your buttons will disappear on mobile web pages if you use backgrounds or change their default style (which almost all style sheets do! Bad design kiddos!) Many of these recent mobile browser updates also default buttons to a dark background with light text by default. Since the OS like on desktop appears to control this like a replaced element normally does, its best to not fight the new mobile OS button default style and just recreate it below using a dark background color with light text. You can change this default below to anything else your mobile design might need, however. */
 	html body main button,
 	html body main button:visited,
 	html body main button:hover,
@@ -175,21 +100,11 @@ GENERAL RULES TO FOLLOW WHEN DISPLAYING MOBILE DESIGNS
 		outline: none;
 		border: none;
 	}
-
-
-
-
-
-
-    /* ======================= Custom Web Page Styles ======================== 
-    This is the mobile version of my HTML 5 custom styles section. */
-
-         
+ 
     html body .box {
         
     }
 
-    /* This fixes a bug where an overflowing table along width extends to the viewport, ignoring the 'body' element's padding. This wrapper div forces the tables inside it, then applies a new padding to push the table off the right side of the viewport. */
     html body .box_html5table {
         display: inline-block !important;
         width: auto;
@@ -227,14 +142,11 @@ GENERAL RULES TO FOLLOW WHEN DISPLAYING MOBILE DESIGNS
         font-size: small;
     }
 
-    /* IE 6 font-size inheritance fix: Text properties fail to inherit so we address that here. Also, the "smaller" property above is not known for some older IE browsers. */
-
     * html body .elementblock3,
     * html body .elementblock3 *
     {
         font-size: small;
     }
-
 
     html body .elementtable > thead > tr > th {
         display: none;
@@ -262,31 +174,4 @@ GENERAL RULES TO FOLLOW WHEN DISPLAYING MOBILE DESIGNS
     html body .elementtable > tbody > tr > td:nth-child(3) {
         border-bottom: 2px solid #666;
     }
-
-
 }
-
-
-
-
-/* -----------------------------------------------------
-
-IPAD MEDIA QUERY EXAMPLE
-
-Add support for older ipad designs here : This used to work well in 1st generation iPads.
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-
-}
-
------------------------------------------------------
-
-ORIENTATION MEDIA QUERY EXAMPLE
-
-Use this to determine the viewport orientation (portrait or landscape) and if the tablet or phone has been flipped. May have limited mobile browser support. Does NOT determine device orientation as some devices in portrait mode use landscape when the virtual keyboard is used. Solid support for orientation with IE 9 or greater. IE8 or lower do not work with media queries, but these browsers should not be on any mobile devices today.
-
-@media screen and (orientation: landscape) {
-
-}
-
------------------------------------------------------- */
-
