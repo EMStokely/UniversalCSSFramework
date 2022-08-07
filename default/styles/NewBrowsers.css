@@ -568,7 +568,7 @@ body button::-moz-focus-inner {
 
 Note: See my "input" change for more details about these new bevel buttons and the Chrome-only rule below.
 */
-@supports (not (-moz-appearance:none)) and (contain: paint) and (-webkit-appearance:none) {
+@supports (not (-moz-appearance:button)) and (contain:paint) and (-webkit-appearance:none) {
 	/* We can now safely recreate the nice "raised" bevelled "operating system" button that used to come with Chrome. */
 	body button,
 	body button:visited,
@@ -1389,7 +1389,7 @@ body input[type="submit"]:active {
 
 "appearance" (non-prefixed version) was supported in Mozilla/Firefox as early as 2006 and Chrome around 2010. Chrome wasnt release until 2008, btw, and was a later browser. But the browser prefixed versions came later, with "-webkit-appearance" in the Webkit Chrome engine likely not supported till May of 2013, or possibly Chrome version 27. "none" was a very early supported property value (2010), so would provide early Chrome version support. So you can probably assume and Chrome browser starting in 2013-present would be able to use the rule below, and seen by all browsers using Webkit engines since then. Because Microsoft Edge switched to Chrome's engine (Blink) around December 2020, any Edge browser since then can also use this rule, and all Internet Explorer/Edge browsers prior, as well as all Safari engines, like Mozilla/Firefox, would be excluded.
 
-. "(not (-moz-appearance:none))" combined with limited support for "@support" filters out all known Mozilla/Firefox/Gecko browsers.
+. "(not (-moz-appearance:button))" combined with limited support for "@support" filters out all known Mozilla/Firefox/Gecko browsers. "button" is one of tghe earliest Mozilla 2006 adopted values for the prefix, so increases the chance all Gecko browsers would be excluded but the "not" value.
 
 Internet Explroer 1-11, as well as Trident Edge prior to 2020, are also excluded. In IE's case, it would not support "@support" feature checks in CSS.
 
@@ -1397,7 +1397,7 @@ Internet Explroer 1-11, as well as Trident Edge prior to 2020, are also excluded
 
 So with this trick you have a pretty decent Chrome-Only/Edge-Only Webkit CSS filter that works in 2022!
 */
-@supports (not (-moz-appearance:none)) and (contain: paint) and (-webkit-appearance:none) {
+@supports (not (-moz-appearance:button)) and (contain:paint) and (-webkit-appearance:none) {
 /* We can now safely recreate the nice "raised" bevelled "operating system" button that used to come with Chrome. */
 	body input[type="button"],
 	body input[type="reset"],
