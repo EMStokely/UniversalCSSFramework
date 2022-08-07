@@ -879,4 +879,27 @@ USE THESE "HACKS" BELOW TO TARGET SPECIFIC OLDER BROWSERS
     html&gt;/**/body selector { property:value; }
 
 
+
+
+NEW MODERN CHROME ONLY CSS FILTER (use design exactly as is but add your own CSS in the block)
+
+@supports (not (-moz-appearance:button)) and (contain:paint) and (-webkit-appearance:none) {
+
+  body {
+    background: blue;
+  }
+
+}
+
+
+
+NEW MODERN FIREFOX ONLY CSS FILTER (use design exactly as is but add your own CSS in the block)
+
+@supports (-moz-appearance:button) and (contain:paint) {
+
+  body {
+    background: red;
+  }
+
+}
  =======================================================================
