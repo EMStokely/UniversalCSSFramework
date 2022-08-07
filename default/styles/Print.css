@@ -332,7 +332,7 @@ html body {
 }
 
 /* Force all "pre" elements to always wrap text so they can be printed. */
-pre {
+html body pre {
     white-space: pre-wrap !important;
     word-wrap: break-word !important;
 }
@@ -374,9 +374,9 @@ html body p {
     widows: 3;
 }
 
-h1,
-h2,
-h3 {
+html body h1,
+html body h2,
+html body h3 {
     page-break-after: avoid;
 }
 
@@ -394,7 +394,10 @@ html body main a:active {
     border-bottom: 1px dashed #cccccc;
 }
 
-
+html body main details > * {
+    display:block;
+    background: transparent;
+}
 
 
 
