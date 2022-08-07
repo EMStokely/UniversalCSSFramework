@@ -564,6 +564,24 @@ body button::-moz-focus-inner {
 	padding: 0;
 }
 
+/* In 2022, July, Chrome and Edge Webkit browsers applied another lame evergreen browser update and stripped away the replaced form field designs or appearance. This flattened the button appearances making them alien looking compared to IE, Firefox, and Safari which continue to use the default raised and bevelled buttons. To recreate this look I had to add this Chrome-Edge Webkit "hack" using "@supports". This works in in browser using the Chrome Webkit or Blink engine starting May 2013 version 28 for Chrome or Edge starting January 2020 when it adopted the Chrome engine. 
+
+Note: See my "input" change for more details about these new bevel buttons and the Chrome-only rule below.
+*/
+@supports (not (-moz-appearance:none)) and (contain: paint) and (-webkit-appearance:none) {
+	/* We can now safely recreate the nice "raised" bevelled "operating system" button that used to come with Chrome. */
+	body button,
+	body button:visited,
+	body button:hover,
+	body button:focus,
+	body button:active {
+		border-left: 2px solid #dfdfdf;
+		border-top: 2px solid #dfdfdf;
+		border-right: 2px solid #a0a0a0;
+		border-bottom: 2px solid #a0a0a0;
+	}
+}
+
 /* ------------------------------------------------------------ */
 
 
@@ -1143,13 +1161,13 @@ body input[type="file"]:read-only:active {
 	background: #fff;
 	white-space: nowrap;
 	cursor: pointer;
+	-moz-appearance: button; /* optional: styles old-fashioned beveled button for Mozilla, Firefox, and Gecko browsers */
 }
 
 ::-webkit-file-upload-button { /* chrome and edge */
 	display: inline-block;
 	padding: .2em .5em;
 	margin: 0em 1em 0em 0em;
-	-webkit-appearance: button;
 	text-align: center;
 	border-radius: .1em 0em 0em .1em;
 	border: none;
@@ -1157,6 +1175,7 @@ body input[type="file"]:read-only:active {
 	background: #eee;
 	white-space: nowrap;
 	cursor: pointer;
+	-webkit-appearance: button; /* optional: styles old-fashioned beveled button for all Apple device, Edge, and Safari browsers */
 }
 
 /* PSEUDO-CLASSES ON INPUTS:
@@ -1360,7 +1379,49 @@ body input[type="submit"]:hover,
 body input[type="submit"]:focus,
 body input[type="submit"]:active {
 	background: #f9f9ff;
+
 }
+
+
+/* In 2022, July, Chrome and Edge Webkit browsers applied another lame evergreen browser update and stripped away the replaced form field designs or appearance. This flattened the button appearances making them alien looking compared to IE, Firefox, and Safari which continue to use the default raised and bevelled buttons. To recreate this look I had to add this Chrome-Edge Webkit "hack" using "@supports". This works in in browser using the Chrome Webkit or Blink engine starting May 2013 version 28 for Chrome or Edge starting January 2020 when it adopted the Chrome engine. 
+
+"@support" feature check started being supported in Chrome in May 2013 so filters out all older browser.
+
+"appearance" (non-prefixed version) was supported in Mozilla/Firefox as early as 2006 and Chrome around 2010. Chrome wasnt release until 2008, btw, and was a later browser. But the browser prefixed versions came later, with "-webkit-appearance" in the Webkit Chrome engine likely not supported till May of 2013, or possibly Chrome version 27. "none" was a very early supported property value (2010), so would provide early Chrome version support. So you can probably assume and Chrome browser starting in 2013-present would be able to use the rule below, and seen by all browsers using Webkit engines since then. Because Microsoft Edge switched to Chrome's engine (Blink) around December 2020, any Edge browser since then can also use this rule, and all Internet Explorer/Edge browsers prior, as well as all Safari engines, like Mozilla/Firefox, would be excluded.
+
+. "(not (-moz-appearance:none))" combined with limited support for "@support" filters out all known Mozilla/Firefox/Gecko browsers.
+
+Internet Explroer 1-11, as well as Trident Edge prior to 2020, are also excluded. In IE's case, it would not support "@support" feature checks in CSS.
+
+"contain: paint" was mainly supported after 2016 in Chrome and Firefox. But it is used to filter out Safari iOS or other newer browsers that switched to the Webkit Chrome engine. "contain:paint" is is not supported by the new Safari browser using Webkit.
+
+So with this trick you have a pretty decent Chrome-Only/Edge-Only Webkit CSS filter that works in 2022!
+*/
+@supports (not (-moz-appearance:none)) and (contain: paint) and (-webkit-appearance:none) {
+/* We can now safely recreate the nice "raised" bevelled "operating system" button that used to come with Chrome. */
+	body input[type="button"],
+	body input[type="reset"],
+	body input[type="submit"],
+	body input[type="button"]:visited,
+	body input[type="button"]:hover,
+	body input[type="button"]:focus,
+	body input[type="button"]:active,
+	body input[type="reset"]:visited,
+	body input[type="reset"]:hover,
+	body input[type="reset"]:focus,
+	body input[type="reset"]:active,
+	body input[type="submit"]:visited,
+	body input[type="submit"]:hover,
+	body input[type="submit"]:focus,
+	body input[type="submit"]:active {
+		border-left: 2px solid #dfdfdf;
+		border-top: 2px solid #dfdfdf;
+		border-right: 2px solid #a0a0a0;
+		border-bottom: 2px solid #a0a0a0;
+	}
+}
+
+
 
 /* This removes borders and inner padding for the inner text block on buttons in Firefox/Gecko browsers. */
 body input[type="button"]::-moz-focus-inner,
