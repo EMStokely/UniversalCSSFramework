@@ -151,7 +151,7 @@ html body #printheader {
     min-width: 100%;
     max-width: 100%;
     height: auto;
-    min-height: none;
+    min-height: auto;
     max-height: none;
     margin:0 0 2px 0;
     padding:0;
@@ -256,7 +256,7 @@ html {
     /* These first properties you should set to control overall print page dimensions from the root element of the page. "body" below will generally control most of the page properties, but also inherit first what is in this root element. */
     width: 100%;
 	height: 100%;
-	min-height: none;
+	min-height: auto;
 	max-height: none;
 	padding: 0;
 	margin: 0;
@@ -283,7 +283,7 @@ Note on Fonts: I do recommend you change all fonts "pt" which map to physical un
 html body {
 	height: auto;
 	width: auto;
-	min-height: none;
+	min-height: auto;
 	max-height: none;
 	min-width: 100%;
 	max-width: 100%;
@@ -440,7 +440,7 @@ html body main textarea.code:active {
     display: block;
     width: 98%;
     height: auto;
-    min-width: none;
+    min-width: auto;
     max-width: none;
     min-height: 10em;
     max-width: none;
