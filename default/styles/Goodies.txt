@@ -21,7 +21,7 @@ If you want to reach 99.99% cross-browser compatibility with older browsers usin
 
 DONT USE CSS CLASS NAMES THAT REPRESENT FORMATS OR PRESENTATION, USE NAMES THAT REPRESENT FUNCTION OR PURPOSE!
 
-Use ".contactus_text" rather than ".bluecontacttext"
+Use ".contactus" rather than ".bluecontacttext"
 
 
 -------------------------------------------------------
@@ -33,7 +33,7 @@ When using multiple class names for an element, Explorer will ignore all but the
 myelement.class1.class2.class3 {...}
 
 So, I would avoid such elaborate classes and use instead:
-myelement .class1. class2. class3 {...} with spaces, such that once implies that each class contains a child element with the next named class.
+myelement .class1 .class2 .class3 {...} with spaces, such that once implies that each class contains a child element with the next named class.
 
 
 -------------------------------------------------------
