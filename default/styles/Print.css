@@ -469,7 +469,34 @@ html body main .elementtable {
     margin: 0px auto 0px auto;
 }
 
+html body main #HTML5elementlist
+{
+	margin: 0 !important;
+	padding: 0 !important;
+}
 
+html body main #elementtable thead + tr,
+html body main #elementtable tbody + tr,
+html body main #elementtable tfoot + tr
+{
+	margin: 0 !important;
+	padding: 0 !important;
+}
 
+html body main #elementtable > thead > tr > th:nth-child(3),
+html body main #elementtable > tbody > tr > td:nth-child(3),
+html body main #elementtable > tfoot > tr > td:nth-child(3)
+{
+	margin: 0 !important;
+	padding: 10px !important;
+}
+
+html body main #elementtable > thead,
+html body main #elementtable > thead > tr > th:nth-child(-n+2),
+html body main #elementtable > tbody > tr > td:nth-child(-n+2),
+html body main #elementtable > tfoot > tr > td:nth-child(-n+2)
+{
+	display:none !important;
+}
 
 /* ======================================================================== */

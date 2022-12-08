@@ -294,12 +294,14 @@ body bdo,
 body big,
 body blink,
 body blockquote,
+body bq,
 body br,
 body button,
 body caption,
 body center,
 body cite,
 body code,
+body credit,
 body dd,
 body del,
 body dfn,
@@ -309,6 +311,7 @@ body dl,
 body dt,
 body em,
 body fieldset,
+body fig,
 body font,
 body form,
 body frame,
@@ -325,13 +328,17 @@ body iframe,
 body img,
 body input,
 body ins,
+body ilayer,
 body kbd,
 body label,
 body legend,
 body li,
+body listing,
 body link,
 body map,
 body marquee,
+body multicol,
+body nobr,
 body noembed,
 body noframes,
 body object,
@@ -340,6 +347,7 @@ body optgroup,
 body option,
 body p,
 body param,
+body plaintext,
 body pre,
 body q,
 body rp,
@@ -349,6 +357,7 @@ body s,
 body samp,
 body select,
 body small,
+body spacer,
 body span,
 body strike,
 body strong,
@@ -365,7 +374,8 @@ body tr,
 body tt,
 body u,
 body ul,
-body var {
+body var,
+body xmp {
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
@@ -378,14 +388,18 @@ body var {
 body area,
 body base,
 body basefont,
+body bgsound,
 body head,
+body ibobject,
+body isindex,
 body link,
 body meta,
 body param,
 body noscript,
 body script,
 body style,
-body title {
+body title,
+body xml {
 }
 
 body a {
@@ -485,6 +499,10 @@ body big {
 	font-size: larger; /* note: you could use a percent here, but the text size steps vary by font */
 }
 
+/* "bgsound" is an old relic of Internet Explorer 5 that is no longer a part of HTML5: <bgsound loop="true" source="birdsounds.wav" volume="20" /> */
+body bgsound {
+}
+
 /* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 body blink {
 }
@@ -495,6 +513,10 @@ body blockquote {
 	margin: 1em 1.6em;
 	/* "blockquote" is for larger blocks. "q" for quoted smaller ones. But if you want to add quotes to your text by default, below is an example. */
 	/*quotes: "“" "”";*/
+}
+
+/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
+body bq {
 }
 
 body br {
@@ -608,7 +630,7 @@ body cite {
 body code {
 	display: inline;
 	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. */
-    font-family: monospace, monospace;
+    font-family: monospace;
     font-size: 1em;
 }
 
@@ -618,6 +640,10 @@ body col {
 
 body colgroup {
 	display: table-column-group;
+}
+
+/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
+credit {
 }
 
 body dd,
@@ -691,6 +717,10 @@ body fieldset {
 	/* Fieldset originally had a Windows dialog box feel to it with a lite gray background when grouping form fields. This looks really nice with input controls inside it. So I have added it back. What is nice about the gray is it matches disabled or readonly form fields inside the fieldset, so that they now blend back into the background and appear more non-interactive, as they should. You can remove this color, if needed. */
 	background-color: #f3f3f3;
 	border: 2px solid #bbb;
+}
+
+/* This is a deprecated HTML3 property but added here if you need to support an older html page. */
+body fig {
 }
 
 /* This is a deprecated HTML4 property but added here if you need to support an older html page. */
@@ -802,11 +832,26 @@ body i {
 	font-style: italic;
 }
 
+/* "ibobject" is an old relic of early Netscape and Internet Explorer (pre-1999) that was a part of old backstage server interactions. It is no longer a part of HTML5: <ibobject name="backstage_object" /> */
+body ibobject {
+}
+
 /* "iframes" are supported in many new and old browsers, but not recommended due to security and other concerns. But, I have added some basic default styles to make the iframe presentable when used. */
 body iframe {
     display: inline-block;
     border: 2px solid #999;
 	background:white;
+}
+
+/* "ilayer" is an old relic of early Netscape 4 Series browsers but no longer a part of HTML5 */
+body ilayer {
+	display: block;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	padding: 0;
+	margin: 0;
+    background: none;
 }
 
 /* Note: Ive removed the formatting for images in old browsers. Newer browsers importing later style sheets will return to unstyled images that are styled to fit into any custom layout. */
@@ -1468,10 +1513,14 @@ body ins {
 	text-decoration: underline;
 }
 
+/* "isindex" is an old tag once used to display search strings in a document but rarely used and no longer a part of HTML5 */
+isindex {
+}
+
 body kbd {
 	display: inline;
 	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. */
-    font-family: monospace, monospace;
+    font-family: monospace;
     font-size: 1em;
 	/* Added "bubbles" around keyboard inputs to make them stand out. */
 	border-radius: 2px;
@@ -1518,6 +1567,17 @@ body li ul ol {
 	margin-left: 1.5em;
 }
 
+/* "listing" is an old relic of HTML v2 that works like <pre> but is no longer a part of HTML5. */
+body listing {
+	display: block;
+	padding: 0;
+	margin: 1em 0em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: monospace;
+    font-size: 1em;
+}
+
 body map {
 	display: block;
 	padding: 0;
@@ -1525,15 +1585,24 @@ body map {
 	cursor: pointer;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
+/* This is a deprecated HTML4 element but added here if you need to support an older html page. */
 body marquee {
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
+/* This is a deprecated HTML4 element but added here if you need to support an older html page. */
+body multicol {
+}
+
+/* This is a deprecated HTML4 element but added here if you need to support an older html page. */
+body nobr {
+	white-space: nowrap;
+}
+
+/* This is a deprecated HTML4 element but added here if you need to support an older html page. */
 body noframes {
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
+/* This is a deprecated HTML4 element but added here if you need to support an older html page. */
 body noembed {
     display: none;/* Note: We hide this from newer browsers as HTML5 does not support this tage and it would always show this element regardless of browser support of media when using the 'embed' element. */
 }
@@ -1566,6 +1635,7 @@ body ol ol ol  {
 ol ol ol ol {
     list-style-type: decimal;/* reset back to decimal again */
 }
+/* Note: Some older browsers also supported the following subtypes: upper-alpha, upper-roman, upper-latin, lower-latin. */
 
 /* The Select element's optgroup and options below have LIMITED style property control in modern browsers as they are "replaced" elements. */
 body optgroup,
@@ -1614,6 +1684,10 @@ body p {
 	margin: .5em 0em .5em 0em;
 }
 
+/* This is a deprecated HTML2 element but added here if you need to support an older html page. */
+body plaintext {
+}
+
 body pre {
 	display: block;
 	padding: 0;
@@ -1622,7 +1696,7 @@ body pre {
     white-space: pre-wrap;
     word-wrap: break-word;
 	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. */
-    font-family: monospace, monospace;
+    font-family: monospace;
     font-size: 1em;
 }
 
@@ -1651,7 +1725,7 @@ body s {
 body samp {
 	display: inline;
 	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. */
-    font-family: monospace, monospace;
+    font-family: monospace;
     font-size: 1em;
 }
 
@@ -1761,6 +1835,10 @@ body small {
 	display: inline;
 	font-size: small;/* used here as some older agents may not know "smaller" (IE1-6) */
 	font-size: smaller;/* note: you could use a percent here, but the text size steps vary by font */
+}
+
+/* This is a deprecated HTML2 element but added here if you need to support an older html page. */
+body spacer {
 }
 
 body span {
@@ -1962,7 +2040,7 @@ body tr {
 
 body tt {
 	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. */
-    font-family: monospace, monospace;
+    font-family: monospace;
     font-size: 1em;
 }
 
@@ -2003,13 +2081,18 @@ body var {
     font-weight: bold;
 	font-style: italic;
 	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. */
-    font-family: monospace, monospace;
+    font-family: monospace;
     font-size: 1em;
 }
 
+/* This is a deprecated HTML element but added here if you need to support an older html page. */
+body xml {
+}
 
-
-
+/* This is a deprecated HTML element but added here if you need to support an older html page. */
+body xmp {
+    font-family: monospace;
+}
 
 
 /* ============================ NEW HTML5 ELEMENTS =============================== */

@@ -163,7 +163,8 @@ p {
 
 * Internet Explorer 3-5 will crash when reading second rule and erase (destroy) the first property units, if it does not recognize the second padding unit ("rem" is not supported till IE9). That means padding would be "0" for IE 5 using this fallback strategy, which then means both properties failed. IE 7 and 8, however, will fail to understand the second "rem" unit but NOT erase the first padding, so work ok. Newer browsers would retain padding "10em" using this system but older ones would erase both. For that reason you will see fallbacks in "NewBrowsers" reset element sheet. The reason for this issue is the older IE browsers do not "ignore" declarations with names or types they don't recognize, but instead erase them when they find a bad property unit. So be careful adding those below, as "fallback" properties do not work for older browsers! You can add those safely in the "NewBrowsers" style sheet.
 21. SPECIAL: Netscape 4 and IE 3 were the first browsers to support CSS so are filled with bugs you may or may not care to address. Besides the ones listed above, Netscape 4 does not allow styling of the "html" element. So do not put any crucial styles there but use the "body" element, instead.  Avoid use of "line-height" in these older browsers due to spacing bugs. I have removed line-height from this sheet in most cases and will instead use it only in my "NewBrowsers" sheet. I remember weird spacing occurring in these old browsers, so I have left it out. These additional buggy properties below are not supported in those older browsers so ok to use as they should be ignored by Netscape 4 and IE3: "word-spacing", "letter-spacing", "white-space". A major issues is using tables in those browsers where they sometimes terminate your "body" element styles. To avoid this issue, when it does crash the table and the body, you can divide your "body" style selector into two "body" styles: One for inherited (font) and the other for non-inherited properties. I have elected to not do that since this is such a narrowly focused bug fix. But if you want to divide your "body" selectors up for Netscape 4 and IE3 you may do that below.
- Note: IE3 only supports the "background" shorthand property and not the individual properties. For Netscape 4, when you use the background shorthand, if you do not specify a color, Netscape specifies black. As a result, you should always specify a color..
+ Note: IE3 only supports the "background" shorthand property and not the individual properties. For Netscape 4, when you use the background shorthand, if you do not specify a color, Netscape specifies black. As a result, you should always specify a color.
+ Note: IE v3, Netscape v4 first supported CSS and at that time never supported CSS class rules using Uppercase, "_" underscore, and "-" hyphenations in CSS class names. So void thos things in your CSS class and ID names for maximum cross-browser support!
 
 */
 
@@ -252,7 +253,10 @@ body {
     left:0;*/
 }
 
-/* HTML ELEMENT LIST: Set basic text styles only on all HTML5 and older HTML 4 supported elements below. Some elements below may be deprecated, but still could appear in some older html pages and browsers. Note: Do NOT add any styles accept fonts/text below. We will customize them below in other parts of this style sheet. Note: IE5 and many other older browsers failed to inherit font values from the "body". The "caption" element in IE5 is one of many examples. So, assigning those values manually below will fix text "body" inheritance problems across the board for many older browsers in this CSS system! */
+/* HTML ELEMENT LIST: Set basic text styles only on all HTML5 and older HTML 4 supported elements below. Some elements below may be deprecated, but still could appear in some older html pages and browsers. Note: Do NOT add any styles accept fonts/text below. We will customize them below in other parts of this style sheet. Note: IE5 and many other older browsers failed to inherit font values from the "body". The "caption" element in IE5 is one of many examples. So, assigning those values manually below will fix text "body" inheritance problems across the board for many older browsers in this CSS system!
+
+Note: Internet Explorer v3 (1996 browser versions) did not support CSS styles applied above in <body> when that CSS was downloaded via an external style sheet as this sheet is, plus would not fully support text inheritance or cascade, so would ignore these styles. The HTML * wildcard settings below are designed help address those early problems by assigning the same text-based styling to every element below.
+*/
 a,
 abbr,
 acronym,
@@ -263,12 +267,14 @@ bdo,
 big,
 blink,
 blockquote,
+bq,
 br,
 button,
 caption,
 center,
 cite,
 code,
+credit,
 dd,
 del,
 dfn,
@@ -278,6 +284,7 @@ dl,
 dt,
 em,
 fieldset,
+fig,
 font,
 form,
 frame,
@@ -291,6 +298,7 @@ h6,
 hr,
 i,
 iframe,
+ilayer,
 img,
 input,
 ins,
@@ -298,9 +306,12 @@ kbd,
 label,
 legend,
 li,
+listing,
 link,
 map,
 marquee,
+multicol,
+nobr,
 noembed,
 noframes,
 object,
@@ -309,6 +320,7 @@ optgroup,
 option,
 p,
 param,
+plaintext,
 pre,
 q,
 rp,
@@ -318,6 +330,7 @@ s,
 samp,
 select,
 small,
+spacer,
 span,
 strike,
 strong,
@@ -334,7 +347,8 @@ tr,
 tt,
 u,
 ul,
-var {
+var,
+xmp {
     /* Avoid UA or System font systems, font shorthand, and custom fonts as they were generally poorly supported by older browsers. Adding popular fonts used in older Windows or Mac systems as shown below for sans-serif types was widely supported with lots of fallback choices and font foundry support native to both Macs and Windows. Font-family names like "sans-serif", "monospace", etc. were also widely supported in very old browsers that support CSS so safe to use below as fallbacks. Always use double-quotes rather than single ones around font names with spaces as single quotes are not supported by IE 3. Many older versions of IE also needed lower case font-family names like sans-serif. The options below include a few fonts only PC's or Mac's used pre-2008. Always end with the generic type, "sans-serif". */
     font-family: Arial, Verdana, Helvetica,"MS Sans Serif","lucida grande", lucida, geneva, sans-serif;
     /* Note: Using pixels for units below, though widely supported in all older user agents, means in some browsers (like older Internet Explorer browsers) the user cannot adjust the font-size nor the line-height from their default values, as pixels prevent font resizing in the browser. This is the trade-off for wider font-size compatibility with older browsers in this sheet. Note that Navigator 4.x doesn't correctly inherit styles like font-family and color set for the body to elements like table, div, and p. That is why we explicitly added font-size and line-height settings below for every element. 
@@ -365,14 +379,18 @@ var {
 area,
 base,
 basefont,
+bgsound,
 head,
+ibobject,
+isindex,
 link,
 meta,
 param,
 noscript,
 script,
 style,
-title {
+title,
+xml {
 }
 
 /* PSEUDO-CLASSES: NEVER STYLE PLAIN PSEUDO-CLASSES FOR OLDER BROWSERS! IE 1-3, Netscape 1-4, and Opera 1-3.6 all misinterpret plain pseudo-class selectors as shown below. Example: Netscape 3 will not read these pseudo-classes at all. Without an element assigned to the pseudo-class, these browsers destroy them or the page styles! The most common bug is they interpret them as all belonging to "a" anchor tags, destroying your anchor tag styles. Opera tries to apply worse results, including block level margins and padding assigned to every elements! Netscape will again turn these into anchor-only styles then push all their combined styles onto one style set on the anchor element. Only color works as a style property in pseudo-classes for Netscape. :hover and :focus are ignored in IE3. Netscape, Opera and IE 3 do not support :hover or :active.
@@ -481,6 +499,10 @@ bdo {
     unicode-bidi: bidi-override;
 }
 
+/* "bgsound" is an old relic of Internet Explorer 5 that is no longer a part of HTML5: <bgsound loop="true" source="birdsounds.wav" volume="20" /> */
+bgsound {
+}
+
 /* This is a deprecated HTML4 property but added here if you need to support an older html page. */
 big {
 	display: inline;
@@ -499,6 +521,10 @@ blockquote {
     /*/*//*/margin: 14px 0px;/*end*/
 	/* "blockquote" is for larger blocks. "q" for quoted smaller ones. But if you want to add quotes to your text by default, below is an example. */
 	/*quotes: "“" "”";*/
+}
+
+/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
+bq {
 }
 
 br {
@@ -559,7 +585,7 @@ code {
 	display: inline;
 	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. I left the original 2000 font set commented out below. It was often used to improve monospace fonts displays. */
     /*font-family:"Courier New", Courier, Corsiva, Helvetica, monospace;*/
-    font-family: monospace, monospace;
+    font-family: monospace;
     font-size: 1em;
 }
 
@@ -571,6 +597,10 @@ col {
 /* This is part of a "table". Note: IE 1-5 have a variety of inheritance issues of CSS properties from this element to its rows and cells. Do not NOT rely on this element to style any children in tables! */
 colgroup {
     display:table-column-group;
+}
+
+/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
+credit {
 }
 
 dd,
@@ -648,6 +678,10 @@ fieldset {
     /*/*//*/background-color: white;/*end*/
     /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */
     border: 2px solid #bbbbbb;
+}
+
+/* This is a deprecated HTML3 property but added here if you need to support an older html page. */
+fig {
 }
 
 /* This is a deprecated HTML4 property but added here if you need to support an older html page. */
@@ -759,11 +793,28 @@ i {
     font-style: italic;
 }
 
+/* "ibobject" is an old relic of early Netscape and Internet Explorer (pre-1999) that was a part of old backstage server interactions. It is no longer a part of HTML5: <ibobject name="backstage_object" /> */
+ibobject {
+}
+
 /* "iframes" are supported in many new and old browsers, but not recommended due to security and other concerns. But, I have added some basic default styles to make the iframe presentable when used. */
 iframe {
     display: inline-block;
     border: 2px solid #999999;
     background:white;
+}
+
+/* "ilayer" is an old relic of early Netscape 4 Series browsers but no longer a part of HTML5 */
+ilayer {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 /* Note: Ive added default formatting for images in old browsers with background color, border, and formatting so they appear as block-level placeholders in the simpler content displays. */
@@ -950,11 +1001,15 @@ ins {
     text-decoration:underline;
 }
 
+/* "isindex" is an old tag once used to display search strings in a document but rarely used and no longer a part of HTML5 */
+isindex {
+}
+
 kbd {
 	display: inline;
 	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. I left the original 2000 font set commented out below. It was often used to improve monospace fonts displays. */
     /*font-family:"Courier New", Courier, Corsiva, Helvetica, monospace;*/
-    font-family: monospace, monospace;
+    font-family: monospace;
     font-size: 1em;
 	/* Added "bubbles" around keyboard inputs to make them stand out. */
 	border-radius: 2px;
@@ -1001,6 +1056,16 @@ li ul ol {
     margin-left: 20px;
 }
 
+/* "listing" is an old relic of HTML v2 that works like <pre> but is no longer a part of HTML5. */
+listing {
+    display: block;
+    padding: 0;
+    margin: 16px 0px;
+    white-space: pre;
+    font-family: monospace;
+    font-size: 1em;
+}
+
 map {
     display: block;
     padding: 0;
@@ -1008,15 +1073,24 @@ map {
     cursor: pointer;
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
+/* This is a deprecated HTML4 element but added here if you need to support an older html page. */
 marquee {
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
+/* This is a deprecated HTML4 element but added here if you need to support an older html page. */
+multicol {
+}
+
+/* This is a deprecated HTML4 element but added here if you need to support an older html page. */
+nobr {
+    white-space: nowrap;
+}
+
+/* This is a deprecated HTML4 element but added here if you need to support an older html page. */
 noframes {
 }
 
-/* This is a deprecated HTML4 property but added here if you need to support an older html page. */
+/* This is a deprecated HTML4 element but added here if you need to support an older html page. */
 noembed {
 }
 
@@ -1048,7 +1122,7 @@ ol ol ol {
 ol ol ol ol {
     list-style-type: decimal;/* reset back to decimal again */
 }
-
+/* Note: Some older browsers also supported the following subtypes: upper-alpha, upper-roman, upper-latin, lower-latin. */
 /* Note: We are not adding "ol ul" or "ul ol" bullet type style combinations here for now. */
 
 /* Note: IE 3-5 will allow font properties on the "select" element only, not its child option elements. They cannot be styled using font, background, margin, line-height, and many other properties in those browsers. IE 4 does not support optgroup at all. */
@@ -1081,6 +1155,10 @@ p {
     margin: 8px 0px 8px 0px;
 }
 
+/* This is a deprecated HTML2 element but added here if you need to support an older html page. */
+plaintext {
+}
+
 pre {
     display: block;
     padding: 0;
@@ -1089,7 +1167,7 @@ pre {
     white-space: pre;
 	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. I left the original 2000 font set commented out below. It was often used to improve monospace fonts displays. */
     /*font-family:"Courier New", Courier, Corsiva, Helvetica, monospace;*/
-    font-family: monospace, monospace;
+    font-family: monospace;
     font-size: 1em;
 }
 
@@ -1119,7 +1197,7 @@ samp {
 	display: inline;
 	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. I left the original 2000 font set commented out below. It was often used to improve monospace fonts displays. */
     /*font-family:"Courier New", Courier, Corsiva, Helvetica, monospace;*/
-    font-family: monospace, monospace;
+    font-family: monospace;
     font-size: 1em;
 }
 
@@ -1157,6 +1235,10 @@ small {
 
 span {
 	display: inline;
+}
+
+/* This is a deprecated HTML2 element but added here if you need to support an older html page. */
+spacer {
 }
 
 /* This is a deprecated HTML4 property but added here if you need to support an older html page. */
@@ -1323,7 +1405,7 @@ tr {
 tt {
 	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. I left the original 2000 font set commented out below. It was often used to improve monospace fonts displays. */
     /*font-family:"Courier New", Courier, Corsiva, Helvetica, monospace;*/
-    font-family: monospace, monospace;
+    font-family: monospace;
     font-size: 1em;
 }
 
@@ -1363,8 +1445,17 @@ var {
     font-style: italic;
 	/* Note: We let the user's browser decide what default monospace font to use. This weird double font-family setting below restores the normal text sizing for "monospace" in Mozilla Firefox, Google Chrome, and Safari, which often do not resize such fonts correctly. The "1em" size fix corrects font-sizes when using "monospace" in Internet Explorer and Opera. I left the original 2000 font set commented out below. It was often used to improve monospace fonts displays. */
     /*font-family:"Courier New", Courier, Corsiva, Helvetica, monospace;*/
-    font-family: monospace, monospace;
+    font-family: monospace;
     font-size: 1em;
+}
+
+/* This is a deprecated HTML element but added here if you need to support an older html page. */
+xml {
+}
+
+/* This is a deprecated HTML element but added here if you need to support an older html page. */
+xmp {
+    font-family: monospace;
 }
 
 

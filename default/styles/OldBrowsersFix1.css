@@ -170,11 +170,11 @@ html body section {
 /* ======================================================================== */
 
 /* Hide these custom items from old IE for Mac and PC*/
-html body  #printheader,
-html body  #printheaderlogo,
-html body  #mobileheader,
-html body  #skip_to_content,
-html body  #back_to_top {
+html body #printheader,
+html body #printheaderlogo,
+html body #mobileheader,
+html body #skip_to_content,
+html body #back_to_top {
     display: none;/* if the IE user decides to print, and supports the print sheet, this would become "block". */
     float: none;
     clear: both;
