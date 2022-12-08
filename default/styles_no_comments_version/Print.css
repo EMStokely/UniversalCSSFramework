@@ -1,0 +1,257 @@
+
+@import url("BootstrapImporter.css");
+@import url("NewBrowsersImporter.css");
+@import url("OldBrowsers.css");
+
+html body #printheader {
+    display:block;
+}
+
+html body #header,
+html body #mobileheader,
+html body #footer,
+html body #copyrightfooter,
+html body #printfooter,
+html body #skip_to_content,
+html body #back_to_top {
+    display:none;
+}
+
+html body #printheader {
+    display:block;
+    float:none;
+    clear:both;
+    width: auto;
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: auto;
+    max-height: none;
+    margin:0 0 2px 0;
+    padding:0;
+    border:none;
+    text-align: left;
+    vertical-align: top;
+    background: none;
+    color:#000;
+}
+
+html body #printlogo {
+    display: block;
+    width: 300px;
+    height: 40px;
+    clear: both;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+html body #printheader address {
+    font-style: normal;
+    font-variant: small-caps;
+    font-family: arial, verdana, sans-serif;
+}
+
+html body #printheader hr {
+	display: block;
+	width: 100%;
+	height: 0;
+	padding: 0;
+	margin: 1em 0;
+	border-top: 1px solid #999;
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+	background-color: transparent;
+	text-align: center;
+}
+
+html body base,
+html body basefont,
+html body head,
+html body keygen,
+html body link,
+html body meta,
+html body script,
+html body style,
+html body title {
+    display:none;
+}
+
+:root,
+html {
+    width: 100%;
+	height: 100%;
+	min-height: auto;
+	max-height: none;
+	padding: 0;
+	margin: 0;
+    color: #000;
+    background: transparent;
+}
+
+html body {
+	height: auto;
+	width: auto;
+	min-height: auto;
+	max-height: none;
+	min-width: 100%;
+	max-width: 100%;
+	padding: 0;
+	margin: 0;
+	background: transparent;
+	color: #000;
+	font-family: sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    text-shadow: none !important;
+    box-shadow: none !important;
+    position: static !important;
+    float: none !important;
+    background: transparent !important;
+}
+
+html body pre {
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+}
+
+html body table {
+    page-break-inside: avoid;
+}
+
+html body img {
+    page-break-inside: avoid;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    color:#ffffff;
+}
+
+html body p {
+    orphans: 3;
+    widows: 3;
+}
+
+html body h1,
+html body h2,
+html body h3 {
+    page-break-after: avoid;
+}
+
+html body main a,
+html body main a:link,
+html body main a:visited,
+html body main a:hover,
+html body main a:focus,
+html body main a:active {
+	color: #000;
+	background: transparent;
+    font-weight:bold;
+    text-decoration:none;
+    border-bottom: 1px dashed #cccccc;
+}
+
+html body main details > * {
+    display:block;
+    background: transparent;
+}
+
+#html5_introlist{
+    position: relative;
+    margin-left: 2em;
+    list-style: square;
+}
+#html5_introlist li::before {
+    display: none;
+    content: "";
+    color: #fff;
+    font-size: 1em;
+    line-height: normal;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    vertical-align: top;
+    position: relative;
+    top: 0em;
+    left: 0em;
+}
+#html5_introlist li {
+    text-align:left;
+    vertical-align: top;
+    padding: .2em 0em .2em 0em;
+    margin: 0;
+    font-size: inherit;
+}
+
+html body main textarea.code,
+html body main textarea.code:hover,
+html body main textarea.code:focus,
+html body main textarea.code:active {
+    display: block;
+    width: 98%;
+    height: auto;
+    min-width: auto;
+    max-width: none;
+    min-height: 10em;
+    max-width: none;
+    padding: .5em;
+    margin: 1em 0em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+html body main .elementtable {
+    table-layout:auto;
+    width: auto;
+    height: auto;
+    min-width: 98%;
+    max-width: 98%;
+    margin:0;
+    padding:0;
+    border: none;
+    background: transparent;
+    border-spacing: 0;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0px auto 0px auto;
+}
+
+html body main #HTML5elementlist
+{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+html body main #elementtable thead + tr,
+html body main #elementtable tbody + tr,
+html body main #elementtable tfoot + tr
+{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+html body main #elementtable > thead > tr > th:nth-child(3),
+html body main #elementtable > tbody > tr > td:nth-child(3),
+html body main #elementtable > tfoot > tr > td:nth-child(3)
+{
+	margin: 0 !important;
+	padding: 10px !important;
+}
+
+html body main #elementtable > thead,
+html body main #elementtable > thead > tr > th:nth-child(-n+2),
+html body main #elementtable > tbody > tr > td:nth-child(-n+2),
+html body main #elementtable > tfoot > tr > td:nth-child(-n+2)
+{
+	display:none !important;
+}
+
+
+

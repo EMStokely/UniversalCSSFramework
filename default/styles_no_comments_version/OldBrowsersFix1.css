@@ -1,0 +1,148 @@
+
+html {
+    height:100%;
+}
+
+html body,
+html body form {
+    height: 100%;
+    min-width: 750px;
+    text-align: left;
+    background: #ffffff;
+    font-size:16px;
+}
+
+html body * {
+    font-size:16px
+}
+
+html body div {
+    float:none;
+    clear:both;
+    margin-top:2px;
+    padding:0;
+    border:0;
+    background-color:#ffffff;
+    width: 100%;
+}
+
+html body hr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html body big,
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h5,
+html body h6,
+html body small,
+html body sub,
+html body sup {
+    border: 0;
+}
+
+html body td 
+{
+    border:1px solid #999999;
+    padding:4px;
+}
+
+html body img {
+    display: block;
+    float: none;
+    clear: both;
+    margin: 2px 0;
+    padding: 0;
+    border: 0;
+    background-color: #cccccc;
+    color: #000000;
+}
+
+html body object,
+html body embed {
+    display: block;
+    float: none;
+    clear: both;
+    width: 100%;
+    height: auto;
+    background-color: #cccccc;
+    font-size: 16px;
+    margin: 0;
+    margin-top: 2px;
+    padding: 0;
+    border: 0;
+}
+
+html body ol,
+html body ul {
+    display: block;
+    float: none;
+    padding: 0;
+}
+
+html body audio,
+html body canvas,
+html body meter,
+html body picture,
+html body progress,
+html body svg,
+html body video {
+    display: block;
+    float: none;
+    clear: both;
+    margin: 0;
+    margin-top: 2px;
+    padding: 0;
+    max-height: none;
+    outline: none;
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+    background-color: #ffffff;
+}
+
+html body article,
+html body aside,
+html body footer,
+html body header,
+html body main,
+html body section {
+    display: block;
+    float: none;
+    clear: both;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    margin-top: 2px;
+    padding: 0;
+    max-height: none;
+    outline: none;
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+    background-color: #ffffff;
+}
+
+html body #printheader,
+html body #printheaderlogo,
+html body #mobileheader,
+html body #skip_to_content,
+html body #back_to_top {
+    display: none;
+    float: none;
+    clear: both;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    max-height: none;
+    outline: none;
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+    background-color: #ffffff;
+}

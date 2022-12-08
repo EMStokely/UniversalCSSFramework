@@ -1,0 +1,315 @@
+
+html,
+html body {
+    font-size: small;
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    font-size: medium;
+    line-height: 1.5; /* end */
+}
+
+html>body {
+    font-size: medium;
+}
+
+* html body {
+    font-size/**/: small;
+}
+
+* html body * {
+    font-size: 1em;
+}
+
+* + html body * {
+    font-size: 1em;
+}
+
+body a,
+body a:visited,
+body a:hover,
+body a:focus,
+body a:active,
+body a img,
+body button,
+body button:visited,
+body button:hover,
+body button:focus,
+body button:active,
+body input,
+body input:visited,
+body input:hover,
+body input:focus,
+body input:active,
+body select,
+body select:visited,
+body select:hover,
+body select:focus,
+body select:active,
+body textarea,
+body textarea:visited,
+body textarea:hover,
+body textarea:focus,
+body textarea:active {
+    cursor: pointer;
+    cursor: hand;
+}
+
+body big {
+    font-size: larger;
+}
+
+body h1 {
+    font-size: 1.80em;
+    line-height: 2.2;
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    font-size: 2.0em;
+    line-height: 1.8; /* end */
+}
+
+body h2 {
+    font-size: 1.5em;
+    line-height: 1.8;
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    font-size: 1.5em;
+    line-height: 1.8; /* end */
+}
+
+body h3 {
+    font-size: 1.2em;
+    line-height: 1.8;
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    font-size: 1.3em;
+    line-height: 1.7; /* end */
+}
+
+body h4 {
+    font-size: 1.0em;
+    line-height: 1.6;
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    font-size: 1.0em;
+    line-height: 1.8; /* end */
+}
+
+body h5 {
+    font-size: 93%;
+    line-height: 2;
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    font-size: 0.8em;
+    line-height: 2; /* end */
+}
+
+body h6 {
+    font-size: 75%;
+    line-height: 1.4;
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    font-size: 0.7em;
+    line-height: 2; /* end */
+}
+
+body sub {
+    font-size: x-small;
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    font-size: small; /* end */
+}
+
+body sup {
+    font-size: x-small;
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    font-size: small; /* end */
+}
+
+body ol,
+body ul {
+    padding-top: 7px;
+    padding-right: 0;
+    padding-bottom: 7px;
+    padding-left: 40px;
+    margin: 0;
+}
+
+body small {
+    font-size: smaller;
+}
+
+html,
+body,
+select,
+textarea {
+    scrollbar-base-color: #c5c5c5;
+    scrollbar-face-color: #9E9E9E;
+    scrollbar-3dlight-color: #D1D1D1;
+    scrollbar-highlight-color: #FFFFFF;
+    scrollbar-shadow-color: #aaaaaa;
+    scrollbar-arrow-color: #555555;
+    scrollbar-track-color: #dddddd;
+    scrollbar-darkshadow-color: #989898;
+}
+
+* html details {
+    list-style: none;
+    cursor: default;
+}
+
+* html input[type="file"],
+* html input[type="file"]:visited,
+* html input[type="file"]:hover,
+* html input[type="file"]:focus,
+* html input[type="file"]:active {
+    padding: 2px 2px;
+    height: 1.6em;
+    width: 304px;
+}
+
+* html a,
+* html a:visited,
+* html a:hover,
+* html a:focus,
+* html a:active,
+* html a img {
+	cursor: pointer;
+}
+
+* html button,
+* html button:visited,
+* html button:hover,
+* html button:focus,
+* html button:active,
+* html input,
+* html input:visited,
+* html input:hover,
+* html input:focus,
+* html input:active,
+* html select,
+* html select:visited,
+* html select:hover,
+* html select:focus,
+* html select:active,
+* html textarea,
+* html textarea:visited,
+* html textarea:hover,
+* html textarea:focus,
+* html textarea:active {
+    display: inline-block;
+	cursor: pointer;
+}
+
+* html body pre {
+    white-space/**/: pre-wrap;
+    word-wrap/**/: break-word;
+}
+
+* + html details {
+    list-style: none;
+    cursor: default;
+}
+
+* + html input[type="file"],
+* + html input[type="file"]:visited,
+* + html input[type="file"]:hover,
+* + html input[type="file"]:focus,
+* + html input[type="file"]:active {
+    padding: 2px 2px;
+    height: 1.6em;
+    width: 304px;
+}
+
+* + html a,
+* + html a:visited,
+* + html a:hover,
+* + html a:focus,
+* + html a:active,
+* + html a img {
+	cursor: pointer;
+}
+
+* + html button,
+* + html button:visited,
+* + html button:hover,
+* + html button:focus,
+* + html button:active,
+* + html input,
+* + html input:visited,
+* + html input:hover,
+* + html input:focus,
+* + html input:active,
+* + html select,
+* + html select:visited,
+* + html select:hover,
+* + html select:focus,
+* + html select:active,
+* + html textarea,
+* + html textarea:visited,
+* + html textarea:hover,
+* + html textarea:focus,
+* + html textarea:active {
+    display: inline-block;
+	cursor: pointer;
+    min-width: 0;
+}
+
+* + html body pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+* html #printheader,
+* html #mobileheader,
+* html #skip_to_content,
+* html #back_to_top {
+    display: none;
+    float: none;
+    clear: both;
+    width: auto;
+    min-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    max-height: none;
+    outline: none;
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+    background-color: #ffffff;
+}
+
+* + html #printheader,
+* + html #mobileheader,
+* + html #skip_to_content,
+* + html #back_to_top {
+    display: none;
+    float: none;
+    clear: both;
+    width: auto;
+    min-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    max-height: none;
+    outline: none;
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+    background-color: #ffffff;
+}
+
+* html .addyourclass {
+}
+
+*:first-child + html .addyourclass {
+}
+* + html .addyourclass {
+}
+
+body.addyourclass\ {
+}
+
+.ie7orlessheight {
+}

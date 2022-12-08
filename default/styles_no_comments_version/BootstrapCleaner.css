@@ -1,0 +1,784 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: content-box;
+    box-sizing: revert;
+}
+
+:root, html {
+    display: block;
+    font-family: inherit;
+    line-height: inherit;
+    -webkit-text-size-adjust: inherit;
+    -webkit-tap-highlight-color: inherit;
+}
+
+body {
+    display: block;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: inherit;
+    color: inherit;
+    text-align: inherit;
+    background-color: inherit;
+}
+
+body * {
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+    display: block;
+    display: revert;
+}
+
+[tabindex="-1"]:focus {
+    outline: none;
+    outline: revert;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    box-sizing: revert;
+    height: revert;
+    overflow: revert;
+}
+
+p {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    display: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    margin-right: revert;
+}
+
+abbr[title],
+abbr[data-original-title] {
+    text-decoration: underline dotted;
+    -webkit-text-decoration: underline dotted;
+    cursor: auto;
+    border-bottom: initial;
+    -webkit-text-decoration-skip-ink: initial;
+    text-decoration-skip-ink: initial;
+    text-decoration: revert;
+    -webkit-text-decoration: revert;
+    cursor: revert;
+    border-bottom: revert;
+    -webkit-text-decoration-skip-ink: revert;
+    text-decoration-skip-ink: revert;
+}
+
+address {
+    display: block;
+    margin-bottom: 0;
+    font-style: italic;
+    line-height: inherit;
+    display: revert;
+    margin-bottom: revert;
+    font-style: revert;
+    line-height: revert;
+}
+
+ol,
+ul,
+dl {
+    margin-top: .5em;
+    margin-right: 0;
+    margin-bottom: .5em;
+    margin-left: 1.5em;
+    padding: 0;
+    margin-top: revert;
+    margin-right: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    padding: revert;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 1.2em;
+    padding: 0;
+    margin-top: revert;
+    margin-right: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    padding: revert;
+}
+
+body header ol,
+body header ul,
+body header dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: unset;
+    margin-bottom: unset;
+    margin-left: unset;
+    margin-right: unset;
+}
+
+body header ol ol,
+body header ul ul,
+body header ol ul,
+body header ul ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: unset;
+    margin-bottom: unset;
+    margin-left: unset;
+    margin-right: unset;
+}
+
+dt {
+    font-weight: normal;
+    font-weight: revert;
+}
+
+dd {
+    margin-bottom: 0;
+    margin-left: 40px;
+    margin-bottom: revert;
+    margin-left: revert;
+}
+
+blockquote {
+    margin: 1em 40px;
+    margin: revert;
+}
+
+b,
+strong {
+    font-weight: bold;
+    font-weight: revert;
+}
+
+small {
+    font-size: smaller;
+    font-weight: normal;
+    font-size: revert;
+    font-weight: revert;
+}
+
+sub {
+    position: relative;
+    font-size: smaller;
+    line-height: normal;
+    vertical-align: sub;
+    bottom: initial;
+    position: revert;
+    font-size: revert;
+    line-height: revert;
+    vertical-align: revert;
+    bottom: revert;
+}
+
+sup {
+    position: relative;
+    font-size: smaller;
+    line-height: normal;
+    vertical-align: super;
+    top: initial;
+    position: revert;
+    font-size: revert;
+    line-height: revert;
+    vertical-align: revert;
+    top: revert;
+}
+
+a {
+    color: #006;
+    text-decoration: underline;
+    background-color: inherit;
+    color: revert;
+    text-decoration: revert;
+    background-color: revert;
+}
+
+body header a {
+    font-size: inherit;
+    line-height: inherit;
+    word-spacing: inherit;
+    letter-spacing: inherit;
+    font-size: revert;
+    line-height: revert;
+    word-spacing: revert;
+    letter-spacing: revert;
+}
+
+a:link {
+    color: #006;
+    text-decoration: underline;
+    color: revert;
+    text-decoration: revert;
+}
+a:visited {
+    color: #66a;
+    text-decoration: underline;
+    color: revert;
+    text-decoration: revert;
+}
+a:hover {
+    color: #00c;
+    text-decoration: underline;
+    color: revert;
+    text-decoration: revert;
+}
+a:focus {
+    color: #00f;
+    text-decoration: underline;
+    color: revert;
+    text-decoration: revert;
+}
+a:active {
+    color: #00f;
+    text-decoration: underline;
+    color: revert;
+    text-decoration: revert;
+}
+
+body header a:link,
+body header a:visited,
+body header a:hover,
+body header a:focus,
+body header a:active {
+    color: inherit;
+    text-decoration: none;
+    color: unset;
+    text-decoration: unset;
+}
+
+a:not([href]):not([tabindex]):hover,
+a:not([href]):not([tabindex]):focus {
+    color: inherit;
+    text-decoration: underline;
+    color: revert;
+    text-decoration: revert;
+}
+
+a:not([href]):not([tabindex]):focus {
+    outline: none;
+    outline: revert;
+}
+
+a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: underline;
+    color: revert;
+    text-decoration: revert;
+}
+
+pre,
+code,
+kbd,
+samp {
+    font-family: monospace;
+    font-size: inherit;
+    font-family: revert;
+    font-size: revert;
+}
+
+pre {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    overflow: auto;
+    margin-top: revert;
+    margin-bottom: revert;
+    overflow: revert;
+}
+
+figure {
+    margin: 1em 40px;
+    margin: revert;
+}
+
+img {
+    vertical-align: auto;
+    border-style: none;
+    vertical-align: revert;
+    border-style: revert;
+}
+
+svg {
+    overflow: auto;
+    vertical-align: auto;
+    overflow: revert;
+    vertical-align: revert;
+}
+
+table {
+    border-collapse: separate;
+    border-collapse: revert;
+}
+
+caption {
+    padding-top: 0;
+    padding-bottom: 0;
+    color: inherit;
+    text-align: center;
+    caption-side: top;
+    padding-top: revert;
+    padding-bottom: revert;
+    color: revert;
+    text-align: revert;
+    caption-side: revert;
+}
+
+th {
+    text-align: center;
+    text-align: revert;
+}
+
+label {
+    display: block;
+    margin-bottom: 0;
+    display: revert;
+    margin-bottom: revert;
+}
+
+button {
+    border-radius: 0;
+    border-radius: unset;
+}
+
+button:visited,
+button:hover,
+button:focus,
+button:active {
+}
+
+button:focus {
+    outline: revert;
+}
+
+input:visited,
+input:hover,
+input:focus,
+input:active {
+}
+
+input,
+button,
+select,
+optgroup {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: normal;
+    margin: revert;
+    font-family: revert;
+    font-size: revert;
+    line-height: revert;
+}
+
+textarea {
+    margin: 0;
+    font-family: monospace;
+    font-size: inherit;
+    line-height: normal;
+    overflow: auto;
+    resize: none;
+    margin: revert;
+    font-family: revert;
+    font-size: revert;
+    line-height: revert;
+    overflow: revert;
+    resize: revert;
+}
+
+button,
+input {
+    overflow: hidden;
+    overflow: revert;
+}
+
+button,
+select {
+    text-transform: none;
+    text-transform: revert;
+}
+
+select {
+    word-wrap: normal;
+    word-wrap: revert;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -webkit-appearance: revert;
+    -moz-appearance: revert;
+}
+
+button:not(:disabled),
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled) {
+    cursor: inherit;
+    cursor: revert;
+}
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    padding: 0;
+    border-style: solid;
+    padding: revert;
+    border-style: revert;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    box-sizing: content-box;
+    padding: 0;
+    box-sizing: revert;
+    padding: revert;
+}
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+    -webkit-appearance: none;
+    -webkit-appearance: revert;
+}
+
+fieldset {
+    min-width: 0;
+    padding: 0 2px 3px;
+    margin: 0 2px;
+    border: 1px groove #000;
+    min-width: revert;
+    padding: revert;
+    margin: revert;
+    border: revert;
+}
+
+legend {
+    float: none !important;
+    clear: none !important;
+    display: block;
+    width: auto;
+    max-width: 0;
+    padding: 0 2px;
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    white-space: normal;
+    display: revert;
+    width: revert;
+    max-width: revert;
+    padding: revert;
+    margin-bottom: revert;
+    font-size: revert;
+    line-height: revert;
+    color: revert;
+    white-space: revert;
+}
+
+progress {
+    vertical-align: top;
+    vertical-align: revert;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+    height: revert;
+}
+
+[type="search"] {
+    outline-offset: 0;
+    -webkit-appearance: searchfield;
+    outline-offset: revert;
+    -webkit-appearance: revert;
+}
+
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: searchfield;
+    -webkit-appearance: revert;
+}
+[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: searchfield-cancel-button;
+    -webkit-appearance: revert;
+}
+
+::-webkit-file-upload-button {
+    font: inherit;
+    -webkit-appearance: default-button;
+    font: revert;
+    -webkit-appearance: revert;
+}
+
+output {
+    display: inline;
+    display: revert;
+}
+
+summary {
+    display: block;
+    cursor: inherit;
+    display: revert;
+    cursor: revert;
+}
+
+template {
+    display: none;
+    display: revert;
+}
+
+[hidden] {
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    display: block;
+    font-weight: bold;
+    line-height: normal;
+    font-size: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    margin-right: revert;
+}
+
+h1 {
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    margin-right: revert;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    margin-right: revert;
+}
+
+h3 {
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    margin-right: revert;
+}
+
+h4 {
+    font-size: 1em;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    margin-right: revert;
+}
+
+h5 {
+    font-size: .83em;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    margin-right: revert;
+}
+
+h6 {
+    font-size: .67em;
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+    margin-left: revert;
+    margin-right: revert;
+}
+
+
+mark {
+    padding: 0;
+    background-color: inherit;
+    padding: revert;
+    background-color: revert;
+}
+
+code {
+    font-size: inherit;
+    color: inherit;
+    word-break: normal;
+    font-size: revert;
+    color: revert;
+    word-break: revert;
+}
+
+a > code {
+    color: inherit;
+    color: revert;
+}
+
+kbd {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    background-color: inherit;
+    border-radius: 2px;
+    padding: revert;
+    font-size: revert;
+    color: revert;
+    background-color: revert;
+    border-radius: revert;
+}
+
+    kbd kbd {
+        padding: 0;
+        font-size: inherit;
+        font-weight: inherit;
+        padding: revert;
+        font-size: revert;
+        font-weight: revert;
+    }
+
+pre {
+    display: block;
+    font-size: inherit;
+    color: inherit;
+    display: revert;
+    font-size: revert;
+    color: revert;
+}
+
+    pre code {
+        font-size: inherit;
+        color: inherit;
+        word-break: normal;
+        font-size: revert;
+        color: revert;
+        word-break: revert;
+    }
+
+@media print {
+    *,
+    *::before,
+    *::after {
+        text-shadow: none;
+        box-shadow: none;
+        text-shadow: revert;
+        box-shadow: revert;
+    }
+
+    a:not(.btn) {
+        text-decoration: underline;
+        text-decoration: revert;
+    }
+
+    abbr[title]::after {
+        content: normal;
+        content: revert;
+    }
+
+    pre {
+        white-space: pre;
+        white-space: revert;
+    }
+
+    pre,
+    blockquote {
+        border: 0;
+        page-break-inside: auto;
+        border: revert;
+        page-break-inside: revert;
+    }
+
+    thead {
+        display: table-header-group;
+        display: revert;
+    }
+
+    tr,
+    img {
+        page-break-inside: auto;
+        page-break-inside: revert;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 0;
+        widows: 0;
+        orphans: revert;
+        widows: revert;
+    }
+
+    h2,
+    h3 {
+        page-break-after: auto;
+        page-break-after: revert;
+    }
+
+    @page {
+        size: auto;
+        size: revert;
+    }
+
+    body {
+        min-width: 0;
+        min-width: revert;
+    }
+}

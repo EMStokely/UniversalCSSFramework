@@ -1,0 +1,905 @@
+﻿
+======================= UNIVERSAL CSS FRAMEWORK ======================
+Title: Universal CSS Framework, version 2.0.0.0
+Author: Mitchell Stokely (updated July, 2022)
+
+Description: This style sheet is part of a complete "progressive" CSS framework designed for cross-browser style sheet support in browsers going back to the birth of the World Wide Web in the 1990's. It provides old browsers the minimum styles needed to display content, while adding newer styles for more modern browsers that can display more modern CSS. I call this the "Universal CSS Framework" because it was designed to universally support as many web browsers as possible, including those that did not support CSS. This system should provide some form of basic layout or design in all browsers, old and new, with a rich cascading style sheet system that degrades gracefully to simpler layouts in the older browsers.
+
+The first "1.0" version of this CSS system was originally constructed in June of 2004, though its initial designs were laid down in 2001. This "2.0" version is a major upgrade I built to accommodate new HTML5 and CSS3 standards. You will see those more modern features in parts of the newer sheets designed for more modern browsers and much better fixes for many older browsers, as well.
+
+Please note that this solution is Javascript-free!
+
+============================ STYLE SHEET NOTES ===========================
+This text page contains lots of extra styles you can use to enhance your styles. I might add cross-browser CSS that work in many old browsers, as well as the latest-and-greatest browsers. The advantage to using these special style rules is they widen your viewership. Note that the prefix types (-moz, -webkit) allow you to support pre-2010 browsers that began implementing early CSS3 style properties.
+
+
+
+======================== OPTIONAL CSS GOODIES! ========================
+If you want to reach 99.99% cross-browser compatibility with older browsers using newer CSS3 and other styles, use these tricks below.
+
+
+
+DONT USE CSS CLASS NAMES THAT REPRESENT FORMATS OR PRESENTATION, USE NAMES THAT REPRESENT FUNCTION OR PURPOSE!
+
+Use ".contactus" rather than ".bluecontacttext"
+
+
+-------------------------------------------------------
+
+
+AVOID: Internet Explorer Hides Multiple Class Names in Declarations
+
+When using multiple class names for an element, Explorer will ignore all but the last of class names, such as
+myelement.class1.class2.class3 {...}
+
+So, I would avoid such elaborate classes and use instead:
+myelement .class1 .class2 .class3 {...} with spaces, such that once implies that each class contains a child element with the next named class.
+
+
+-------------------------------------------------------
+
+
+DESCENDANT SELECTORS BEST PRACTICES
+
+Ive found that using the descendant selector with an "id" attribute saves time and is easier to manage and use than any other CSS styling technique. It also adds high selectivity so you run no risk of cascade issues. It allows for modularization of chunks of web pages with associated id containers. Lastly, using this model you can reuse the same class names but different styles, because they rest under the CSS id selector. For example, "hotlink" could be reused elsewhere as a class name in the style sheet under a new id.
+
+#content a {font-size:12px;}
+#content .hotlink1 a {color:red;}
+
+<div id="content">
+<a href="...">link1</a>
+<a href="..." class="hotlink1">hotlink1</a>
+</div>
+
+
+-------------------------------------------------------
+
+
+DON'T LOSE THE MEANING OF GOOD SEMANTIC MARKUP!
+
+What I have found is that many designers use classes and styled tags too freely and lose the semantic meaning of the natural html tags. For example:
+
+<div class="mytitle">hello world!</div>
+<div class="mytext">this is some text</div>
+
+*The above is BAD! Why? Because the classes "mytitle" and "mytext" have NO MEANING, or rather, don't help the page identify what the content means or what element it applies to beyond its presentation and look-and-feel. The correct way is to make sure you match classes and styles with the correct element who's semantic meaning is used naturally by most modern agents today. This goes back to designing for older HTML agents as well, and designing sites that look good in old and new browsers as well. The right way to design using the code above would be to use the heading and paragraph tags, with the classes renamed, so now you have markup and content that is styled right, works well in non-css browsers, works with old-fashioned text-based html browsers, and fits with pure xml and semantic meaning in XHTML browsers:
+
+<h1 class="heading_main">hello world!</h1>
+<p class="paragraph1">this is some text</p>
+
+Now, you can do this one step better if you controlled and wrapped these in a div that represents a section of the page...say "content":
+
+<div id="content">
+<h1>hello world!</h1>
+<p>this is some text</p>
+</div>
+
+...and the new styling, controlled via the id contextual selector, would be:
+
+#content h1 {...}
+#content p {...}
+
+Now, you are controlling all tags relevant to the content id and so every paragraph on every page will carry that format, and as well, have a very selective and powerful cascade, as it using an id selector, who's specificity is at least 100 in this example. Later, if you wanted to say, change color or some other item specific for some paragraphs, you can build a custom class for that paragraph, and removing it from the contextual declaration and moving into the class, you can fully control one set of properties for all the paragraphs, but say font colors, you can customize paragraph by paragraph. This example has both semantic meaning, manageable and purposeful style identifiers, less html and less style code, and more control!
+
+These classes have more selectivity than the "h1" and "p" element selectors by 10 points, as defined using standard CSS weights. So they easily write their styles over the ove ones for custom headings and paragraphs:
+
+#content .h1_introtitle {...}
+#content .p_maintext {...}
+
+
+As Tantek Celik (http://tantek.com/) says on his web site:
+
+"The primary purpose of markup is to make the meaning (semantics) of content more explicit. The class attribute, unfortunately, does not capture any semantics, at least not on its own. Does this mean you should avoid the class attribute altogether? Absolutely not. However, it does mean that before using the class attribute, you should first pick the most semantically specific tag for the job (hint: div and span should be last resorts), and then, and only then, optionally specify a class to denote additional sub-semantics."
+
+
+So, use elements that represent your content, in addition to good style structures, and you will go far, my friend!
+
+
+-------------------------------------------------------
+
+
+CLASS NAMES IN CSS ARE CASE SENSITIVE IN MANY CASES
+
+Class names are case-sensitive in many older browsers (old IE3?), case insensitive in newer ones! Be careful with mixed case in your classes (e.g. "MyStyle"), and be especially careful if you mix your cases site-wide, like "MyStyle" and "mystyle", as some browsers may get confused. I like to use ALL LOWERCASE NAMES FOR CLASSES AND ID's to solve any potential issues, permanently. This is in keeping with XHTML/XML standards anyway. I like to use underscores as well, as they are more universally understood than hyphens or dots in names for most OS file structures, which may get you in trouble when referencing, say, background images, etc. 
+
+
+-------------------------------------------------------
+
+
+MY FAVORITE CLEARING FLOAT SOLUTION: THE CLEARING DIV
+
+My favorite way of clearing floats in a parent so the floats stay inside the parent container and end, is to use a "clearing div" (see below) right inside the "div" or parent block that holds your floats, and right after the last float. Unlike all other clearing techniques, this one works universally in 20+ years of browsers, unlike the "content:" variety kids love to brag about online today....which by the way FAILS in IE5 browsers! Insert this HTML block below as described above and you will never haven issue closing a container around floating blocks!
+
+<div style="clear: both;"><!--empty--></div>
+
+
+-------------------------------------------------------
+
+
+If you care about styling rounded corners in older pre-2010 browsers, use the prefix versions below. MAny pre-2010 browsers that did not support rounded borders in CSS worked well with these for a few years:
+
+.roundedcorners {
+    border: 1px solid #171717;
+    -webkit-border-radius: 7px;
+    -khtml-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
+
+-------------------------------------------------------
+
+
+Background image resizing class for cross-browser website designs
+
+.backgroundresize {
+    background-image: url(bg.png);
+    -webkit-background-size: 50% 50%; <<< Safari
+    -khtml-background-size: 50% 50%; <<< Konquer
+    -moz-background-size: 50% 50%; <<< Firefox
+    -o-background-size: 50% 50%; <<< Opera
+    background-size: 50% 50%; <<< CSS3
+}
+
+
+-------------------------------------------------------
+
+
+Legacy Drop Shadow Class
+
+Note that the "box-shadow" property accepts four parameter values: x-axis, y-axis, blur, and color. Again, the prefix types allow you to support pre-2010 browsers that began implementing early CSS3 style properties.
+
+.singledropshadow {
+    border: 1px solid #333;
+    -moz-box-shadow: 1px 1px 7px #999;
+    -webkit-box-shadow: 1px 1px 7px #999;
+    box-shadow: 1px 1px 7px #999;
+}
+
+-------------------------------------------------------
+
+
+Cross-Browser Opacity Class
+
+Need to have transparency colors appear in a range of older web browsers prior to 2012? This solution below works in very old browsers going back to IE 6 (Sorry, in Internet Explorer 5.5, or browsers prior to 2000, this will likely fail).
+
+.opacity {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=70)"; <<< Internet Explorer 6-8
+    filter: alpha(opacity=70); <<< Internet explorer 6-8
+    -khtml-opacity: 0.7; <<< khtml, old safari
+    -moz-opacity: 0.7; <<< Mozilla, Netscape
+    opacity: 0.7; <<< all modern browsers: IE 9+, Opera 9+, Firefox 1+, Chrome 1+, old Safari for Mac, Safari 2+
+}
+
+
+-------------------------------------------------------
+
+
+When a user is highlighting selected text in boxes of content in your site, a warm color background will appear using these classes:
+
+(many browsers)
+
+.highlighttext::selection {
+    background: #E6E5C3;
+    color: #291F16;
+}
+
+
+(for Mozilla/Firefox browsers)
+
+.highlighttext::-moz-selection {
+    background: #E6E5C3;
+    color: #291F16;
+}
+
+
+-------------------------------------------------------
+
+
+Newspaper Column Layouts
+
+This new "columns" feature is used less today now that "flex" layouts are available. But this features assists older browsers with simple newspaper layouts. Simply add to a div to divide up content:
+
+.multiplecolumns {
+
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+
+    -moz-column-gap: 2em;
+    -webkit-column-gap: 2em;
+    column-gap: 2em;
+
+    column-rule: 1px solid #bbb;  
+}
+
+
+-------------------------------------------------------
+
+
+Using alpha transparency with new RGB colors in backgrounds and text
+
+Sorry, I do not know when this was first supported, but I suspect in browsers built after 2001.
+
+.transparentbackgroundcolor {
+    color: rgb(0, 0, 0); <<< this is plain black text on top of colors below
+    background-color: rgb(77%, 77%, 77%); <<< gray fallback for older browsers
+    background-color: rgba(0, 0, 0, 0.7); <<< modern browsers support alpha transparency using black starting color
+}
+.transparenttextcolor {
+    color: rgb(77%, 77%, 77%); <<< gray starting fallback text color for older browsers
+    color: rgba(0, 0, 0, 0.7); <<< modern browsers support alpha transparency starting with black text
+    background-color: rgb(255, 255, 255); <<< white background
+}
+.ietransparentbackgroundcolor { <<< optional older IE-only transparency. Likely IE6+
+    background: transparent;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF333333, endColorstr=#FF333333);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF333333, endColorstr=#FF333333)";
+    zoom: 1;
+}
+
+
+-------------------------------------------------------
+
+
+Add resize corners to any content box. Limited browser support.
+
+.resize {
+    resize: both;
+}
+
+-------------------------------------------------------
+
+
+CSS3 transition colors between states. The "transitions" supports these states:  ease, linear, ease-in, ease-out, and ease-in-out. This version has support for the older pre-2012 browsers using prefixes. After playing with this is seemed to fail in some mobile browsers, and caused some confusion in users rolling over links. So I dont recommend it.
+
+a:link,
+a:visited {
+    -ms-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    color: #7777aa;
+}
+a:hover,
+a:focus,
+a:active {
+    color: #000033;
+}
+
+
+-------------------------------------------------------
+
+
+Button Gradient: Color gradients can be used as a replacement for images that creates color fades on button and blocks of HTML. Again, these prefix version are only for support of a few older browsers that supported early version of gradients:
+
+.buttoncolorgradient {
+    background-image: -moz-linear-gradient(top, #FFFF00, #FF0000);
+    background-image: -webkit-gradient(linear, top, bottom, color-stop(0.00, #FFFF00), color-stop(1.00, #FF0000));
+}
+
+
+-------------------------------------------------------
+
+
+Rotating elements and text with cross-browser "transform" support using early browser prefixes. These versions below support earlier browser versions for IE, Chrome, Mozilla, and Opera s well as modern ones:
+
+.rotateblock {
+    behavior: url(-ms-transform.htc);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg); <<< for modern browsers
+}
+
+
+-------------------------------------------------------
+
+
+Float Clearing
+
+Note: Use my "Clearing Div" solution mentioned elsewhere in this style sheet instead of this, as it works great across over 20 years of web browsers.
+
+But you can use this method below to supports many older browsers, as well. Add these to the parent wrapper element that holds floating boxes. I have noticed some weird issues in IE 5-7 with this one, where either extra space appears at the bottom or the floats doesn't clear when IE is in quirksmode:
+
+.clearfix1:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+
+-------------------------------------------------------
+
+
+Here is a more modern browser clear fix using CSS3. Advantage is it clears before and after floats. This creates a table box after and before content. I do not like the idea of using "table" display types, but it works. This one is not supported in IE 6-7. If you are ignoring those browsers, like this imported style sheet does, then its ok to use. I still prefer the "Clearing Div" solution above:
+
+.clearfix2:before {
+    content: '';
+    display: table;
+}
+.clearfix2:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+
+-------------------------------------------------------
+
+
+HOW TO HIDE ELEMENTS WITHOUT MESSING WITH CONTENT
+
+Use of "display:none" permanently removes the item from any readers, search engines, and some submitted form data in older browsers. Doing so means those elements are in the source code but not part of form-posted data or seen by users. In general, anything that reads or submits the page will ignore elements with "display:none". Form submissions will send fields in current browsers with "display:none" but for many older browsers not send inputs, even hidden ones, with "display:none" (IE 1-8, for example). Its a red flag in Google search bots now, too, which ignore them. If you do want to use an element and its content but just not let users ever see it, its best to avoid "display:none" and use an alternate method (see below). Use of "visibility" and absolute positioning hides these elements from the page flow without removing them from screen readers, form submissions, or search engines. They are simply removed off the page visually, which is often a better solutions. If you use "display:none" do so when needing to turn a block temporarily on or off. If you simply do not need an element just don't ever create it and send it to the server page. Send it when its needed.
+
+.hidemycontent {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    visibility: hidden;
+}
+
+-------------------------------------------------------
+
+
+
+Use this style to determine the viewport orientation (portrait or landscape) and if the tablet or phone has been flipped, reorients the CSS and HTML page design. This may have limited browser support. Does NOT determine device orientation just portrait vs landscape, as some devices in portrait mode use landscape when the virtual keyboard is used. Solid support for orientation with IE 9 or greater support and all major phone browsers. Note: IE 1-8 do not work with media queries, so it would fail!
+
+IMPORTANT: Never design layout resizes around device orientation. Only change layout situations for the text or content, and where the layout might look weird in a specific window frame or window ratio. When building a responsive website it should adjust to an array of different viewport sizes, text sizes, and zooms regardless of the device pixel range, orientation, or resolution because often CSS pixels get translated into "device pixels" anyway and shift the overall size of the viewport or text. Breakpoints in pages work the same and should only be introduced when a website starts to break or the experience is being hampered.
+
+@media screen and (orientation: landscape) {
+
+}
+
+
+-------------------------------------------------------
+
+
+SCALING AND DISPLAYING IFRAMES, VIDEO AND MULTIMEDIA IN HTML5
+
+There are a range of bugs in IE and other browsers that don't allow multimedia blocks like iframe or videos to scale properly. The tricks below fix all those and should be used for special multimedia elements like this where a parent element controls the scale of the embedded child.
+
+<figure >
+    <iframe src="https://www.youtube.com/myvideo"></iframe >
+</figure >
+
+figure {
+    width: 100%;
+    height: 0; <<< triggers IE "hasLayout" fix
+    padding-bottom: 56.25%; <<< For a typical youtube video ratio of 16:9. Fixes IE5.5 break bug
+    position: relative; <<< optional: give parent positioning for absolute positioned child below
+}
+iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute; <<< positioned absolite only relative to the parent "figure" element that also has positioning and holds it
+    top: 0;
+    left: 0;
+}
+
+
+-------------------------------------------------------
+
+
+USING THE BACKGROUND IMAGE SHORTHAND
+
+I have often gotten confused by this property in CSS. The background-image URL should always use NO QUOTES around the path as that seems buggy in some older browsers. You can use absolute or relative paths. Positions can be top, bottom, left, right, or center which old browsers understand. Below is the most common background shorthand setting. 
+
+Update: ALWAYS use absolute paths, not relative. Old Netscape failed using relative paths. Be careful as there is non-support in IE 1-3 (1990's browsers), and where IE4 allowed this feature only in the body tag. I also liked to add a tiny empty 1 pixel transparent image to prop open the element holding the background image. It could then be stretched to prop open the element. Also, yoi can tile or repeat patterns inside blocks in your web page using background images this way, and have them collapse as needed. This device is SUPERIOR to modern solutions as it will work in web browsers going back to 2001 at least.
+
+.mybackgroundshorthand {
+    background: #ccc url(/images/test.jpg) no-repeat fixed top left;
+   [set whatever dimensions you need for this block here]
+}
+
+
+-------------------------------------------------------
+
+
+TRANSFORM TEXT
+
+Using the text-transform property allows you to use fonts in a different style. This changes the text 'case' or appearance. You can use uppercase or lowercase or capitalize. This works in very old browsers as well!
+
+.myspecialuppercasetext { 
+    text-transform: uppercase;
+}
+
+
+-------------------------------------------------------
+
+
+
+LETTER SPACING AND WORD SPACING
+
+Changing these text features can really increase text-readability in your web site. So, consider changing these here for a custom class or in your style sheets to improve site-wide text readability. Note the addition or "rem" fallback code. This allows IE 5-8 to understand "em" units, and all other browsers that understand the "rem" or "em" relative to the body element text setting to have improved text unit sizing. Often with "em" there is a bad cascading effect where if multiple nested elements change in text size those compound badly using "em":
+
+.lettersandwordspacing {
+    word-spacing: .2em; <<< "em" mainly supported by older browser like IE 5-8
+    word-spacing: .2rem; <<< "rem" used by IE 9+ and all modern web browsers
+    letter-spacing: .1em; <<< "em" mainly supported by older browser like IE 5-8
+    letter-spacing: .1rem; <<< "rem" used by IE 9+ and all modern web browsers 
+    text-indent: 0;
+}
+
+
+-------------------------------------------------------
+
+
+Add cool double emphasis underline for those very important links! This works well in all older browsers.
+
+a.doubleunderline {
+    text-decoration: underline;
+    border-bottom: #0000FF 1px solid;
+}
+
+
+-------------------------------------------------------
+
+
+Add paragraph indention. This one has another fallback "em" property for older IE browsers who do not know "rem" units.
+
+p {
+    text-indent: 1em;
+    text-indent: 1rem;
+}
+
+
+-------------------------------------------------------
+
+
+DROP CAP LETTERS
+
+This is a "drop cap" or "first letter formatting" example as see in old fairly tale books for children. This technique modifies the first letter of a paragraph to use a special letter format. You can neatly align the top of the drop cap capital letter with the top of main text using this technique or have it pop its head higher than the paragraph text. Check older IE browsers (5-8), as support was spotty for the "first-letter" pseudo-element:
+
+p:first-letter {
+	font: 2.5em/80% serif;
+	float: left;
+	padding: 0.2ex 0 0 0.2ex;
+	margin: 0;
+	overflow: visible;
+}
+
+-------------------------------------------------------
+
+
+FIXED TABLE LAYOUTS
+
+Use Tables with the "table" element set to "table-layout:fixed" and set widths or percentage widths on first header row table cells to allow for faster table display and rendering. All this feature does is tells the browser it can expect columns to not shift in size and go ahead and render the table dimensions slightly ahead of the content. This was rarely used but could be handly for very large complex tables of data displayed in a large browser screen where the content and dimensions are set and not expected to change and you need fast displays of tabular data. This might grant you a few hundred extra milliseconds of rendering speed, but thats it!
+
+Be careful you do not have unexpected content, though, that in later rows overflows your content or cells. If you think you might have overflowing or unknown table cell content then stick with "table-layout:auto" or the default. This really benefits large tables, and when used, the user will see the header tables load first, then the later rows load last as the browser calculates and prepares a placeholder for the set table content.
+
+Notes: Always set table cell width on the first or header row for easier maintenance rather than every row and cell, or using style sheets. Always prepare a strategy for what happens to content that pushes the table or its cells or rows too far. Another trick I use to control table widths is to wrap a "div" around a growing table that gets too large for its content is set the parent wrapper "div" to "display:inline-block". If the table and its content grows past the width of the viewport, this trick will not allow a table to break out of the page width. By stretching the parent around the growing table width, the parent remains contained by the outer body or its parent, preventing the growing table from destroying your layout.
+
+<div style="display:inline-block;">
+    <table style="table-layout:fixed;width:600px;">
+        <tr>
+            <td style="width:10em;">table layout cell 1</td>
+            <td style="width:20em;">table layout cell 2</td>
+            <td style="width:auto;">table layout cell 3</td>
+        </tr> 
+    </table>
+</div>
+
+
+-------------------------------------------------------
+
+
+CUSTOM BROWSER CURSORS
+
+Create your own cool custom cursor using images! When you add a custom cursor, the browser retrieves the cursor file/image from the resource designated by the URI. If the browser cannot handle the first cursor of a list of cursors, it should attempt to handle the second, etc. Always add a default or fallback cursor, or let the browser choose using "auto". If the browser cannot handle any user-defined cursor, it will use the generic cursor at the end of the list. Note: Do not use quotes around the image path below, as some browsers like IE 5 for MAC had issues!
+
+.customcursor {
+    cursor : url(first.cur), url(second.csr), text; <<< the "text" type could be "pointer", "auto", "default" etc. which are standard fallback cursor types known in most browsers
+}
+
+
+-------------------------------------------------------
+
+
+COOL WAY TO SET YOUR STYLE COLORS TO INHERIT THE USERS WINDOW INTERFACE OR OS COLOR
+
+This feature I believe no longer is supported by Windows browsers and was mainly an old trick in 2001 Internet Explorer browsers to force the user's Windows PC chosen colors into the website design. So test this, as I believe support today is gone.
+
+To use this feature, set the foreground and background colors of a paragraph to the same foreground and background colors of the user's Window colors as shown below. In this case the text color is the color of the Windows PC scrollbar(?) and the background color of the block element uses whatever their Windows PC background uses:
+
+div.windowcolortest { 
+    color: Scrollbar;
+    background-color: Window;
+}
+
+
+-------------------------------------------------------
+
+
+You can also pass the values stored in the browser or Window for the user's browser OS and pass that into the font settings for any class or rule as below and it should display that font used. These fonts are ones controlled by the global font of the operating system on the user's device. I read that many browsers in HTML5 may no longer support this feature. Some options for "font" were: caption | icon | menu | message-box | small-caption | status-bar.
+
+.matchwindowsfont {
+    font: status-bar;
+}
+
+
+-------------------------------------------------------
+
+
+
+OUTLINES
+
+Many developers forget about "outline". I know I did! "outlines are not the same as "border" around elements, and are colors that do not affect the dimensions of elements like border. You will see outline used more now in HTML5 form control input boxes where the state or status of the input form control text or interactions change the color of the inputs color outline. For example in HTML5 browsers many will color an input form control red if its required and the user has left the form empty. This is still a cool way to add borders and color around items, even in older browsers! 
+
+.outline {
+    outline: thick solid red;
+}
+
+
+-------------------------------------------------------
+
+
+ALTERNATIVE BULLET LIST
+
+Assign your own images to a bullet list. Great for controlling major navigation schema's and accessibility using images with hidden text for older browsers. Again, always avoid quotes around image paths in url's used like this.
+
+li.myimagelist {
+    list-style-image:url(/myfolder/image.gif);
+}
+
+
+-------------------------------------------------------
+
+
+IMAGE CROP FEATURE
+
+Wrap this around an image or text and it will crop or clip a portion of the image field and hide it from view if the image pixel dimensions extend beyond the set width and height. Great for image clipping! Note that this "clip" feature has wider CSS and browser support than using the "clip" CSS property, even though it worked in most browsers after 2001.
+
+.myimage {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.myrectclip {
+    width: 200px;
+    height: 30px;
+    overflow: hidden;
+    clip: rect(30px,-30px,50px,20px);
+}
+
+
+-------------------------------------------------------
+
+
+
+CONTENT REPLACEMENT USING CSS
+
+Use "content" replacement techniques for non-IE browsers when adding a "hover" event to any tag and have the text content be replaced when hovering over it. This isnt supported until after IE 6, so use with caution. What I love about this solution is it requires no JavaScript!
+
+
+p.answer:hover {
+    content: "Here is the answer."
+}
+
+<p class="answer">Here is a question. Hover over it to reveal the answer.</p>
+
+
+-------------------------------------------------------
+
+
+
+EMBEDDED FONT EXAMPLE
+
+ (This works in very old and new browser). This CSS technique allows the user's browser to download the font to their browser, like an image. Note: Some security systems may not allow this! Also, you might try "OpenType" fonts instead as they might have wider acceptance. The type file path should be relative to the current style sheet, not to the web page. The "local" fonts search a user's computer for available fonts rather than download them, saving time.
+
+CROSS_BROWSER SUPPORT: CSS "@font-face" is supported by Internet Explorer 4+, Firefox 3.1+, Safari 4.0+, and Opera 10+, so far superior in terms of cross-browser issues.
+
+When using @font-face, be aware of these issues:
+
+Many fonts won't work in Internet Explorer if the 'font-family' property entry in CSS is named differently than the actual font name! So try and match them up. This bug can be very frustrating if you are not aware of it!
+
+IE4 first supported @font-face so widely supported in old IE.
+
+For IE 6-11, use "EOT" fonts, but be aware it is not supported by any other browsers. Offer it as an alternative.
+
+For IE >=9 and all other browsers, use "woff" fonts, as it has the widest support and the best compression, since it was designed specifically for the web.
+
+
+EXAMPLE of supporting older browsers using @font-face:
+
+@font-face {
+    font-family: 'webfont'; << This sets the 'font-family' name used in the 'body' element. It can be any text name, but I like to use the same name as the actual font.  Note: Try and match this name with the actual font name for older Internet Explorer browsers.
+    src: url('webfont.eot'); <<< Use this for IE 6-11 only font settings. May not be read by non-IE browsers!
+
+    /* This is an example of using fonts that support older IE browsers but newer ones as well! */
+    src: url('webfont.eot?#iefix') format('embedded-opentype'), <<< IE6-IE8 only font support
+         url('webfont.woff') format('woff'), <<< IE9+ Compat Mode support. Most Modern Browsers support this faster, more compressed version, as well. Many non-IE browsers will also support this.
+         url('webfont.ttf')  format('truetype'), <<< Safari, Android, iOS have more True Type font support.
+         url('webfont.svg#svgFontName') format('svg'); <<< Use SVG fonts for legacy iOS support.
+
+    font-weight: normal;
+    font-style: normal;
+    font-size: medium;
+    font-variant: normal;
+    font-stretch: normal;
+    font-display: swap;/* Tells the browser to use the "fallback" font to display the text (sans-serif) until the custom font has fully downloaded to the browser. It is just a hack that tries to save a few milliseconds of font download time. Optional. I do like this as it prevents "invisible" fonts often used when set to "auto" or "block". */
+}
+
+
+@font-face {
+    font-family: 'Federation Bold'; <<< IE needs the true font name and your alias to match
+    src: local('Federation Bold'), <<< Browsers will first try and fast-load the font from OS
+         url(../images/FEDERATION_BOLD.TTF) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-size: medium;
+    font-variant: normal;
+    font-stretch: normal;
+    font-display: swap;/* Tells the browser to use the fallback font to display the text (sans-serif) until the custom font has fully downloaded to the browser. I like this as it prevents "invisible" font often used when set to "auto" or "block". */
+}
+
+
+This assigns and displays the new font. Always offer fallbacks in case the font fails.
+
+body {
+    font-family: 'Federation Bold',-apple-system, sans-serif; <<< note that the font-family name must match whatever text was used on @font-face block above
+}
+
+Or, you can apply it for custom sections of your website.
+
+
+.font_federation_bold {
+    font-family: 'Federation Bold',-apple-system, sans-serif;
+}
+
+-------------------------------------------------------
+
+
+
+SOME NEWER CSS3 TECHNOLOGIES YOU CAN SAFELY USE IN THIS STYLE SHEET AND BROWSERS GOING FORWARD
+
+I created this list so designers know, by using my CSS framework to exclude so many older browsers, in this more cutting-edge imported sheet you can now go forward with all the "latest and greatest" CSS tricks in the 'Styles.css' advanced sheet for modern CSS3 browsers! As mentioned, these styles are ONLY seen by IE8+ browsers and greater, with IE8 being the lowest/most difficult browser that will see your advanced CSS using the "Styles.css"! For that reason, you should always test in IE8-IE9 first to make sure the CSS below works as a minimum test. I have created styles that I know work in IE8+ in the list below so that you know they are safe to use in all imported advanced style sheets in my CSS system. I will add more of these as time goes on.
+
+
+
+
+
+Using the "attr()" CSS selector to post content from HTML attributes into content. Note below "data-foo" is a HTML5 custom "data-" attribute you can add to any element withe the "data-" prefix.
+
+
+[HTML]
+<p data-foo="hello">world</p>
+
+[CSS]
+[data-foo]::before {
+  content: attr(data-foo) " ";
+}
+
+[THE RESULT]
+"hello world"
+
+
+
+===================== CSS HACKS =======================
+
+USE THESE "HACKS" BELOW TO TARGET SPECIFIC OLDER BROWSERS
+
+
+    Netscape 4 Series Hack - only seen by Netscape 4 or less
+    selector {
+        /*/*//*/line-height: normal;/*end*/
+    }
+
+    Old Safari 5.1-6 Browser Only Hack. Good for old Macs.
+    _::-moz-svg-foreign-content,
+    :root selector {
+
+    }
+   
+    All Browsers except IE5
+    selector { property/**/: value; }
+     
+    All Browsers except IE5/Mac
+    /*\*/ selector { property:value; } /**/
+     
+    IE5/Mac Browsers
+    /*\*//*/ selector { property:value; } /**/
+     
+    All Browsers except IE5-5.5
+    selector { property: /**/value; }
+     
+    IE <= 5.5 Browsers
+    selector { property:value; p\roperty: normal-value; }
+     
+    All Browsers except IE <= 6
+    html>body selector { property:value; }
+     
+    IE <= 6 Browsers
+    /*\*/ * html selector { property:value; } /**/
+     
+    All Browsers except IE6 standard
+    selector { property /**/: value; }
+     
+    IE6+ quirks and IE5 (= all IE/Win quirks)
+    * html selector { property /**/: value; }
+     
+    IE5.5-6 Browsers Only
+    selector { _property:value; }
+	
+	IE6 Browsers
+    * html selector { property:value; }
+     
+    IE <= 7 Browsers
+    html >/**/body selector { property:value; }
+    body*selector{ property:value; }
+    selector { property:value !important!;}
+    selector { property:value !inIE;}
+     
+    IE7 Browsers
+    *:first-child+html selector { property:value; }
+    *+html selector { property:value; }
+    selector { .property:value; }
+    selector { `property:value; }
+    selector { ~property:value; }
+    selector { !property:value; }
+    selector { @property:value; }
+    selector { #property:value; }
+    selector { $property:value; }
+    selector { %property:value; }
+    selector { ^property:value; }
+    selector { &property:value; }
+    selector { *property:value; }
+    selector { (property:value; }
+    selector { )property:value; }
+    selector { =property:value; }
+    selector { +property:value; }
+    selector { [property:value; }
+    selector { ]property:value; }
+    selector { {property:value; }
+    selector { |property:value; }
+    selector { ,property:value; }
+    selector { <property:value; }
+    selector { >property:value; }
+    selector { /property:value; }
+    selector { ?property:value; }
+     
+    IE >= 7 Browsers
+    selector { property /*\**/: value\9; }
+	
+	In IE5, IE6, IE7 text will be blue, green in other browsers.
+	body{
+	  color: green;
+	  * color: blue;
+	}
+     
+    IE < 8 Browsers
+    selector\ { property:value; }
+     
+    IE 8 Browsers
+    selector { property:value\9; }
+    selector { property:value\0; }
+
+    IE 8 Browsers
+    @media \0screen {
+        selector { property:value; }
+    }
+     
+    IE 8 & IE 9 Browsers
+    selector { property:value; \ ;}
+    selector { property:value;\0/;}
+     
+    IE 9 Browsers
+    :root selector { property:value \ ;}
+    :root selector { property:value \0;}
+    @media all and (min-width:0) { selector { property:value \0/; } }
+
+    IE 9 Browsers
+    @media all and (min-width:0\0) and (min-resolution:.001dpcm) {
+        selector { property:value; }
+    }
+     
+    IE 9 & Opera 10 Browsers
+    :root selector { property:value\0;}
+
+    IE 10-11 Browsers
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        selector { property:value; }
+    }
+     
+    IE Browsers
+    selector { *property:value; }
+
+    Trident Edge Browsers (Includes IE11 version)
+    @supports (-ms-ime-align:auto) {
+        selector { property:value; }
+    }
+
+    Excludes IE 1-11 and Trident Edge browser
+    @supports not (-ms-ime-align:auto) {
+        selector { property:value; }
+    }
+     
+    Opera 7 Browsers
+    @ Media all and (min-width: 0px) { selector { property:value; } }
+     
+    Opera <= 9 Browsers
+    @media all and (min-width: 0px){ head~body selector { property:value; } }
+    html:first-child selector { property:value; }
+     
+    Opera <= 9.5 Browsers
+    @media all and (min-width: 0px) { html:first-child selector { property:value; } }
+     
+    Opera >= 9.5 Browsers
+    x:-o-prefocus, selector { property:value; }
+     
+    Opera < 10 & Chrome Browsers
+    selector { -bracket-:hack(;property:value;); }
+     
+    Opera >= 10 Browsers
+    @media not all and (-webkit-min-device-pixel-ratio:0) { selector { property:value; } }
+     
+    Opera Browsers
+    @media all and (min-width: 0px){ selector { property:value; } }
+     
+    Opera & IE <= 6 Browsers
+    head: first-child + body selector { property:value; }
+     
+    Safari 3 Browsers
+    selector:not(:root:root) { property:value; }
+     
+    Safari Browsers
+    @media all and (-webkit-min-device-pixel-ratio: 0) { selector { property:value; } }
+    html:lang(en)>body selector { property:value; }
+     
+    Mozilla & Safari Browsers
+    html: not ([dummy]) selector { property:value; }
+     
+    Chrome & Safari Browsers
+    @media screen and (-webkit-min-device-pixel-ratio:0) { selector { property:value; } }
+     
+    Chrome Browsers
+    body:nth-of-type(1) selector { color: #333333; }
+    selector { (-bracket-:hack;property:value;); }
+    selector { -bracket-:hack[;property:value;]; }
+     
+    Firefox 1.5 & 2 Browsers
+    body:empty selector { property:value; }
+     
+    Firefox >= 1.5 Browsers
+    @-moz-document url-prefix() { selector { property:value; } }
+     
+    Firefox 3 Browsers
+    html&gt;/**/body .className, x:-moz-any-link, x:default { selector { property:value; } }
+     
+    Firefox 4-6 Browsers
+    :-moz-any(selector} { property:value; }
+     
+    Firefox Browsers
+    @-moz-document url-prefix() { selector { property:value; } }
+    html&gt;/**/body selector { property:value; }
+
+
+
+
+NEW MODERN CHROME ONLY CSS FILTER (use design exactly as is but add your own CSS in the block)
+
+@supports (not (-moz-appearance:button)) and (contain:paint) and (-webkit-appearance:none) {
+
+  body {
+    background: blue;
+  }
+
+}
+
+
+
+NEW MODERN FIREFOX ONLY CSS FILTER (use design exactly as is but add your own CSS in the block)
+
+@supports (-moz-appearance:button) and (contain:paint) {
+
+  body {
+    background: red;
+  }
+
+}
+ =======================================================================

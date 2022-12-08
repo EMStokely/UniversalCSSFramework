@@ -1,0 +1,13 @@
+Universal CSS Framework v2.0 : No Comments (v2.0-no-comments)
+
+This is the "no comments" version of the Universal CSS Framework and is production-ready. Use this release if you want a smaller footprint of the Cascading Style Sheet code and do not care about customizing it beyond adding your own style sheet rules. However, please use the full commented version if you need more information as this no-comment version has removed all optional code from the CSS files.
+
+As mentioned, I have removed all comments from the style sheets in this release version so they load faster and can be implemented immediately in your website with no changes beyond adding your own code. Use this version of the code if you will only be adding your own CSS code to the Styles, Mobile, and Print style sheets and need to ramp up quickly!
+
+Keep in mind these files have a few CSS rules that map to HTML elements in the README.html template and my HTML5 Tutorial templates at: https://mitchellstokely.com/HTML5Tutorial/
+
+Also note that optional code and suggestions that help you customize the CSS code have been stripped away from this release of the framework. So I recommend you download the commented version as well to help you modify the CSS code base.
+
+As before, never use Modernizr, SASS , polyfills, minimizers, or any JavaScripting API to alter the CSS text files as they will strip out critical characters and CSS fixes needed to run the code correctly in 20+ years of older browsers.
+
+This is version 2.0 of the software.

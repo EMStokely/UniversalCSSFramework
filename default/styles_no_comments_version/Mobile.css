@@ -1,0 +1,179 @@
+
+@media only screen and (max-width: 46rem) {
+
+    html,
+    html body
+    {
+        min-width: none;
+        max-width: none;
+        min-height: none;
+        max-height: none;
+        margin: 0;
+        padding: 0 .25em .25em .25em !important;
+        font-size: small !important;
+    }
+
+    #mobileheader {
+        display: block !important;
+    }
+
+    html body #header,
+    html body #printheader,
+    html body #printfooter,
+    html body #skip_to_content,
+    html body #back_to_top {
+        display: none !important;
+    }
+
+    html body header,
+    html body nav,
+    html body main,
+    html body section,
+    html body article,
+    html body aside,
+    html body footer,
+    html body div,
+    html body form  {
+    }
+
+    #mobileheader {
+        display: block;
+        float: none;
+        clear: both;
+        width: auto;
+        min-width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 10px;
+        margin: 0;
+        padding: 0;
+        border: none;
+        text-align: center;
+        vertical-align: middle;
+        background: #0d98ba;
+    }
+
+    #mobilelogolink {
+        display: inline-block;
+        width: 151px;
+        height: 20px;
+        padding: 0;
+        margin: 0;
+        border: none;
+        border-left: 10px solid #fff;
+        border-right: 10px solid #fff;
+        text-align: center;
+        vertical-align: top;
+        background: #fff;
+    }
+
+    html body main pre {
+        white-space: pre-wrap !important;
+        word-wrap: break-word !important;
+    }
+
+    html body main p {
+        text-indent: 0;
+    }
+	
+	html body main button,
+	html body main button:visited,
+	html body main button:hover,
+	html body main button:focus,
+	html body main button:active,
+	html body main input[type="button"],
+	html body main input[type="button"]:visited,
+	html body main input[type="button"]:hover,
+	html body main input[type="button"]:focus,
+	html body main input[type="button"]:active,
+	html body main input[type="reset"],
+	html body main input[type="reset"]:visited,
+	html body main input[type="reset"]:hover,
+	html body main input[type="reset"]:focus,
+	html body main input[type="reset"]:active,
+	html body main input[type="submit"],
+	html body main input[type="submit"]:visited,
+	html body main input[type="submit"]:hover,
+	html body main input[type="submit"]:focus,
+	html body main input[type="submit"]:active {
+		color: #fff;
+		background: #99a;
+		outline: none;
+		border: none;
+	}
+   
+    html body .box {  
+    }
+
+    html body .box_html5table {
+        display: inline-block !important;
+        width: auto;
+        min-width: none !important;
+        max-width: none !important;
+        padding: 0 !important;
+        margin: .5em 0 !important;
+        background: none;
+        border: none;
+        -webkit-border-radius: 0;
+        -khtml-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    html body textarea.code,
+    html body textarea.code:hover,
+    html body textarea.code:focus,
+    html body textarea.code:active {
+        min-width: 20em;
+        min-height: 10em;
+    }
+
+    html body .elementtable {
+        max-width: none;
+        border: none;
+    }
+
+    html body .elementblock3,
+    html body .elementblock3 *
+    {
+        font-size: small;
+    }
+
+    * html body .elementblock3,
+    * html body .elementblock3 *
+    {
+        font-size: small;
+    }
+
+
+    html body .elementtable > thead > tr > th {
+        display: none;
+    }
+
+    html body .elementtable > thead > tr > th:nth-child(1) {
+        display: block;
+        border-bottom: 2px solid #666;
+        background-color: #f3f3f0;
+    }
+
+    html body .elementtable > tbody > tr > td {
+        display: block;
+        border-top: none;
+        border-bottom: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        padding: .5em;
+    }
+
+    html body .elementtable > tbody > tr > td:nth-child(2) {
+        display:none;
+    }
+
+    html body .elementtable > tbody > tr > td:nth-child(3) {
+        border-bottom: 2px solid #666;
+    }
+
+}

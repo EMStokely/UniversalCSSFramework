@@ -1,0 +1,31 @@
+
+body {
+/*/*//*/background-color:#ffffff;margin:0;padding:0;line-height:1;border:none;/*end*/
+}
+body,a,abbr,acronym,address,area,b,bdo,blockquote,br,button,caption,cite,col,colgroup,dd,del,dfn,dl,dt,em,fieldset,form,hr,i,img,input,ins,label,legend,li,map,noscript,object,ol,ol ol, ol ol ol,ol ol ol ol,ol ol ol ol ol,optgroup,option,p,param,q,ruby,rt,rb,select,span,strong,table,tbody,td,textarea,tfoot,th,thead,tr,tt,ul,ul ul,ul ul ul,ul ul ul ul,ul ul ul ul ul,div {
+/*/*//*/font-size:16px;/*end*/
+}
+big,h1,h2,h3,h4,h5,h6,small,sub,sup {
+/*/*//*/border:0;line-height:1;/*end*/
+}
+hr {
+/*/*//*/margin:0;padding:0;border:0;/*end*/
+}
+code,kbd,pre,samp,var {
+/*/*//*/font-size: 16px;line-height:1;/*end*/
+}
+body div,body div div,body div div div,body div div div div,body div div div div div,body div div div div div div,body div div div div div div div,body div div div div div div div div {
+/*/*//*/font-size:16px;margin:0;padding:0;border:0;line-height:1;/*end*/
+}
+body img{
+/*/*//*/display:block;float:none;margin:2px 0px;padding:0;border:none;background-color:#ffffff;color:#000000;line-height:1;/*end*/
+}
+body #skip_to_content a, body #back_to_top a {
+    /*/*//*/text-decoration:underline;color:#0000ff;/*end*/
+}
+body .mypageclass{
+    /*/*//*/{add your font settings here}/*end*/
+}
+body .myprintclass {
+    /*/*//*/height:0;width:0;display:none;margin:0;padding:0;line-height:0;font-size:0;visibility:hidden;float:none;/*end*/
+}

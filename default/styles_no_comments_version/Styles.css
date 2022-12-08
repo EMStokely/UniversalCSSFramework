@@ -1,0 +1,343 @@
+
+#printheader,
+#mobileheader {
+    display:none;
+}
+
+#skip_to_content {
+    display: block;
+    clear: both;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    padding: .2em;
+    background: #fff;
+}
+#back_to_top {
+    display: block;
+    clear: both;
+    width: auto;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: -9999px;
+    padding: .2em;
+    background: #fff;
+}
+
+@font-face {
+    font-family: 'Ebrima';
+    src: local('Ebrima'),url(../fonts/ebrima.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-size: medium;
+    font-variant: normal;
+    font-stretch: normal;
+    font-display: swap;
+}
+
+html body {
+    background: #eee;
+    padding: 0 1em 1em 1em;
+    margin: 0;
+    overflow-y: scroll;
+    font-family: 'Ebrima', -apple-system, sans-serif;
+}
+
+#header {
+    display: block;
+    float: none;
+    clear: both;
+    width: auto;
+    min-width: 100%;
+    max-width: none;
+    height: 40px;
+    min-height: 40px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-align: center;
+    vertical-align: middle;
+    background: #114f66;
+}
+
+#headerlogolink {
+    display: inline-block;
+    width: 301px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-left: 10px solid #fff;
+    border-right: 10px solid #fff;
+    text-align: center;
+    vertical-align: middle;
+    background: none;
+    text-decoration: none;
+}
+
+#headerlogo {
+    display: inline-block;
+    width: 301px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    position:relative;
+    display: block;
+    float: none;
+    clear: both;
+    width: auto;
+    min-width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: none;
+    margin: 0;
+    padding: 0;
+    border:none;
+    text-align: left;
+    vertical-align: top;
+    background: none;
+}
+
+#footer {
+    position:relative;
+    display: block;
+    float: none;
+    clear: both;
+    width: auto;
+    min-width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: none;
+    margin: 0;
+    padding: 0;
+    border:none;
+    text-align: left;
+    vertical-align: top;
+    background: none;
+}
+
+#copyrightfooter {
+    font-size: smaller;
+    float:left;
+    margin: 0em .5em .5em 0em;
+}
+
+#printfooter {
+    font-size: smaller;
+    float:right;
+    margin: 0em 0em .5em .5em;
+}
+
+html body main p {
+}
+
+html body main pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+html body main a:link,
+html body main a:visited {
+    color: #222299;
+}
+html body main a:hover,
+html body main a:focus,
+html body main a:active {
+    color: #000033;
+}
+
+html body main textarea::selection {
+    background: #eee;
+    color: #000;
+}
+
+.tinytext {
+    font-size: xx-small;
+}
+
+.print_pagebreak {
+    page-break-after: always;
+}
+
+#main button,
+#main input,
+#main textarea,
+#main select
+{
+    margin: .5em 0em;
+}
+
+#main li {
+    padding: .5em 0em;
+}
+
+.box,
+.box_html5table {
+    display: block;
+    width: auto;
+    padding: 1em 2em;
+    margin: .5em 0em .5em 0em;
+    background: #fff;
+    border: 1px solid #bbb;
+    -webkit-border-radius: .5em;
+    -khtml-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -moz-box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+}
+
+#html5_introlist{
+    position: relative;
+    margin-left: 1em;
+    list-style: none;
+}
+#html5_introlist li::before {
+    display: inline-block;
+    content: "\2023";
+    color: #114f66;
+    font-size: 3em;
+    line-height: 0;
+    padding: 0 .1em 0 0;
+    margin: 0;
+    text-align: left;
+    vertical-align: top;
+    position: relative;
+    top: .2em;
+    left: 0em;
+}
+#html5_introlist li {
+    text-align:left;
+    vertical-align: top;
+    padding: .2em 0em .2em 0em;
+    margin: 0;
+    font-size: 1em;
+}
+
+textarea.code,
+textarea.code:hover,
+textarea.code:focus,
+textarea.code:active {
+    display: block;
+    width: 98%;
+    height: auto;
+    min-width: none;
+    max-width: none;
+    min-height: 10em;
+    max-width: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding:.5em;
+    margin: .5em 0em;
+    white-space:pre-wrap;
+    word-wrap: break-word;
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+.elementtable {
+    table-layout:auto;
+    width: auto;
+    max-width: none;
+    margin:0;
+    padding:0;
+    border: none;
+    background: #fff;
+}
+
+.elementtable caption {
+    width: auto;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.elementblock3,
+.elementblock3 *
+{
+    font-size: small;
+    color: #444;
+}
+
+* html .elementblock3,
+* html .elementblock3 *
+{
+    font-size: x-small;
+    color: #444;
+}
+
+.elementtable > thead > tr > th,
+.elementtable > tbody > tr > td,
+.elementtable > tfoot > tr > td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding: .5em;
+    vertical-align: top;
+}
+
+.elementtable > thead > tr > th:nth-child(1) {
+    width: auto;
+    text-align: center;
+    background-color: #f3f3f0;
+}
+
+.elementtable > thead > tr > th:nth-child(2) {
+    width: auto;
+    text-align: center;
+    background-color: #f3f3f0;
+}
+
+.elementtable > thead > tr > th:nth-child(3) {
+    width: auto;
+    text-align: center;
+    background-color: #f3f3f0;
+}
+
+.elementtable > tbody > tr > td:nth-child(1),
+.elementtable > tfoot > tr > td:nth-child(1) {
+    text-align: center;
+}
+
+.elementtable > tbody > tr > td:nth-child(2),
+.elementtable > tfoot > tr > td:nth-child(2) {
+    text-align: center;
+}
+
+.elementtable > tbody > tr > td:nth-child(3),
+.elementtable > tfoot > tr > td:nth-child(3) {
+    text-align: left;
+}
+
+.elementtable > thead > tr:nth-child(even),
+.elementtable > tbody > tr:nth-child(even),
+.elementtable > tfoot > tr:nth-child(even)
+{
+    background-color: #f3f3f0;
+}
+
+.elementtable > thead > tr:nth-child(odd),
+.elementtable > tbody > tr:nth-child(odd),
+.elementtable > tfoot > tr:nth-child(odd)
+{
+    background-color: #fff;
+}
+
+.elementblock1,
+.elementblock2,
+.elementblock3 {
+    margin: 0em 0em 1em 0em;
+}
+
+.tinytable,
+.tinytable caption,
+.tinytable th,
+.tinytable td {
+    font-size: smaller;
+}
