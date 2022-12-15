@@ -456,6 +456,9 @@ body abbr[title] {
 	text-decoration: underline dotted #000;
 	color: #000;
 	cursor: help;
+    text-underline-position: under;
+    text-decoration-thickness: 0.01em;
+    text-decoration-thickness: 0.01rem;
 }
 
 /* This is a deprecated HTML4 property but added here if you need to support an older html page. Use "abbr" instead. */
