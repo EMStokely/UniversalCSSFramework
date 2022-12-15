@@ -358,6 +358,46 @@ IMPORTANT: Never design layout resizes around device orientation. Only change la
 
 -------------------------------------------------------
 
+UNICODE BULLET LIST! You will never every need to download custom fonts or special icon packages to display special symbols! Just use the UNICODE values free with every browser. There are millions!!
+
+<style>
+#html_list{
+    position: relative;
+    margin-left: 1em;
+    list-style: none;
+}
+#html_list li::before {
+    display: inline-block;
+    content: "\2023";/* ADD YOU CUSTOM BULLET UNICODE ICON CODE HERE */
+    color: #114f66;
+    font-size: 3rem;
+    line-height: 0;
+    padding: 0 .1em 0 0;
+    margin: 0;
+    text-align: left;
+    vertical-align: top;
+    position: relative;
+    top: .2em;
+    left: 0em;
+}
+#html_list li {
+    text-align:left;
+    vertical-align: top;
+    padding: .2em 0em .2em 0em;
+    margin: 0;
+    font-size: 1rem;
+}
+</style>
+
+<ul id="html_list">
+    <li><a href="#">Area 1</a></li>
+    <li><a href="#">Area 2</a></li>
+    <li><a href="#">Area 3</a></li>
+</ul>
+
+
+-------------------------------------------------------
+
 
 SCALING AND DISPLAYING IFRAMES, VIDEO AND MULTIMEDIA IN HTML5
 
