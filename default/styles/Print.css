@@ -117,7 +117,7 @@ This CSS Rule affects ALL print pages in your website and is the default. It let
 
 /* REQUIRED: IMPORT IN ALL WEBSITE STYLES : Unless you want to cut-and-paste your complete website styles into this print sheet, the best strategy is to simply import in the "importers" for all your desktop style sheets. Based on browser version, this print sheet will load in all the styles needed to print. You can then simply customize a few features of your web site styles below for your print version of your website. Note: ALWAYS place @imports ABOVE all CSS style rules, or they will fail in compliant CSS browsers. */
 
-@import url("BootstrapImporter.css");
+/*@import url("BootstrapImporter.css");*/
 @import url("NewBrowsersImporter.css");
 @import url("OldBrowsers.css");
 
