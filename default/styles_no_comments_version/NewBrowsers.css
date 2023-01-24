@@ -247,13 +247,10 @@ body abbr,
 body abbr[title] {
 	display: inline;
 	border: 0;
-	-webkit-text-decoration: underline dotted #000;
-	text-decoration: underline dotted #000;
+	text-decoration: none;
+	border-bottom: 1px dotted #000;
 	color: #000;
 	cursor: help;
-    text-underline-position: under;
-    text-decoration-thickness: 0.01em;
-    text-decoration-thickness: 0.01rem;
 }
 
 body acronym {
@@ -1610,10 +1607,10 @@ body tt {
 }
 
 body u {
-	-webkit-text-decoration: underline dashed red;
-    text-decoration: underline dashed red;
-	-webkit-text-decoration: underline wavy red;
-    text-decoration: underline wavy red;
+	-webkit-text-decoration: dashed underline red;
+    text-decoration: dashed underline red;
+	-webkit-text-decoration: wavy underline red;
+    text-decoration: wavy underline red;
 }
 
 body ul {
@@ -1818,8 +1815,8 @@ body summary {
 }
 
 body time {
-	-webkit-text-decoration: underline dashed #000000;
-    text-decoration: underline dotted #000 ;
+	-webkit-text-decoration: dashed underline #000000;
+    text-decoration: dotted underline #000;
 }
 
 body a img {

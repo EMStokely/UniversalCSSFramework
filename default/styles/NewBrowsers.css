@@ -453,13 +453,10 @@ body abbr,
 body abbr[title] {
 	display: inline;
 	border: 0;
-	-webkit-text-decoration: underline dotted #000;
-	text-decoration: underline dotted #000;
+	text-decoration: none;
+	border-bottom: 1px dotted #000;
 	color: #000;
 	cursor: help;
-    text-underline-position: under;
-    text-decoration-thickness: 0.01em;
-    text-decoration-thickness: 0.01rem;
 }
 
 /* This is a deprecated HTML4 property but added here if you need to support an older html page. Use "abbr" instead. */
@@ -2050,10 +2047,10 @@ body tt {
 
 /* ALERT: The 'u' element was deprecated in later HTML4 recommendations as it had no semantic meaning, but was  re-instated in HTML5, but for the wrong reasons (for misspelled words?). Plus, the "underline" has always confused text with hypertext links. So, I force an alternative line style now so users know the wrapped text is a "spelling error". */
 body u {
-	-webkit-text-decoration: underline dashed red;
-    text-decoration: underline dashed red;/* Older IE browsers only */
-	-webkit-text-decoration: underline wavy red;
-    text-decoration: underline wavy red;/* Try and use the "spellcheck" wavy error line instead. */
+	-webkit-text-decoration: dashed underline red;
+    text-decoration: dashed underline red;/* Older IE browsers only */
+	-webkit-text-decoration: wavy underline red;
+    text-decoration: wavy underline red;/* Try and use the "spellcheck" wavy error line instead. */
 }
 
 body ul {
@@ -2295,8 +2292,8 @@ body summary {
 
 /* Time is a new HTML5 element that is helpful when it also has some visual enhancement combined with a tooltip. */
 body time {
-	-webkit-text-decoration: underline dashed #000000;
-    text-decoration: underline dotted #000 ;
+	-webkit-text-decoration: dashed underline #000000;
+    text-decoration: dotted underline #000;
 }
 
 /* =================== END : APPLY BASE ELEMENT STYLES =================== */

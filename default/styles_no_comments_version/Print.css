@@ -8,13 +8,15 @@ html body #printheader {
 }
 
 html body #header,
+html body #navigation,
+html body #outline,
 html body #mobileheader,
 html body #footer,
 html body #copyrightfooter,
 html body #printfooter,
 html body #skip_to_content,
 html body #back_to_top {
-    display:none;
+    display:none !important;
 }
 
 html body #printheader {
