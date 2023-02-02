@@ -1227,18 +1227,18 @@ body input[type="file"]:read-only:active {
 /* PSEUDO-CLASSES ON INPUTS:
 Added New HTML5 required and validation pseudo-classes. These depend on adding the "required=required" attribute on text inputs. If the user has failed to enter valid text data in these text boxes on submit, alert messages and colored outlines will appear on these inputs to alert the user. The browser generally controls these boxes and outlines, but I have attempted to enhance these, when possible.
 
-Other pseudo-class candidates you can use that have wide adoption in 2021. Note: All these have some level of limited Internet Explorer support:
+Other pseudo-class candidates you can use that have wide adoption in 2021 are listed below and ones I recommend you use. Note: All these have some level of limited Internet Explorer support in versions 5-11:
+
+- :enabled
+- :disabled
+- :read-only
+
+Do NOT use these pseudo-classes as modern browsers still do not interpret these correctly!
 
 - :optional
 - :target
 - :empty
 - :checked
-
-Do NOT use these pseudo-classes as modern browsers still do not interpret these correctly:
-
-- :enabled
-- :disabled
-- :read-only
 
 */
 
