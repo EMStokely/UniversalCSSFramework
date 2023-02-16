@@ -215,12 +215,13 @@ html body main a:visited {
     -moz-transition: all 1s ease;
     -webkit-transition: all 1s ease;
     transition: all 1s ease;*/
-    color: #222299;
+
+    /*color: #222299;*//*for now just use the default colors in NewBrowsers.cs so its easier to change sitewide later*/
 }
 html body main a:hover,
 html body main a:focus,
 html body main a:active {
-    color: #000033;
+    /*color: #000033;*//*for now just use the default colors in NewBrowsers.cs so its easier to change sitewide later*/
 }
 
 /* This adds a little extra interactive effect to textarea boxes. When a use selects text it highlights it in a light gray color and darkens the text. */
@@ -277,7 +278,7 @@ These styles mainly apply to my HTML 5 Tutorial page. */
     -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
     box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
     /* New feature allows the browser to hide rendering of larger content features by thebrowser until needed. */
-    content-visibility:auto;
+    /*content-visibility:auto;*/
 }
 
 /* Here are the style for the HTML5 page, Introduction section. */

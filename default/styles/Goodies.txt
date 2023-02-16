@@ -26,6 +26,45 @@ Use ".contactus" rather than ".bluecontacttext"
 
 -------------------------------------------------------
 
+BREAK OUT OF CONTAINERS
+
+* This very cool code allows you to break out of a container using old CSS1 and extend content hidden deep in a div in a webpage to spread across the viewport width of the page.
+
+    html body {position:relative;}
+
+    #parent1 {
+        min-width: 100vw;
+        position:absolute;
+        top:0;
+        right:-1em;
+        padding: 0 0 0 1em;
+        margin:0;
+        background:yellow;/* make this transparent */
+        height:auto;
+        z-index:100;
+    }
+    #child1 {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+        margin:0 auto;
+        z-index:101;
+        padding:1em;
+        margin:0;
+        background: rgb(100,100,100,.5);
+        color:#fff;
+    }
+
+    <div id="parent1">
+        <div id="child1">
+        text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+        </div>
+    </div>
+
+
+
+-------------------------------------------------------
 
 AVOID: Internet Explorer Hides Multiple Class Names in Declarations
 

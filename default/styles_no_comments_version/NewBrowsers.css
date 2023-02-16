@@ -249,7 +249,7 @@ body abbr[title] {
 	border: 0;
 	text-decoration: none;
 	border-bottom: 1px dotted #000;
-	color: #000;
+	color: inherit;
 	cursor: help;
 }
 
@@ -258,14 +258,14 @@ body acronym {
 	border: 0;
 	text-decoration: none;
 	border-bottom: 1px dotted #000;
-	color: #000;
+	color: inherit;
 	cursor: help;
 }
 
 body address {
 	display: block;
 	font-style: italic;
-	color: #000;
+	color: inherit;
 	padding: 0;
     margin: .5em 0;
 }
@@ -377,7 +377,7 @@ body caption {
 	margin: 0;
 	padding: 0;
 	border: none;
-	color: #000;
+	color: inherit;
 	text-align: center;
 }
 
@@ -501,7 +501,7 @@ body h1 {
 	font-size: 2.0rem;
 	font-weight: bold;
 	line-height: 1.8;
-	color: #000;
+	color: inherit;
 }
 
 body h2 {
@@ -512,7 +512,7 @@ body h2 {
 	font-size: 1.5rem;
 	font-weight: bold;
 	line-height: 1.8;
-	color: #000;
+	color: inherit;
 }
 
 body h3 {
@@ -523,7 +523,7 @@ body h3 {
 	font-size: 1.3rem;
 	font-weight: bold;
 	line-height: 1.7;
-	color: #000;
+	color: inherit;
 }
 
 body h4 {
@@ -534,7 +534,7 @@ body h4 {
 	font-size: 1.0rem;
 	font-weight: bold;
 	line-height: 1.8;
-	color: #000;
+	color: inherit;
 }
 
 body h5 {
@@ -545,7 +545,7 @@ body h5 {
 	font-size: 0.8rem;
 	font-weight: bold;
 	line-height: 2;
-	color: #000;
+	color: inherit;
 }
 
 body h6 {
@@ -556,7 +556,7 @@ body h6 {
 	font-size: 0.7rem;
 	font-weight: bold;
 	line-height: 2;
-	color: #000;
+	color: inherit;
 }
 
 body hr {
@@ -1769,7 +1769,7 @@ body figcaption {
 body mark {
     display: inline;
     background-color: yellow;
-    color: black;
+    color: inherit;
 }
 
 body menu {
