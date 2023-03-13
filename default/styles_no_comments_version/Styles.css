@@ -192,7 +192,7 @@ html body main textarea::selection {
     -moz-box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
     -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
     box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
-    content-visibility:auto;
+/*content-visibility:auto;*/
 }
 
 #html5_introlist{
