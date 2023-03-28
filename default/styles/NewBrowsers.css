@@ -2362,9 +2362,13 @@ body form div {
 
 	/* This removes the bullet icon from the details HTML5 element which isn't supported in this version of IE. */
 	body details {
+        display:block;
+        min-width:100%;
 		list-style: none;
 	}
 	body summary {
+        display:block;
+        min-width:100%;
 		cursor: default;
 	}
 
@@ -2418,10 +2422,14 @@ body form div {
 
 	/* This removes the bullet icon from the details HTML5 element which isn't supported in this version of IE. */
 	body details {
+        display:block;
+        min-width:100%;
 		list-style: none;
 	}
 
 	body summary {
+        display:block;
+        min-width:100%;
 		cursor: default;
 	}
 }
@@ -2450,11 +2458,15 @@ body form div {
 
 	/* This removes the bullet icon and pointer from the details HTML5 element which isn't supported in this version of IE. */
 	body details {
+        display:block;
+        min-width:100%;
 		list-style: none;
 		cursor: default;
 	}
 
 	body summary {
+        display:block;
+        min-width:100%;
 		cursor: default;
 	}
 
