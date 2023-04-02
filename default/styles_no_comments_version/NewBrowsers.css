@@ -319,7 +319,6 @@ body button:active {
 	display: inline-block;
 	width: auto;
 	height: auto;
-	padding: .2em .5em;
 	margin: 0;
 	overflow: visible;
 	text-transform: none;
@@ -331,7 +330,6 @@ body button:active {
 	-webkit-appearance: button;
 	-moz-appearance: button;
 	cursor: pointer !important;
-    line-height: normal;
 }
 
 body button:hover,
@@ -356,19 +354,6 @@ body button[disabled="disabled"]:active {
 body button::-moz-focus-inner {
 	border-style: none;
 	padding: 0;
-}
-
-@supports (not (-moz-appearance:button)) and (contain:paint) and (-webkit-appearance:none) {
-	body button,
-	body button:visited,
-	body button:hover,
-	body button:focus,
-	body button:active {
-		border-left: 2px solid #dfdfdf;
-		border-top: 2px solid #dfdfdf;
-		border-right: 2px solid #a0a0a0;
-		border-bottom: 2px solid #a0a0a0;
-	}
 }
 
 body caption {
@@ -617,13 +602,11 @@ body input:active {
 	height: auto;
 	min-width: 0;
 	max-width: none;
-	padding: 0;
 	margin: 0;
 	overflow: visible;
 	text-transform: none;
 	background: none;
 	cursor: pointer;
-    line-height: normal;
 }
 
 body input[type="checkbox"],
@@ -1046,13 +1029,11 @@ body input[type="submit"]:hover,
 body input[type="submit"]:focus,
 body input[type="submit"]:active {
 	display: inline-block;
-	padding: .2em .5em;
 	margin: 0;
 	text-align: center;
 	border-radius: .2em;
 	cursor: pointer;
 	outline: none;
-	background: #fff;
 	white-space: nowrap;
 	-webkit-appearance: button;
 	-moz-appearance: button;
@@ -1070,7 +1051,6 @@ body input[type="submit"]:visited,
 body input[type="submit"]:hover,
 body input[type="submit"]:focus,
 body input[type="submit"]:active {
-	background: #f9f9ff;
 
 }
 
@@ -1090,10 +1070,7 @@ body input[type="submit"]:active {
 	body input[type="submit"]:hover,
 	body input[type="submit"]:focus,
 	body input[type="submit"]:active {
-		border-left: 2px solid #dfdfdf;
-		border-top: 2px solid #dfdfdf;
-		border-right: 2px solid #a0a0a0;
-		border-bottom: 2px solid #a0a0a0;
+
 	}
 }
 

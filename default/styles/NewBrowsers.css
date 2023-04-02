@@ -539,25 +539,25 @@ body button:visited,
 body button:hover,
 body button:focus,
 body button:active {
-	display: inline-block;
+    display: inline-block;
 	width: auto;
 	height: auto;
-	padding: .2em .5em;
+    /*padding: .2em .5em;*//* conflicts with bootstrap5 */
 	margin: 0;
-	overflow: visible; /* show text overflow in IE and Edge */
+    overflow: visible; /* show text overflow in IE and Edge */
 	text-transform: none; /* remove text-transform inheritance */
 	background: #fff;
-	outline: none;/* Note: "outline" was not supported in IE 1-6. */
+    outline: none;/* Note: "outline" was not supported in IE 1-6. */
 	text-align: center;
 	cursor: pointer;
-	border-radius: .2em; /* all buttons, inputs, selects, and textareas will have a small default rounded corners */
-	/* WARNING: These two properties below would remove the raised beveled look of buttons. Add these two properties for a smoother, raised but flatter button.  */
+    border-radius: .2em; /* all buttons, inputs, selects, and textareas will have a small default rounded corners */
+    /* WARNING: These two properties below would remove the raised beveled look of buttons. Add these two properties for a smoother, raised but flatter button.  */
 	/*background-image: linear-gradient(to bottom, #e4e4e4, #f7f7f7);
 	border: 1px solid #afafaf*/
-	-webkit-appearance: button; /* styles old-fashioned beveled button for all Apple device, Edge, and Safari browsers */
+    -webkit-appearance: button; /* styles old-fashioned beveled button for all Apple device, Edge, and Safari browsers */
 	-moz-appearance: button; /* styles old-fashioned beveled button for Mozilla, Firefox, and Gecko browsers */
-	cursor: pointer !important; /* note: had to add !important here due to Bootstraps more selective cursor rule that overrides it */
-    line-height: normal;/* Required as pseudo-classes should not inherit line-height */
+    cursor: pointer !important; /* note: had to add !important here due to Bootstraps more selective cursor rule that overrides it */
+    /*line-height: normal;*//* conflicts with bootstrap5. Required as pseudo-classes should not inherit line-height */
 }
 
 body button:hover,
@@ -598,10 +598,11 @@ Note: See my "input" change for more details about these new bevel buttons and t
 	body button:hover,
 	body button:focus,
 	body button:active {
-		border-left: 2px solid #dfdfdf;
+        /*conflicts with bootstrap5*/
+		/*border-left: 2px solid #dfdfdf;
 		border-top: 2px solid #dfdfdf;
 		border-right: 2px solid #a0a0a0;
-		border-bottom: 2px solid #a0a0a0;
+		border-bottom: 2px solid #a0a0a0;*/
 	}
 }
 
@@ -915,21 +916,21 @@ body input:hover,
 body input:focus,
 body input:active {
 	display: inline-block;
-	width: auto; /* we let the user customize dimensions and leave these flexible */
+    width: auto; /* we let the user customize dimensions and leave these flexible */
 	height: auto;
-	min-width: 0;
+    min-width: 0;
 	max-width: none;
-	padding: 0;
+    /*padding: 0;*//* conflicts with Bootstrap5 */
 	margin: 0;
-	overflow: visible; /* show text overflow in IE and Edge */
+    overflow: visible; /* show text overflow in IE and Edge */
 	text-transform: none; /* remove text-transform inheritance */
-	/* WARNING: Adding a "border" property triggers all input fields and input buttons to flatten instead of using their default, old-fashioned, beveled look in some browsers. */
+    /* WARNING: Adding a "border" property triggers all input fields and input buttons to flatten instead of using their default, old-fashioned, beveled look in some browsers. */
 	/*border:none;*/
 	background: none;
 	cursor: pointer;
-	/* Do NOT apply outline settings here and let the browsers apply their natural colored outlines as needed. HTML5-supporting browsers apply special colored or shaded outlines on required fields and other events. Only apply this setting below if you want to remove the black default outline that appears in some browsers when the input is clicked. */
+    /* Do NOT apply outline settings here and let the browsers apply their natural colored outlines as needed. HTML5-supporting browsers apply special colored or shaded outlines on required fields and other events. Only apply this setting below if you want to remove the black default outline that appears in some browsers when the input is clicked. */
 	/*outline: none;*/
-    line-height: normal;/* required as pseudo-classes should not inherit line-height */
+    /*line-height: normal;*//* conflicts with Bootstrap5. required as pseudo-classes should not inherit line-height */
 }
 
 body input[type="checkbox"],
@@ -938,7 +939,6 @@ body input[type="radio"] {
 	padding: 0; /* extra IE10 padding removed */
 	background: none;
 }
-
 
 /* WARNING: There is limited support of these types of CSS selectors for many older browsers, so these may be ignored. */
 body input[type="url"],
@@ -1016,7 +1016,6 @@ body input[type="search"]:active {
 	-moz-appearance: textfield;*/
 }
 
-
 body input[type="search"],
 body input[type="search"]:visited,
 body input[type="search"]:hover,
@@ -1032,8 +1031,6 @@ body input[type="search"]::-webkit-search-cancel-button:focus,
 body input[type="search"]::-webkit-search-cancel-button:active {
 	-webkit-appearance: searchfield-cancel-button;
 }
-
-
 
 body input[type="url"]:hover,
 body input[type="date"]:hover,
@@ -1244,8 +1241,6 @@ Do NOT use these pseudo-classes as modern browsers still do not interpret these 
 
 /* ----------------------------------------------------- */
 
-
-
 body input[type="url"]:required:visited:valid,
 body input[type="url"]:required:valid,
 body input[type="date"]:required:visited:valid,
@@ -1275,7 +1270,6 @@ body input[type="search"]:required:valid {
 	background: #fff;
 	border: 2px solid #7fbe96; /* light green */
 }
-
 
 body input[type="url"]:required:hover:valid,
 body input[type="date"]:required:hover:valid,
@@ -1398,7 +1392,7 @@ body input[type="submit"]:hover,
 body input[type="submit"]:focus,
 body input[type="submit"]:active {
 	display: inline-block;
-	padding: .2em .5em;
+	/*padding: .2em .5em;*//* conflicts with Bootstrap5 */
 	margin: 0;
 	text-align: center;
 	border-radius: .2em;
@@ -1406,7 +1400,7 @@ body input[type="submit"]:active {
 	outline: none; /* remove the black default outline that appears in some browsers when the button is clicked */
 	/* WARNING: Adding a "border" property triggers all input fields and input buttons to flatten instead of using their default, old-fashioned, beveled look in some browsers. */
 	/*border:2px solid #bbb;*/
-	background: #fff; /* I have made the buttons white but traditionally they were gray Windows button colors. */
+	/*background: #fff;*//* conflicts with Bootstrap5. I have made the buttons white but traditionally they were gray Windows button colors. */
 	white-space: nowrap;
 	-webkit-appearance: button; /* styles old-fashioned beveled button for all Apple device and Safari browsers */
 	-moz-appearance: button; /* styles old-fashioned beveled button for Mozilla-Firefox browsers */
@@ -1424,10 +1418,8 @@ body input[type="submit"]:visited,
 body input[type="submit"]:hover,
 body input[type="submit"]:focus,
 body input[type="submit"]:active {
-	background: #f9f9ff;
-
+    /*background: #f9f9ff;*//* conflicts with Bootstrap5 */
 }
-
 
 /* In 2022, July, Chrome and Edge Webkit browsers applied another lame evergreen browser update and stripped away the replaced form field designs or appearance. This flattened the button appearances making them alien looking compared to IE, Firefox, and Safari which continue to use the default raised and bevelled buttons. To recreate this look I had to add this Chrome-Edge Webkit "hack" using "@supports". This works in in browser using the Chrome Webkit or Blink engine starting May 2013 version 28 for Chrome or Edge starting January 2020 when it adopted the Chrome engine. 
 
@@ -1460,10 +1452,11 @@ So with this trick you have a pretty decent Chrome-Only/Edge-Only Webkit CSS fil
 	body input[type="submit"]:hover,
 	body input[type="submit"]:focus,
 	body input[type="submit"]:active {
-		border-left: 2px solid #dfdfdf;
+        /* conflicts with Bootstrap5 */
+/*		border-left: 2px solid #dfdfdf;
 		border-top: 2px solid #dfdfdf;
 		border-right: 2px solid #a0a0a0;
-		border-bottom: 2px solid #a0a0a0;
+		border-bottom: 2px solid #a0a0a0;*/
 	}
 }
 

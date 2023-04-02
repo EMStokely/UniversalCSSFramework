@@ -544,7 +544,7 @@ button:active {
     /* Note: Since this will be the last style sheet read by much older agents, I have added a slight margin to separate the content boxes they will display. */
 	width: auto;
 	height: auto;
-    padding: 0px 5px;
+    /*padding: 0px 5px;*//*conflicts with bootstrap5*/
     margin-top: 2px;/* margin-top requires pixels for Netscape 4 */
     margin-bottom: 2px;
     text-align: center;
@@ -554,9 +554,9 @@ button:active {
     outline: none;/* Note: "outline" was not supported in IE 1-6. */
     cursor: pointer;
     /* Optional: Adding "line-height" settings in pseudo-classes is good as inheritance in line-height is spotty in very old browsers. Even though "normal" is the ideal value to use here, and is supported in many old browsers, Netscape 4 doesn't allow "normal" to override any values that might be inherited. So, I use 19px for line-height here, which is close to what "normal" for line-height, or "1.2", when using a "16px" font. It also matches the default height assigned to the input text boxes in this style sheet. Note: These changes match the "input", "select", and "textarea" elements below. */
-    line-height: 19px;
+    /*line-height: 19px;*//*conflicts with bootstrap5*/
     /* Adding a minimum width allows all your smaller text label buttons to line up as the same size. Note: These changes match the "input", "select", and "textarea" elements below. Note: IE 1-5, Netscape 1-4 and others do not understand the "min-" values. */
-    min-width: 6em;
+    /*min-width: 6em;*//*conflicts with bootstrap5*/
 }
 
 /* IE5 ignores width, height, and positioning in captions, so avoid. */
@@ -860,7 +860,7 @@ input:active {
     /* Do NOT apply outline settings here and let the browsers apply their natural colored outlines as needed. HTML5-supporting browsers apply special colored or shaded outlines on required fields and other events. Apply this settings to remove the black default outline that appears in some browsers when the input is clicked. Note: "outline" was not supported in IE 1-6. */
     /*outline: none;*/
     /* See "button" element notes on Netscape issues and why these values are chosen. */
-    line-height: 19px;
+    /*line-height: 19px;*//* conflicts with bootstrap5 */
     min-width: 6em;
 }
 
@@ -986,7 +986,7 @@ input[type="submit"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:active {
     display: block;
-    padding: 2px 5px;
+    /*padding: 2px 5px;*//* conflicts with bootstrap5 */
     text-align: center;
     /* WARNING: Adding a "border" property triggers all input fields and input buttons to flatten buttons instead of using their default, old-fashioned, raised look in some browsers. Add the border property to "flatten" them. */
     /* In Netscape 4 setting border resets line-height to "normal" so try and avoid it! This can be fixed by setting margin to any value. */

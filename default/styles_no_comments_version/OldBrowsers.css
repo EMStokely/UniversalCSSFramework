@@ -275,7 +275,6 @@ button:active {
     display: block;
 	width: auto;
 	height: auto;
-    padding: 0px 5px;
     margin-top: 2px;
     margin-bottom: 2px;
     text-align: center;
@@ -283,8 +282,6 @@ button:active {
     /*/*//*/background: none;/*end*/
     outline: none;
     cursor: pointer;
-    line-height: 19px;
-    min-width: 6em;
 }
 
 caption {
@@ -538,7 +535,6 @@ input:active {
     background-color: #ffffff;
     /*/*//*/background: none;/*end*/
     cursor: pointer;
-    line-height: 19px;
     min-width: 6em;
 }
 
@@ -658,7 +654,6 @@ input[type="submit"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:active {
     display: block;
-    padding: 2px 5px;
     text-align: center;
     /*/*//*/border: none;/*end*/
 }
