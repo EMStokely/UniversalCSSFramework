@@ -28,9 +28,27 @@ Using this style sheet framework, older browsers will get plain white, vertical 
 * OmniWeb
 * Many more antiquated browsers...
 
-With this solutions I aim to deliver simple, cut-and-paste HTML and CSS code that new web developers can use with minimal customization. My CSS framework will allow you to deliver viewable content in 20+ years worth of historical browsers, while allowing your teams to safely move forward with cutting-edge web technology used in the browsers of tomorrow.
+### Print, Mobile, and Web Accessibility Features
 
-Also, I have posted a complete HTML5 Tutorial on my website which works well with this CSS system. It has a complete modern HTML5 element sample coding list, history of every HTML element since the 1990's, a "Best Practices" section, template web pages with cross-browser grids/flex examples, recommended markup attributes, WAI-ARIA attributes for the blind, and lists of HTML/CSS code to avoid that still is not supported in modern HTML5 browsers. What is even better is my HTML5 code works perfectly with this Universal CSS Framework! Using the two systems combined (HTML and CSS), you can deliver powerful cross-browser web pages that load lightning fast and parse perfectly in browsers, past and present. You can even use my README.html page in this project as an HTML5 template, as it has all the same "best practices" markup code. Or simply visit my HTML5 Tutorial link below for all the goodies!
+My solution also supports many other goodies most CSS frameworks leave out, including full print-to-paper website translation, small screen support, and accessibility.
+
+The Universal CSS Framework allows your website to be fully printable! It comes with styles that turn on and off non-printing design HTML5 structural elements in your web page, then enhancements that change tables and other features to print-friendly design so your customers or internal staff can see your web content displayed perfectly on the printed page! It comes with a customizeable print header, contact and copyright info, and landscape/portrait print-friendly design support you can customize.
+
+To support this feature you will need to use modern HTML5 layouts found in my README.HTML page or in my online HTML5 Tutorial (below).
+
+This CSS system also has a build in Mobile style sheet you can customize for smart phone or small device viewports.
+
+Finally, my code also enhances HTML5 used with WAI-ARIA attributes when used with the HTML5 and attributes found in the README.html file. My HTML5 Tutorial below demonstrates how to use ARIA the right way.
+
+With this CSS solution, I aim to deliver simple, cut-and-paste HTML and CSS code that new web developers can use with minimal customization. My CSS framework will allow you to deliver viewable content in 20+ years worth of historical browsers, while allowing your teams to safely move forward with cutting-edge web technology used in the browsers of tomorrow.
+
+### Check Out My Modern HTML5 Tutorial
+
+CSS requires knowledge of HTML. The two are brothers and must be carefully designed as one unit to balance and enhance each other. Too many new developers are not understanding how the two work together because they are not taught the 20 year history of HTML and CSS, which has evolved. I have posted a complete HTML5 Tutorial on my website to help you!
+
+My online tutorial has HTML which works well with this CSS system and many others. the code there takes care of nearly all of the issues in outdated browsers and works well with the cutting-edge ones. It also "speeds up" parsing and rendering of the CSS/HTML in all browser displays, which is important.
+
+It has a complete modern HTML5 element sample coding list, history of every HTML element since the 1990's, a "Best Practices" section, template web pages with cross-browser grids/flex examples, recommended markup attributes, WAI-ARIA attributes for the blind, and lists of HTML/CSS code to avoid that still is not supported in modern HTML5 browsers. What is even better is my HTML5 code works perfectly with this Universal CSS Framework! Using the two systems combined (HTML and CSS), you can deliver powerful cross-browser web pages that load lightning fast and parse perfectly in browsers, past and present. You can even use my README.html page in this project as an HTML5 template, as it has all the same "best practices" markup code. Or simply visit my HTML5 Tutorial link below for all the goodies!
 
 [View my HTML5 Tutorial >>>](https://mitchellstokely.com/HTML5Tutorial/)
 
