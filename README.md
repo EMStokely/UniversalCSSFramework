@@ -60,7 +60,7 @@ For more detailed information on the installation of these files, be sure to go 
 
 This CSS solution is just "text files" so you do not install anything, just drag and drop the folder of files into your web project and link to a couple of them from the head of your web pages. That is it! But here is a few more details to guide you:
 
-1. `Copy the CSS folder into your Web Project` - First copy-and-paste the "default" folder of files anywhere inside your website. I like to create a "css" folder first and drag the "default" folder into it. This allows you to make copies the the "default" folder of CSS files later and use them as a "skin" or theme.
+1. `Copy the "default" CSS folder into your Web Project` - First copy-and-paste the "default" folder of files anywhere inside your website. I like to create a "css" folder first and drag the "default" folder into it  so you have "/css/default". This allows you to make copies the "default" folder of CSS files later and use them as a "skin" or theme. (See my "/default/styles/readme.txt" file for more info)
 
 2. `Add HTML links to the CSS` - Below is how you  link to the "Universal CSS Framework" from an HTML web page. Paste these links below into the head section of your HTML web page and modify the paths as needed so they link to the files show below:
 
