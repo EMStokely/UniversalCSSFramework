@@ -60,9 +60,12 @@ For more detailed information on the installation of these files, be sure to go 
 
 This CSS solution is just "text files" so you do not install anything, just drag and drop the folder of files into your web project and link to a couple of them from the head of your web pages. That is it! But here is a few more details to guide you:
 
-1. `Copy the CSS folder into your Web Project` - First copy-and-paste the "default" folder of files anywhere inside the directory of your website - Just paste the "default" folder of files into your website and link to it in your HTML pages (see below). You can also paste this folder inside any folder on your desktop computer, create an HTML file, and test it! Web page link examples are shown below. After you have added your link path to the CSS files, double-click your HTML web page and see it in action. No special software or server is needed when you work with plain CSS and HTML!
+1. `Copy the CSS folder into your Web Project` - First copy-and-paste the "default" folder of files anywhere inside your website. I like to create a "css" folder first and drag the "default" folder into it. This allows you to make copies the the "default" folder of CSS files later and use them as a "skin" or theme.
 
-2. `Add HTML links to the CSS` - Below is ow you  link to the "Universal CSS Framework" from an HTML web page. Paste these links below into the head section of your HTML web page and modify the paths as needed. This example below assumes your HTML page is in the same folder as a "css" master folder. Modify the file paths as needed below:
+2. `Add HTML links to the CSS` - Below is how you  link to the "Universal CSS Framework" from an HTML web page. Paste these links below into the head section of your HTML web page and modify the paths as needed so they link to the files show below:
+
+&lt;html&gt;<br />
+&lt;head&gt;
 
 &lt;link media="print" rel="stylesheet" type="text/css" href="css/default/styles/Print.css?v=2.0" /&gt;<br />
 
@@ -70,9 +73,16 @@ This CSS solution is just "text files" so you do not install anything, just drag
 
 &lt;link media="screen" rel="stylesheet" type="text/css" href="css/default/styles/OldBrowsers.css?v=2.0" /&gt;
 
+&lt;/head&gt;<br />
+...
+
+That's it!
+
 * Note that there are other optional CSS files you can add to the link list above but these are the basic ones you need. Go read my REAME.txt file inside the Styles Folder for more details.
 
-3. `Add your CSS Code as Needed inside the 'Styles.css'` - You will need create an HTML web page, of course, write custom CSS for your layouts, then paste that into the CSS files inside my system. For adding custom styles, just go to the "default/styles" folder and paste in your custom styles and classes into "Styles.css". Do the same for the "Mobile.css" layout version, and modify the "Print.css" file so your web pages are perfectly printable. Note that the project only comes with basic mobile-friendly and print-friendly layout designs. All these default designs match the HTML in my README.HTML layout code, or the one found inside my HTML5 Turtorial (link above). So use this web page or my tutorial link below to get started with a clean HTML5 template that works well with my CSS systems.
+### Add your CSS Code as Needed inside the 'Styles.css'
+
+When adding your custom styles to the framework, just go to the "default/styles" folder and paste in your custom styles and classes into "Styles.css". Do the same for the "Mobile.css" layout version, and modify the "Print.css" file so your web pages are perfectly printable. Note that the project only comes with basic mobile-friendly and print-friendly layout designs. All these default designs match the HTML in my README.HTML layout code, or the one found inside my HTML5 Turtorial (link above). So use that web page or my HTML5 Tutorial web page to get started with a clean markup template that works well with my CSS systems.
 
 Additionally, you can add your own mobile app images, print button, favicon, header logo, and high definition print logo inside the Images or Content folder. I have included samples in the "images" folder. There are lots of goodies to customize in the "styles" CSS folder.
 
