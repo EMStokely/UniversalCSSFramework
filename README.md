@@ -58,9 +58,9 @@ If you want to get more detailed information about this project, you will have t
 
 For more detailed information on the installation of these files, be sure to go to my README.html file, or the README.txt text file inside the Styles folder for more information.
 
-This CSS solution is just "text files" so you do not install anything, just drag and drop the folder of files into your web project and link to a couple of them from the head of your web pages. That is it! But here is a few more detail to guide you:
+This CSS solution is just "text files" so you do not install anything, just drag and drop the folder of files into your web project and link to a couple of them from the head of your web pages. That is it! But here is a few more details to guide you:
 
-1. `Copy the CSS folder into your Web Project` - First copy-and-paste the "css" folder of files anywhere inside the directory of your website - Just paste the "default" folder of files into your website and link to it in your HTML pages (see below). You can also paste this folder inside any folder on your desktop computer, create an HTML file, and test it! Web page link examples are shown below. After you have added your link path to the CSS files, double-click your HTML web page and see it in action. No special software or server is needed when you work with plain CSS and HTML!
+1. `Copy the CSS folder into your Web Project` - First copy-and-paste the "default" folder of files anywhere inside the directory of your website - Just paste the "default" folder of files into your website and link to it in your HTML pages (see below). You can also paste this folder inside any folder on your desktop computer, create an HTML file, and test it! Web page link examples are shown below. After you have added your link path to the CSS files, double-click your HTML web page and see it in action. No special software or server is needed when you work with plain CSS and HTML!
 
 2. `Add HTML links to the CSS` - Below is ow you  link to the "Universal CSS Framework" from an HTML web page. Paste these links below into the head section of your HTML web page and modify the paths as needed. This example below assumes your HTML page is in the same folder as a "css" master folder. Modify the file paths as needed below:
 
