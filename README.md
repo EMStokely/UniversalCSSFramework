@@ -32,13 +32,11 @@ Using this style sheet framework, older browsers will get plain white, vertical 
 
 My solution also supports many other goodies most CSS frameworks leave out, including full print-to-paper website translation, small screen support, and accessibility.
 
-The Universal CSS Framework allows your website to be fully printable! It comes with styles that turn on and off non-printing design HTML5 structural elements in your web page, then enhancements that change tables and other features to print-friendly design so your customers or internal staff can see your web content displayed perfectly on the printed page! It comes with a customizeable print header, contact and copyright info, and landscape/portrait print-friendly design support you can customize.
+The Universal CSS Framework allows your website to be fully printable! It comes with styles that turn on and off non-printing HTML5 structural elements in your web page, then adds enhancements that change HTML elements like tables and other features to a print-friendly design. Your customers or internal staff can now see your web content displayed perfectly on the printed page, as well! It comes with a fully customizeable print header, contact and copyright info, and landscape/portrait print-friendly design support. If your CSS is not helping your viewers print every page of your website content, then it is not a true CSS system. To support this feature you will need to use modern HTML5 layouts like those found in my README.HTML page or in my online HTML5 Tutorial (below).
 
-To support this feature you will need to use modern HTML5 layouts found in my README.HTML page or in my online HTML5 Tutorial (below).
+This CSS system also has a build in mobile style sheet you can customize for smart phone or small device viewports. My version is supported in older browsers unlike many of the ones built today.
 
-This CSS system also has a build in Mobile style sheet you can customize for smart phone or small device viewports.
-
-Finally, my code also enhances HTML5 used with WAI-ARIA attributes when used with the HTML5 and attributes found in the README.html file. My HTML5 Tutorial below demonstrates how to use ARIA the right way.
+Finally, my code also enhances HTML5 and WAI-ARIA attributes when used with the HTML5 attributes found in the README.html file. My HTML5 Tutorial below demonstrates how to use ARIA the right way, as well.
 
 With this CSS solution, I aim to deliver simple, cut-and-paste HTML and CSS code that new web developers can use with minimal customization. My CSS framework will allow you to deliver viewable content in 20+ years worth of historical browsers, while allowing your teams to safely move forward with cutting-edge web technology used in the browsers of tomorrow.
 
