@@ -54,6 +54,30 @@ If you want to get more detailed information about this project, you will have t
 
 ---
 
+### How to Install
+
+For more detailed information on the installation of these files, be sure to go to my README.html file, or the README.txt text file inside the Styles folder for more information.
+
+This CSS solution is just "text files" so you do not install anything, just drag and drop the folder of files into your web project and link to a couple of them from the head of your web pages. That is it! But here is a few more detail to guide you:
+
+1. `Copy the CSS folder into your Web Project` - First copy-and-paste the "css" folder of files anywhere inside the directory of your website - Just paste the "default" folder of files into your website and link to it in your HTML pages (see below). You can also paste this folder inside any folder on your desktop computer, create an HTML file, and test it! Web page link examples are shown below. After you have added your link path to the CSS files, double-click your HTML web page and see it in action. No special software or server is needed when you work with plain CSS and HTML!
+
+2. `Add HTML links to the CSS` - Below is ow you  link to the "Universal CSS Framework" from an HTML web page. Paste these links below into the head section of your HTML web page and modify the paths as needed. This example below assumes your HTML page is in the same folder as a "css" master folder. Modify the file paths as needed below:
+
+&lt;link media="print" rel="stylesheet" type="text/css" href="css/default/styles/Print.css?v=2.0" /&gt;<br />
+
+&lt;link media="screen" rel="stylesheet" type="text/css" href="css/default/styles/NewBrowsersImporter.css?v=2.0" /&gt;<br />
+
+&lt;link media="screen" rel="stylesheet" type="text/css" href="css/default/styles/OldBrowsers.css?v=2.0" /&gt;
+
+* Note that there are other optional CSS files you can add to the link list above but these are the basic ones you need. Go read my REAME.txt file inside the Styles Folder for more details.
+
+3. `Add your CSS Code as Needed inside the 'Styles.css'` - You will need create an HTML web page, of course, write custom CSS for your layouts, then paste that into the CSS files inside my system. For adding custom styles, just go to the "default/styles" folder and paste in your custom styles and classes into "Styles.css". Do the same for the "Mobile.css" layout version, and modify the "Print.css" file so your web pages are perfectly printable. Note that the project only comes with basic mobile-friendly and print-friendly layout designs. All these default designs match the HTML in my README.HTML layout code, or the one found inside my HTML5 Turtorial (link above). So use this web page or my tutorial link below to get started with a clean HTML5 template that works well with my CSS systems.
+
+Additionally, you can add your own mobile app images, print button, favicon, header logo, and high definition print logo inside the Images or Content folder. I have included samples in the "images" folder. There are lots of goodies to customize in the "styles" CSS folder.
+
+
+
 ## Go Read My HTML File
 
 #### Sorry, Im not a fan of Markdown. *It is a redundant format when we have HTML as a superior static browser format with much better control.* Please view my "README.html" file instead of this "README.md" file for more project details. You will have to download the full project of files to your desktop to view it in your web browser as the GitHub "readme" system does not even understand basic HTML or CSS!
