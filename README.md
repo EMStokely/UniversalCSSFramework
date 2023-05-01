@@ -82,7 +82,7 @@ That's it!
 
 ### Add your CSS Code as Needed inside the 'Styles.css'
 
-When adding your custom styles to the framework, just go to the "default/styles" folder and paste in your custom styles and classes into "Styles.css". Do the same for the "Mobile.css" layout version, and modify the "Print.css" file so your web pages are perfectly printable. Note that the project only comes with basic mobile-friendly and print-friendly layout designs. All these default designs match the HTML in my README.HTML layout code, or the one found inside my HTML5 Turtorial (link above). So use that web page or my HTML5 Tutorial web page to get started with a clean markup template that works well with my CSS systems.
+When adding your custom styles to the framework, just go to the "default/styles" folder and paste in your custom styles and classes into "Styles.css". Do the same for the "Mobile.css" layout version, and modify the "Print.css" file so your web pages are perfectly printable. Note that the project only comes with basic mobile-friendly and print-friendly layout designs. All these default designs match the HTML in my README.HTML layout code, or the one found inside my HTML5 Tutorial (link above). So use thuse HTmL web pages to get started with a clean markup template that works well with my CSS system.
 
 Additionally, you can add your own mobile app images, print button, favicon, header logo, and high definition print logo inside the Images or Content folder. I have included samples in the "images" folder. There are lots of goodies to customize in the "styles" CSS folder.
 
