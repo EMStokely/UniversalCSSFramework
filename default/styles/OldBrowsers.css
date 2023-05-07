@@ -121,9 +121,9 @@ Note: Netscape 1-4 and IE 1-4 do NOT support the wildcard selector nor "inherit"
     letter-spacing: inherit;
     /* Alert: "all:revert" is a newer CSS declaration that resets all HTML element properties to its original user agent style and not to the property’s base style. In the case of inherited text values, it will use the "body" element first, then the UA browser style sheet. Use of "initial" or "unset" will not do that and in the case of "initial" wipe away all styles completely. All the elements will look the same and use the same default values. Note that "all:revert" only works in more modern HTML5 browsers (c. 2020). It is only supported by certain newer CSS3-supporting browsers. None of the older browsers (pre-2010) will understand this declaration, so it will be ignored by them. But I added this "revert" here in case newer browsers that read this sheet want a clean reset of previous styles applied.
 
-    WARNING, be careful using "all:revert" on all elements below! (Updated 6/2021) - After testing images, it appears we cannot use this property as it erases an images actual "width" and "height" from the DOM after processing 'img' element dimensions, including srcset values. After erasing them, the image then has no known dimensions after calling "all:revert", but fills the actual block level element, getting extremely large! */
-
-    all:revert;
+    WARNING, be careful using "all:revert" on all elements below! (Updated 6/2021) - After testing images, it appears we cannot use this property as it erases an images actual "width" and "height" from the DOM after processing 'img' element dimensions, including srcset values. After erasing them, the image then has no known dimensions after calling "all:revert", but fills the actual block level element, getting extremely large! 
+    SVG ISSUES: This rule wrecks SVG formats like in icons in font-awesome so not good to use here! */
+    /*all:revert;*/
 }
 
 

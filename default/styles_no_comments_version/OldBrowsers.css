@@ -4,7 +4,7 @@
     font-size: inherit;
     word-spacing: inherit;
     letter-spacing: inherit;
-    all:revert;
+    /*all:revert;*/
 }
 
 html {
