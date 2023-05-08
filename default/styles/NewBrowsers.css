@@ -404,48 +404,49 @@ body xml {
 }
 
 body a {
-	display: inline;
-	color: #006;
-	text-decoration: underline;
+    /* UPDATE: 5/2023 I had to change pseudo-classes to use "inherit" as their high selectivity (class-level) was overridingBootStrap 5s style sheets for menus. */
+	display: inherit;/*display: inline;*/
+	color: inherit;/*color: #006;*/
+	text-decoration: inherit;/*text-decoration: underline;*/
 	cursor: pointer;
-	background: transparent;/* IE 10 and others may try and add gray backgrounds, so this fixes that value. */
+	background: inherit;/*background: transparent;*//* IE 10 and others may try and add gray backgrounds, so this fixes that value. */
 }
 
 /* WARNING: Because pseudo-classes have the same selectivity as a plain class, these styles can conflict with many 3rd party style classes or custom classes applied to the anchor elements. For that reason Ive removed any extra selectors that would give them more weight than a plain CSS class. Also, because pseudo-classes may not inherit font settings in older browsers or may not cascade over previous 3rd part resets, Ive explicitly added font inheritance settings below. */
 
 body a:link { /* Note: ":link" is any element with an "href" attribute. For now we wont define the link pseudo-class default styles on other elements other than anchors. */
-	color: #006;
-	background: transparent;/* IE 10 and others may try and add gray backgrounds, so this fixes that value. */
-	text-decoration: underline;
+	color: inherit;/*color: #006;*/
+	background: inherit;/*background: transparent;*//* IE 10 and others may try and add gray backgrounds, so this fixes that value. */
+	text-decoration: inherit;/*text-decoration: underline;*/
 	/* WARNING: We do NOT add font properties here to prevent issues where modern 3rd party sheets use anchors in pseudo-classes in header elements with non-traditional styles that this selector would write over. */
     cursor: pointer;
 }
 
 body a:visited { /* Note: new "privacy" concerns in modern search engines now limit the properties web authors are allowed to change on "visited" anchors. So most of these are removed. Color is one you can still safely change. */
-	color: #66a;
-	background: transparent;
-	text-decoration: underline;
+	color: inherit;/*color: #66a;*/
+	background: inherit;/*background: transparent;*/
+	text-decoration: inherit;/*text-decoration: underline;*/
     cursor: pointer;
 }
 
 body a:hover { /* hover is any link with mouse-over. not supported in IE */
-	color: #00c;
-	background: transparent;
-	text-decoration: underline;
+	color: inherit;/*color: #00c;*/
+	background: inherit;/*background: transparent;*/
+	text-decoration: inherit;/*text-decoration: underline;*/
     cursor: pointer;
 }
 
 body a:focus { /* focus is any link with keyboard tab focus. also occurs briefly on mouse-up click event */
-	color: #00f;
-	background: transparent;
-	text-decoration: underline;
+	color: inherit;/*color: #00f;*/
+	background: inherit;/*background: transparent;*/
+	text-decoration: inherit;/*text-decoration: underline;*/
     cursor: pointer;
 }
 
 body a:active { /* active is generally the click event on the anchor. very brief color change */
-	color: #00f;
-	background: transparent;
-	text-decoration: underline;
+	color: inherit;/*color: #00f;*/
+	background: inherit;/*background: transparent;*/
+	text-decoration: inherit;/*text-decoration: underline;*/
     cursor: pointer;
 }
 

@@ -201,45 +201,45 @@ body xml {
 }
 
 body a {
-	display: inline;
-	color: #006;
-	text-decoration: underline;
+	display: inherit;
+	color: inherit;
+	text-decoration: inherit;
 	cursor: pointer;
-	background: transparent;
+	background: inherit;
 }
 
 body a:link {
-	color: #006;
-	background: transparent;
-	text-decoration: underline;
+	color: inherit;
+	background: inherit;
+	text-decoration: inherit;
     cursor: pointer;
 }
 
 body a:visited {
-	color: #66a;
-	background: transparent;
-	text-decoration: underline;
+	color: inherit;
+	background: inherit;
+	text-decoration: inherit;
     cursor: pointer;
 }
 
 body a:hover {
-	color: #00c;
-	background: transparent;
-	text-decoration: underline;
+	color: inherit;
+	background: inherit;
+	text-decoration: inherit;
     cursor: pointer;
 }
 
 body a:focus {
-	color: #00f;
-	background: transparent;
-	text-decoration: underline;
+	color: inherit;
+	background: inherit;
+	text-decoration: inherit;
     cursor: pointer;
 }
 
 body a:active {
-	color: #00f;
-	background: transparent;
-	text-decoration: underline;
+	color: inherit;
+	background: inherit;
+	text-decoration: inherit;
     cursor: pointer;
 }
 
