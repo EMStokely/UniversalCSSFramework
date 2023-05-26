@@ -14,9 +14,11 @@ GNU GENERAL PUBLIC LICENSE VERSION 3
 
 ## Description
 
-This is a project I call the "Universal CSS Framework". This powerful cascading style sheet (CSS) system supports universal website design in all known web browsers going back to the birth of the World Wide Web in the 1990's. It is simply a small package of CSS files you drag-and-drop into your website and which "resets" the web browser's HTML element designs so they consistently display your website's elements in many types of web browsers. This CSS system also offers you a more advanced CSS system for managing how older and newer browsers view your website's HTML and CSS by hiding modern CSS designs from older browsers and degrading gracefully your HTML layouts for those older user agents. As such, this CSS system has been carefully designed to allow your websites to perform well in 99.99% of web browsers past and present without having to use eleborate custom CSS hacks, install complex JavaScript API libraries, struggle with half-baked polyfills, or implement styles sheet preprocessor dependencies. It uses plain CSS text!
+This is a project I call the **Universal CSS Framework**. This powerful cascading style sheet (CSS) system supports universal website design in all known web browsers going back to the birth of the World Wide Web in the 1990's. It is simply a small package of CSS files you drag-and-drop into your website which "resets" the web browser's HTML element designs so they consistently display your website's elements in many types of web browsers.
 
-Using this style sheet framework, older browsers will get plain white, vertical content pages with san-serif black fonts, while newer and more modern browsers will get your cutting-edge, CSS3 designs. This system achieves that using special CSS rules that older browsers do not understand. These newer style sheets are hidden from the old browsers using a special `@import` style sheet trick all known modern browsers understand but older ones do not. The older browsers get a simpler reset element style sheet, while modern browsers get a more advanced reset element sheet, plus your custom CSS layout styles. This includes full support for advanced mobile and print designs using CSS. The following older browsers are now hidden from these newer style sheets using `@import` rules in this CSS framework:
+This CSS system also offers you a more advanced CSS framework for managing how older and newer browsers view your website's HTML and CSS by hiding modern CSS designs from older browsers and degrading gracefully your HTML layouts for those older user agents. As such, this CSS framework has been carefully designed to allow your websites to perform well in `99.99%` of web browsers past and present without having to use eleborate custom CSS hacks, install complex JavaScript API libraries, struggle with half-baked polyfills, or implement styles sheet preprocessor dependencies. **It uses plain CSS text!**
+
+Using this style sheet framework, older browsers will get plain white, vertical content pages with sans-serif black fonts, while newer and more modern browsers will get your cutting-edge, CSS3 designs. This system achieves that using special CSS rules that older browsers do not understand. These newer style sheets are hidden from the old browsers using a special `@import` style sheet trick all known modern browsers understand but older ones do not. The older browsers get a simpler reset element style sheet, while modern browsers get a more advanced reset element sheet, plus your custom CSS layout styles. This includes full support for advanced mobile and print designs using CSS. The following older browsers are now hidden from these newer style sheets using `@import` rules in this CSS framework:
 
 * Netscape 1-4.8 
 * Opera 1-3.5
@@ -50,7 +52,7 @@ It has a complete modern HTML5 element sample coding list, history of every HTML
 
 [View my HTML5 Tutorial >>>](https://mitchellstokely.com/HTML5Tutorial/)
 
-If you want to get more detailed information about this project, you will have to copy my code then view my "README.html" file. It is written in clean HTML5 markup, can be opened in any web browser, and is styled by the CSS system found in this project. It is superior to GitPages, Jekyll, Markdown, and all the other goofy new frameworks that require complicated coding, settings, and other routines to work. Stick with plan CSS and HTML and you always widen your viewing audience!
+If you want to get more detailed information about this project, you will have to copy my code then view my `README.html` file. It is written in clean HTML5 markup, can be opened in any web browser, and is styled by the CSS system found in this project. It is superior to GitPages, Jekyll, Markdown, and all the other goofy new frameworks that require complicated coding, settings, and other routines to work. Stick with plan CSS and HTML and you always widen your viewing audience!
 
 ---
 
@@ -58,11 +60,11 @@ If you want to get more detailed information about this project, you will have t
 
 For more detailed information on the installation of these files, be sure to go to my README.html file, or the README.txt text file inside the Styles folder for more information.
 
-This CSS solution is just "text files" so you do not install anything, just drag and drop the folder of files into your web project and link to a couple of them from the head of your web pages. That is it! But here is a few more details to guide you:
+This CSS solution is just "text files", so you do not install anything, just drag and drop the folder of files into your web project and link to a couple of them from the head of your web pages. That is it! But here is a few more details to guide you:
 
-1. `Copy the "default" CSS folder into your Web Project` - First copy-and-paste the "default" folder of files anywhere inside your website. I like to create a "css" folder first and drag the "default" folder into it so you have "/css/default". This allows you to make copies of the "default" folder of CSS files later and use those copies as "skins", dark themes, or other designs inside your website. (See my "/default/styles/readme.txt" file for more info). This is superior to trying to hack together CSS designs or theme manipulated by JavaScript API's as it works in all browsers and you have very granular control over the website skin.
+1. `Copy the "default" CSS folder into your Web Project` - First copy-and-paste the "default" folder of files anywhere inside your website. I like to create a "css" folder first and drag the "default" folder into it so you have `/css/default` as your CSS path. This allows you to make copies of the "default" folder of CSS files later and link to those copies as alternative CSS "skins", dark themes, or other designs inside your website. (See my "/default/styles/readme.txt" file for more info). This is superior to trying to hack together CSS designs or theme manipulated by JavaScript API's as it works in all browsers and you have very granular control over the website skin.
 
-2. `Add HTML links to the CSS` - Below is how you  link to the "Universal CSS Framework" from an HTML web page. Paste these links below into the head section of your HTML web page and modify the paths as needed so they link to the files show below:
+2. `Add HTML links to the CSS` - Below is how you link to the "Universal CSS Framework" from an HTML web page. Paste these links below into the head section of your HTML web page and modify the paths as needed so they link to the files show below:
 
 &lt;html&gt;<br />
 &lt;head&gt;
@@ -78,13 +80,13 @@ This CSS solution is just "text files" so you do not install anything, just drag
 
 That's it!
 
-* Note that there are other optional CSS files you can add to the link list above but these are the basic ones you need. Go read my REAME.txt file inside the Styles Folder for more details.
+* Note that there are other optional CSS files you can add to the link list above but these are the basic ones you need. Go read my `REAME.txt` file inside the Styles Folder for more details.
 
 ### Add your CSS Code as Needed inside the 'Styles.css'
 
-When adding your custom styles to the framework, just go to the "default/styles" folder and paste in your custom styles and classes into "Styles.css". Do the same for the "Mobile.css" layout version, and modify the "Print.css" file so your web pages are perfectly printable. Note that the project only comes with basic mobile-friendly and print-friendly layout designs. All these default designs match the HTML in my README.HTML layout code, or the one found inside my HTML5 Tutorial (link above). So use thuse HTmL web pages to get started with a clean markup template that works well with my CSS system.
+When adding your custom styles to the framework, just go to the "default/styles" folder and paste in your custom styles and classes into "Styles.css". Do the same for the "Mobile.css" layout version, and modify the "Print.css" file so your web pages are perfectly printable. Note that the project only comes with basic mobile-friendly and print-friendly layout designs. All these default designs match the HTML in my README.HTML layout code, or the one found inside my HTML5 Tutorial (link above). So use these HTML web pages to get started with a clean markup template that works well with my CSS system.
 
-Additionally, you can add your own mobile app images, print button, favicon, header logo, and high definition print logo inside the Images or Content folder. I have included samples in the "images" folder. There are lots of goodies to customize in the "styles" CSS folder.
+Additionally, you can add your own mobile app images, print button, favicon, header logo, and high definition print logo inside the Images or Content folder. The "Images" foler is for icons and images that relate to the overall CSS design, like favicons, print icons, headers, and phone icons. "Content" is for all non-CSS images and media added to to the HTML pages. I have included samples in the "images" folder. There are lots of goodies to customize in the "styles" CSS folder.
 
 
 

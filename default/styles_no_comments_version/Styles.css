@@ -177,6 +177,49 @@ html body main textarea::selection {
     padding: .1em 0em;
 }
 
+html body a {
+	display: inline;
+	color: #006;
+	text-decoration: underline;
+	cursor: pointer;
+	background: transparent;
+}
+html body a:link {
+	color: #006;
+	background: transparent;
+	text-decoration: underline;
+    cursor: pointer;
+}
+
+html body a:visited {
+	color: #66a;
+	background: transparent;
+	text-decoration: underline;
+    cursor: pointer;
+}
+
+html body a:hover {
+	color: #00c;
+	background: transparent;
+	text-decoration: underline;
+    cursor: pointer;
+}
+
+html body a:focus { 
+	color: #00f;
+	background: transparent;
+	text-decoration: underline;
+    cursor: pointer;
+}
+
+html body a:active {
+	color: #00f;
+	background: transparent;
+	text-decoration: underline;
+    cursor: pointer;
+}
+
+
 .box,
 .box_html5table {
     display: block;

@@ -262,6 +262,50 @@ html body main textarea::selection {
 /* ======================= Custom Web Page Styles ======================== 
 These styles mainly apply to my HTML 5 Tutorial page. */
 
+/* Added back in the anchor styles for my non-Bootstrap menu design. */
+html body a {
+	display: inline;
+	color: #006;
+	text-decoration: underline;
+	cursor: pointer;
+	background: transparent;
+}
+html body a:link {
+	color: #006;
+	background: transparent;
+	text-decoration: underline;
+    cursor: pointer;
+}
+
+html body a:visited {
+	color: #66a;
+	background: transparent;
+	text-decoration: underline;
+    cursor: pointer;
+}
+
+html body a:hover {
+	color: #00c;
+	background: transparent;
+	text-decoration: underline;
+    cursor: pointer;
+}
+
+html body a:focus { 
+	color: #00f;
+	background: transparent;
+	text-decoration: underline;
+    cursor: pointer;
+}
+
+html body a:active {
+	color: #00f;
+	background: transparent;
+	text-decoration: underline;
+    cursor: pointer;
+}
+
+
 .box,
 .box_html5table {
     display: block;
