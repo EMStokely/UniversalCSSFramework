@@ -1735,7 +1735,7 @@ body select:active {
 	height: auto;
 	min-width: 0;
 	max-width: none;
-	padding: .17em .17em;/* aligns default select height with input elements */
+	padding: .2em .2em;/* aligns default select height with input elements */
 	margin: 0;
 	text-transform: none; /* remove text-transform inheritance */
 	border-radius: .2em;
@@ -1957,10 +1957,43 @@ body textarea:active {
 	background: #f9f9ff;
 	border: 2px solid #999;
 }
+
 body textarea:focus {
 	background: #fff; /* Default back to a white box when focused. */
 	border: 2px solid #999;
 }
+body textarea:required:visited:valid,
+body textarea:required:valid {
+	background: #fff;
+	border: 2px solid #7fbe96;
+}
+
+body textarea:required:hover:valid {
+	background: #f9f9ff;
+	border: 2px solid #278b3d;
+}
+
+body textarea:required:focus:valid {
+	background: #fff;
+	border: 2px solid #278b3d;
+}
+
+body textarea:required:visited:invalid,
+body textarea:required:invalid {
+	background: #fff;
+	border: 2px solid #ff6565;
+}
+
+body textarea:required:hover:invalid {
+	background: #f9f9ff;
+	border: 2px solid #ce2f2f;
+}
+
+body textarea:required:focus:invalid {
+	background: #fff;
+	border: 2px solid #ce2f2f;
+}
+
 body textarea[disabled],
 body textarea[readonly],
 body textarea[disabled="disabled"],
