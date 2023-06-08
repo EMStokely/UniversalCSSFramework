@@ -733,6 +733,30 @@ Or, you can apply it for custom sections of your website.
 
 -------------------------------------------------------
 
+ALTERNATIVE WAY TO ADD FONT-AWESOME
+
+/* Try these names first directly in CSS after adding a reference or install for Font Awesome in your HTML to see if they work. If they do, you do not have to use the font awesome CSS classes or import them into Angular or other apps manually. Just add these names below into CSS selectors as show down below. */
+
+font-family: "fontawesome";
+font-family: "Font Awesome 5 Free";
+font-family: 'Font Awesome 5 Brands';
+font-family: 'Font Awesome 5 Pro';
+
+.mylistbullet::before{
+content:"\f006";
+font-family:"fontawesome";
+font-weight:900;/* required */
+}
+
+.myicon {
+font-family: 'fontawesome', sans-serif
+content:"\f006";
+font-family:"fontawesome";
+font-weight:900;/* required */
+}
+
+-------------------------------------------------------
+
 
 
 SOME NEWER CSS3 TECHNOLOGIES YOU CAN SAFELY USE IN THIS STYLE SHEET AND BROWSERS GOING FORWARD

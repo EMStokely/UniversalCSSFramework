@@ -87,6 +87,37 @@ html body {
 }
 
 
+/* ADOBE UNICODE FONTS - Adobe and Google had new OpenType font sets that not only look great for all web products but support most if not all Unicode code points, icons, glyphs, emoticons, and characters in the growing Unicode standard. I prefer Adobe's fonts over Googles, but choose what you like. Here is Adobes free font-source: https://github.com/adobe-fonts Below are ways to bolt these into this universal css framework quickly. This assumes you downloaded these fonts from the github portal listed above and added the woff, true type, or opentype repositories of fonts to a subfolder. For licensing purposes, I did not include those Adobe or Google fonts as part of this CSS system. */
+
+
+/*
+@font-face{
+    font-family: 'SourceSans3Medium';
+    font-weight: 200 900;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('../fonts-adobe/SourceSans3-Medium.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'SourceSerif4Regular';
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('../fonts-adobe/SourceSerif4-Regular.ttf') format('truetype');
+}
+
+html body {
+    font-family: 'SourceSans3Medium', sans-serif;
+    background: #eee;
+    padding: 0em .5em .5em .5em;
+    margin: 0;
+    overflow-y: scroll;
+}
+*/
+
+
 
 
 
